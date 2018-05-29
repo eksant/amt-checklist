@@ -19,5 +19,6 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 
 app.use('/api/users', require('./routes/users'))
+app.use('/api/mt', require('./routes/mobiltangkis'))
 
 module.exports = app
