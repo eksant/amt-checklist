@@ -7,7 +7,12 @@ import Breadcrumb from '../../components/Breadcrumb/';
 import Aside from '../../components/Aside/';
 import Footer from '../../components/Footer/';
 
+import Login from '../../views/Login/';
 import Dashboard from '../../views/Dashboard/';
+import Admin from '../../views/Admin/';
+import User from '../../views/User/';
+import MobilTangki from '../../views/MobilTangki/';
+import Checklist from '../../views/Checklist/';
 
 class Full extends Component {
   render() {
@@ -21,6 +26,10 @@ class Full extends Component {
             <Container fluid>
               <Switch>
                 <Route path="/dashboard" name="Dashboard" component={Dashboard}/>
+                <Route path="/admin" name="Admin" component={Admin}/>
+                <Route path="/user" name="User" component={User}/>
+                <Route path="/mobil-tangki" name="MobilTangki" component={MobilTangki}/>
+                <Route path="/checklist" name="Checklist" component={Checklist}/>
                 <Redirect from="/" to="/dashboard"/>
               </Switch>
             </Container>
