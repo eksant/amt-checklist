@@ -1,11 +1,14 @@
 const express = require('express')
 const router = express.Router()
-const { read, readById, create, update, destroy } = require('../controllers/users')
+const authorization = require('../middlewares/authorization')
+const authentication = require('../middlewares/authentication')
+const { auth, read, readById, create, update, destroy } = require('../controllers/users')
 
-router.get('/', read)
+router.get('/', authentication, read)
 router.post('/', create)
-router.get('/:id', readById)
-router.put('/:id', update)
-router.delete('/:id', destroy)
+router.post('/auth', auth)
+router.get('/:id', authentication, readById)
+router.put('/:id', authentication, update)
+router.delete('/:id', authentication, destroy)
 
 module.exports = router
