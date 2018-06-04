@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {HashRouter, Route, Switch} from 'react-router-dom';
+import { Provider } from 'react-redux';
+import store from './store';
 
 // Styles
 // Import Flag Icons Set
@@ -17,10 +19,16 @@ import '../scss/core/_dropdown-menu-right.scss';
 // Containers
 import Full from './containers/Full/';
 
+// Views
+import Login from './views/Login/';
+
 ReactDOM.render((
-  <HashRouter>
-    <Switch>
-      <Route path="/" name="Home" component={Full}/>
-    </Switch>
-  </HashRouter>
+  <Provider store={store}>
+    <HashRouter>
+      <Switch>
+        <Route exact path="/login" name="Login" component={Login}/>
+        <Route path="/" name="Home" component={Full}/>
+      </Switch>
+    </HashRouter>
+  </Provider>
 ), document.getElementById('root'));

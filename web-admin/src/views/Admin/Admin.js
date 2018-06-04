@@ -62,8 +62,8 @@ class Admin extends Component {
                 <thead>
                 <tr>
                   <th>Username</th>
-                  <th>Date registered</th>
-                  <th>Role</th>
+                  <th>Email</th>
+                  <th>Date Registered</th>
                   <th>Status</th>
                   <th>Actions</th>
                 </tr>
@@ -105,97 +105,26 @@ class Admin extends Component {
           <Form action="" method="post" encType="multipart/form-data" className="form-horizontal">
             <FormGroup row>
               <Col md="3">
-                <Label htmlFor="text-input">Text Input</Label>
+                <Label htmlFor="username">Username</Label>
               </Col>
               <Col xs="12" md="9">
-                <Input type="text" id="text-input" name="text-input" placeholder="Text" />
-                <FormText color="muted">This is a help text</FormText>
+                <Input type="text" id="username" name="username" placeholder="Enter Username" />
               </Col>
             </FormGroup>
             <FormGroup row>
               <Col md="3">
-                <Label htmlFor="email-input">Email Input</Label>
+                <Label htmlFor="email">Email</Label>
               </Col>
               <Col xs="12" md="9">
-                <Input type="email" id="email-input" name="email-input" placeholder="Enter Email" autoComplete="email"/>
-                <FormText className="help-block">Please enter your email</FormText>
+                <Input type="email" id="email" name="email" placeholder="Enter Email" autoComplete="email"/>
               </Col>
             </FormGroup>
             <FormGroup row>
               <Col md="3">
-                <Label htmlFor="password-input">Password</Label>
+                <Label htmlFor="password">Password</Label>
               </Col>
               <Col xs="12" md="9">
-                <Input type="password" id="password-input" name="password-input" placeholder="Password" autoComplete="new-password" />
-                <FormText className="help-block">Please enter a complex password</FormText>
-              </Col>
-            </FormGroup>
-            <FormGroup row>
-              <Col md="3">
-                <Label htmlFor="date-input">Date Input <Badge>NEW</Badge></Label>
-              </Col>
-              <Col xs="12" md="9">
-                <Input type="date" id="date-input" name="date-input" placeholder="date" />
-              </Col>
-            </FormGroup>
-            <FormGroup row>
-              <Col md="3">
-                <Label htmlFor="textarea-input">Textarea</Label>
-              </Col>
-              <Col xs="12" md="9">
-                <Input type="textarea" name="textarea-input" id="textarea-input" rows="9"
-                        placeholder="Content..." />
-              </Col>
-            </FormGroup>
-            <FormGroup row>
-              <Col md="3">
-                <Label htmlFor="select">Select</Label>
-              </Col>
-              <Col xs="12" md="9">
-                <Input type="select" name="select" id="select">
-                  <option value="0">Please select</option>
-                  <option value="1">Option #1</option>
-                  <option value="2">Option #2</option>
-                  <option value="3">Option #3</option>
-                </Input>
-              </Col>
-            </FormGroup>
-            <FormGroup row>
-              <Col md="3">
-                <Label>Inline Radios</Label>
-              </Col>
-              <Col md="9">
-                <FormGroup check inline>
-                  <Input className="form-check-input" type="radio" id="inline-radio1" name="inline-radios" value="option1" />
-                  <Label className="form-check-label" check htmlFor="inline-radio1">One</Label>
-                </FormGroup>
-                <FormGroup check inline>
-                  <Input className="form-check-input" type="radio" id="inline-radio2" name="inline-radios" value="option2" />
-                  <Label className="form-check-label" check htmlFor="inline-radio2">Two</Label>
-                </FormGroup>
-                <FormGroup check inline>
-                  <Input className="form-check-input" type="radio" id="inline-radio3" name="inline-radios" value="option3" />
-                  <Label className="form-check-label" check htmlFor="inline-radio3">Three</Label>
-                </FormGroup>
-              </Col>
-            </FormGroup>
-            <FormGroup row>
-              <Col md="3">
-                <Label>Inline Checkboxes</Label>
-              </Col>
-              <Col md="9">
-                <FormGroup check inline>
-                  <Input className="form-check-input" type="checkbox" id="inline-checkbox1" name="inline-checkbox1" value="option1" />
-                  <Label className="form-check-label" check htmlFor="inline-checkbox1">One</Label>
-                </FormGroup>
-                <FormGroup check inline>
-                  <Input className="form-check-input" type="checkbox" id="inline-checkbox2" name="inline-checkbox2" value="option2" />
-                  <Label className="form-check-label" check htmlFor="inline-checkbox2">Two</Label>
-                </FormGroup>
-                <FormGroup check inline>
-                  <Input className="form-check-input" type="checkbox" id="inline-checkbox3" name="inline-checkbox3" value="option3" />
-                  <Label className="form-check-label" check htmlFor="inline-checkbox3">Three</Label>
-                </FormGroup>
+                <Input type="password" id="password" name="password" placeholder="Enter Password" autoComplete="new-password" />
               </Col>
             </FormGroup>
           </Form>

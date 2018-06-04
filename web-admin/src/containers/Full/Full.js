@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Link, Switch, Route, Redirect} from 'react-router-dom';
+import {Link, Switch, BrowserRouter, Router, Redirect} from 'react-router-dom';
 import {Container} from 'reactstrap';
 import Header from '../../components/Header/';
 import Sidebar from '../../components/Sidebar/';
@@ -16,29 +16,33 @@ import Checklist from '../../views/Checklist/';
 
 class Full extends Component {
   render() {
-    return (
-      <div className="app">
-        <Header />
-        <div className="app-body">
-          <Sidebar {...this.props}/>
-          <main className="main">
-            <Breadcrumb />
-            <Container fluid>
-              <Switch>
-                <Route path="/dashboard" name="Dashboard" component={Dashboard}/>
-                <Route path="/admin" name="Admin" component={Admin}/>
-                <Route path="/user" name="User" component={User}/>
-                <Route path="/mobil-tangki" name="MobilTangki" component={MobilTangki}/>
-                <Route path="/checklist" name="Checklist" component={Checklist}/>
-                <Redirect from="/" to="/dashboard"/>
-              </Switch>
-            </Container>
-          </main>
-          <Aside />
+    if (!localStorage.getItem('username') && !localStorage.getItem('token')) {
+      return <Redirect from="/" to="/login"/>
+    } else {
+      return (
+        <div className="app">
+          <Header />
+          <div className="app-body">
+            <Sidebar {...this.props}/>
+            <main className="main">
+              <Breadcrumb />
+              <Container fluid>
+                <Switch>
+                  <BrowserRouter path="/dashboard" name="Dashboard" component={Dashboard}/>
+                  <BrowserRouter path="/admin" name="Admin" component={Admin}/>
+                  <BrowserRouter path="/user" name="User" component={User}/>
+                  <BrowserRouter path="/mobil-tangki" name="MobilTangki" component={MobilTangki}/>
+                  <BrowserRouter path="/checklist" name="Checklist" component={Checklist}/>
+                  <Redirect from="/" to="/dashboard"/>
+                </Switch>
+              </Container>
+            </main>
+            <Aside />
+          </div>
+          <Footer />
         </div>
-        <Footer />
-      </div>
-    );
+      );
+    }
   }
 }
 

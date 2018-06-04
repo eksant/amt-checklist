@@ -62,8 +62,8 @@ class User extends Component {
                 <thead>
                 <tr>
                   <th>Username</th>
-                  <th>Date registered</th>
-                  <th>Role</th>
+                  <th>Email</th>
+                  <th>Date Registered</th>
                   <th>Status</th>
                   <th>Actions</th>
                 </tr>
