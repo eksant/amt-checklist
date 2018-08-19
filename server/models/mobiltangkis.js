@@ -1,7 +1,8 @@
-const mongoose  = require('mongoose')
-const Schema    = mongoose.Schema
+const mongoose          = require('mongoose')
+const mongoosePaginate  = require('mongoose-paginate')
+const Schema            = mongoose.Schema
 
-var mobiltangkisSchema = new Schema({
+var schema = new Schema({
   nopol: {
     type: String,
   },
@@ -18,4 +19,5 @@ var mobiltangkisSchema = new Schema({
   timestamps: true
 })
 
-module.exports = mongoose.model('mobiltangki', mobiltangkisSchema)
+schema.plugin(mongoosePaginate)
+module.exports = mongoose.model('mobiltangki', schema)

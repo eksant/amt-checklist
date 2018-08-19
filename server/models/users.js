@@ -1,7 +1,8 @@
-const mongoose  = require('mongoose')
-const Schema    = mongoose.Schema
+const mongoose          = require('mongoose')
+const mongoosePaginate  = require('mongoose-paginate')
+const Schema            = mongoose.Schema
 
-var usersSchema = new Schema({
+var schema = new Schema({
   username: {
     type: String,
   },
@@ -27,4 +28,5 @@ var usersSchema = new Schema({
   timestamps: true
 })
 
-module.exports = mongoose.model('user', usersSchema)
+schema.plugin(mongoosePaginate)
+module.exports = mongoose.model('user', schema)

@@ -1,10 +1,6 @@
 import React, {Component} from 'react';
-import axios from 'axios';
-import { bindActionCreators } from 'redux';
-import { connect } from "react-redux";
 import { notification } from 'antd';
 import logo from '../../../public/img/logo-symbol.png';
-import { GetAdminLogin } from "../../store/admins/admins.actions";
 import {
   Container, 
   Row, 
@@ -20,23 +16,18 @@ import {
   InputGroupText
 } from 'reactstrap';
 
-class Login extends Component {
+export default class Login extends Component {
   constructor() {
     super()
 
     this.state = {
-      email: '',
-      password: ''
+      email: 'superadmin@email.com',
+      password: 'password'
     }
-
-    this.handleChange = this.handleChange.bind(this)
-    this.handleLogin = this.handleLogin.bind(this)
   }
 
-  handleChange(event) {
-    this.setState({
-      [event.target.name]: event.target.value
-    })
+  handleChange(field, e) {
+    this.setState(Object.assign({}, this.state, {[field]: e.target.value}))
   }
 
   handleLogin(event) {
@@ -53,27 +44,7 @@ class Login extends Component {
         description: 'Password must be filled !!',
       });
     } else {
-      let result = null
-      // this.props.GetAdminLogin(this.state.email, this.state.password)
-      axios.post('http://localhost:3030/api/users/auth', {
-        email: this.state.email,
-        password: this.state.password
-      })
-      .then(resp => {
-        if (resp.data.token) {
-          localStorage.setItem('username', resp.data.users.username)
-          localStorage.setItem('token', resp.data.token)
-          this.props.history.push('/dashboard')
-        } else {
-          notification['warning']({
-            message: 'Notification Login',
-            description: 'Invalid Username or Password !!',
-          });
-        }
-      })
-      .catch(err => {
-        console.log('err', err)
-      })
+      
     }
   }
 
@@ -88,14 +59,14 @@ class Login extends Component {
                   <CardBody>
                     <h1>Login</h1>
                     <p className="text-muted">Sign In to your account</p>
-                    <Form onSubmit={this.handleLogin} className="form-horizontal">
+                    <Form onSubmit={this.handleLogin.bind(this)} className="form-horizontal">
                       <InputGroup className="mb-3">
                         <InputGroupAddon addonType="prepend">
                           <InputGroupText>
                             <i className="icon-user"></i>
                           </InputGroupText>
                         </InputGroupAddon>
-                        <Input name="email" value={this.state.email} onChange={this.handleChange} type="email" placeholder="Email"/>
+                        <Input value={this.state.email} onChange={this.handleChange.bind(this, 'email')} type="email" placeholder="Email"/>
                       </InputGroup>
                       <InputGroup className="mb-4">
                         <InputGroupAddon addonType="prepend">
@@ -103,7 +74,7 @@ class Login extends Component {
                             <i className="icon-lock"></i>
                           </InputGroupText>
                         </InputGroupAddon>
-                        <Input name="password" value={this.state.password} onChange={this.handleChange} type="password" placeholder="Password"/>
+                        <Input value={this.state.password} onChange={this.handleChange.bind(this, 'password')} type="password" placeholder="Password"/>
                       </InputGroup>
                       <Row>
                         <Col xs="6">
@@ -129,15 +100,3 @@ class Login extends Component {
     );
   }
 }
-
-const mapStateToProps = (state) => ({
-  admins: state.admins,
-});
-
-const mapDispacthToProps = (dispatch) => (
-  bindActionCreators({
-    GetAdminLogin
-  }, dispatch)
-);
-
-export default connect(mapStateToProps, mapDispacthToProps)(Login);

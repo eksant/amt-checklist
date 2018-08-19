@@ -7,20 +7,29 @@ module.exports = {
     user.findOne({
       email: req.body.email.trim()
     })
-    .then(users => {
-      if (users) {
-        if (bcrypt.compareSync(req.body.password, users.password)) {
-          var token = jwt.sign({ users }, process.env.JWT_KEY);
-          res.json({
+    .then((user) => {
+      if (user) {
+        if (bcrypt.compareSync(req.body.password, user.password)) {
+          var token = jwt.sign({ user }, process.env.JWT_KEY);
+          res.status(200).json({
             message: 'Login succeess',
-            users,
+            user: {
+              username: user.username,
+              email: user.email,
+              imgUrl: user.imgUrl
+            },
             token
           });
+        } else {
+          res.status(201).json({
+            message: 'Invalid email or password !!'
+          })
         }
+      } else {
+        res.status(201).json({
+          message: 'Invalid email or password !!'
+        })
       }
-      res.json({
-        message: 'Fail Login'
-      });
     })
     .catch(err => next(err));
   },
@@ -30,12 +39,12 @@ module.exports = {
       username: req.body.username,
       email: req.body.email,
       password: bcrypt.hashSync(req.body.password),
-      mobile: req.body.mobile,
+      mobile: req.body.mobile || null,
       roles: req.body.roles,
       status: 1,
       imgUrl: req.body.imgUrl || null
     })
-    .then(users => res.json(users))
+    .then(users => res.status(200).json(users))
     .catch(err => next(err))
   },
 
@@ -65,7 +74,7 @@ module.exports = {
 
   destroy: (req, res, next) => {
     user.findByIdAndRemove(req.params.id)
-    .then(user => res.json(user))
+    .then(user => res.status(200).json(user))
     .catch(err => next(err))
   }
 }
