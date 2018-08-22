@@ -1,42 +1,12 @@
-// const express = require('express')
-// const router = express.Router()
-// const authentication = require('../middlewares/authentication')
-// const { auth, read, readById, create, update, destroy } = require('../controllers/users')
+const express = require("express");
+const router = express.Router();
+const userController = require("../controllers/users");
+const auth = require("../middlewares/authentication");
 
-// router.get('/', read)
-// router.post('/', create)
-// router.post('/auth', auth)
-// router.get('/:id', authentication, readById)
-// router.put('/:id', authentication, update)
-// router.delete('/:id', authentication, destroy)
+router.get("/", auth, userController.read);
+router.get("/:id", auth, userController.readById);
+router.post("/add", auth, userController.create);
+router.put("/update/:id", auth, userController.update);
+router.delete("/delete/:id", auth, userController.destroy);
 
-// module.exports = router
-
-const userController = require('../controllers/users')
-const authentication = require('../middlewares/authentication')
-
-module.exports = (router) => {
-  router
-  .route('/users/auth')
-  .post(userController.auth)
-  
-  router
-  .route('/users')
-  .post(authentication, userController.create)
-
-  router
-  .route('/users')
-  .get(authentication, userController.read)
-
-  router
-  .route('users/:id')
-  .get(authentication, userController.readById)
-
-  router
-  .route('users/:id')
-  .put(authentication, userController.update)
-
-  router
-  .route('users/:id')
-  .delete(authentication, userController.destroy)
-}
+module.exports = router;
