@@ -5,6 +5,13 @@
   "author": "eksa <eksant@gmail.com>",
   "license": "ISC",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:eksant/amt-checklist.git"
+  },
+  "bugs": {
+    "url": "https://github.com/eksant/amt-checklist/issues"
+  },
   "scripts": {
     "start": "node ./bin/www",
     "dev": "nodemon ./bin/www"

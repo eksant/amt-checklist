@@ -1,15 +1,18 @@
 {
-  "name": "@coreui/coreui-free-react-admin-template",
-  "version": "2.0.5",
-  "description": "CoreUI React Open Source Bootstrap 4 Admin Template",
-  "author": "Łukasz Holeczek",
-  "homepage": "https://coreui.io",
-  "copyright": "Copyright 2018 creativeLabs Łukasz Holeczek",
-  "license": "MIT",
+  "name": "web-admin",
+  "version": "0.0.0",
+  "description": "Web Admin for Daily AMT Checklist",
+  "author": "Eksa <eksant@gmail.com>",
+  "homepage": "http://seorangeksa.com",
+  "copyright": "Copyright 2018 seorangeksa",
+  "license": "ISC",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git@github.com:coreui/coreui-free-react-admin-template.git"
+    "url": "git@github.com:eksant/amt-checklist.git"
+  },
+  "bugs": {
+    "url": "https://github.com/eksant/amt-checklist/issues"
   },
   "dependencies": {
     "@coreui/coreui": "^2.0.2",
@@ -52,8 +55,5 @@
     "build": "npm-run-all build-css build-js",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  },
-  "bugs": {
-    "url": "https://github.com/coreui/coreui-free-react-admin-template/issues"
   }
 }
