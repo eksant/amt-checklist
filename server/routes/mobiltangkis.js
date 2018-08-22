@@ -1,37 +1,12 @@
-// const express = require('express')
-// const router = express.Router()
-// const authorization = require('../middlewares/authorization')
-// const { read, readById, create, update, destroy } = require('../controllers/mobiltangkis')
+const express = require("express");
+const router = express.Router();
+const amtController = require("../controllers/mobiltangkis");
+const auth = require("../middlewares/authentication");
 
-// router.get('/', authorization, read)
-// router.post('/', authorization, create)
-// router.get('/:id', authorization, readById)
-// router.put('/:id', authorization, update)
-// router.delete('/:id', authorization, destroy)
+router.get("/", auth, amtController.read);
+router.get("/:id", auth, amtController.readById);
+router.post("/add", auth, amtController.create);
+router.put("/update/:id", auth, amtController.update);
+router.delete("/delete/:id", auth, amtController.destroy);
 
-// module.exports = router
-
-const mobiltangkiController = require('../controllers/mobiltangkis')
-const authentication = require('../middlewares/authentication')
-
-module.exports = (router) => {  
-  router
-  .route('/mt')
-  .post(authentication, mobiltangkiController.create)
-
-  router
-  .route('/mt')
-  .get(authentication, mobiltangkiController.read)
-
-  router
-  .route('mt/:id')
-  .get(authentication, mobiltangkiController.readById)
-
-  router
-  .route('mt/:id')
-  .put(authentication, mobiltangkiController.update)
-
-  router
-  .route('mt/:id')
-  .delete(authentication, mobiltangkiController.destroy)
-}
+module.exports = router;
