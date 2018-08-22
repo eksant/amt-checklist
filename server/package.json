@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "description": "Daily AMT Checklist",
   "author": "eksa <eksant@gmail.com>",
+  "license": "ISC",
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
