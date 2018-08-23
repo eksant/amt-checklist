@@ -1,48 +1,45 @@
 export default {
   items: [
     {
-      name: 'Dashboard',
-      url: '/dashboard',
-      icon: 'icon-speedometer',
+      name: "Dashboard",
+      url: "/dashboard",
+      icon: "icon-speedometer"
     },
     {
       title: true,
-      name: 'Master Data',
-      wrapper: {            // optional wrapper object
-        element: '',        // required valid HTML5 element tag
-        attributes: {}        // optional valid JS object with JS API naming ex: { className: "my-class", style: { fontFamily: "Verdana" }, id: "my-id"}
-      },
-      class: ''             // optional class names space delimited list for title item ex: "text-center"
-    },
-    {
-      name: 'Mobil Tangki',
-      url: '/theme/colors',
-      icon: 'icon-drop',
-    },
-    {
-      title: true,
-      name: 'Checking',
+      name: "Management Data",
       wrapper: {
-        element: '',
-        attributes: {},
+        element: "", // required valid HTML5 element tag
+        attributes: {} // optional valid JS object with JS API naming ex: { className: "my-class", style: { fontFamily: "Verdana" }, id: "my-id"}
       },
+      class: "" // optional class names space delimited list for title item ex: "text-center"
     },
     {
-      name: 'Shipment',
-      url: '/theme/colors',
-      icon: 'icon-drop',
+      name: "Manage Users",
+      url: "/theme/colors",
+      icon: "fa fa-users"
     },
     {
-      divider: true,
+      name: "Manage AMT",
+      url: "/theme/colors",
+      icon: "fa fa-truck"
+    },
+    {
+      name: "Daily AMT Check",
+      url: "/theme/colors",
+      icon: "fa fa-check-square-o"
+    },
+    {
+      divider: true
     },
     {
       title: true,
-      name: 'Report',
+      name: "Reporting"
     },
     {
-      name: 'Checklist Shipment',
-      url: '/theme/colors',
-      icon: 'icon-drop',
-    },
-  ],
+      name: "AMT Checklist",
+      url: "/theme/colors",
+      icon: "fa fa-list-alt"
+    }
+  ]
 };
