@@ -1,10 +1,7 @@
-const {
-  create,
-  read,
-  readId,
-  update,
-  destroy
-} = require("../models/checklist");
+const redis = require('redis')
+const client = redis.createClient()
+
+const { create, read, readId, update, destroy } = require('../../models/checklist')
 
 module.exports = {
   create: (req, res) => {
@@ -79,48 +76,51 @@ module.exports = {
       },
       (error, data) => {
         if (!error) {
+          client.del('checklistCache')
           res.status(200).json({
-            message: "Success to insert record",
-            data
-          });
+            message: 'Success to insert record',
+            data,
+          })
         } else {
           res.status(400).json({
-            message: "Bad request",
-            error
-          });
+            message: 'Bad request',
+            error,
+          })
         }
       }
-    );
+    )
   },
 
   read: (req, res) => {
     read((error, data) => {
       if (!error) {
+        client.set('checklistCache', JSON.stringify(data), 'EX', 500)
         res.status(200).json({
-          data
-        });
+          data,
+        })
       } else {
         res.status(400).json({
-          message: "Bad request",
-          error
-        });
+          message: 'Bad request',
+          error,
+        })
       }
-    });
+    })
   },
 
   readById: (req, res) => {
     readId(req.params.id, (error, data) => {
       if (!error) {
+        client.set('checklistCache', JSON.stringify(data), 'EX', 500)
         res.status(200).json({
-          data
-        });
+          data,
+        })
       } else {
         res.status(400).json({
-          message: "Bad request",
-          error
-        });
+          message: 'Bad request',
+          error,
+        })
       }
-    });
+    })
   },
 
   update: (req, res) => {
@@ -148,89 +148,121 @@ module.exports = {
             kondisiLampu: req.body.kondisiLampu || checklist[0].kondisiLampu,
             kondisiLampuReason: req.body.kondisiLampuReason || checklist[0].kondisiLampuReason,
             kondisiKompartemen: req.body.kondisiKompartemen || checklist[0].kondisiKompartemen,
-            kondisiKompartemenReason: req.body.kondisiKompartemenReason || checklist[0].kondisiKompartemenReason,
+            kondisiKompartemenReason:
+              req.body.kondisiKompartemenReason || checklist[0].kondisiKompartemenReason,
             kondisiApar: req.body.kondisiApar || checklist[0].kondisiApar,
             kondisiAparReason: req.body.kondisiAparReason || checklist[0].kondisiAparReason,
             kondisiOliMesin: req.body.kondisiOliMesin || checklist[0].kondisiOliMesin,
-            kondisiOliMesinReason: req.body.kondisiOliMesinReason || checklist[0].kondisiOliMesinReason,
+            kondisiOliMesinReason:
+              req.body.kondisiOliMesinReason || checklist[0].kondisiOliMesinReason,
             kondisiAirRadiator: req.body.kondisiAirRadiator || checklist[0].kondisiAirRadiator,
-            kondisiAirRadiatorReason: req.body.kondisiAirRadiatorReason || checklist[0].kondisiAirRadiatorReason,
+            kondisiAirRadiatorReason:
+              req.body.kondisiAirRadiatorReason || checklist[0].kondisiAirRadiatorReason,
             keberadaanSTNK: req.body.keberadaanSTNK || checklist[0].keberadaanSTNK,
-            keberadaanSTNKReason: req.body.keberadaanSTNKReason || checklist[0].keberadaanSTNKReason,
+            keberadaanSTNKReason:
+              req.body.keberadaanSTNKReason || checklist[0].keberadaanSTNKReason,
             keberadaanSuratKeur: req.body.keberadaanSuratKeur || checklist[0].keberadaanSuratKeur,
-            keberadaanSuratKeurReason: req.body.keberadaanSuratKeurReason || checklist[0].keberadaanSuratKeurReason,
+            keberadaanSuratKeurReason:
+              req.body.keberadaanSuratKeurReason || checklist[0].keberadaanSuratKeurReason,
             keberadaanSuratTera: req.body.keberadaanSuratTera || checklist[0].keberadaanSuratTera,
-            keberadaanSuratTeraReason: req.body.keberadaanSuratTeraReason || checklist[0].keberadaanSuratTeraReason,
+            keberadaanSuratTeraReason:
+              req.body.keberadaanSuratTeraReason || checklist[0].keberadaanSuratTeraReason,
             keberadaanP3K: req.body.keberadaanP3K || checklist[0].keberadaanP3K,
             keberadaanP3KReason: req.body.keberadaanP3KReason || checklist[0].keberadaanP3KReason,
             keberadaanFlameTrap: req.body.keberadaanFlameTrap || checklist[0].keberadaanFlameTrap,
-            keberadaanFlameTrapReason: req.body.keberadaanFlameTrapReason || checklist[0].keberadaanFlameTrapReason,
+            keberadaanFlameTrapReason:
+              req.body.keberadaanFlameTrapReason || checklist[0].keberadaanFlameTrapReason,
             keberadaanBanSerep: req.body.keberadaanBanSerep || checklist[0].keberadaanBanSerep,
-            keberadaanBanSerepReason: req.body.keberadaanBanSerepReason || checklist[0].keberadaanBanSerepReason,
+            keberadaanBanSerepReason:
+              req.body.keberadaanBanSerepReason || checklist[0].keberadaanBanSerepReason,
             keberadaanToolkit: req.body.keberadaanToolkit || checklist[0].keberadaanToolkit,
-            keberadaanToolKitReason: req.body.keberadaanToolKitReason || checklist[0].keberadaanToolKitReason,
-            keberadaanGroundingCable: req.body.keberadaanGroundingCable || checklist[0].keberadaanGroundingCable,
-            keberadaanGroundingCableReason: req.body.keberadaanGroundingCableReason || checklist[0].keberadaanGroundingCableReason,
-            keberadaanSelangBongkar: req.body.keberadaanSelangBongkar || checklist[0].keberadaanSelangBongkar,
-            keberadaanSelangBongkarReason: req.body.keberadaanSelangBongkarReason || checklist[0].keberadaanSelangBongkarReason,
+            keberadaanToolKitReason:
+              req.body.keberadaanToolKitReason || checklist[0].keberadaanToolKitReason,
+            keberadaanGroundingCable:
+              req.body.keberadaanGroundingCable || checklist[0].keberadaanGroundingCable,
+            keberadaanGroundingCableReason:
+              req.body.keberadaanGroundingCableReason ||
+              checklist[0].keberadaanGroundingCableReason,
+            keberadaanSelangBongkar:
+              req.body.keberadaanSelangBongkar || checklist[0].keberadaanSelangBongkar,
+            keberadaanSelangBongkarReason:
+              req.body.keberadaanSelangBongkarReason || checklist[0].keberadaanSelangBongkarReason,
             keberadaanSpillKit: req.body.keberadaanSpillKit || checklist[0].keberadaanSpillKit,
-            keberadaanSpillKitReason: req.body.keberadaanSpillKitReason || checklist[0].keberadaanSpillKitReason,
+            keberadaanSpillKitReason:
+              req.body.keberadaanSpillKitReason || checklist[0].keberadaanSpillKitReason,
             membawaSIM: req.body.membawaSIM || checklist[0].membawaSIM,
             membawaSIMReason: req.body.membawaSIMReason || checklist[0].membawaSIMReason,
-            membawaSuratIjinArea: req.body.membawaSuratIjinArea || checklist[0].membawaSuratIjinArea,
-            membawaSuratIjinAreaReason: req.body.membawaSuratIjinAreaReason || checklist[0].membawaSuratIjinAreaReason,
+            membawaSuratIjinArea:
+              req.body.membawaSuratIjinArea || checklist[0].membawaSuratIjinArea,
+            membawaSuratIjinAreaReason:
+              req.body.membawaSuratIjinAreaReason || checklist[0].membawaSuratIjinAreaReason,
             membawaBukuSaku: req.body.membawaBukuSaku || checklist[0].membawaBukuSaku,
-            membawaBukuSakuReason: req.body.membawaBukuSakuReason || checklist[0].membawaBukuSakuReason,
-            membawaCatatanPerjalanan: req.body.membawaCatatanPerjalanan || checklist[0].membawaCatatanPerjalanan,
-            membawaCatatanPerjalananReason: req.body.membawaCatatanPerjalananReason || checklist[0].membawaCatatanPerjalananReason,
+            membawaBukuSakuReason:
+              req.body.membawaBukuSakuReason || checklist[0].membawaBukuSakuReason,
+            membawaCatatanPerjalanan:
+              req.body.membawaCatatanPerjalanan || checklist[0].membawaCatatanPerjalanan,
+            membawaCatatanPerjalananReason:
+              req.body.membawaCatatanPerjalananReason ||
+              checklist[0].membawaCatatanPerjalananReason,
             menggunakanSeragam: req.body.menggunakanSeragam || checklist[0].menggunakanSeragam,
-            menggunakanSeragamReason: req.body.menggunakanSeragamReason || checklist[0].menggunakanSeragamReason,
-            menggunakanSafetyShoes: req.body.menggunakanSafetyShoes || checklist[0].menggunakanSafetyShoes,
-            menggunakanSafetyShoesReason: req.body.menggunakanSafetyShoesReason || checklist[0].menggunakanSafetyShoesReason,
-            menggunakanSafetyHelm: req.body.menggunakanSafetyHelm || checklist[0].menggunakanSafetyHelmReason,
-            menggunakanSafetyHelmReason: req.body.menggunakanSafetyHelmReason || checklist[0].menggunakanSafetyHelmReason,
+            menggunakanSeragamReason:
+              req.body.menggunakanSeragamReason || checklist[0].menggunakanSeragamReason,
+            menggunakanSafetyShoes:
+              req.body.menggunakanSafetyShoes || checklist[0].menggunakanSafetyShoes,
+            menggunakanSafetyShoesReason:
+              req.body.menggunakanSafetyShoesReason || checklist[0].menggunakanSafetyShoesReason,
+            menggunakanSafetyHelm:
+              req.body.menggunakanSafetyHelm || checklist[0].menggunakanSafetyHelmReason,
+            menggunakanSafetyHelmReason:
+              req.body.menggunakanSafetyHelmReason || checklist[0].menggunakanSafetyHelmReason,
             menggunakanIDCard: req.body.menggunakanIDCard || checklist[0].menggunakanIDCard,
-            menggunakanIDCardReason: req.body.menggunakanIDCardReason || checklist[0].menggunakanIDCardReason,
-            menggunakanSarungTangan: req.body.menggunakanSarungTangan || checklist[0].menggunakanSarungTangan,
-            menggunakanSarungTanganReason: req.body.menggunakanSarungTanganReason || checklist[0].menggunakanSarungTanganReason,
+            menggunakanIDCardReason:
+              req.body.menggunakanIDCardReason || checklist[0].menggunakanIDCardReason,
+            menggunakanSarungTangan:
+              req.body.menggunakanSarungTangan || checklist[0].menggunakanSarungTangan,
+            menggunakanSarungTanganReason:
+              req.body.menggunakanSarungTanganReason || checklist[0].menggunakanSarungTanganReason,
             menggunakanJasHujan: req.body.menggunakanJasHujan || checklist[0].menggunakanJasHujan,
-            menggunakanJamHujanReason: req.body.menggunakanJamHujanReason || checklist[0].menggunakanJasHujan,
+            menggunakanJamHujanReason:
+              req.body.menggunakanJamHujanReason || checklist[0].menggunakanJasHujan,
           },
           (error, data) => {
             if (!error) {
+              client.del('checklistCache')
               res.status(200).json({
-                message: "Success to update record!",
-                data
-              });
+                message: 'Success to update record!',
+                data,
+              })
             } else {
               res.status(400).json({
-                message: "Bad request",
-                error
-              });
+                message: 'Bad request',
+                error,
+              })
             }
           }
-        );
+        )
       } else {
         res.status(400).json({
-          message: "Data not found!",
-          error
-        });
+          message: 'Data not found!',
+          error,
+        })
       }
-    });
+    })
   },
 
   destroy: (req, res) => {
     destroy(req.params.id, error => {
       if (!error) {
+        client.del('checklistCache')
         res.status(200).json({
-          message: "Success to delete record!"
-        });
+          message: 'Success to delete record!',
+        })
       } else {
         res.status(400).json({
-          message: "Bad request",
-          error
-        });
+          message: 'Bad request',
+          error,
+        })
       }
-    });
-  }
-};
+    })
+  },
+}

@@ -1,312 +1,312 @@
-const mongoose = require("mongoose");
-const mongoosePaginate = require("mongoose-paginate");
+const mongoose = require('mongoose')
+const mongoosePaginate = require('mongoose-paginate')
 // const uniqueValidator = require("mongoose-unique-validator");
-const ObjectId = mongoose.Types.ObjectId;
-const Schema = mongoose.Schema;
+const ObjectId = mongoose.Types.ObjectId
+const Schema = mongoose.Schema
 
 var schema = new Schema(
   {
     user: {
       type: Schema.Types.ObjectId,
-      ref: "User",
-      required: [true, "User required!"]
+      ref: 'User',
+      required: [true, 'User required!'],
     },
     mobiltangki: {
       type: Schema.Types.ObjectId,
-      ref: "MobilTangki",
-      required: [true, "Mobil tangki required!"]
+      ref: 'MobilTangki',
+      required: [true, 'Mobil tangki required!'],
     },
     status: {
       type: Number,
       trim: true,
-      enum: ["0", "1", "2", "3"], // 0=not active, 1=request, 2=approve, 3=rejected
-      required: [true, "Status required!"]
+      enum: ['0', '1', '2', '3'], // 0=not active, 1=request, 2=approve, 3=rejected
+      required: [true, 'Status required!'],
     },
     ritase: {
       type: Number,
-      trim: true
+      trim: true,
     },
     odoKM: {
       type: Number,
-      trim: true
+      trim: true,
     },
     HSSE: {
       type: String,
-      trim: true
+      trim: true,
     },
     PWSAMT: {
       type: String,
-      trim: true
+      trim: true,
     },
     TBBM: {
       type: String,
-      trim: true
+      trim: true,
     },
     remarks: {
       type: String,
-      trim: true
+      trim: true,
     },
     imgUrl: {
       type: String,
-      trim: true
+      trim: true,
     },
     kondisiRem: {
       type: Number,
-      trim: true
+      trim: true,
     },
     kondisiRemReason: {
       type: String,
-      trim: true
+      trim: true,
     },
     kondisiBan: {
       type: Number,
-      trim: true
+      trim: true,
     },
     kondisiBanReason: {
       type: String,
-      trim: true
+      trim: true,
     },
     kondisiWiper: {
       type: Number,
-      trim: true
+      trim: true,
     },
     kondisiWiperReason: {
       type: String,
-      trim: true
+      trim: true,
     },
     kondisiLampu: {
       type: Number,
-      trim: true
+      trim: true,
     },
     kondisiLampuReason: {
       type: String,
-      trim: true
+      trim: true,
     },
     kondisiKompartemen: {
       type: Number,
-      trim: true
+      trim: true,
     },
     kondisiKompartemenReason: {
       type: String,
-      trim: true
+      trim: true,
     },
     kondisiApar: {
       type: Number,
-      trim: true
+      trim: true,
     },
     kondisiAparReason: {
       type: String,
-      trim: true
+      trim: true,
     },
     kondisiOliMesin: {
       type: Number,
-      trim: true
+      trim: true,
     },
     kondisiOliMesinReason: {
       type: String,
-      trim: true
+      trim: true,
     },
     kondisiAirRadiator: {
       type: Number,
-      trim: true
+      trim: true,
     },
     kondisiAirRadiatorReason: {
       type: String,
-      trim: true
+      trim: true,
     },
     keberadaanSTNK: {
       type: Number,
-      trim: true
+      trim: true,
     },
     keberadaanSTNKReason: {
       type: String,
-      trim: true
+      trim: true,
     },
     keberadaanSuratKeur: {
       type: Number,
-      trim: true
+      trim: true,
     },
     keberadaanSuratKeurReason: {
       type: String,
-      trim: true
+      trim: true,
     },
     keberadaanSuratTera: {
       type: Number,
-      trim: true
+      trim: true,
     },
     keberadaanSuratTeraReason: {
       type: String,
-      trim: true
+      trim: true,
     },
     keberadaanP3K: {
       type: Number,
-      trim: true
+      trim: true,
     },
     keberadaanP3KReason: {
       type: String,
-      trim: true
+      trim: true,
     },
     keberadaanFlameTrap: {
       type: Number,
-      trim: true
+      trim: true,
     },
     keberadaanFlameTrapReason: {
       type: String,
-      trim: true
+      trim: true,
     },
     keberadaanBanSerep: {
       type: Number,
-      trim: true
+      trim: true,
     },
     keberadaanBanSerepReason: {
       type: String,
-      trim: true
+      trim: true,
     },
     keberadaanToolkit: {
       type: Number,
-      trim: true
+      trim: true,
     },
     keberadaanToolKitReason: {
       type: String,
-      trim: true
+      trim: true,
     },
     keberadaanGroundingCable: {
       type: Number,
-      trim: true
+      trim: true,
     },
     keberadaanGroundingCableReason: {
       type: String,
-      trim: true
+      trim: true,
     },
     keberadaanSelangBongkar: {
       type: Number,
-      trim: true
+      trim: true,
     },
     keberadaanSelangBongkarReason: {
       type: String,
-      trim: true
+      trim: true,
     },
     keberadaanSpillKit: {
       type: Number,
-      trim: true
+      trim: true,
     },
     keberadaanSpillKitReason: {
       type: String,
-      trim: true
+      trim: true,
     },
     membawaSIM: {
       type: Number,
-      trim: true
+      trim: true,
     },
     membawaSIMReason: {
       type: String,
-      trim: true
+      trim: true,
     },
     membawaSuratIjinArea: {
       type: Number,
-      trim: true
+      trim: true,
     },
     membawaSuratIjinAreaReason: {
       type: String,
-      trim: true
+      trim: true,
     },
     membawaBukuSaku: {
       type: Number,
-      trim: true
+      trim: true,
     },
     membawaBukuSakuReason: {
       type: String,
-      trim: true
+      trim: true,
     },
     membawaCatatanPerjalanan: {
       type: Number,
-      trim: true
+      trim: true,
     },
     membawaCatatanPerjalananReason: {
       type: String,
-      trim: true
+      trim: true,
     },
     menggunakanSeragam: {
       type: Number,
-      trim: true
+      trim: true,
     },
     menggunakanSeragamReason: {
       type: String,
-      trim: true
+      trim: true,
     },
     menggunakanSafetyShoes: {
       type: Number,
-      trim: true
+      trim: true,
     },
     menggunakanSafetyShoesReason: {
       type: String,
-      trim: true
+      trim: true,
     },
     menggunakanSafetyHelm: {
       type: Number,
-      trim: true
+      trim: true,
     },
     menggunakanSafetyHelmReason: {
       type: String,
-      trim: true
+      trim: true,
     },
     menggunakanIDCard: {
       type: Number,
-      trim: true
+      trim: true,
     },
     menggunakanIDCardReason: {
       type: String,
-      trim: true
+      trim: true,
     },
     menggunakanSarungTangan: {
       type: Number,
-      trim: true
+      trim: true,
     },
     menggunakanSarungTanganReason: {
       type: String,
-      trim: true
+      trim: true,
     },
     menggunakanJasHujan: {
       type: Number,
-      trim: true
+      trim: true,
     },
     menggunakanJamHujanReason: {
       type: String,
-      trim: true
-    }
+      trim: true,
+    },
   },
   {
     createdAt: { type: Date, default: Date.now },
-    timestamps: true
+    timestamps: true,
   }
-);
+)
 
-schema.plugin(mongoosePaginate);
+schema.plugin(mongoosePaginate)
 // schema.plugin(uniqueValidator, {
 //   message: "{VALUE} already registered"
 // });
-const CheckList = mongoose.model("CheckList", schema);
+const CheckList = mongoose.model('CheckList', schema)
 
 const create = (data, callback) => {
   CheckList.create(data, (error, data) => {
-    if (!error) callback(null, data);
-    else callback(error, null);
-  });
-};
+    if (!error) callback(null, data)
+    else callback(error, null)
+  })
+}
 
 const read = callback => {
   CheckList.find((error, checklist) => {
-    if (!error) callback(null, checklist);
-    else callback(error, null);
-  });
-};
+    if (!error) callback(null, checklist)
+    else callback(error, null)
+  })
+}
 
 const readId = (id, callback) => {
   CheckList.find({ _id: ObjectId(id) }, (error, checklist) => {
-    if (!error) callback(null, checklist);
-    else callback(error, null);
-  });
-};
+    if (!error) callback(null, checklist)
+    else callback(error, null)
+  })
+}
 
 const update = (id, data, callback) => {
   CheckList.findOneAndUpdate(
@@ -314,17 +314,17 @@ const update = (id, data, callback) => {
     { $set: data },
     { upsert: true, new: true },
     (error, data) => {
-      if (!error) callback(null, data);
-      else callback(error, null);
+      if (!error) callback(null, data)
+      else callback(error, null)
     }
-  );
-};
+  )
+}
 
 const destroy = (id, callback) => {
   CheckList.remove({ _id: ObjectId(id) }, error => {
-    if (!error) callback(null);
-    else callback(error);
-  });
-};
+    if (!error) callback(null)
+    else callback(error)
+  })
+}
 
-module.exports = { CheckList, create, read, readId, update, destroy };
+module.exports = { CheckList, create, read, readId, update, destroy }

@@ -1,10 +1,7 @@
-const {
-  create,
-  read,
-  readId,
-  update,
-  destroy
-} = require("../models/mobiltangkis");
+const redis = require('redis')
+const client = redis.createClient()
+
+const { create, read, readId, update, destroy } = require('../../models/mobiltangkis')
 
 module.exports = {
   create: (req, res) => {
@@ -17,48 +14,51 @@ module.exports = {
       },
       (error, data) => {
         if (!error) {
+          client.del('mobiltangkiCache')
           res.status(200).json({
-            message: "Success to insert record",
-            data
-          });
+            message: 'Success to insert record',
+            data,
+          })
         } else {
           res.status(400).json({
-            message: "Bad request",
-            error
-          });
+            message: 'Bad request',
+            error,
+          })
         }
       }
-    );
+    )
   },
 
   read: (req, res) => {
     read((error, data) => {
       if (!error) {
+        client.set('mobiltangkiCache', JSON.stringify(data), 'EX', 500)
         res.status(200).json({
-          data
-        });
+          data,
+        })
       } else {
         res.status(400).json({
-          message: "Bad request",
-          error
-        });
+          message: 'Bad request',
+          error,
+        })
       }
-    });
+    })
   },
 
   readById: (req, res) => {
     readId(req.params.id, (error, data) => {
       if (!error) {
+        client.set('mobiltangkiCache', JSON.stringify(data), 'EX', 500)
         res.status(200).json({
-          data
-        });
+          data,
+        })
       } else {
         res.status(400).json({
-          message: "Bad request",
-          error
-        });
+          message: 'Bad request',
+          error,
+        })
       }
-    });
+    })
   },
 
   update: (req, res) => {
@@ -74,39 +74,41 @@ module.exports = {
           },
           (error, data) => {
             if (!error) {
+              client.del('mobiltangkiCache')
               res.status(200).json({
-                message: "Success to update record!",
-                data
-              });
+                message: 'Success to update record!',
+                data,
+              })
             } else {
               res.status(400).json({
-                message: "Bad request",
-                error
-              });
+                message: 'Bad request',
+                error,
+              })
             }
           }
-        );
+        )
       } else {
         res.status(400).json({
-          message: "Data not found!",
-          error
-        });
+          message: 'Data not found!',
+          error,
+        })
       }
-    });
+    })
   },
 
   destroy: (req, res) => {
     destroy(req.params.id, error => {
       if (!error) {
+        client.del('mobiltangkiCache')
         res.status(200).json({
-          message: "Success to delete record!"
-        });
+          message: 'Success to delete record!',
+        })
       } else {
         res.status(400).json({
-          message: "Bad request",
-          error
-        });
+          message: 'Bad request',
+          error,
+        })
       }
-    });
-  }
-};
+    })
+  },
+}
