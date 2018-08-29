@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Card, Col, Form, Input, InputNumber, Radio, Button, Alert } from 'antd'
+import { Card, Col, Row, Form, Input, InputNumber, Radio, Button, Alert } from 'antd'
 
 const formItemLayout = {
   labelCol: {
@@ -55,43 +55,59 @@ class MobilTangkiForm extends Component {
             <Alert message="Error" description={this.props.error.message} type="error" showIcon />
           ) : (
             <Form onSubmit={this.handleSubmit}>
-              <Col span="12">
-                <Form.Item label="No. Polisi" {...formItemLayout}>
-                  {getFieldDecorator('nopol', {
-                    initialValue: itemData && itemData.nopol,
-                    rules: [
-                      { required: true, message: 'Please input no. polisi!', whitespace: true },
-                    ],
-                  })(<Input placeholder="Input your no. polisi.." />)}
-                </Form.Item>
-                <Form.Item label="KL" {...formItemLayout}>
-                  {getFieldDecorator('KL', {
-                    initialValue: itemData && itemData.KL,
-                    rules: [{ required: true, message: 'Please input KL!', whitespace: true }],
-                  })(<InputNumber min={1} max={2} placeholder="Input your KL.." style={{ width: '100%' }} />)}
-                </Form.Item>
-              </Col>
-              <Col span="12">
-                <Form.Item label="Year" {...formItemLayout}>
-                  {getFieldDecorator('year', {
-                    initialValue: itemData && itemData.year,
-                    rules: [
-                      { required: true, message: 'Please input year!', whitespace: true },
-                    ],
-                  })(<InputNumber min={1} max={4} placeholder="Input your year.." style={{ width: '100%' }} />)}
-                </Form.Item>
-                <Form.Item label="Status" {...formItemLayout}>
-                  {getFieldDecorator('status', {
-                    initialValue: itemData && itemData.status,
-                    rules: [{ required: true, message: 'Please select status!', whitespace: true }],
-                  })(
-                    <Radio.Group>
-                      <Radio value="Active">Active</Radio>
-                      <Radio value="Non-Active">Non-Active</Radio>
-                    </Radio.Group>
-                  )}
-                </Form.Item>
-              </Col>
+              <Row>
+                <Col span="12">
+                  <Form.Item label="No. Polisi" {...formItemLayout}>
+                    {getFieldDecorator('nopol', {
+                      initialValue: itemData && itemData.nopol,
+                      rules: [
+                        { required: true, message: 'Please input no. polisi!', whitespace: true },
+                      ],
+                    })(<Input placeholder="Input your no. polisi.." />)}
+                  </Form.Item>
+                  <Form.Item label="KL" {...formItemLayout}>
+                    {getFieldDecorator('KL', {
+                      initialValue: itemData && itemData.KL,
+                      rules: [{ required: true, message: 'Please input KL!', whitespace: true }],
+                    })(
+                      <InputNumber
+                        min={1}
+                        max={2}
+                        placeholder="Input your KL.."
+                        style={{ width: '100%' }}
+                      />
+                    )}
+                  </Form.Item>
+                </Col>
+                <Col span="12">
+                  <Form.Item label="Year" {...formItemLayout}>
+                    {getFieldDecorator('year', {
+                      initialValue: itemData && itemData.year,
+                      rules: [{ required: true, message: 'Please input year!', whitespace: true }],
+                    })(
+                      <InputNumber
+                        min={1}
+                        max={4}
+                        placeholder="Input your year.."
+                        style={{ width: '100%' }}
+                      />
+                    )}
+                  </Form.Item>
+                  <Form.Item label="Status" {...formItemLayout}>
+                    {getFieldDecorator('status', {
+                      initialValue: itemData && itemData.status,
+                      rules: [
+                        { required: true, message: 'Please select status!', whitespace: true },
+                      ],
+                    })(
+                      <Radio.Group>
+                        <Radio value="Active">Active</Radio>
+                        <Radio value="Non-Active">Non-Active</Radio>
+                      </Radio.Group>
+                    )}
+                  </Form.Item>
+                </Col>
+              </Row>
 
               <Form.Item {...tailFormItemLayout}>
                 <Button loading={loading} type="primary" htmlType="submit">
