@@ -1,20 +1,20 @@
-import React, {Component} from 'react';
-import { notification } from 'antd';
-import logo from '../../../public/img/logo-symbol.png';
+import React, { Component } from 'react'
+import { notification } from 'antd'
+import logo from '../../../public/img/logo-symbol.png'
 import {
-  Container, 
-  Row, 
-  Col, 
-  CardGroup, 
-  Card, 
-  CardBody, 
-  Button, 
+  Container,
+  Row,
+  Col,
+  CardGroup,
+  Card,
+  CardBody,
+  Button,
   Form,
-  Input, 
-  InputGroup, 
-  InputGroupAddon, 
-  InputGroupText
-} from 'reactstrap';
+  Input,
+  InputGroup,
+  InputGroupAddon,
+  InputGroupText,
+} from 'reactstrap'
 
 export default class Login extends Component {
   constructor() {
@@ -22,12 +22,12 @@ export default class Login extends Component {
 
     this.state = {
       email: 'superadmin@email.com',
-      password: 'password'
+      password: 'password',
     }
   }
 
   handleChange(field, e) {
-    this.setState(Object.assign({}, this.state, {[field]: e.target.value}))
+    this.setState(Object.assign({}, this.state, { [field]: e.target.value }))
   }
 
   handleLogin(event) {
@@ -37,14 +37,13 @@ export default class Login extends Component {
       notification['warning']({
         message: 'Notification Required',
         description: 'Email must be filled !!',
-      });
+      })
     } else if (this.state.password === '') {
       notification['warning']({
         message: 'Notification Required',
         description: 'Password must be filled !!',
-      });
+      })
     } else {
-      
     }
   }
 
@@ -63,22 +62,34 @@ export default class Login extends Component {
                       <InputGroup className="mb-3">
                         <InputGroupAddon addonType="prepend">
                           <InputGroupText>
-                            <i className="icon-user"></i>
+                            <i className="icon-user" />
                           </InputGroupText>
                         </InputGroupAddon>
-                        <Input value={this.state.email} onChange={this.handleChange.bind(this, 'email')} type="email" placeholder="Email"/>
+                        <Input
+                          value={this.state.email}
+                          onChange={this.handleChange.bind(this, 'email')}
+                          type="email"
+                          placeholder="Email"
+                        />
                       </InputGroup>
                       <InputGroup className="mb-4">
                         <InputGroupAddon addonType="prepend">
                           <InputGroupText>
-                            <i className="icon-lock"></i>
+                            <i className="icon-lock" />
                           </InputGroupText>
                         </InputGroupAddon>
-                        <Input value={this.state.password} onChange={this.handleChange.bind(this, 'password')} type="password" placeholder="Password"/>
+                        <Input
+                          value={this.state.password}
+                          onChange={this.handleChange.bind(this, 'password')}
+                          type="password"
+                          placeholder="Password"
+                        />
                       </InputGroup>
                       <Row>
                         <Col xs="6">
-                          <Button type="submit" color="primary" className="px-4">Login</Button>
+                          <Button type="submit" color="primary" className="px-4">
+                            Login
+                          </Button>
                         </Col>
                         <Col xs="6" className="text-right">
                           {/* <Button color="link" className="px-0">Forgot password?</Button> */}
@@ -87,9 +98,11 @@ export default class Login extends Component {
                     </Form>
                   </CardBody>
                 </Card>
-                <Card className="text-white bg-primary py-5 d-md-down-none" style={{ width: 44 + '%' }}>
+                <Card
+                  className="text-white bg-primary py-5 d-md-down-none"
+                  style={{ width: 44 + '%' }}>
                   <CardBody className="text-center">
-                    <img src={logo} alt="Pertamina" height="200px"/>
+                    <img src={logo} alt="Pertamina" height="200px" />
                   </CardBody>
                 </Card>
               </CardGroup>
@@ -97,6 +110,6 @@ export default class Login extends Component {
           </Row>
         </Container>
       </div>
-    );
+    )
   }
 }

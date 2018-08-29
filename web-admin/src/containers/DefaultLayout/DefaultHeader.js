@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react'
 import {
   Badge,
   DropdownItem,
@@ -6,35 +6,31 @@ import {
   DropdownToggle,
   Nav,
   NavItem,
-  NavLink
-} from "reactstrap";
-import PropTypes from "prop-types";
+  NavLink,
+} from 'reactstrap'
+import PropTypes from 'prop-types'
 
-import {
-  AppHeaderDropdown,
-  AppNavbarBrand,
-  AppSidebarToggler
-} from "@coreui/react";
-import logo from "../../assets/img/brand/logo.png";
-import sygnet from "../../assets/img/brand/logo-symbol.png";
+import { AppHeaderDropdown, AppNavbarBrand, AppSidebarToggler } from '@coreui/react'
+import logo from '../../assets/img/brand/logo.png'
+import sygnet from '../../assets/img/brand/logo-symbol.png'
 
 const propTypes = {
-  children: PropTypes.node
-};
+  children: PropTypes.node,
+}
 
-const defaultProps = {};
+const defaultProps = {}
 
 class DefaultHeader extends Component {
   render() {
     // eslint-disable-next-line
-    const { children, ...attributes } = this.props;
+    const { children, ...attributes } = this.props
 
     return (
       <React.Fragment>
         <AppSidebarToggler className="d-lg-none" display="md" mobile />
         <AppNavbarBrand
-          full={{ src: logo, width: 150, height: 40, alt: "Pertamina" }}
-          minimized={{ src: sygnet, width: 40, height: 40, alt: "Pertamina" }}
+          full={{ src: logo, width: 150, height: 40, alt: 'Pertamina' }}
+          minimized={{ src: sygnet, width: 40, height: 40, alt: 'Pertamina' }}
         />
 
         <Nav className="ml-auto" navbar>
@@ -49,12 +45,12 @@ class DefaultHeader extends Component {
           <AppHeaderDropdown direction="down">
             <DropdownToggle nav>
               <img
-                src={"assets/img/avatars/6.jpg"}
+                src={'assets/img/avatars/user.png'}
                 className="img-avatar"
                 alt="admin@bootstrapmaster.com"
               />
             </DropdownToggle>
-            <DropdownMenu right style={{ right: "auto" }}>
+            <DropdownMenu right style={{ right: 'auto' }}>
               <DropdownItem>
                 <i className="fa fa-wrench" /> Settings
               </DropdownItem>
@@ -68,11 +64,11 @@ class DefaultHeader extends Component {
           </AppHeaderDropdown>
         </Nav>
       </React.Fragment>
-    );
+    )
   }
 }
 
-DefaultHeader.propTypes = propTypes;
-DefaultHeader.defaultProps = defaultProps;
+DefaultHeader.propTypes = propTypes
+DefaultHeader.defaultProps = defaultProps
 
-export default DefaultHeader;
+export default DefaultHeader

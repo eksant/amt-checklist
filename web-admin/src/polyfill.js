@@ -27,14 +27,13 @@ import 'core-js/es7/object'
 // import 'core-js/es7/reflect'
 
 // CustomEvent() constructor functionality in IE9, IE10, IE11
-(function () {
+;(function() {
+  if (typeof window.CustomEvent === 'function') return false
 
-  if ( typeof window.CustomEvent === "function" ) return false
-
-  function CustomEvent ( event, params ) {
+  function CustomEvent(event, params) {
     params = params || { bubbles: false, cancelable: false, detail: undefined }
-    var evt = document.createEvent( 'CustomEvent' )
-    evt.initCustomEvent( event, params.bubbles, params.cancelable, params.detail )
+    var evt = document.createEvent('CustomEvent')
+    evt.initCustomEvent(event, params.bubbles, params.cancelable, params.detail)
     return evt
   }
 

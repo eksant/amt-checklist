@@ -1,5 +1,14 @@
-import React, {Component} from 'react';
-import {Container, Row, Col, Button, Input, InputGroupAddon, InputGroup, InputGroupText} from 'reactstrap';
+import React, { Component } from 'react'
+import {
+  Container,
+  Row,
+  Col,
+  Button,
+  Input,
+  InputGroupAddon,
+  InputGroup,
+  InputGroupText,
+} from 'reactstrap'
 
 class Page404 extends Component {
   render() {
@@ -16,10 +25,10 @@ class Page404 extends Component {
               <InputGroup className="input-prepend">
                 <InputGroupAddon addonType="prepend">
                   <InputGroupText>
-                    <i className="fa fa-search"></i>
+                    <i className="fa fa-search" />
                   </InputGroupText>
                 </InputGroupAddon>
-                <Input size="16" type="text" placeholder="What are you looking for?"/>
+                <Input size="16" type="text" placeholder="What are you looking for?" />
                 <InputGroupAddon addonType="append">
                   <Button color="info">Search</Button>
                 </InputGroupAddon>
@@ -28,8 +37,8 @@ class Page404 extends Component {
           </Row>
         </Container>
       </div>
-    );
+    )
   }
 }
 
-export default Page404;
+export default Page404
