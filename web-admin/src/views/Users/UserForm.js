@@ -63,7 +63,6 @@ class UserForm extends Component {
 
   render() {
     // console.log('user form props', this.props)
-    console.log('image:', this.state.fileObjs)
     const { getFieldDecorator } = this.props.form
     const { loading, error, onBack, itemData } = this.props
 
