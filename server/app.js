@@ -1,79 +1,110 @@
 require('dotenv').config()
 
-const fs = require('fs')
 const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
-const mongoose = require('mongoose')
 const helmet = require('helmet')
 const logger = require('morgan')
 const redis = require('redis')
-// const { graphqlExpress, graphiqlExpress } = require("apollo-server-express");
-// const { makeExecutableSchema } = require("graphql-tools");
-// const { ApolloServer, gql } = require("apollo-server");
-
-const cacheRedis = require('./rest/middlewares/cache')
-// const typeDefs = require('./graphql/sc')
-// const typeDefs = fs.readFileSync("./graphql/schema.graphql", "utf-8");
-// const resolverUser = require("./graphql/resolverUser");
-// const schema = makeExecutableSchema({
-//   typeDefs
-//   // resolverUser
-// });
-
-const app = express()
+const chalk = require('chalk')
+const compression = require('compression')
+const errorHandler = require('errorhandler')
+const lusca = require('lusca')
 const clientRedis = redis.createClient()
+const port = normalizePort(process.env.PORT || '3000')
+const expressStatusMonitor = require('express-status-monitor')
 
-mongoose.Promise = global.Promise
-mongoose.connection.openUri('mongodb://localhost:27017/mtc', {
-  autoIndex: false,
-  useNewUrlParser: true,
+//Create server
+const app = express()
+const server = app.listen(port, () => {
+  console.log(
+    '%s Server Rest API running at http://localhost:%d/api in %s mode',
+    chalk.green('🚀'),
+    app.get('port'),
+    app.get('env')
+  )
+  console.log(
+    '%s Server Graphql running at http://localhost:%d/graphiql in %s mode',
+    chalk.green('🚀'),
+    app.get('port'),
+    app.get('env')
+  )
+  // console.log('  Press CTRL-C to stop\n')
 })
-mongoose.connection
-  .once('open', () => {
-    console.log('🚀 MongoDB connection success')
-  })
-  .on('error', error => {
-    console.error('🚀 MongoDB connection error', error)
-  })
+const io = require('socket.io')(server)
 
+const cacheRedis = require('./middlewares/cache')
+const configMongoDB = require('./config/mongodb')
+const graphql = require('./config/graphql')
+
+// Connecting MongoDB
+configMongoDB.connectToServer(err => {
+  if (err) return console.error(err)
+})
+
+// Connecting Socket IO
+io.on('connection', socket => {
+  console.log('Socket IO Connected...')
+  socket.on('disconnect', function() {
+    console.log('Socket IO Disconnected.')
+  })
+})
+
+// Connecting Client Redis
 clientRedis.on('ready', err => {
   err
-    ? console.error('🚀 Redis client connection error : ', err)
-    : console.log('🚀 Redis client connection success')
+    ? console.error('%s Redis client connection error : %d', chalk.red('🚀'), err)
+    : console.log('%s Redis client connection success', chalk.green('🚀'))
 })
 
+// Connecting Graphql
+graphql.connectToServer(app)
+
+app.set('port', port)
+app.set('socketio', io)
+
+//Express configuration
 app.use(cors())
 app.use(logger('dev'))
 app.use(helmet())
+app.use(compression())
 app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded({ extended: true }))
+app.use(lusca.xframe('SAMEORIGIN'))
+app.use(lusca.xssProtection(true))
+app.use(errorHandler())
+app.use(expressStatusMonitor({ websocket: io, port: port }))
 
-// Using GRAPHQL
-// app.use("/graphql", graphqlExpress({ schema }));
-// app.use("/graphiql", graphiqlExpress({ endpointURL: "/graphql" }));
-
-// Using REST API
+// Using Rest API
 app.use('/api/', cacheRedis, require('./rest/routes/auth'))
 app.use('/api/users', cacheRedis, require('./rest/routes/users'))
 app.use('/api/mobiltangkis', cacheRedis, require('./rest/routes/mobiltangkis'))
 app.use('/api/checklist', cacheRedis, require('./rest/routes/checklist'))
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  var err = new Error('Not Found')
-  err.status = 404
-  next(err)
-})
+// app.use((req, res, next) => {
+//   var err = new Error('Not Found')
+//   err.status = 404
+//   next(err)
+// })
 
 // error handler
-app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message
-  res.locals.error = req.app.get('env') === 'development' ? err : {}
+// app.use(function(err, req, res) {
+//   res.locals.message = err.message
+//   res.locals.error = req.app.get('env') === 'development' ? err : {}
+//   res.status(err.status || 500).json({ err })
+// })
 
-  // render the error page
-  res.status(err.status || 500).json({ err })
-})
+function normalizePort(val) {
+  var port = parseInt(val, 10)
 
-module.exports = app
+  if (isNaN(port)) {
+    return val // named pipe
+  }
+
+  if (port >= 0) {
+    return port // port number
+  }
+
+  return false
+}
