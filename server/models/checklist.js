@@ -17,9 +17,9 @@ var schema = new Schema(
       required: [true, 'Mobil tangki required!'],
     },
     status: {
-      type: Number,
+      type: String,
       trim: true,
-      enum: ['0', '1', '2', '3'], // 0=not active, 1=request, 2=approve, 3=rejected
+      enum: ['NonActive', 'Request', 'Approved', 'Rejected'], // 0=not active, 1=request, 2=approve, 3=rejected
       required: [true, 'Status required!'],
     },
     ritase: {

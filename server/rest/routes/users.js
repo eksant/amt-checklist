@@ -1,12 +1,12 @@
 const express = require('express')
 const router = express.Router()
 const userController = require('../controllers/users')
-const auth = require('../middlewares/authentication')
+const { validateToken } = require('../../middlewares/auth')
 
-router.get('/', auth, userController.read)
-router.get('/:id', auth, userController.readById)
-router.post('/add', auth, userController.create)
-router.put('/update/:id', auth, userController.update)
-router.delete('/delete/:id', auth, userController.destroy)
+router.get('/', validateToken, userController.read)
+router.get('/:id', validateToken, userController.readById)
+router.post('/add', validateToken, userController.create)
+router.put('/update/:id', validateToken, userController.update)
+router.delete('/delete/:id', validateToken, userController.destroy)
 
 module.exports = router

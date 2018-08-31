@@ -1,44 +1,23 @@
-const jwt = require('jsonwebtoken')
 const bcrypt = require('bcryptjs')
 const redis = require('redis')
 const client = redis.createClient()
 
-const {
-  // User,
-  create,
-  read,
-  readId,
-  update,
-  destroy,
-  signIn,
-} = require('../../models/users')
+const { create, read, readId, update, destroy, signIn } = require('../../models/users')
+const auth = require('../../middlewares/auth')
 
 module.exports = {
   signIn: (req, res) => {
-    signIn(req.body.username, (error, user) => {
+    signIn(req.body.username, req.body.password, (error, user) => {
       if (!error) {
-        if (user.length === 0) {
-          res.status(203).json({
-            message: 'Username not found!',
-          })
-        }
-        if (bcrypt.compareSync(req.body.password, user[0].password)) {
-          jwt.sign({ user }, process.env.JWT_KEY, (error, token) => {
-            if (!error) {
-              req.headers.token = token
-              res.status(200).json({
-                message: 'User signed in successfully',
-                user,
-                token,
-              })
-            } else {
-              res.status(203).json({
-                message: 'Invalid username or password!',
-                error,
-              })
-            }
-          })
-        }
+        const authToken = auth.createToken(user)
+        const refreshToken = auth.createRefreshToken(user)
+        req.headers.token = authToken
+        res.status(200).json({
+          message: 'User signed in successfully',
+          user,
+          authToken,
+          refreshToken,
+        })
       } else {
         res.status(400).json({
           message: 'Bad request',
@@ -58,7 +37,7 @@ module.exports = {
         password: bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10)),
         mobile: req.body.mobile || null,
         roles: req.body.roles,
-        status: 1,
+        status: 'Active',
         imgUrl: req.body.imgUrl || null,
       },
       (error, data) => {

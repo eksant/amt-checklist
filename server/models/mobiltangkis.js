@@ -22,13 +22,13 @@ var schema = new Schema(
       trim: true,
     },
     status: {
-      type: Number,
-      enum: ['0', '1'],
+      type: String,
+      enum: ['Active', 'NonActive'],
       required: [true, 'Status required!'],
     },
   },
   {
-    createdAt: { type: Date, default: Date.now },
+    timestamps: true,
   }
 )
 

@@ -1,13 +1,14 @@
 const mongoose = require('mongoose')
 const mongoosePaginate = require('mongoose-paginate')
 const uniqueValidator = require('mongoose-unique-validator')
+const bcrypt = require('bcryptjs')
 const ObjectId = mongoose.Types.ObjectId
 const Schema = mongoose.Schema
 
-var validateEmail = email => {
-  var regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
-  return regex.test(email)
-}
+// var validateEmail = email => {
+// 	var regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+// 	return regex.test(email)
+// }
 
 const schema = new Schema(
   {
@@ -35,7 +36,7 @@ const schema = new Schema(
       lowercase: true,
       unique: true,
       required: [true, 'Email required!'],
-      validate: [validateEmail, 'Please fill a valid email address!'],
+      // validate: [validateEmail, 'Please fill a valid email address!'],
     },
     mobile: {
       type: String,
@@ -48,12 +49,12 @@ const schema = new Schema(
     },
     roles: {
       type: String,
-      enum: ['superadmin', 'admin', 'sopir', 'kernet'],
+      enum: ['Superadmin', 'Admin', 'Sopir', 'Kernet'],
       required: [true, 'Roles required!'],
     },
     status: {
-      type: Number,
-      enum: ['0', '1'],
+      type: String,
+      enum: ['Active', 'NonActive'],
       required: [true, 'Status required!'],
     },
     imgUrl: {
@@ -61,7 +62,7 @@ const schema = new Schema(
     },
   },
   {
-    createdAt: { type: Date, default: Date.now },
+    timestamps: true,
   }
 )
 
@@ -82,6 +83,7 @@ const create = (data, callback) => {
 
 const read = callback => {
   User.find((error, users) => {
+    // console.log(users)
     if (!error) {
       callback(null, users)
     } else {
@@ -100,20 +102,27 @@ const readId = (id, callback) => {
   })
 }
 
-const signIn = (username, callback) => {
-  User.find(
-    {
-      username: username,
-      status: 1,
-    },
-    (error, user) => {
-      if (!error) {
-        callback(null, user)
-      } else {
-        callback(error, null)
-      }
+const signIn = (username, password, callback) => {
+  if (!username || !password) {
+    throw 'You must send the username and the password!'
+    // callback('You must send the username and the password!', null)
+  }
+  User.findOne({ username: username }, (error, user) => {
+    if (!error) {
+      if (!user) throw 'Username not found!'
+      bcrypt.compare(password, user.password, (error, success) => {
+        if (error) {
+          callback(error, null)
+        } else if (!success) {
+          callback('Invalid username or password!', null)
+        } else {
+          callback(null, user)
+        }
+      })
+    } else {
+      callback(error, null)
     }
-  )
+  })
 }
 
 const update = (id, data, callback) => {
