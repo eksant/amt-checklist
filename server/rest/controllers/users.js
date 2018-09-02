@@ -26,9 +26,9 @@ module.exports = {
     })
   },
 
-  create: (req, res) => {
-    create(
-      {
+  create: async (req, res) => {
+    try {
+      const data = await create({
         username: req.body.username,
         NIP: req.body.NIP || null,
         fullName: req.body.fullName || null,
@@ -39,110 +39,91 @@ module.exports = {
         status: 'Active',
         imgUrl: req.body.imgUrl || null,
         createdBy: req.authUser[0],
-      },
-      (error, data) => {
-        if (!error) {
-          client.del('userCache')
-          res.status(200).json({
-            message: 'Success to insert record',
-            data,
-          })
-        } else {
-          res.status(400).json({
-            message: 'Bad request',
-            error,
-          })
-        }
-      }
-    )
+      })
+      client.del('userCache')
+      res.status(200).json({ data })
+    } catch (error) {
+      res.status(400).json({
+        message: 'Bad request',
+        error,
+      })
+    }
   },
 
-  read: (req, res) => {
-    read((error, data) => {
-      if (!error) {
-        client.set('userCache', JSON.stringify(data), 'EX', 500)
-        res.status(200).json({
-          data,
-        })
-      } else {
-        res.status(400).json({
-          message: 'Bad request',
-          error,
-        })
-      }
-    })
+  read: async (req, res) => {
+    try {
+      const data = await read()
+      client.set('userCache', JSON.stringify(data), 'EX', 500)
+      res.status(200).json({ data })
+    } catch (error) {
+      res.status(400).json({
+        message: 'Bad request',
+        error,
+      })
+    }
   },
 
-  readById: (req, res) => {
-    readId(req.params.id, (error, data) => {
-      if (!error) {
-        client.set('userCache', JSON.stringify(data), 'EX', 500)
-        res.status(200).json({
-          data,
-        })
-      } else {
-        res.status(400).json({
-          message: 'Bad request',
-          error,
-        })
-      }
-    })
+  readById: async (req, res) => {
+    try {
+      const data = await readId(req.params.id)
+      client.set('userCache', JSON.stringify(data), 'EX', 500)
+      res.status(200).json({ data })
+    } catch (error) {
+      res.status(400).json({
+        message: 'Bad request',
+        error,
+      })
+    }
   },
 
-  update: (req, res) => {
-    readId(req.params.id, (error, user) => {
+  update: async (req, res) => {
+    try {
+      const user = await readId(req.params.id)
       if (user) {
-        update(
-          req.params.id,
-          {
-            username: req.body.username,
-            NIP: req.body.NIP || user[0].NIP,
-            fullName: req.body.fullName || user[0].fullName,
-            // email: req.body.email.trim(),
-            password:
-              bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10)) || user[0].password,
-            mobile: req.body.mobile,
-            roles: req.body.roles || user[0].roles,
-            status: req.body.status || user[0].status,
-            // createdBy: req.authUser[0],
-          },
-          (error, data) => {
-            if (!error) {
-              client.del('userCache')
-              res.status(200).json({
-                message: 'Success to update record!',
-                data,
-              })
-            } else {
-              res.status(400).json({
-                message: 'Bad request',
-                error,
-              })
-            }
+        var item = {
+          username: req.body.username,
+          NIP: req.body.NIP || user.NIP,
+          fullName: req.body.fullName || user.fullName,
+          // email: req.body.email.trim(),
+          mobile: req.body.mobile || null,
+          roles: req.body.roles || user.roles,
+          status: req.body.status || user.status,
+          // createdBy: req.authUser[0],
+        }
+
+        if (req.body.password) {
+          item = {
+            ...item,
+            password: bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10)),
           }
-        )
+        }
+
+        const data = await update(req.params.id, item)
+        client.del('userCache')
+        res.status(200).json({ data })
       } else {
-        res.status(400).json({
+        res.status(200).json({
           message: 'Data not found!',
-          error,
         })
       }
-    })
+    } catch (error) {
+      res.status(400).json({
+        message: 'Bad request',
+        error,
+      })
+    }
   },
 
-  destroy: (req, res) => {
-    destroy(req.params.id, error => {
-      if (!error) {
-        client.del('userCache')
-        res.status(200).json({
-          message: 'Success to delete record!',
-        })
-      } else {
-        res.status(400).json({
-          message: 'Bad request',
-          error,
-        })
-      }
-    })
+  destroy: async (req, res) => {
+    try {
+      const data = await destroy(req.params.id)
+      client.del('userCache')
+      res.status(200).json({ data })
+    } catch (error) {
+      res.status(400).json({
+        message: 'Bad request',
+        error,
+      })
+    }
   },
 }

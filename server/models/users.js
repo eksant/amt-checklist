@@ -77,35 +77,6 @@ schema.plugin(uniqueValidator, {
 })
 const User = mongoose.model('User', schema)
 
-const create = (data, callback) => {
-  User.create(data, (error, data) => {
-    if (!error) callback(null, data)
-    else {
-      callback(error, null)
-    }
-  })
-}
-
-const read = callback => {
-  User.find((error, users) => {
-    if (!error) {
-      callback(null, users)
-    } else {
-      callback(error, null)
-    }
-  })
-}
-
-const readId = (id, callback) => {
-  User.find({ _id: ObjectId(id) }, (error, user) => {
-    if (!error) {
-      callback(null, user)
-    } else {
-      callback(error, null)
-    }
-  })
-}
-
 const signIn = (username, password, callback) => {
   if (!username || !password) {
     throw 'You must send the username and the password!'
@@ -129,29 +100,28 @@ const signIn = (username, password, callback) => {
   })
 }
 
-const update = (id, data, callback) => {
-  User.findOneAndUpdate(
+const create = async data => {
+  return await User.create(data)
+}
+
+const read = async () => {
+  return await User.find()
+}
+
+const readId = async id => {
+  return await User.findOne({ _id: ObjectId(id) })
+}
+
+const update = async (id, data) => {
+  return await User.findOneAndUpdate(
     { _id: ObjectId(id) },
     { $set: data },
-    { upsert: true, new: true },
-    (error, data) => {
-      if (!error) {
-        callback(null, data)
-      } else {
-        callback(error, null)
-      }
-    }
+    { upsert: true, new: true }
   )
 }
 
-const destroy = (id, callback) => {
-  User.findOneAndDelete({ _id: ObjectId(id) }, error => {
-    if (!error) {
-      callback(null)
-    } else {
-      callback(error)
-    }
-  })
+const destroy = async id => {
+  return await User.deleteOne({ _id: ObjectId(id) })
 }
 
 module.exports = { User, create, read, readId, update, destroy, signIn }

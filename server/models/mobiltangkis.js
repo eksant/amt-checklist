@@ -43,58 +43,28 @@ schema.plugin(uniqueValidator, {
 })
 const MobilTangki = mongoose.model('MobilTangki', schema)
 
-const create = (data, callback) => {
-  MobilTangki.create(data, (error, data) => {
-    if (!error) callback(null, data)
-    else {
-      callback(error, null)
-    }
-  })
+const create = async data => {
+  return await MobilTangki.create(data)
 }
 
-const read = callback => {
-  MobilTangki.find((error, mobiltangkis) => {
-    if (!error) {
-      callback(null, mobiltangkis)
-    } else {
-      callback(error, null)
-    }
-  })
+const read = async () => {
+  return await MobilTangki.find()
 }
 
-const readId = (id, callback) => {
-  MobilTangki.find({ _id: ObjectId(id) }, (error, mobiltangki) => {
-    if (!error) {
-      callback(null, mobiltangki)
-    } else {
-      callback(error, null)
-    }
-  })
+const readId = async id => {
+  return await MobilTangki.findOne({ _id: ObjectId(id) })
 }
 
-const update = (id, data, callback) => {
-  MobilTangki.findOneAndUpdate(
+const update = async (id, data) => {
+  return await MobilTangki.findOneAndUpdate(
     { _id: ObjectId(id) },
     { $set: data },
-    { upsert: true, new: true },
-    (error, data) => {
-      if (!error) {
-        callback(null, data)
-      } else {
-        callback(error, null)
-      }
-    }
+    { upsert: true, new: true }
   )
 }
 
-const destroy = (id, callback) => {
-  MobilTangki.remove({ _id: ObjectId(id) }, error => {
-    if (!error) {
-      callback(null)
-    } else {
-      callback(error)
-    }
-  })
+const destroy = async id => {
+  return await MobilTangki.deleteOne({ _id: ObjectId(id) })
 }
 
 module.exports = { MobilTangki, create, read, readId, update, destroy }
