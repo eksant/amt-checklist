@@ -1,0 +1,63 @@
+type Query {
+  # User
+  users: [User!]
+  user(id: ID!): User
+  userProfile: User
+}
+
+type Mutation {
+  # User
+  signIn(account: SignInInput!): Token!
+  createUser(user: UserInput!): Token!
+  updateUser(id: ID!, user: UserInput!): User!
+  deleteUser(id: ID!): Boolean!
+}
+
+# User
+type User {
+  _id: ID!
+  username: String
+  NIP: String
+  fullName: String
+  email: String
+  mobile: String
+  password: String
+  roles: RoleAccess
+  status: StatusActive
+  imgUrl: String
+  createdAt: String
+}
+
+type Token {
+  token: String!
+  user: User
+}
+
+input SignInInput {
+  username: String!
+  password: String!
+}
+
+input UserInput {
+  NIP: String!
+  fullName: String
+  email: String!
+  mobile: String
+  password: String!
+  roles: RoleAccess!
+  status: StatusActive
+  imgUrl: String
+}
+
+# Enum list
+enum StatusActive {
+  Active
+  NonActive
+}
+
+enum RoleAccess {
+  Superadmin
+  Admin
+  Sopir
+  Kernet
+}

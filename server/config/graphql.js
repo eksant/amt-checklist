@@ -1,36 +1,22 @@
-const { graphqlExpress, graphiqlExpress } = require('apollo-server-express')
-const bodyParser = require('body-parser')
-const ejwt = require('express-jwt')
+const { ApolloServer } = require('apollo-server-express')
 
-const schema = require('../graphql/schema')
+const { verifyToken } = require('../middlewares/auth')
+const typeDefs = require('../graphql/schema/schemagraphql')
+const resolvers = require('../graphql/resolvers')
 
 const connectToServer = app => {
-  app.use(
-    '/graphql',
-    bodyParser.json(),
-    ejwt({
-      secret: process.env.JWT_KEY,
-      credentialsRequired: false,
-    }),
-    graphqlExpress(req => ({
-      schema,
-      context: { user: req.user },
-    })),
-    (req, res, next) => {
-      res.header('Access-Control-Allow-Origin', '*')
-      res.header(
-        'Access-Control-Allow-Headers',
-        'Content-Type, Authorization, Content-Length, X-Requested-With'
-      )
-      if (req.method === 'OPTIONS') {
-        res.sendStatus(200)
-      } else {
-        next()
-      }
-    }
-  )
+  const server = new ApolloServer({
+    typeDefs,
+    resolvers,
+    context: async ({ req }) => {
+      const authUser = await verifyToken(req)
 
-  app.use('/graphiql', graphiqlExpress({ endpointURL: '/graphql' }))
+      return {
+        authUser,
+      }
+    },
+  })
+  server.applyMiddleware({ app, path: '/graphql' })
 }
 
 module.exports = { connectToServer }
