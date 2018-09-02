@@ -3,7 +3,9 @@ const { gql } = require('apollo-server-express')
 module.exports = gql`
   type Query {
     users: [User!]
-    user(id: ID!): User
+    user(id: ID!): User!
+    mobiltangkis: [MobilTangki!]
+    mobiltangki(id: ID!): MobilTangki!
   }
 
   type Mutation {
@@ -11,9 +13,10 @@ module.exports = gql`
     createAdmin(admin: UserInput!): User!
     createUser(user: UserInput!): User!
     updateUser(id: ID!, user: UserInput!): User!
-    updateUserByAdmin(id: ID!, user: UserInput!): User!
     deleteUser(id: ID!): Boolean!
-    deleteUserByAdmin(id: ID!): Boolean!
+    createMobilTangki(mobiltangki: MobilTangkiInput!): MobilTangki!
+    updateMobilTangki(id: ID!, mobiltangki: MobilTangkiInput!): MobilTangki!
+    deleteMobilTangki(id: ID!): Boolean!
   }
 
   type User {
@@ -31,16 +34,6 @@ module.exports = gql`
     createdBy: User
   }
 
-  type Token {
-    user: User!
-    token: String!
-  }
-
-  input SignInInput {
-    username: String!
-    password: String!
-  }
-
   input UserInput {
     NIP: String!
     fullName: String
@@ -51,6 +44,33 @@ module.exports = gql`
     roles: RoleAccess!
     status: StatusActive!
     imgUrl: String
+  }
+
+  type Token {
+    user: User!
+    token: String!
+  }
+
+  input SignInInput {
+    username: String!
+    password: String!
+  }
+
+  type MobilTangki {
+    _id: ID!
+    nopol: String
+    KL: String
+    year: Int
+    status: StatusActive
+    createdAt: String
+    createdBy: User
+  }
+
+  input MobilTangkiInput {
+    nopol: String!
+    KL: String
+    year: Int
+    status: StatusActive!
   }
 
   enum StatusActive {
