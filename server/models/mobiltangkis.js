@@ -26,6 +26,11 @@ var schema = new Schema(
       enum: ['Active', 'NonActive'],
       required: [true, 'Status required!'],
     },
+    createdBy: {
+      type: Schema.Types.Object,
+      ref: 'User',
+      required: [true, 'CreateBy required!'],
+    },
   },
   {
     timestamps: true,

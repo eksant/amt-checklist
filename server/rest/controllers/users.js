@@ -9,14 +9,13 @@ module.exports = {
   signIn: (req, res) => {
     signIn(req.body.username, req.body.password, (error, user) => {
       if (!error) {
-        const authToken = auth.createToken(user)
-        const refreshToken = auth.createRefreshToken(user)
-        req.headers.token = authToken
+        const token = auth.createToken(user)
+
+        req.headers.token = token
         res.status(200).json({
           message: 'User signed in successfully',
           user,
-          authToken,
-          refreshToken,
+          token,
         })
       } else {
         res.status(400).json({
@@ -39,6 +38,7 @@ module.exports = {
         roles: req.body.roles,
         status: 'Active',
         imgUrl: req.body.imgUrl || null,
+        createdBy: req.authUser[0],
       },
       (error, data) => {
         if (!error) {
@@ -104,6 +104,7 @@ module.exports = {
             mobile: req.body.mobile,
             roles: req.body.roles || user[0].roles,
             status: req.body.status || user[0].status,
+            // createdBy: req.authUser[0],
           },
           (error, data) => {
             if (!error) {

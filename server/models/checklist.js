@@ -6,13 +6,13 @@ const Schema = mongoose.Schema
 
 var schema = new Schema(
   {
-    user: {
-      type: Schema.Types.ObjectId,
+    createdBy: {
+      type: Schema.Types.Object,
       ref: 'User',
-      required: [true, 'User required!'],
+      required: [true, 'CreateBy required!'],
     },
     mobiltangki: {
-      type: Schema.Types.ObjectId,
+      type: Schema.Types.Object,
       ref: 'MobilTangki',
       required: [true, 'Mobil tangki required!'],
     },

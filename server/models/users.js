@@ -60,6 +60,11 @@ const schema = new Schema(
     imgUrl: {
       type: String,
     },
+    createdBy: {
+      type: Schema.Types.Object,
+      ref: 'User',
+      required: [true, 'CreateBy required!'],
+    },
   },
   {
     timestamps: true,
@@ -83,7 +88,6 @@ const create = (data, callback) => {
 
 const read = callback => {
   User.find((error, users) => {
-    // console.log(users)
     if (!error) {
       callback(null, users)
     } else {
@@ -141,7 +145,7 @@ const update = (id, data, callback) => {
 }
 
 const destroy = (id, callback) => {
-  User.remove({ _id: ObjectId(id) }, error => {
+  User.findOneAndDelete({ _id: ObjectId(id) }, error => {
     if (!error) {
       callback(null)
     } else {
