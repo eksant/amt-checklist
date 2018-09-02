@@ -1,82 +1,73 @@
 const _ = require('lodash')
 const jwt = require('jsonwebtoken')
+const { AuthenticationError } = require('apollo-server')
+const { ForbiddenError } = require('apollo-server')
+const { combineResolvers, skip } = require('graphql-resolvers')
 
-const { User } = require('../models/users')
-
-const checkUser = context => {
-  if (!context.user) {
-    return Promise.reject('You dont have authentication!')
-  }
-  return Promise.resolve(context.user)
-}
-
+// Using for Global Authentication
 const createToken = user => {
   return jwt.sign(_.omit(user.toObject(), 'password'), process.env.JWT_KEY, {
-    expiresIn: '10s',
+    expiresIn: '8h',
   })
 }
 
-const createRefreshToken = user => {
-  const refreshToken = jwt.sign({ type: 'refresh' }, process.env.JWT_KEY, {
-    expiresIn: '20s',
-  })
+// Using for Rest API Authentication
+const validateToken = async (req, res, next) => {
+  const token = req.headers.token
 
-  return User.findOneAndUpdate({ username: user.username }, { refreshToken })
-    .then(() => {
-      return refreshToken
-    })
-    .catch(err => {
-      throw err
-    })
-}
+  if (token) {
+    const decode = await jwt.verify(token, process.env.JWT_KEY)
 
-const validateToken = (req, res, next) => {
-  if (!req.headers.token) {
-    res.status(203).json({
-      message: 'You dont have authentication!',
-    })
-  } else {
-    var decode = jwt.verify(req.headers.token, process.env.JWT_KEY)
-    // console.log('decode: ', decode)
     if (decode.name !== 'JsonWebTokenError') {
+      req.authUser = decode.user
       next()
     } else {
       next({
-        message: 'You dont have authentication!',
+        message: 'Your session expired. Sign in again!',
       })
     }
+  } else {
+    res.status(203).json({
+      message: 'You dont have authentication!',
+    })
   }
 }
 
-const validateRefreshToken = refreshToken => {
-  if (refreshToken != '') {
-    return new Promise((res, rej) => {
-      jwt.verify(refreshToken, process.env.JWT_KEY, err => {
-        if (err) {
-          rej({
-            code: 'refreshExpired',
-            message: 'Refresh token expired - session ended!',
-          })
-        } else {
-          User.findOne({ refreshToken: refreshToken })
-            .then(user => {
-              res(user)
-            })
-            .catch(err => {
-              rej(err)
-            })
-        }
-      })
-    })
+// Using for Graphql Authentication
+const verifyToken = async req => {
+  const token = req.headers.token
+
+  if (token) {
+    try {
+      return await jwt.verify(token, process.env.JWT_KEY)
+    } catch (error) {
+      throw new AuthenticationError('Your session expired. Sign in again!')
+    }
   } else {
-    throw 'There is no refresh token to check!'
+    throw new AuthenticationError('You dont have authentication!')
   }
 }
+
+const isAuthenticated = (parent, args, { authUser }) =>
+  authUser ? skip : new ForbiddenError('You dont have authentication!')
+
+const isSuperAdmin = combineResolvers(
+  isAuthenticated,
+  (parent, args, { authUser: { roles } }) =>
+    roles === 'Superadmin' ? skip : new ForbiddenError('You dont have authorized as superadmin!')
+)
+
+const isAdmin = combineResolvers(
+  isAuthenticated,
+  (parent, args, { authUser: { roles } }) =>
+    roles === 'Admin' ? skip : new ForbiddenError('You dont have authorized as admin!')
+)
 
 module.exports = {
-  checkUser,
   createToken,
-  createRefreshToken,
   validateToken,
-  validateRefreshToken,
+  verifyToken,
+  isAuthenticated,
+  isSuperAdmin,
+  isAdmin,
 }
