@@ -16,14 +16,14 @@ const validateToken = async (req, res, next) => {
   const token = req.headers.token
 
   if (token) {
-    const decode = await jwt.verify(token, process.env.JWT_KEY)
-
-    if (decode.name !== 'JsonWebTokenError') {
+    try {
+      const decode = await jwt.verify(token, process.env.JWT_KEY)
       req.authUser = decode.user
       next()
-    } else {
-      next({
+    } catch (error) {
+      res.status(203).json({
         message: 'Your session expired. Sign in again!',
+        error,
       })
     }
   } else {
