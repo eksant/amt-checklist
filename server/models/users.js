@@ -79,25 +79,30 @@ const User = mongoose.model('User', schema)
 
 const signIn = (username, password, callback) => {
   if (!username || !password) {
-    throw 'You must send the username and the password!'
-    // callback('You must send the username and the password!', null)
-  }
-  User.findOne({ username: username }, (error, user) => {
-    if (!error) {
-      if (!user) throw 'Username not found!'
-      bcrypt.compare(password, user.password, (error, success) => {
-        if (error) {
-          callback(error, null)
-        } else if (!success) {
-          callback('Invalid username or password!', null)
+    // throw 'You must send the username and the password!'
+    callback('You must send the username and the password!', null)
+  } else {
+    User.findOne({ username: username }, (error, user) => {
+      if (!error) {
+        if (!user) {
+          // throw 'Username not found!'
+          callback('Username not found!', null)
         } else {
-          callback(null, user)
+          bcrypt.compare(password, user.password, (error, success) => {
+            if (error) {
+              callback(error, null)
+            } else if (!success) {
+              callback('Invalid username or password!', null)
+            } else {
+              callback(null, user)
+            }
+          })
         }
-      })
-    } else {
-      callback(error, null)
-    }
-  })
+      } else {
+        callback(error, null)
+      }
+    })
+  }
 }
 
 const create = async data => {
