@@ -63,9 +63,9 @@ class DefaultHeader extends Component {
               />
             </DropdownToggle>
             <DropdownMenu right style={{ right: 'auto' }}>
-              <DropdownItem>
+              {/* <DropdownItem>
                 <i className="fa fa-wrench" /> Settings
-              </DropdownItem>
+              </DropdownItem> */}
               <DropdownItem>
                 <i className="fa fa-user" /> Profile
               </DropdownItem>
