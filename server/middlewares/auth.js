@@ -36,6 +36,7 @@ const validateToken = async (req, res, next) => {
 // Using for Graphql Authentication
 const verifyToken = async req => {
   const token = req.headers.token
+  // console.log('token:', token)
 
   if (token) {
     try {
