@@ -27,7 +27,7 @@ export default {
     },
     {
       name: 'Manage AMT',
-      url: '/mobiltangkis',
+      url: '/amts',
       icon: 'fa fa-truck',
     },
     // {

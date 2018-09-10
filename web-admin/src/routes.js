@@ -27,7 +27,7 @@ const Users = Loadable({
   loading: Loading,
 })
 
-const MobilTangki = Loadable({
+const MobilTangkis = Loadable({
   loader: () => import('./containers/AccountLayout/MobilTangkis'),
   loading: Loading,
 })
@@ -49,7 +49,7 @@ const routes = [
   { path: '/login', exact: true, name: 'Login', component: Login },
   { path: '/admins', exact: true, name: 'Admins', component: Admins },
   { path: '/users', exact: true, name: 'Users', component: Users },
-  { path: '/mobiltangkis', name: 'Mobil Tangki', component: MobilTangki },
+  { path: '/amts', name: 'AMT', component: MobilTangkis },
   { path: '/checklist', name: 'Checklist', component: Checklist },
   // { path: '/users/:id', exact: true, name: 'User Details', component: User },
 ]
