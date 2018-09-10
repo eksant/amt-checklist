@@ -3,7 +3,16 @@ const { UserInputError, ForbiddenError } = require('apollo-server')
 const { combineResolvers, skip } = require('graphql-resolvers')
 
 const { createToken, isSuperAdmin, isAdmin } = require('../../middlewares/auth')
-const { User } = require('../../models/users')
+const {
+  User,
+  create,
+  readAdmin,
+  readAdminId,
+  readUser,
+  readUserId,
+  update,
+  destroy,
+} = require('../../models/users')
 
 const isDataOwner = async (parent, { id }, { authUser }) => {
   var dataUser = await User.findById(id)
@@ -17,16 +26,30 @@ const isDataOwner = async (parent, { id }, { authUser }) => {
 
 module.exports = {
   Query: {
+    admins: async () => {
+      try {
+        return await readAdmin()
+      } catch (error) {
+        throw new UserInputError('Data not found!')
+      }
+    },
+    admin: async (parent, { id }) => {
+      try {
+        return await readAdminId(id)
+      } catch (error) {
+        throw new UserInputError('Data not found!')
+      }
+    },
     users: async () => {
       try {
-        return await User.find()
+        return await readUser()
       } catch (error) {
         throw new UserInputError('Data not found!')
       }
     },
     user: async (parent, { id }) => {
       try {
-        return await User.findById(id)
+        return await readUserId(id)
       } catch (error) {
         throw new UserInputError('Data not found!')
       }
@@ -53,7 +76,7 @@ module.exports = {
 
     createAdmin: combineResolvers(isSuperAdmin, async (parent, { admin }, { authUser }) => {
       try {
-        return await User.create({
+        return await create({
           ...admin,
           password: bcrypt.hashSync(admin.password, bcrypt.genSaltSync(10)),
           createdBy: authUser,
@@ -65,7 +88,7 @@ module.exports = {
 
     createUser: combineResolvers(isAdmin, async (parent, { user }, { authUser }) => {
       try {
-        return await User.create({
+        return await create({
           ...user,
           password: bcrypt.hashSync(user.password, bcrypt.genSaltSync(10)),
           createdBy: authUser,
@@ -87,7 +110,7 @@ module.exports = {
           }
         }
 
-        return await User.findOneAndUpdate({ _id: id }, { $set: data }, { upsert: true, new: true })
+        return await update(id, data)
       } catch (error) {
         throw new ForbiddenError(error)
       }
@@ -95,7 +118,7 @@ module.exports = {
 
     deleteUser: combineResolvers(isAdmin || isDataOwner, async (parent, { id }) => {
       try {
-        return await User.findOneAndDelete({ _id: id })
+        return await destroy(id)
       } catch (error) {
         throw new ForbiddenError(error)
       }

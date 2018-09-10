@@ -2,6 +2,8 @@ const { gql } = require('apollo-server-express')
 
 module.exports = gql`
   type Query {
+    admins: [User!]
+    admin(id: ID!): User!
     users: [User!]
     user(id: ID!): User!
     mobiltangkis: [MobilTangki!]
@@ -13,7 +15,7 @@ module.exports = gql`
     createAdmin(admin: UserInput!): User!
     createUser(user: UserInput!): User!
     updateUser(id: ID!, user: UserInput!): User!
-    deleteUser(id: ID!): Boolean!
+    deleteUser(id: ID!): Boolean
     createMobilTangki(mobiltangki: MobilTangkiInput!): MobilTangki!
     updateMobilTangki(id: ID!, mobiltangki: MobilTangkiInput!): MobilTangki!
     deleteMobilTangki(id: ID!): Boolean!
