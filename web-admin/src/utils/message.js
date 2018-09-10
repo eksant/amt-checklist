@@ -1,3 +1,3 @@
 export const message = msg => {
-  return msg.replace('GraphQL error: ValidationError: ', '')
+  return msg.replace('GraphQL error: ', '').replace('ValidationError: ', '')
 }
