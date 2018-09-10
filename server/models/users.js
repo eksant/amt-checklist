@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 const mongoosePaginate = require('mongoose-paginate')
 const uniqueValidator = require('mongoose-unique-validator')
+const uuidv1 = require('uuid/v1')
 const bcrypt = require('bcryptjs')
 const ObjectId = mongoose.Types.ObjectId
 const Schema = mongoose.Schema
@@ -12,6 +13,10 @@ const Schema = mongoose.Schema
 
 const schema = new Schema(
   {
+    _id: {
+      type: String,
+      default: uuidv1(),
+    },
     username: {
       type: String,
       trim: true,
@@ -106,27 +111,58 @@ const signIn = (username, password, callback) => {
 }
 
 const create = async data => {
-  return await User.create(data)
+  return await User.create({
+    ...data,
+    _id: uuidv1(),
+  })
 }
 
-const read = async () => {
-  return await User.find()
+const readAdmin = async () => {
+  return await User.find({ roles: 'Admin' })
 }
 
-const readId = async id => {
-  return await User.findOne({ _id: ObjectId(id) })
+const readAdminId = async id => {
+  return await User.findOne({
+    _id: ObjectId(id),
+    roles: 'Admin',
+  })
+}
+
+const readUser = async () => {
+  return await User.find({ roles: { $in: ['Sopir', 'Kernet'] } })
+}
+
+const readUserId = async id => {
+  return await User.findOne({
+    _id: ObjectId(id),
+    roles: { $in: ['Sopir', 'Kernet'] },
+  })
 }
 
 const update = async (id, data) => {
   return await User.findOneAndUpdate(
-    { _id: ObjectId(id) },
+    // { _id: ObjectId(id) },
+    { _id: id },
     { $set: data },
     { upsert: true, new: true }
   )
 }
 
-const destroy = async id => {
-  return await User.deleteOne({ _id: ObjectId(id) })
+const destroy = id => {
+  User.findOneAndDelete({ _id: id }, async err => {
+    if (err) return await false
+    return await true
+  })
 }
 
-module.exports = { User, create, read, readId, update, destroy, signIn }
+module.exports = {
+  User,
+  create,
+  readAdmin,
+  readAdminId,
+  readUser,
+  readUserId,
+  update,
+  destroy,
+  signIn,
+}
