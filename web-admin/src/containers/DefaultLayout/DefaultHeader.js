@@ -21,6 +21,17 @@ const propTypes = {
 const defaultProps = {}
 
 class DefaultHeader extends Component {
+  constructor(props) {
+    super(props)
+
+    this.handleLogout = this.handleLogout.bind(this)
+  }
+
+  handleLogout() {
+    localStorage.removeItem('token')
+    window.location.reload()
+  }
+
   render() {
     // eslint-disable-next-line
     const { children, ...attributes } = this.props
@@ -57,7 +68,7 @@ class DefaultHeader extends Component {
               <DropdownItem>
                 <i className="fa fa-user" /> Profile
               </DropdownItem>
-              <DropdownItem>
+              <DropdownItem onClick={() => this.handleLogout()}>
                 <i className="fa fa-lock" /> Logout
               </DropdownItem>
             </DropdownMenu>

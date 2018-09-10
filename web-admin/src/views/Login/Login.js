@@ -1,53 +1,32 @@
 import React, { Component } from 'react'
-import { notification } from 'antd'
-import logo from '../../../public/img/logo-symbol.png'
-import {
-  Container,
-  Row,
-  Col,
-  CardGroup,
-  Card,
-  CardBody,
-  Button,
-  Form,
-  Input,
-  InputGroup,
-  InputGroupAddon,
-  InputGroupText,
-} from 'reactstrap'
 
-export default class Login extends Component {
-  constructor() {
-    super()
+import { Container, Row, Col, CardGroup, Card, CardBody } from 'reactstrap'
+import { Form, Input, Button } from 'antd'
 
-    this.state = {
-      email: 'superadmin@email.com',
-      password: 'password',
-    }
+import logo from '../../assets/img/brand/logo-symbol.png'
+
+class Login extends Component {
+  constructor(props) {
+    super(props)
+
+    this.form = props.form
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
-  handleChange(field, e) {
-    this.setState(Object.assign({}, this.state, { [field]: e.target.value }))
-  }
-
-  handleLogin(event) {
+  handleSubmit(event) {
     event.preventDefault()
 
-    if (this.state.email === '') {
-      notification['warning']({
-        message: 'Notification Required',
-        description: 'Email must be filled !!',
-      })
-    } else if (this.state.password === '') {
-      notification['warning']({
-        message: 'Notification Required',
-        description: 'Password must be filled !!',
-      })
-    } else {
-    }
+    this.form.validateFieldsAndScroll((err, itemData) => {
+      if (!err) {
+        this.props.onSubmitLogin(itemData.username, itemData.password)
+      }
+    })
   }
 
   render() {
+    // console.log('login props: ', this.props)
+    const { getFieldDecorator } = this.props.form
+
     return (
       <div className="app flex-row align-items-center">
         <Container>
@@ -58,49 +37,43 @@ export default class Login extends Component {
                   <CardBody>
                     <h1>Login</h1>
                     <p className="text-muted">Sign In to your account</p>
-                    <Form onSubmit={this.handleLogin.bind(this)} className="form-horizontal">
-                      <InputGroup className="mb-3">
-                        <InputGroupAddon addonType="prepend">
-                          <InputGroupText>
-                            <i className="icon-user" />
-                          </InputGroupText>
-                        </InputGroupAddon>
-                        <Input
-                          value={this.state.email}
-                          onChange={this.handleChange.bind(this, 'email')}
-                          type="email"
-                          placeholder="Email"
-                        />
-                      </InputGroup>
-                      <InputGroup className="mb-4">
-                        <InputGroupAddon addonType="prepend">
-                          <InputGroupText>
-                            <i className="icon-lock" />
-                          </InputGroupText>
-                        </InputGroupAddon>
-                        <Input
-                          value={this.state.password}
-                          onChange={this.handleChange.bind(this, 'password')}
-                          type="password"
-                          placeholder="Password"
-                        />
-                      </InputGroup>
-                      <Row>
-                        <Col xs="6">
-                          <Button type="submit" color="primary" className="px-4">
-                            Login
-                          </Button>
-                        </Col>
-                        <Col xs="6" className="text-right">
-                          {/* <Button color="link" className="px-0">Forgot password?</Button> */}
-                        </Col>
-                      </Row>
+                    <Form onSubmit={this.handleSubmit.bind(this)}>
+                      <Form.Item>
+                        {getFieldDecorator('username', {
+                          rules: [{ required: true, message: 'Please input username!' }],
+                        })(
+                          <Input
+                            prefix={
+                              <i className="fa fa-user" style={{ color: 'rgba(0,0,0,.25)' }} />
+                            }
+                            placeholder="Username.."
+                          />
+                        )}
+                      </Form.Item>
+                      <Form.Item>
+                        {getFieldDecorator('password', {
+                          rules: [{ required: true, message: 'Please input password!' }],
+                        })(
+                          <Input
+                            type="password"
+                            prefix={
+                              <i className="fa fa-key" style={{ color: 'rgba(0,0,0,.25)' }} />
+                            }
+                            placeholder="Password.."
+                          />
+                        )}
+                      </Form.Item>
+                      <Form.Item>
+                        <Button type="primary" htmlType="submit" className="login-form-button">
+                          Log in
+                        </Button>
+                      </Form.Item>
                     </Form>
                   </CardBody>
                 </Card>
                 <Card
                   className="text-white bg-primary py-5 d-md-down-none"
-                  style={{ width: 44 + '%' }}>
+                  style={{ width: '44%' }}>
                   <CardBody className="text-center">
                     <img src={logo} alt="Pertamina" height="200px" />
                   </CardBody>
@@ -113,3 +86,5 @@ export default class Login extends Component {
     )
   }
 }
+
+export default Form.create()(Login)

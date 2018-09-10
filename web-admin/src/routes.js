@@ -32,19 +32,19 @@ const Checklist = Loadable({
   loading: Loading,
 })
 
-// const Login = Loadable({
-//   loader: () => import("./views/Login"),
-//   loading: Loading
-// });
+const Login = Loadable({
+  loader: () => import('./views/Login'),
+  loading: Loading,
+})
 
 // https://github.com/ReactTraining/react-router/tree/master/packages/react-router-config
 const routes = [
   { path: '/', exact: true, name: 'Home', component: DefaultLayout },
   { path: '/dashboard', name: 'Dashboard', component: Dashboard },
+  { path: '/login', exact: true, name: 'Login', component: Login },
   { path: '/users', exact: true, name: 'Users', component: Users },
   { path: '/mobiltangkis', name: 'Mobil Tangki', component: MobilTangki },
   { path: '/checklist', name: 'Checklist', component: Checklist },
-  // { path: "/login", exact: true, name: "Login", component: Login },
   // { path: '/users/:id', exact: true, name: 'User Details', component: User },
 ]
 
