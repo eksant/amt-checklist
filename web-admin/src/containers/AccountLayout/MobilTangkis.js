@@ -1,8 +1,69 @@
 import React, { Component } from 'react'
+import { compose, graphql } from 'react-apollo'
+import gql from 'graphql-tag'
+
 import { notification } from 'antd'
 
-import MobilTangkiList from '../../views/MobilTangki/MobilTangkiList'
-import MobilTangkiForm from '../../views/MobilTangki/MobilTangkiForm'
+import { message } from '../../utils/message'
+import MobilTangkiList from '../../views/MobilTangkis/MobilTangkiList'
+import MobilTangkiForm from '../../views/MobilTangkis/MobilTangkiForm'
+
+const queryMobilTangkis = gql`
+  query mobiltangkis {
+    mobiltangkis {
+      _id
+      nopol
+      KL
+      year
+      status
+      createdAt
+      createdBy {
+        username
+        roles
+      }
+    }
+  }
+`
+
+const mutationCreateMobilTangki = gql`
+  mutation createMobilTangki($mobiltangki: MobilTangkiInput!) {
+    createMobilTangki(mobiltangki: $mobiltangki) {
+      _id
+      nopol
+      KL
+      year
+      status
+      createdAt
+      createdBy {
+        username
+        roles
+      }
+    }
+  }
+`
+
+const mutationUpdateMobilTangki = gql`
+  mutation updateMobilTangki($id: ID!, $mobiltangki: MobilTangkiInput!) {
+    updateMobilTangki(id: $id, mobiltangki: $mobiltangki) {
+      _id
+      nopol
+      KL
+      year
+      status
+      createdAt
+      createdBy {
+        username
+        roles
+      }
+    }
+  }
+`
+
+const mutationDeleteMobilTangki = gql`
+  mutation deleteMobilTangki($id: ID!) {
+    deleteMobilTangki(id: $id)
+  }
+`
 
 class MobilTangkis extends Component {
   constructor(props) {
@@ -42,26 +103,78 @@ class MobilTangkis extends Component {
   }
 
   handleSubmit(item) {
-    notification['success']({
-      message: 'Success Message',
-      description: 'Success to submit record!',
-      style: { top: '35px' },
-    })
+    if (!this.state.itemData) {
+      this.props
+        .onCreateItem(item)
+        .then(() => {
+          notification['success']({
+            message: 'Success Message',
+            description: 'Success to create record!',
+            style: { top: '35px' },
+          })
+          this.props.refetch()
+          this.handleBack()
+        })
+        .catch(res => {
+          notification['warning']({
+            message: 'Validation Message',
+            description: message(res.message), //res.message.replace('GraphQL error: ValidationError: ', ''),
+            style: { top: '35px' },
+          })
+        })
+    } else {
+      this.props
+        .onUpdateItem(this.state.itemData._id, item)
+        .then(() => {
+          notification['success']({
+            message: 'Success Message',
+            description: 'Success to update record!',
+            style: { top: '35px' },
+          })
+          this.props.refetch()
+          this.handleBack()
+        })
+        .catch(res => {
+          notification['warning']({
+            message: 'Validation Message',
+            description: message(res.message), //res.message.replace('GraphQL error: ValidationError: ', ''),
+            style: { top: '35px' },
+          })
+        })
+    }
   }
 
   handleDeleteItem(id) {
-    notification['success']({
-      message: 'Success Message',
-      description: 'Success to submit record!',
-      style: { top: '35px' },
-    })
+    this.props
+      .onDeleteItem(id)
+      .then(() => {
+        notification['success']({
+          message: 'Success Message',
+          description: 'Success to delete record!',
+          style: { top: '35px' },
+        })
+        this.props.refetch()
+        this.handleBack()
+      })
+      .catch(res => {
+        notification['warning']({
+          message: 'Validation Message',
+          description: message(res.message), //res.message.replace('GraphQL error: ValidationError: ', ''),
+          style: { top: '35px' },
+        })
+      })
   }
 
   render() {
-    // console.log('mobil tangkis props: ', this.props)
+    // console.log('users props: ', this.props)
+    const { loading, error, refetch, mobiltangkis = [] } = this.props
+
     return !this.state.showForm ? (
       <MobilTangkiList
-        onRefresh={this.handleAddItem}
+        loading={loading}
+        error={error}
+        mobiltangkis={mobiltangkis}
+        onRefresh={() => refetch()}
         onAddItem={this.handleAddItem}
         onEditItem={this.handleEditItem}
         onDeleteItem={this.handleDeleteItem}
@@ -76,4 +189,63 @@ class MobilTangkis extends Component {
   }
 }
 
-export default MobilTangkis
+export default compose(
+  graphql(queryMobilTangkis, {
+    options: {
+      fetchPolicy: 'cache-and-network',
+      errorPolicy: 'all',
+    },
+    props: ({ data }) => {
+      const { loading, error, refetch, mobiltangkis } = data
+      return loading || error
+        ? {
+            loading,
+            error,
+            refetch,
+          }
+        : {
+            refetch,
+            mobiltangkis,
+          }
+    },
+  }),
+  graphql(mutationCreateMobilTangki, {
+    options: {
+      fetchPolicy: 'cache-and-network',
+      errorPolicy: 'all',
+    },
+    props: props => ({
+      onCreateItem: mobiltangki => {
+        return props.mutate({
+          variables: { mobiltangki },
+        })
+      },
+    }),
+  }),
+  graphql(mutationUpdateMobilTangki, {
+    options: {
+      fetchPolicy: 'cache-and-network',
+      errorPolicy: 'all',
+    },
+    props: props => ({
+      onUpdateItem: (id, mobiltangki) => {
+        return props.mutate({
+          variables: { id, mobiltangki },
+        })
+      },
+    }),
+  }),
+  graphql(mutationDeleteMobilTangki, {
+    options: {
+      fetchPolicy: 'cache-and-network',
+      errorPolicy: 'all',
+    },
+    props: props => ({
+      onDeleteItem: id => {
+        return props.mutate({
+          variables: { id },
+        })
+      },
+    }),
+  })
+)(MobilTangkis)

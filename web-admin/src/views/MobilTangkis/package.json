@@ -1,0 +1,6 @@
+{
+  "name": "MobilTangkis",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./MobilTangkiList.js"
+}
