@@ -1,7 +1,19 @@
+import axios from 'axios'
 import React, { Component } from 'react'
 import { HashRouter, Route, Switch } from 'react-router-dom'
+import { ApolloProvider } from 'react-apollo'
+import ApolloClient from 'apollo-boost'
+// import { ApolloClient } from 'apollo-client'
+// import { getMainDefinition } from 'apollo-utilities'
+// import { ApolloLink, split } from 'apollo-link'
+// import { HttpLink } from 'apollo-link-http'
+// import { WebSocketLink } from 'apollo-link-ws'
+// import { onError } from 'apollo-link-error'
+// import { InMemoryCache } from 'apollo-cache-inmemory'
+
+import { notification } from 'antd'
+
 import './App.css'
-// Styles
 // CoreUI Icons Set
 import '@coreui/icons/css/coreui-icons.min.css'
 // Import Flag Icons Set
@@ -13,24 +25,159 @@ import 'simple-line-icons/css/simple-line-icons.css'
 // Import Main styles for this application
 import './scss/style.css'
 
+import config from './config'
+// import history from './history'
+
 // Containers
 import { DefaultLayout } from './containers'
-// Pages
-// import { Login, Page404, Page500, Register } from './views/Pages';
 
-// import { renderRoutes } from 'react-router-config';
+// Views
+import Login from './views/Login'
+
+// const httpLink = new HttpLink({
+//   uri: config.EndpointGraphql, // 'http://localhost:3030/graphql',
+// })
+
+// const wsLink = new WebSocketLink({
+//   uri: `ws://localhost:3030/graphql`,
+//   options: {
+//     reconnect: true,
+//   },
+// })
+
+// const terminatingLink = split(
+//   ({ query }) => {
+//     const { kind, operation } = getMainDefinition(query)
+//     // console.log('operation', operation)
+//     return kind === 'OperationDefinition' && operation === 'subscription'
+//   },
+//   // wsLink,
+//   httpLink
+// )
+
+// const authLink = new ApolloLink((operation, forward) => {
+//   operation.setContext(({ headers = {} }) => ({
+//     headers: {
+//       ...headers,
+//       'token': localStorage.getItem('token'),
+//     },
+//   }))
+
+//   return forward(operation)
+// })
+
+// const errorLink = onError(({ graphQLErrors, networkError }) => {
+//   if (graphQLErrors) {
+//     graphQLErrors.forEach(({ message, locations, path }) => {
+//       console.log('GraphQL error', message)
+
+//       if (message === 'NOT_AUTHENTICATED') {
+//         localStorage.removeItem('token')
+//         window.location.reload()
+//       }
+//     })
+//   }
+
+//   if (networkError) {
+//     console.log('Network error', networkError)
+
+//     if (networkError.statusCode === 401) {
+//       localStorage.removeItem('token')
+//       window.location.reload()
+//     }
+//   }
+// })
+
+// const link = ApolloLink.from([authLink, errorLink, httpLink])
+// const cache = new InMemoryCache()
+// const client = new ApolloClient({
+//   link,
+//   cache,
+// })
+
+const client = new ApolloClient({
+  uri: config.EndpointGraphql,
+  fetchOptions: {
+    credentials: 'include',
+  },
+  request: async operation => {
+    const token = await localStorage.getItem('token')
+    operation.setContext({
+      headers: {
+        token: token,
+      },
+    })
+  },
+  onError: ({ graphQLErrors, networkError }) => {
+    if (graphQLErrors) {
+      graphQLErrors.forEach(({ message, locations, path }) => {
+        // console.log('GraphQL error', message)
+
+        if (message === 'NOT_AUTHENTICATED') {
+          localStorage.removeItem('token')
+          window.location.reload()
+        }
+      })
+    }
+
+    if (networkError) {
+      // console.log('Network error', networkError)
+      if (networkError.statusCode === 401) {
+        localStorage.removeItem('token')
+        window.location.reload()
+      }
+    }
+  },
+  clientState: {
+    defaults: {
+      isConnected: true,
+    },
+    resolvers: {
+      Mutation: {
+        updateNetworkStatus: (_, { isConnected }, { cache }) => {
+          cache.writeData({ data: { isConnected } })
+          return null
+        },
+      },
+    },
+  },
+})
 
 class App extends Component {
+  onSubmitLogin(username, password) {
+    axios
+      .post(`${config.EndpointRestAPI}/signin`, { username, password })
+      .then(res => {
+        // console.log(res)
+        if (res.status === 200) {
+          localStorage.setItem('token', res.data.token)
+          window.location.reload()
+          // history.push('#/dashboard')
+        } else {
+          notification['error']({
+            message: 'Login Message',
+            description: res.data.error,
+            style: { top: '35px' },
+          })
+        }
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }
+
   render() {
     return (
       <HashRouter>
-        <Switch>
-          {/* <Route exact path="/login" name="Login Page" component={Login} />
-          <Route exact path="/register" name="Register Page" component={Register} />
-          <Route exact path="/404" name="Page 404" component={Page404} />
-          <Route exact path="/500" name="Page 500" component={Page500} /> */}
-          <Route path="/" name="Home" component={DefaultLayout} />
-        </Switch>
+        <ApolloProvider client={client}>
+          <Switch>
+            {!localStorage.getItem('token') ? (
+              <Login onSubmitLogin={this.onSubmitLogin} />
+            ) : (
+              <Route path="/" name="Home" component={DefaultLayout} />
+            )}
+          </Switch>
+        </ApolloProvider>
       </HashRouter>
     )
   }
