@@ -5,12 +5,12 @@ import gql from 'graphql-tag'
 import { notification } from 'antd'
 
 import { message } from '../../utils/message'
-import UserList from '../../views/Users/UserList'
-import UserForm from '../../views/Users/UserForm'
+import AdminList from '../../views/Admins/AdminList'
+import AdminForm from '../../views/Admins/AdminForm'
 
-const queryUsers = gql`
-  query users {
-    users {
+const queryAdmins = gql`
+  query admins {
+    admins {
       _id
       username
       password
@@ -30,9 +30,9 @@ const queryUsers = gql`
   }
 `
 
-const mutationCreateUser = gql`
-  mutation createUser($user: UserInput!) {
-    createUser(user: $user) {
+const mutationCreateAdmin = gql`
+  mutation createAdmin($admin: AdminInput!) {
+    createAdmin(admin: $admin) {
       _id
       username
       password
@@ -52,9 +52,9 @@ const mutationCreateUser = gql`
   }
 `
 
-const mutationUpdateUser = gql`
-  mutation updateUser($id: ID!, $user: UserInput!) {
-    updateUser(id: $id, user: $user) {
+const mutationUpdateAdmin = gql`
+  mutation updateAdmin($id: ID!, $admin: AdminInput!) {
+    updateAdmin(id: $id, admin: $admin) {
       _id
       username
       password
@@ -74,13 +74,13 @@ const mutationUpdateUser = gql`
   }
 `
 
-const mutationDeleteUser = gql`
-  mutation deleteUser($id: ID!) {
-    deleteUser(id: $id)
+const mutationDeleteAdmin = gql`
+  mutation deleteAdmin($id: ID!) {
+    deleteAdmin(id: $id)
   }
 `
 
-class Users extends Component {
+class Admins extends Component {
   constructor(props) {
     super(props)
 
@@ -181,21 +181,21 @@ class Users extends Component {
   }
 
   render() {
-    // console.log('users props: ', this.props)
-    const { loading, error, refetch, users = [] } = this.props
+    // console.log('admins props: ', this.props)
+    const { loading, error, refetch, admins = [] } = this.props
 
     return !this.state.showForm ? (
-      <UserList
+      <AdminList
         loading={loading}
         error={error}
-        users={users}
+        admins={admins}
         onRefresh={() => refetch()}
         onAddItem={this.handleAddItem}
         onEditItem={this.handleEditItem}
         onDeleteItem={this.handleDeleteItem}
       />
     ) : (
-      <UserForm
+      <AdminForm
         itemData={this.state.itemData}
         onBack={this.handleBack}
         onSubmitItem={itemData => this.handleSubmit(itemData)}
@@ -205,13 +205,13 @@ class Users extends Component {
 }
 
 export default compose(
-  graphql(queryUsers, {
+  graphql(queryAdmins, {
     options: {
       fetchPolicy: 'cache-and-network',
       errorPolicy: 'all',
     },
     props: ({ data }) => {
-      const { loading, error, refetch, users } = data
+      const { loading, error, refetch, admins } = data
       return loading || error
         ? {
             loading,
@@ -220,37 +220,37 @@ export default compose(
           }
         : {
             refetch,
-            users,
+            admins,
           }
     },
   }),
-  graphql(mutationCreateUser, {
+  graphql(mutationCreateAdmin, {
     options: {
       fetchPolicy: 'cache-and-network',
       errorPolicy: 'all',
     },
     props: props => ({
-      onCreateItem: user => {
+      onCreateItem: admin => {
         return props.mutate({
-          variables: { user },
+          variables: { admin },
         })
       },
     }),
   }),
-  graphql(mutationUpdateUser, {
+  graphql(mutationUpdateAdmin, {
     options: {
       fetchPolicy: 'cache-and-network',
       errorPolicy: 'all',
     },
     props: props => ({
-      onUpdateItem: (id, user) => {
+      onUpdateItem: (id, admin) => {
         return props.mutate({
-          variables: { id, user },
+          variables: { id, admin },
         })
       },
     }),
   }),
-  graphql(mutationDeleteUser, {
+  graphql(mutationDeleteAdmin, {
     options: {
       fetchPolicy: 'cache-and-network',
       errorPolicy: 'all',
@@ -263,4 +263,4 @@ export default compose(
       },
     }),
   })
-)(Users)
+)(Admins)

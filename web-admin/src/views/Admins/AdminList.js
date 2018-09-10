@@ -2,9 +2,9 @@ import React from 'react'
 import { Card, Table, Divider, Icon, Popconfirm, Alert } from 'antd'
 
 export default props => {
-  // console.log('user list props: ', props)
-  const { loading, error, onRefresh, onAddItem, onEditItem, onDeleteItem, users = [] } = props
-  const dataSource = users !== null ? users.map(user => ({ ...user, key: user._id })) : []
+  // console.log('admin list props: ', props)
+  const { loading, error, onRefresh, onAddItem, onEditItem, onDeleteItem, admins = [] } = props
+  const dataSource = admins !== null ? admins.map(admin => ({ ...admin, key: admin._id })) : []
 
   const columns = [
     {
@@ -35,7 +35,7 @@ export default props => {
       title: 'Action',
       render: record => (
         <span>
-          <a href="#/users" onClick={() => onEditItem(record)}>
+          <a href="#/admins" onClick={() => onEditItem(record)}>
             <Icon type="edit" theme="outlined" /> Edit
           </a>
           <Divider type="vertical" />
@@ -44,7 +44,7 @@ export default props => {
             onConfirm={() => onDeleteItem(record._id)}
             okText="Yes"
             cancelText="No">
-            <a href="#/users" className="ant-btn-danger ant-btn-background-ghost">
+            <a href="#/admins" className="ant-btn-danger ant-btn-background-ghost">
               <Icon type="delete" theme="outlined" /> Delete
             </a>
           </Popconfirm>
@@ -56,16 +56,16 @@ export default props => {
   return (
     <div className="animated fadeIn">
       <Card
-        title="Manage Users"
+        title="Manage Admins"
         extra={
           <span>
             <a
-              href="#/users"
+              href="#/admins"
               onClick={() => onRefresh()}
               style={{ marginRight: '10px', color: '#A6A6A6' }}>
               <i className="fa fa-refresh" /> Refresh
             </a>
-            <a href="#/users" onClick={() => onAddItem()}>
+            <a href="#/admins" onClick={() => onAddItem()}>
               <i className="fa fa-plus-square" /> Create New
             </a>
           </span>

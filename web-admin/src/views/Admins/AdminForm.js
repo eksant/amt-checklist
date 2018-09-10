@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Dropzone from 'react-dropzone'
-import { Card, Col, Row, Form, Input, Radio, Button, Select, Alert, Tag } from 'antd'
+import { Card, Col, Row, Form, Input, Radio, Button, Alert, Tag } from 'antd'
 
 const formItemLayout = {
   labelCol: {
@@ -26,7 +26,7 @@ const tailFormItemLayout = {
   },
 }
 
-class UserForm extends Component {
+class AdminForm extends Component {
   constructor(props) {
     super(props)
 
@@ -68,7 +68,7 @@ class UserForm extends Component {
 
     return (
       <div className="animated fadeIn">
-        <Card title="Manage Users">
+        <Card title={!itemData ? 'Create Admin' : 'Edit Admin'}>
           {error ? (
             <Alert message="Error" description={this.props.error.message} type="error" showIcon />
           ) : (
@@ -191,17 +191,6 @@ class UserForm extends Component {
                       })(<Input type="password" placeholder="Input your password.." />)}
                     </Form.Item>
                   )}
-                  <Form.Item label="Role" {...formItemLayout}>
-                    {getFieldDecorator('roles', {
-                      initialValue: itemData && itemData.roles,
-                      rules: [{ required: true, message: 'Please choose role!' }],
-                    })(
-                      <Select placeholder="Please select role.." style={{ width: '100%' }}>
-                        <Select.Option value="Sopir">Sopir</Select.Option>
-                        <Select.Option value="Kernet">Kernet</Select.Option>
-                      </Select>
-                    )}
-                  </Form.Item>
                 </Col>
               </Row>
 
@@ -225,4 +214,4 @@ class UserForm extends Component {
   }
 }
 
-export default Form.create()(UserForm)
+export default Form.create()(AdminForm)
