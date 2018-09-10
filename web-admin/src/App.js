@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { Component } from 'react'
-import { HashRouter, Route, Switch } from 'react-router-dom'
+import { HashRouter, Switch } from 'react-router-dom'
 import { ApolloProvider } from 'react-apollo'
 import ApolloClient from 'apollo-boost'
 // import { ApolloClient } from 'apollo-client'
@@ -26,7 +26,6 @@ import 'simple-line-icons/css/simple-line-icons.css'
 import './scss/style.css'
 
 import config from './config'
-// import history from './history'
 
 // Containers
 import { DefaultLayout } from './containers'
@@ -148,11 +147,12 @@ class App extends Component {
     axios
       .post(`${config.EndpointRestAPI}/signin`, { username, password })
       .then(res => {
-        // console.log(res)
+        // console.log(res.data)
         if (res.status === 200) {
           localStorage.setItem('token', res.data.token)
+          localStorage.setItem('group', res.data.user.roles)
           window.location.reload()
-          // history.push('#/dashboard')
+          // history.push('#/')
         } else {
           notification['error']({
             message: 'Login Message',
@@ -174,7 +174,7 @@ class App extends Component {
             {!localStorage.getItem('token') ? (
               <Login onSubmitLogin={this.onSubmitLogin} />
             ) : (
-              <Route path="/" name="Home" component={DefaultLayout} />
+              <DefaultLayout />
             )}
           </Switch>
         </ApolloProvider>
