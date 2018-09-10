@@ -68,7 +68,7 @@ class UserForm extends Component {
 
     return (
       <div className="animated fadeIn">
-        <Card title="Manage Users">
+        <Card title={!itemData ? 'Create User' : 'Edit User'}>
           {error ? (
             <Alert message="Error" description={this.props.error.message} type="error" showIcon />
           ) : (
