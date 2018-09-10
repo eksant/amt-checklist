@@ -1,11 +1,16 @@
 const mongoose = require('mongoose')
 const mongoosePaginate = require('mongoose-paginate')
 const uniqueValidator = require('mongoose-unique-validator')
+const uuidv1 = require('uuid/v1')
 const ObjectId = mongoose.Types.ObjectId
 const Schema = mongoose.Schema
 
 var schema = new Schema(
   {
+    _id: {
+      type: String,
+      default: uuidv1(),
+    },
     nopol: {
       type: String,
       trim: true,
@@ -44,7 +49,10 @@ schema.plugin(uniqueValidator, {
 const MobilTangki = mongoose.model('MobilTangki', schema)
 
 const create = async data => {
-  return await MobilTangki.create(data)
+  return await MobilTangki.create({
+    ...data,
+    _id: uuidv1(),
+  })
 }
 
 const read = async () => {
@@ -56,15 +64,21 @@ const readId = async id => {
 }
 
 const update = async (id, data) => {
+  console.log('id', id)
   return await MobilTangki.findOneAndUpdate(
-    { _id: ObjectId(id) },
+    // { _id: ObjectId(id) },
+    { _id: id },
     { $set: data },
     { upsert: true, new: true }
   )
 }
 
-const destroy = async id => {
-  return await MobilTangki.deleteOne({ _id: ObjectId(id) })
+const destroy = id => {
+  // return await MobilTangki.deleteOne({ _id: ObjectId(id) })
+  MobilTangki.findOneAndDelete({ _id: id }, async err => {
+    if (err) return await false
+    return await true
+  })
 }
 
 module.exports = { MobilTangki, create, read, readId, update, destroy }
