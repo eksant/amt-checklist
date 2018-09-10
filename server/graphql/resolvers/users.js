@@ -1,11 +1,13 @@
 const bcrypt = require('bcryptjs')
 const { UserInputError, ForbiddenError } = require('apollo-server')
-const { combineResolvers, skip } = require('graphql-resolvers')
+const { combineResolvers } = require('graphql-resolvers')
+// const { combineResolvers, skip } = require('graphql-resolvers')
 
 const { createToken, isSuperAdmin, isAdmin } = require('../../middlewares/auth')
 const {
   User,
-  create,
+  createAdmin,
+  createUser,
   readAdmin,
   readAdminId,
   readUser,
@@ -14,15 +16,15 @@ const {
   destroy,
 } = require('../../models/users')
 
-const isDataOwner = async (parent, { id }, { authUser }) => {
-  var dataUser = await User.findById(id)
+// const isDataOwner = async (parent, { id }, { authUser }) => {
+//   var dataUser = await User.findById(id)
 
-  if (dataUser._id !== authUser._id) {
-    throw new ForbiddenError('You dont have authorized as owner!')
-  }
+//   if (dataUser._id !== authUser._id) {
+//     throw new ForbiddenError('You dont have authorized as owner!')
+//   }
 
-  return skip
-}
+//   return skip
+// }
 
 module.exports = {
   Query: {
@@ -76,7 +78,7 @@ module.exports = {
 
     createAdmin: combineResolvers(isSuperAdmin, async (parent, { admin }, { authUser }) => {
       try {
-        return await create({
+        return await createAdmin({
           ...admin,
           password: bcrypt.hashSync(admin.password, bcrypt.genSaltSync(10)),
           createdBy: authUser,
@@ -88,7 +90,7 @@ module.exports = {
 
     createUser: combineResolvers(isAdmin, async (parent, { user }, { authUser }) => {
       try {
-        return await create({
+        return await createUser({
           ...user,
           password: bcrypt.hashSync(user.password, bcrypt.genSaltSync(10)),
           createdBy: authUser,
@@ -98,7 +100,25 @@ module.exports = {
       }
     }),
 
-    updateUser: combineResolvers(isAdmin || isDataOwner, async (parent, { id, user }) => {
+    updateAdmin: combineResolvers(isSuperAdmin, async (parent, { id, admin }) => {
+      try {
+        const { password } = admin
+        var data = { ...admin }
+
+        if (password) {
+          data = {
+            ...admin,
+            password: bcrypt.hashSync(admin.password, bcrypt.genSaltSync(10)),
+          }
+        }
+
+        return await update(id, data)
+      } catch (error) {
+        throw new ForbiddenError(error)
+      }
+    }),
+
+    updateUser: combineResolvers(isAdmin, async (parent, { id, user }) => {
       try {
         const { password } = user
         var data = { ...user }
@@ -116,7 +136,15 @@ module.exports = {
       }
     }),
 
-    deleteUser: combineResolvers(isAdmin || isDataOwner, async (parent, { id }) => {
+    deleteAdmin: combineResolvers(isSuperAdmin, async (parent, { id }) => {
+      try {
+        return await destroy(id)
+      } catch (error) {
+        throw new ForbiddenError(error)
+      }
+    }),
+
+    deleteUser: combineResolvers(isAdmin, async (parent, { id }) => {
       try {
         return await destroy(id)
       } catch (error) {

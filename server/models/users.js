@@ -110,7 +110,15 @@ const signIn = (username, password, callback) => {
   }
 }
 
-const create = async data => {
+const createAdmin = async data => {
+  return await User.create({
+    ...data,
+    roles: 'Admin',
+    _id: uuidv1(),
+  })
+}
+
+const createUser = async data => {
   return await User.create({
     ...data,
     _id: uuidv1(),
@@ -157,7 +165,8 @@ const destroy = id => {
 
 module.exports = {
   User,
-  create,
+  createAdmin,
+  createUser,
   readAdmin,
   readAdminId,
   readUser,

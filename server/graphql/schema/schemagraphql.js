@@ -11,10 +11,12 @@ module.exports = gql`
   }
 
   type Mutation {
-    signIn(username: String!, password: String!): Token!
-    createAdmin(admin: UserInput!): User!
+    signIn(username: String!, password: String!): UserLogin!
+    createAdmin(admin: AdminInput!): User!
     createUser(user: UserInput!): User!
+    updateAdmin(id: ID!, admin: AdminInput!): User!
     updateUser(id: ID!, user: UserInput!): User!
+    deleteAdmin(id: ID!): Boolean
     deleteUser(id: ID!): Boolean
     createMobilTangki(mobiltangki: MobilTangkiInput!): MobilTangki!
     updateMobilTangki(id: ID!, mobiltangki: MobilTangkiInput!): MobilTangki!
@@ -36,6 +38,17 @@ module.exports = gql`
     createdBy: User
   }
 
+  input AdminInput {
+    NIP: String!
+    fullName: String
+    email: String!
+    mobile: String
+    username: String!
+    password: String
+    status: StatusActive!
+    imgUrl: String
+  }
+
   input UserInput {
     NIP: String!
     fullName: String
@@ -48,7 +61,7 @@ module.exports = gql`
     imgUrl: String
   }
 
-  type Token {
+  type UserLogin {
     user: User!
     token: String!
   }
