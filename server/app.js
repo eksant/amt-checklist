@@ -24,7 +24,7 @@ const server = app.listen(port, () => {
     app.get('env')
   )
   console.log(
-    '%s Server Graphql running at http://localhost:%d/graphiql in %s mode',
+    '%s Server Graphql running at http://localhost:%d/graphql in %s mode',
     chalk.green('🚀'),
     app.get('port'),
     app.get('env')
