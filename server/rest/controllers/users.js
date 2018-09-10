@@ -18,7 +18,7 @@ module.exports = {
           token,
         })
       } else {
-        res.status(400).json({
+        res.status(203).json({
           message: 'Bad request',
           error,
         })
