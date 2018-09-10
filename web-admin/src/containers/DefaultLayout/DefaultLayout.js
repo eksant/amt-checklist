@@ -23,6 +23,33 @@ import DefaultFooter from './DefaultFooter'
 import DefaultHeader from './DefaultHeader'
 
 class DefaultLayout extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      group: null,
+      navGroup: {
+        items: [],
+      },
+    }
+  }
+
+  componentDidMount() {
+    const group = localStorage.getItem('group')
+
+    if (group) {
+      this.setState({ group })
+      this.setState({
+        navGroup: {
+          items:
+            group !== 'Superadmin'
+              ? navigation.items.filter(item => item.group !== 'Superadmin')
+              : navigation.items,
+        },
+      })
+    }
+  }
+
   render() {
     return (
       <div className="app">
@@ -33,7 +60,7 @@ class DefaultLayout extends Component {
           <AppSidebar fixed display="lg">
             <AppSidebarHeader />
             <AppSidebarForm />
-            <AppSidebarNav navConfig={navigation} {...this.props} />
+            <AppSidebarNav navConfig={this.state.navGroup} {...this.props} />
             <AppSidebarFooter />
             <AppSidebarMinimizer />
           </AppSidebar>

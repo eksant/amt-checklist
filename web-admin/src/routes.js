@@ -17,6 +17,11 @@ const Dashboard = Loadable({
   loading: Loading,
 })
 
+const Admins = Loadable({
+  loader: () => import('./containers/AccountLayout/Admins'),
+  loading: Loading,
+})
+
 const Users = Loadable({
   loader: () => import('./containers/AccountLayout/Users'),
   loading: Loading,
@@ -42,6 +47,7 @@ const routes = [
   { path: '/', exact: true, name: 'Home', component: DefaultLayout },
   { path: '/dashboard', name: 'Dashboard', component: Dashboard },
   { path: '/login', exact: true, name: 'Login', component: Login },
+  { path: '/admins', exact: true, name: 'Admins', component: Admins },
   { path: '/users', exact: true, name: 'Users', component: Users },
   { path: '/mobiltangkis', name: 'Mobil Tangki', component: MobilTangki },
   { path: '/checklist', name: 'Checklist', component: Checklist },

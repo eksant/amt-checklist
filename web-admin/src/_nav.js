@@ -15,6 +15,12 @@ export default {
       class: '', // optional class names space delimited list for title item ex: "text-center"
     },
     {
+      name: 'Manage Admins',
+      url: '/admins',
+      icon: 'fa fa-user-secret',
+      group: 'Superadmin',
+    },
+    {
       name: 'Manage Users',
       url: '/users',
       icon: 'fa fa-users',
