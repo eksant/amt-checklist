@@ -76,8 +76,8 @@ class UserForm extends Component {
               <Row>
                 <Col span="12">
                   <Form.Item label="NIP" {...formItemLayout}>
-                    {getFieldDecorator('nip', {
-                      initialValue: itemData && itemData.nip,
+                    {getFieldDecorator('NIP', {
+                      initialValue: itemData && itemData.NIP,
                       rules: [{ required: true, message: 'Please input NIP!', whitespace: true }],
                     })(<Input placeholder="Input your NIP.." />)}
                   </Form.Item>
@@ -181,21 +181,22 @@ class UserForm extends Component {
                       ],
                     })(<Input placeholder="Input your username.." />)}
                   </Form.Item>
-                  <Form.Item label="Password" {...formItemLayout}>
-                    {getFieldDecorator('password', {
-                      initialValue: itemData && itemData.password,
-                      rules: [
-                        { required: true, message: 'Please input password!', whitespace: true },
-                      ],
-                    })(<Input type="password" placeholder="Input your password.." />)}
-                  </Form.Item>
+                  {!itemData && (
+                    <Form.Item label="Password" {...formItemLayout}>
+                      {getFieldDecorator('password', {
+                        initialValue: itemData && itemData.password,
+                        rules: [
+                          { required: true, message: 'Please input password!', whitespace: true },
+                        ],
+                      })(<Input type="password" placeholder="Input your password.." />)}
+                    </Form.Item>
+                  )}
                   <Form.Item label="Role" {...formItemLayout}>
                     {getFieldDecorator('roles', {
                       initialValue: itemData && itemData.roles,
                       rules: [{ required: true, message: 'Please choose role!' }],
                     })(
                       <Select placeholder="Please select role.." style={{ width: '100%' }}>
-                        <Select.Option value="Admin">Admin</Select.Option>
                         <Select.Option value="Sopir">Sopir</Select.Option>
                         <Select.Option value="Kernet">Kernet</Select.Option>
                       </Select>

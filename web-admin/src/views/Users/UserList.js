@@ -3,78 +3,49 @@ import { Card, Table, Divider, Icon, Popconfirm, Alert } from 'antd'
 
 export default props => {
   // console.log('user list props: ', props)
-  const { loading, error, onRefresh, onAddItem, onEditItem, onDeleteItem } = props
-
-  const data = [
-    {
-      key: '1',
-      nip: 'PN-001',
-      fullName: 'John Brown',
-      email: 'email@email.com',
-      roles: 'Admin',
-      status: 'Active',
-    },
-    {
-      key: '2',
-      nip: 'PN-002',
-      fullName: 'Jim Green',
-      email: 'email@email.com',
-      roles: 'Sopir',
-      status: 'Active',
-    },
-    {
-      key: '3',
-      nip: 'PN-003',
-      fullName: 'Joe Black',
-      email: 'email@email.com',
-      roles: 'Kernet',
-      status: 'Active',
-    },
-  ]
+  const { loading, error, onRefresh, onAddItem, onEditItem, onDeleteItem, users = [] } = props
+  const dataSource = users !== null ? users.map(user => ({ ...user, key: user._id })) : []
 
   const columns = [
     {
       title: 'NIP',
-      dataIndex: 'nip',
-      key: 'nip',
-      // render: text => <a href="javascript:;">{text}</a>,
+      dataIndex: 'NIP',
     },
     {
       title: 'Full Name',
       dataIndex: 'fullName',
-      key: 'fullName',
+    },
+    {
+      title: 'Username',
+      dataIndex: 'username',
     },
     {
       title: 'Email',
       dataIndex: 'email',
-      key: 'email',
     },
     {
       title: 'Role',
       dataIndex: 'roles',
-      key: 'roles',
     },
     {
       title: 'Status',
       dataIndex: 'status',
-      key: 'status',
     },
     {
       title: 'Action',
-      key: 'action',
       render: record => (
         <span>
           <a href="#/users" onClick={() => onEditItem(record)}>
-            <Icon type="edit" /> Edit
+            <Icon type="edit" theme="outlined" /> Edit
           </a>
           <Divider type="vertical" />
           <Popconfirm
             title="Are you sure delete this record?"
-            onConfirm={() => onDeleteItem(record.id)}
+            onConfirm={() => onDeleteItem(record._id)}
             okText="Yes"
             cancelText="No">
             <a href="#/users" className="ant-btn-danger ant-btn-background-ghost">
-              <Icon type="delete" /> Delete
+              <Icon type="delete" theme="outlined" /> Delete
             </a>
           </Popconfirm>
         </span>
@@ -102,7 +73,7 @@ export default props => {
         {error ? (
           <Alert message="Error" description={this.props.error.message} type="error" showIcon />
         ) : (
-          <Table columns={columns} dataSource={data} size={'small'} />
+          <Table columns={columns} dataSource={dataSource} loading={loading} size={'small'} />
         )}
       </Card>
     </div>
