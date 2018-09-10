@@ -20,7 +20,7 @@ module.exports = gql`
     deleteUser(id: ID!): Boolean
     createMobilTangki(mobiltangki: MobilTangkiInput!): MobilTangki!
     updateMobilTangki(id: ID!, mobiltangki: MobilTangkiInput!): MobilTangki!
-    deleteMobilTangki(id: ID!): Boolean!
+    deleteMobilTangki(id: ID!): Boolean
   }
 
   type User {
@@ -75,7 +75,7 @@ module.exports = gql`
     _id: ID!
     nopol: String
     KL: String
-    year: Int
+    year: String
     status: StatusActive
     createdAt: String
     createdBy: User
@@ -84,7 +84,7 @@ module.exports = gql`
   input MobilTangkiInput {
     nopol: String!
     KL: String
-    year: Int
+    year: String
     status: StatusActive!
   }
 

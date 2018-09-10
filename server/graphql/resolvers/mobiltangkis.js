@@ -36,13 +36,7 @@ module.exports = {
 
     updateMobilTangki: combineResolvers(isAdmin, async (parent, { id, mobiltangki }) => {
       try {
-        const data = await readId(id)
-
-        if (data) {
-          return await update(id, mobiltangki)
-        } else {
-          throw new UserInputError('Data not found!')
-        }
+        return await update(id, mobiltangki)
       } catch (error) {
         throw new ForbiddenError(error)
       }
