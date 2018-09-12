@@ -110,6 +110,14 @@ const signIn = (username, password, callback) => {
   }
 }
 
+const createSuperadmin = async data => {
+  return await User.create({
+    ...data,
+    roles: 'Superadmin',
+    _id: uuidv1(),
+  })
+}
+
 const createAdmin = async data => {
   return await User.create({
     ...data,
@@ -133,6 +141,12 @@ const readAdminId = async id => {
   return await User.findOne({
     _id: ObjectId(id),
     roles: 'Admin',
+  })
+}
+
+const readSuperadmin = async () => {
+  return await User.find({
+    roles: 'Superadmin',
   })
 }
 
@@ -165,8 +179,10 @@ const destroy = id => {
 
 module.exports = {
   User,
+  createSuperadmin,
   createAdmin,
   createUser,
+  readSuperadmin,
   readAdmin,
   readAdminId,
   readUser,
