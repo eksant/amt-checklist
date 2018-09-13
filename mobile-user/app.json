@@ -1,4 +1,6 @@
 {
+  "name": "mobile-user",
+  "displayName": "mobile-user",
   "expo": {
     "sdkVersion": "27.0.0"
   }
