@@ -6,7 +6,6 @@ import {
   Card,
   CardItem,
   Button,
-  Icon,
   Text,
   List,
   ListItem,
@@ -24,7 +23,7 @@ class Checklist extends Component {
         <Content padder>
           <Card>
             <CardItem>
-            <Text note>No.Pol: </Text>
+              <Text note>No.Pol: </Text>
             </CardItem>
             <CardItem footer bordered>
               <Text note>No.Pol: </Text>

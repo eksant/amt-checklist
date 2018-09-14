@@ -31,7 +31,7 @@ export default {
   textGrey: {
     color: '#454545',
   },
-  button: {
+  buttonLogin: {
     marginTop: 30,
     alignSelf: 'center',
   },

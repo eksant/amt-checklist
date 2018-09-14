@@ -8,11 +8,15 @@ import { Container, Content, Card, CardItem, Text } from 'native-base'
 class Scanner extends Component {
   state = {
     hasCameraPermission: null,
-    lastScannedUrl: null,
+    lastScannedResult: null,
   }
 
   componentDidMount() {
     this.handleCameraPermission()
+  }
+
+  componentWillUnmount() {
+    this.setState({ lastScannedResult: null })
   }
 
   handleCameraPermission = async () => {
@@ -23,9 +27,9 @@ class Scanner extends Component {
   }
 
   handleBarCodeRead = result => {
-    if (result.data !== this.state.lastScannedUrl) {
+    if (result.data !== this.state.lastScannedResult) {
       LayoutAnimation.spring()
-      this.setState({ lastScannedUrl: result.data })
+      this.setState({ lastScannedResult: result.data })
     }
   }
 
@@ -36,9 +40,11 @@ class Scanner extends Component {
           <Card>
             <CardItem>
               {this.state.hasCameraPermission === null ? (
-                <Text>Requesting for camera permission</Text>
+                <Text note>Requesting for camera permission</Text>
               ) : this.state.hasCameraPermission === false ? (
-                <Text style={{ color: '#fff' }}>Camera permission is not granted</Text>
+                <Text note style={{ color: 'red' }}>
+                  Camera permission is not granted
+                </Text>
               ) : (
                 <BarCodeScanner
                   onBarCodeRead={this.handleBarCodeRead.bind(this)}
@@ -51,10 +57,10 @@ class Scanner extends Component {
               )}
             </CardItem>
             <CardItem footer bordered>
-              <Text note>No.Pol: {this.state.lastScannedUrl}</Text>
-              {this.state.lastScannedUrl &&
+              <Text note>No.Pol: {this.state.lastScannedResult}</Text>
+              {this.state.lastScannedResult &&
                 setTimeout(() => {
-                  this.setState({ lastScannedUrl: null })
+                  this.setState({ lastScannedResult: null })
                   this.props.navigation.navigate('Checklist')
                 }, 2000)}
             </CardItem>

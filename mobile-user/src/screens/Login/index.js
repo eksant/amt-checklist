@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { View } from 'react-native'
-import { Container, Button, H3, Form, Item, Input, Label, Icon, Text } from 'native-base'
+import Icon from 'react-native-vector-icons/FontAwesome'
+import { Container, Button, H3, Form, Item, Input, Label, Text } from 'native-base'
 
 import styles from './styles'
 
@@ -23,13 +24,9 @@ class Login extends Component {
               <Label style={styles.textWhite}>Password</Label>
               <Input secureTextEntry={true} style={styles.textWhite} />
             </Item>
-            <Button
-              iconLeft
-              light
-              onPress={() => this.handleLogin()}
-              style={styles.button}>
-              <Icon type="FontAwesome" name="sign-in" style={styles.textGrey} />
-              <Text style={styles.textGrey}>Login</Text>
+            <Button iconLeft light onPress={() => this.handleLogin()} style={styles.buttonLogin}>
+              <Icon name="sign-in" size={20} style={{ left: 10 }} />
+              <Text>Login</Text>
             </Button>
           </Form>
         </View>

@@ -1,7 +1,15 @@
 {
-  "name": "mobile-user",
-  "displayName": "mobile-user",
   "expo": {
-    "sdkVersion": "27.0.0"
-  }
+    "name": "Daily AMT Checklist",
+    "privacy": "public",
+    "icon": "./src/assets/img/brand/icon.png",
+    "version": "0.1.0",
+    "sdkVersion": "27.0.0",
+    "ios": {
+      "bundleIdentifier": "com.seorangeksa.amt"
+    },
+    "android": {
+      "package": "com.seorangeksa.amt"
+    }
+   }
 }

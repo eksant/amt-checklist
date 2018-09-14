@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { Provider } from 'react-redux'
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
-import { Root, Icon } from 'native-base'
+import { Root } from 'native-base'
+import Icon from 'react-native-vector-icons/FontAwesome'
 import {
   createDrawerNavigator,
   createStackNavigator,
@@ -75,12 +76,12 @@ const DashboardScreen = createStackNavigator(
         headerTitle: 'Daily AMT Checklist',
         headerLeft: (
           <TouchableOpacity onPress={() => navigation.navigate('Dashboard')}>
-            <Icon name="home" style={{ paddingLeft: 10 }} />
+            <Icon name="home" size={20} style={{ paddingLeft: 10 }} />
           </TouchableOpacity>
         ),
         headerRight: (
           <TouchableOpacity onPress={() => navigation.openDrawer()}>
-            <Icon name="person" style={{ paddingRight: 10 }} />
+            <Icon name="user-circle-o" size={20} style={{ paddingRight: 10 }} />
           </TouchableOpacity>
         ),
       }),
@@ -92,12 +93,12 @@ const DashboardScreen = createStackNavigator(
         headerTitle: 'Form Scanner',
         headerLeft: (
           <TouchableOpacity onPress={() => navigation.navigate('Dashboard')}>
-            <Icon name="home" style={{ paddingLeft: 10 }} />
+            <Icon name="home" size={20} style={{ paddingLeft: 10 }} />
           </TouchableOpacity>
         ),
         headerRight: (
           <TouchableOpacity onPress={() => navigation.openDrawer()}>
-            <Icon name="person" style={{ paddingRight: 10 }} />
+            <Icon name="user-circle-o" size={20} style={{ paddingRight: 10 }} />
           </TouchableOpacity>
         ),
       }),
@@ -109,7 +110,7 @@ const DashboardScreen = createStackNavigator(
         headerTitle: 'Form Checklist',
         headerRight: (
           <TouchableOpacity onPress={() => navigation.openDrawer()}>
-            <Icon name="person" style={{ paddingRight: 10 }} />
+            <Icon name="user-circle-o" size={20} style={{ paddingRight: 10 }} />
           </TouchableOpacity>
         ),
       }),
@@ -121,12 +122,12 @@ const DashboardScreen = createStackNavigator(
         headerTitle: 'History',
         headerLeft: (
           <TouchableOpacity onPress={() => navigation.navigate('Dashboard')}>
-            <Icon name="home" style={{ paddingLeft: 10 }} />
+            <Icon name="home" size={20} style={{ paddingLeft: 10 }} />
           </TouchableOpacity>
         ),
         headerRight: (
           <TouchableOpacity onPress={() => navigation.openDrawer()}>
-            <Icon name="person" style={{ paddingRight: 10 }} />
+            <Icon name="user-circle-o" size={20} style={{ paddingRight: 10 }} />
           </TouchableOpacity>
         ),
       }),

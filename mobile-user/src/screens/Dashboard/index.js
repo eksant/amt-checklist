@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
+import Icon from 'react-native-vector-icons/FontAwesome'
 import {
   Container,
   Content,
   Card,
   CardItem,
   Button,
-  Icon,
   Text,
   List,
   ListItem,
@@ -23,13 +23,13 @@ class Dashboard extends Component {
             <CardItem>
               <Left style={{ flex: 1 }}>
                 <Button iconLeft success onPress={() => this.props.navigation.navigate('Scanner')}>
-                  <Icon type="FontAwesome" name="file" />
+                  <Icon name="file" style={{ fontSize: 20, left: 10, color: '#FFF' }} />
                   <Text>Form Checklist</Text>
                 </Button>
               </Left>
               <Right style={{ flex: 0 }}>
                 <Button iconLeft info>
-                  <Icon type="FontAwesome" name="copy" />
+                  <Icon name="copy" style={{ fontSize: 20, left: 10, color: '#FFF' }} />
                   <Text>History</Text>
                 </Button>
               </Right>
@@ -44,11 +44,7 @@ class Dashboard extends Component {
                 <List>
                   <ListItem avatar>
                     <Left>
-                      <Icon
-                        type="FontAwesome"
-                        name="check"
-                        style={{ fontSize: 20, color: 'green' }}
-                      />
+                      <Icon name="check" style={{ fontSize: 20, color: 'green' }} />
                     </Left>
                     <Body>
                       <Text>Request Approved</Text>
@@ -60,11 +56,7 @@ class Dashboard extends Component {
                   </ListItem>
                   <ListItem avatar>
                     <Left>
-                      <Icon
-                        type="FontAwesome"
-                        name="times"
-                        style={{ fontSize: 20, color: 'red' }}
-                      />
+                      <Icon name="times" style={{ fontSize: 20, color: 'red' }} />
                     </Left>
                     <Body>
                       <Text>Request Rejected</Text>
@@ -76,11 +68,7 @@ class Dashboard extends Component {
                   </ListItem>
                   <ListItem avatar>
                     <Left>
-                      <Icon
-                        type="FontAwesome"
-                        name="history"
-                        style={{ fontSize: 20, color: 'blue' }}
-                      />
+                      <Icon name="history" style={{ fontSize: 20, color: 'blue' }} />
                     </Left>
                     <Body>
                       <Text>Request Onprocess</Text>

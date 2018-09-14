@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { Container, Header, Left, Body, Title, Right, Button, Icon, Text } from 'native-base'
+import Icon from 'react-native-vector-icons/FontAwesome'
+import { Container, Header, Left, Body, Title, Right, Button, Text } from 'native-base'
 
 class NavBar extends Component {
   render() {
