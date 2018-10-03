@@ -1,0 +1,48 @@
+{
+  "private": true,
+  "name": "Amtc",
+  "version": "0.0.1",
+  "description": "Mobile User for Daily AMT Checklist",
+  "author": "Eksa <eksant@gmail.com>",
+  "homepage": "http://seorangeksa.com",
+  "copyright": "Copyright 2018 seorangeksa",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:eksant/amt-checklist.git"
+  },
+  "bugs": {
+    "url": "https://github.com/eksant/amt-checklist/issues"
+  },
+  "scripts": {
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "native-base": "^2.8.0",
+    "react": "16.5.0",
+    "react-native": "0.57.1",
+    "react-native-camera": "^1.3.0",
+    "react-native-permissions": "^1.1.1",
+    "react-native-progress": "^3.5.0",
+    "react-native-qrcode-scanner": "^1.1.0",
+    "react-native-vector-icons": "^5.0.0",
+    "react-navigation": "^2.17.0",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0",
+    "redux-thunk": "^2.3.0"
+  },
+  "devDependencies": {
+    "@babel/runtime": "^7.1.2",
+    "babel-jest": "23.6.0",
+    "jest": "23.6.0",
+    "metro-react-native-babel-preset": "0.47.0",
+    "react-test-renderer": "16.5.0"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
