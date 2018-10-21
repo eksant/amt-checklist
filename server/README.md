@@ -34,10 +34,10 @@ Access the endpoints by visiting [http://localhost:3030/api/auth](http://localho
 | 4  | PUT      | /update/:id | Update Data By Id |
 | 5  | DELETE   | /delete/:id | Delete Data By Id |
 
-Access the endpoints admins by visiting [http://localhost:3030/api/admins](http://localhost:3030/api/admins)
-Access the endpoints users by visiting [http://localhost:3030/api/users](http://localhost:3030/api/users)
-Access the endpoints mobil tangkis by visiting [http://localhost:3030/api/mobiltangkis](http://localhost:3030/api/mobiltangkis)
-Access the endpoints checklist by visiting [http://localhost:3030/api/checklist](http://localhost:3030/api/checklist)
+Access the endpoints admins by visiting [http://localhost:3030/api/admins](http://localhost:3030/api/admins)  
+Access the endpoints users by visiting [http://localhost:3030/api/users](http://localhost:3030/api/users)  
+Access the endpoints mobil tangkis by visiting [http://localhost:3030/api/mobiltangkis](http://localhost:3030/api/mobiltangkis)  
+Access the endpoints checklist by visiting [http://localhost:3030/api/checklist](http://localhost:3030/api/checklist)  
 
 ### A Typical Top-Level Directory :
     .
