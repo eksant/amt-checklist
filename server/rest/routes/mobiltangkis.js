@@ -1,12 +1,12 @@
 const express = require('express')
 const router = express.Router()
 const amtController = require('../controllers/mobiltangkis')
-const { validateToken } = require('../../middlewares/auth')
+const { validateTokenAdmin, validateTokenUser } = require('../../middlewares/auth')
 
-router.get('/', validateToken, amtController.read)
-router.get('/:id', validateToken, amtController.readById)
-router.post('/add', validateToken, amtController.create)
-router.put('/update/:id', validateToken, amtController.update)
-router.delete('/delete/:id', validateToken, amtController.destroy)
+router.get('/', validateTokenAdmin, amtController.read)
+router.get('/:id', validateTokenUser, amtController.readById)
+router.post('/add', validateTokenAdmin, amtController.create)
+router.put('/update/:id', validateTokenAdmin, amtController.update)
+router.delete('/delete/:id', validateTokenAdmin, amtController.destroy)
 
 module.exports = router
