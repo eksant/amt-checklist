@@ -22,7 +22,7 @@ class Dashboard extends Component {
           <Card transparent>
             <CardItem>
               <Left style={{ flex: 1 }}>
-                <Button iconLeft success onPress={() => this.props.navigation.navigate('Scanner')}>
+                <Button iconLeft success onPress={() => this.props.navigation.navigate('Checklist')}>
                   <Icon name="file" style={{ fontSize: 20, left: 10, color: '#FFF' }} />
                   <Text>Form Checklist</Text>
                 </Button>

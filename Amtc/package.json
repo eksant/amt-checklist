@@ -15,9 +15,11 @@
     "url": "https://github.com/eksant/amt-checklist/issues"
   },
   "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
     "android": "react-native run-android",
     "ios": "react-native run-ios",
-    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "debug-android": "react-native log-android",
+    "debug-ios": "react-native log-ios",
     "test": "jest"
   },
   "dependencies": {
@@ -26,14 +28,16 @@
     "react": "16.5.0",
     "react-native": "0.57.1",
     "react-native-camera": "^1.3.0",
-    "react-native-permissions": "^1.1.1",
+    "react-native-elements": "^0.19.1",
     "react-native-progress": "^3.5.0",
     "react-native-qrcode-scanner": "^1.1.0",
     "react-native-vector-icons": "^5.0.0",
     "react-navigation": "^2.17.0",
     "react-redux": "^5.0.7",
     "redux": "^4.0.0",
-    "redux-thunk": "^2.3.0"
+    "redux-form": "^7.4.2",
+    "redux-thunk": "^2.3.0",
+    "tcomb-form-native": "^0.6.19"
   },
   "devDependencies": {
     "@babel/runtime": "^7.1.2",

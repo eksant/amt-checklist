@@ -93,7 +93,7 @@ const DashboardScreen = createStackNavigator(
       screen: Scanner,
       navigationOptions: ({ navigation }) => ({
         headerStyle: styles.header,
-        headerTitle: 'Form Scanner',
+        headerTitle: 'QRCode Scanner',
         headerLeft: (
           <TouchableOpacity onPress={() => navigation.navigate('Dashboard')}>
             <Icon name="home" size={20} style={{ paddingLeft: 10 }} />
@@ -138,6 +138,7 @@ const DashboardScreen = createStackNavigator(
   },
   {
     initialRouteName: 'Dashboard',
+    headerLayoutPreset: 'center',
   }
 )
 

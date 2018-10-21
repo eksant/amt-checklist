@@ -15,6 +15,14 @@ class Splash extends Component {
     }
   }
 
+  componentDidMount() {
+    let self = this
+
+    setTimeout(() => {
+      self.handleCloseSplashScreen()
+    }, 2000)
+  }
+
   async handleCloseSplashScreen() {
     await this.setState({ isVisible: false })
     this.props.navigation.navigate('Login')
@@ -41,33 +49,25 @@ class Splash extends Component {
   //   this.iSMounted = false
   // }
 
-  componentDidMount() {
-    let self = this
+  // animate() {
+  //   let progress = 0
+  //   this.setState({ progress })
+  //   setTimeout(() => {
+  //     this.setState({ indeterminate: false })
+  //     setInterval(() => {
+  //       progress += Math.random() / 5
+  //       if (this._isMounted) {
+  //         this.setState({ progress })
+  //       }
 
-    setTimeout(() => {
-      self.handleCloseSplashScreen()
-    }, 2000)
-  }
-
-  animate() {
-    let progress = 0
-    this.setState({ progress })
-    setTimeout(() => {
-      this.setState({ indeterminate: false })
-      setInterval(() => {
-        progress += Math.random() / 5
-        if (this._isMounted) {
-          this.setState({ progress })
-        }
-
-        if (progress > 1) {
-          this._isMounted = false
-          progress = 1
-          this.props.navigation.navigate('Login')
-        }
-      }, 200)
-    }, 100)
-  }
+  //       if (progress > 1) {
+  //         this._isMounted = false
+  //         progress = 1
+  //         this.props.navigation.navigate('Login')
+  //       }
+  //     }, 200)
+  //   }, 100)
+  // }
 
   render() {
     return (
