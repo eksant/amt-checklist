@@ -170,13 +170,13 @@ class App extends Component {
     return (
       <HashRouter>
         <ApolloProvider client={client}>
-          <Switch>
+          {/* <Switch> */}
             {!localStorage.getItem('token') ? (
               <Login onSubmitLogin={this.onSubmitLogin} />
             ) : (
               <DefaultLayout />
             )}
-          </Switch>
+          {/* </Switch> */}
         </ApolloProvider>
       </HashRouter>
     )
