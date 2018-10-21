@@ -30,11 +30,18 @@ export default {
       url: '/amts',
       icon: 'fa fa-truck',
     },
-    // {
-    //   name: "Daily AMT Check",
-    //   url: "/theme/colors",
-    //   icon: "fa fa-check-square-o"
-    // },
+    {
+      divider: true,
+    },
+    {
+      title: true,
+      name: 'Approval AMT Checklist',
+    },
+    {
+      name: "Daily AMT Check",
+      url: "/theme/colors",
+      icon: "fa fa-check-square-o"
+    },
     {
       divider: true,
     },
