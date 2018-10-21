@@ -2,7 +2,14 @@ const bcrypt = require('bcryptjs')
 const redis = require('redis')
 const client = redis.createClient()
 
-const { createUser, readUser, readUserId, update, destroy, signIn } = require('../../models/users')
+const {
+  createAdmin,
+  readAdmin,
+  readAdminId,
+  update,
+  destroy,
+  signIn,
+} = require('../../models/users')
 const auth = require('../../middlewares/auth')
 
 module.exports = {
@@ -28,7 +35,7 @@ module.exports = {
 
   create: async (req, res) => {
     try {
-      const data = await createUser({
+      const data = await createAdmin({
         username: req.body.username,
         NIP: req.body.NIP || null,
         fullName: req.body.fullName || null,
@@ -40,7 +47,6 @@ module.exports = {
         imgUrl: req.body.imgUrl || null,
         createdBy: req.authUser,
       })
-      // console.log('data', data)
       client.del('userCache')
       res.status(200).json({
         status: 200,
@@ -48,7 +54,6 @@ module.exports = {
         data,
       })
     } catch (error) {
-      // console.log(error)
       res.status(400).json({
         message: 'Bad request',
         error,
@@ -58,7 +63,7 @@ module.exports = {
 
   read: async (req, res) => {
     try {
-      const data = await readUser()
+      const data = await readAdmin()
       client.set('userCache', JSON.stringify(data), 'EX', 500)
       res.status(200).json({
         status: 200,
@@ -75,7 +80,7 @@ module.exports = {
 
   readById: async (req, res) => {
     try {
-      const data = await readUserId(req.params.id)
+      const data = await readAdminId(req.params.id)
       client.set('userCache', JSON.stringify(data), 'EX', 500)
       res.status(200).json({
         status: 200,
@@ -92,7 +97,7 @@ module.exports = {
 
   update: async (req, res) => {
     try {
-      const user = await readUserId(req.params.id)
+      const user = await readAdminId(req.params.id)
       if (user) {
         var item = {
           username: req.body.username,

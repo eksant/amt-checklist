@@ -11,10 +11,15 @@ module.exports = {
         KL: req.body.KL,
         year: req.body.year || null,
         status: 'Active',
-        createdBy: req.authUser[0],
+        createdBy: req.authUser,
       })
+
       client.del('mobiltangkiCache')
-      res.status(200).json({ data })
+      res.status(200).json({
+        status: 200,
+        message: 'Success to create record!',
+        data,
+      })
     } catch (error) {
       res.status(400).json({
         message: 'Bad request',
@@ -26,8 +31,13 @@ module.exports = {
   read: async (req, res) => {
     try {
       const data = await read()
+
       client.set('mobiltangkiCache', JSON.stringify(data), 'EX', 500)
-      res.status(200).json({ data })
+      res.status(200).json({
+        status: 200,
+        message: 'Success to read records!',
+        data,
+      })
     } catch (error) {
       res.status(400).json({
         message: 'Bad request',
@@ -39,8 +49,13 @@ module.exports = {
   readById: async (req, res) => {
     try {
       const data = await readId(req.params.id)
+
       client.set('mobiltangkiCache', JSON.stringify(data), 'EX', 500)
-      res.status(200).json({ data })
+      res.status(200).json({
+        status: 200,
+        message: 'Success to read record!',
+        data,
+      })
     } catch (error) {
       res.status(400).json({
         message: 'Bad request',
@@ -52,6 +67,7 @@ module.exports = {
   update: async (req, res) => {
     try {
       const mobiltangki = await readId(req.params.id)
+
       if (mobiltangki) {
         const data = await update(req.params.id, {
           nopol: req.body.nopol || mobiltangki[0].nopol,
@@ -61,7 +77,11 @@ module.exports = {
           createdBy: req.authUser[0],
         })
         client.del('mobiltangkiCache')
-        res.status(200).json({ data })
+        res.status(200).json({
+          status: 200,
+          message: 'Success to update record!',
+          data,
+        })
       } else {
         res.status(200).json({
           message: 'Data not found!',
@@ -78,8 +98,13 @@ module.exports = {
   destroy: async (req, res) => {
     try {
       const data = await destroy(req.params.id)
+
       client.del('mobiltangkiCache')
-      res.status(200).json({ data })
+      res.status(200).json({
+        status: 200,
+        message: 'Success to delete record!',
+        data,
+      })
     } catch (error) {
       res.status(400).json({
         message: 'Bad request',
