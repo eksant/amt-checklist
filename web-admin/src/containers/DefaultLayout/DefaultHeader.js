@@ -30,7 +30,8 @@ class DefaultHeader extends Component {
   handleLogout() {
     localStorage.removeItem('token')
     localStorage.removeItem('group')
-    window.location.reload()
+    window.location.href = '/'
+    // window.location.reload()
   }
 
   render() {
