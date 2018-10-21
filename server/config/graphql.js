@@ -1,6 +1,6 @@
 const { ApolloServer } = require('apollo-server-express')
 
-const { verifyToken } = require('../middlewares/auth')
+const { getToken } = require('../middlewares/auth')
 const typeDefs = require('../graphql/schema/schemagraphql.js')
 const resolvers = require('../graphql/resolvers')
 
@@ -11,7 +11,7 @@ const connectToServer = app => {
     // tracing: true,
     // cacheControl: true,
     context: async ({ req }) => {
-      const authUser = await verifyToken(req)
+      const authUser = await getToken(req)
 
       return {
         authUser,

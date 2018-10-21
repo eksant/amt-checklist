@@ -84,7 +84,7 @@ module.exports = gql`
   input MobilTangkiInput {
     nopol: String!
     KL: String
-    year: String
+    year: Int
     status: StatusActive!
   }
 
