@@ -55,12 +55,12 @@ Access the endpoints checklist by visiting [http://localhost:3030/api/checklist]
 | 1  | signIn(username: String!, password: String!): UserLogin!                   | Login                         |
 | 2  | createAdmin(admin: AdminInput!): User!                                     | Create Admin                  |
 | 3  | createUser(user: UserInput!): User!                                        | Create User                   |
-| 4  | updateAdmin(id: ID!, admin: AdminInput!): User!                            | Update Admin By Id            |
-| 5  | updateUser(id: ID!, user: UserInput!): User!                               | Update User By Id             |
-| 6  | deleteAdmin(id: ID!): Boolean                                              | Delete Admin By Id            |
-| 7  | deleteUser(id: ID!): Boolean                                               | Delete User By Id             |
-| 8  | createMobilTangki(mobiltangki: MobilTangkiInput!): MobilTangki!            | Create Mobil Tangki           |
-| 9  | updateMobilTangki(id: ID!, mobiltangki: MobilTangkiInput!): MobilTangki!   | Update Mobil Tangki By Id     |
+| 4  | createMobilTangki(mobiltangki: MobilTangkiInput!): MobilTangki!            | Create Mobil Tangki           |
+| 5  | updateAdmin(id: ID!, admin: AdminInput!): User!                            | Update Admin By Id            |
+| 6  | updateUser(id: ID!, user: UserInput!): User!                               | Update User By Id             |
+| 7  | updateMobilTangki(id: ID!, mobiltangki: MobilTangkiInput!): MobilTangki!   | Update Mobil Tangki By Id     |
+| 8  | deleteAdmin(id: ID!): Boolean                                              | Delete Admin By Id            |
+| 9  | deleteUser(id: ID!): Boolean                                               | Delete User By Id             |
 | 10 | deleteMobilTangki(id: ID!): Boolean                                        | Delete Mobil Tangki By Id     |
 
 Access the graphql by visiting [http://localhost:3030/graphql](http://localhost:3030/graphql)  
