@@ -1,12 +1,12 @@
 const express = require('express')
 const router = express.Router()
 const checklistController = require('../controllers/checklist')
-const { validateToken } = require('../../middlewares/auth')
+const { validateTokenUser } = require('../../middlewares/auth')
 
-router.get('/', validateToken, checklistController.read)
-router.get('/:id', validateToken, checklistController.readById)
-router.post('/add', validateToken, checklistController.create)
-router.put('/update/:id', validateToken, checklistController.update)
-router.delete('/delete/:id', validateToken, checklistController.destroy)
+router.get('/', validateTokenUser, checklistController.read)
+router.get('/:id', validateTokenUser, checklistController.readById)
+router.post('/add', validateTokenUser, checklistController.create)
+router.put('/update/:id', validateTokenUser, checklistController.update)
+router.delete('/delete/:id', validateTokenUser, checklistController.destroy)
 
 module.exports = router
