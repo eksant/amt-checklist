@@ -104,8 +104,13 @@ class MobilTangkis extends Component {
 
   handleSubmit(item) {
     if (!this.state.itemData) {
+      const newItem = {
+        ...item,
+        year: Number(item.year),
+      }
+
       this.props
-        .onCreateItem(item)
+        .onCreateItem(newItem)
         .then(() => {
           notification['success']({
             message: 'Success Message',
