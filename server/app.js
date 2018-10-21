@@ -77,6 +77,7 @@ app.use(expressStatusMonitor({ websocket: io, port: port }))
 
 // Using Rest API
 app.use('/api/', cacheRedis, require('./rest/routes/auth'))
+app.use('/api/admins', cacheRedis, require('./rest/routes/admins'))
 app.use('/api/users', cacheRedis, require('./rest/routes/users'))
 app.use('/api/mobiltangkis', cacheRedis, require('./rest/routes/mobiltangkis'))
 app.use('/api/checklist', cacheRedis, require('./rest/routes/checklist'))
