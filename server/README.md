@@ -1,4 +1,4 @@
-#AMT-Checklist (server side)
+# AMT-Checklist (server side)
 
 ### Library :
 - Graphql
@@ -18,7 +18,26 @@ yarn install or npm install
 yarn start or npm start
 ```
 
-### Endpoint API :
+### Endpoint API Auth :
+| No | Method   | End Point   | Description       |
+| -- | ---------|-------------|-------------------|
+| 1  | POST     | /           | Login             |
+
+Access the endpoints by visiting [http://localhost:3030/api/auth](http://localhost:3030/api/auth)
+
+### Endpoint API Admins, Users, Mobil Tangkis, Checklist :
+| No | Method   | End Point   | Description       |
+| -- | ---------|-------------|-------------------|
+| 1  | GET      | /           | Read All Data     |
+| 2  | GET      | /:id        | Read Data By Id   |
+| 3  | POST     | /add        | Create Data       |
+| 4  | PUT      | /update/:id | Update Data By Id |
+| 5  | DELETE   | /delete/:id | Delete Data By Id |
+
+Access the endpoints admins by visiting [http://localhost:3030/api/admins](http://localhost:3030/api/admins)
+Access the endpoints users by visiting [http://localhost:3030/api/users](http://localhost:3030/api/users)
+Access the endpoints mobil tangkis by visiting [http://localhost:3030/api/mobiltangkis](http://localhost:3030/api/mobiltangkis)
+Access the endpoints checklist by visiting [http://localhost:3030/api/checklist](http://localhost:3030/api/checklist)
 
 ### A Typical Top-Level Directory :
     .
