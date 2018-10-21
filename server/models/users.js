@@ -3,7 +3,7 @@ const mongoosePaginate = require('mongoose-paginate')
 const uniqueValidator = require('mongoose-unique-validator')
 const uuidv1 = require('uuid/v1')
 const bcrypt = require('bcryptjs')
-const ObjectId = mongoose.Types.ObjectId
+// const ObjectId = mongoose.Types.ObjectId
 const Schema = mongoose.Schema
 
 // var validateEmail = email => {
@@ -139,7 +139,8 @@ const readAdmin = async () => {
 
 const readAdminId = async id => {
   return await User.findOne({
-    _id: ObjectId(id),
+    // _id: ObjectId(id),
+    _id: id,
     roles: 'Admin',
   })
 }
@@ -156,7 +157,8 @@ const readUser = async () => {
 
 const readUserId = async id => {
   return await User.findOne({
-    _id: ObjectId(id),
+    // _id: ObjectId(id),
+    _id: id,
     roles: { $in: ['Sopir', 'Kernet'] },
   })
 }

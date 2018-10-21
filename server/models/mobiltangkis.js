@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 const mongoosePaginate = require('mongoose-paginate')
 const uniqueValidator = require('mongoose-unique-validator')
 const uuidv1 = require('uuid/v1')
-const ObjectId = mongoose.Types.ObjectId
+// const ObjectId = mongoose.Types.ObjectId
 const Schema = mongoose.Schema
 
 var schema = new Schema(
@@ -60,11 +60,13 @@ const read = async () => {
 }
 
 const readId = async id => {
-  return await MobilTangki.findOne({ _id: ObjectId(id) })
+  return await MobilTangki.findOne({
+    // _id: ObjectId(id)
+    _id: id,
+  })
 }
 
 const update = async (id, data) => {
-  console.log('id', id)
   return await MobilTangki.findOneAndUpdate(
     // { _id: ObjectId(id) },
     { _id: id },
