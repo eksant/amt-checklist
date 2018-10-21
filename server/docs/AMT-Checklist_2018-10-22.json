@@ -1,0 +1,2510 @@
+{
+	"_type": "export",
+	"__export_format": 3,
+	"__export_date": "2018-10-21T16:54:56.906Z",
+	"__export_source": "insomnia.desktop.app:v6.0.2",
+	"resources": [
+		{
+			"_id": "wrk_117476e4f0924d74906119101016c3b3",
+			"created": 1540140710259,
+			"description": "",
+			"modified": 1540140710259,
+			"name": "AMT Checklist",
+			"parentId": null,
+			"_type": "workspace"
+		},
+		{
+			"_id": "env_7fad66717350467bb182d56183ef1854",
+			"color": null,
+			"created": 1540140710274,
+			"data": {},
+			"isPrivate": false,
+			"metaSortKey": 1540140710274,
+			"modified": 1540140710274,
+			"name": "New Environment",
+			"parentId": "wrk_117476e4f0924d74906119101016c3b3",
+			"_type": "environment"
+		},
+		{
+			"_id": "jar_bef097310f5540f799419a718e64bae7",
+			"cookies": [],
+			"created": 1540140710276,
+			"modified": 1540140710276,
+			"name": "Default Jar",
+			"parentId": "wrk_117476e4f0924d74906119101016c3b3",
+			"_type": "cookie_jar"
+		},
+		{
+			"_id": "fld_984e94b8782a494f83c7368a2b0cb8ea",
+			"created": 1540140758378,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1535267393122,
+			"modified": 1540140807326,
+			"name": "AMT-Checklist",
+			"parentId": "wrk_117476e4f0924d74906119101016c3b3",
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_6f020455bf374751997eed3f98371d64",
+			"created": 1540140758381,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1540095464487,
+			"modified": 1540140758381,
+			"name": "Localhost",
+			"parentId": "fld_984e94b8782a494f83c7368a2b0cb8ea",
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_20341d071609476cb7b82ba3126b9d8f",
+			"created": 1540140758585,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1540006610808,
+			"modified": 1540140758585,
+			"name": "Google Cloud",
+			"parentId": "fld_984e94b8782a494f83c7368a2b0cb8ea",
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_a8bed2182544495ca96035003844a7f7",
+			"created": 1540140758382,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1540130560235,
+			"modified": 1540140758382,
+			"name": "Rest API",
+			"parentId": "fld_6f020455bf374751997eed3f98371d64",
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_4786ca8dbd8d4c0182220d9ad60b0492",
+			"created": 1540140758442,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1540130636776,
+			"modified": 1540140758442,
+			"name": "GraphQL",
+			"parentId": "fld_6f020455bf374751997eed3f98371d64",
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_027eae808d134fe4baa776d0cd2e23b7",
+			"created": 1540140758591,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1540130796295,
+			"modified": 1540140758591,
+			"name": "Rest API",
+			"parentId": "fld_20341d071609476cb7b82ba3126b9d8f",
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_caa8bb5f9f654185ac6f7907becba142",
+			"created": 1540140758641,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1540130796345,
+			"modified": 1540140758641,
+			"name": "GraphQL",
+			"parentId": "fld_20341d071609476cb7b82ba3126b9d8f",
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_863e735f9dd14291861a95de538e1225",
+			"created": 1540140758383,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1540095532724.5,
+			"modified": 1540140758383,
+			"name": "Users",
+			"parentId": "fld_a8bed2182544495ca96035003844a7f7",
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_0b1e527a74584923a5158fce8bf14ecd",
+			"created": 1540140758396,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1540095532762,
+			"modified": 1540140758396,
+			"name": "Auth",
+			"parentId": "fld_a8bed2182544495ca96035003844a7f7",
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_7243563a6f314192895465ff88a45cad",
+			"created": 1540140758402,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1540095532737,
+			"modified": 1540140758402,
+			"name": "Admins",
+			"parentId": "fld_a8bed2182544495ca96035003844a7f7",
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_151f527025364e30a1c8dd3db21249a5",
+			"created": 1540140758417,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1540095532718.25,
+			"modified": 1540140758417,
+			"name": "Mobil Tangkis",
+			"parentId": "fld_a8bed2182544495ca96035003844a7f7",
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_4dd5e144b62f4090898797a38c9a95f4",
+			"created": 1540140758430,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1540095532712,
+			"modified": 1540140758430,
+			"name": "Checklist",
+			"parentId": "fld_a8bed2182544495ca96035003844a7f7",
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_3022f123fa174655a3a101a923bcae6b",
+			"created": 1540140758444,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1540133820989,
+			"modified": 1540140758444,
+			"name": "Auth",
+			"parentId": "fld_4786ca8dbd8d4c0182220d9ad60b0492",
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_200a823555fc41b0876dae406fbed51b",
+			"created": 1540140758450,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1540133820939,
+			"modified": 1540140758450,
+			"name": "Admins",
+			"parentId": "fld_4786ca8dbd8d4c0182220d9ad60b0492",
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_540054265c18496b87ac0f578e0d0790",
+			"created": 1540140758490,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1540132329931,
+			"modified": 1540140758490,
+			"name": "Users",
+			"parentId": "fld_4786ca8dbd8d4c0182220d9ad60b0492",
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_88594d705e4f4e21b51e9effc1868343",
+			"created": 1540140758534,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1540131584427,
+			"modified": 1540140758534,
+			"name": "Mobil Tangkis",
+			"parentId": "fld_4786ca8dbd8d4c0182220d9ad60b0492",
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_dcd3245ffe8745ee8c04026b4af82dc8",
+			"created": 1540140758592,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1540095532762,
+			"modified": 1540140758592,
+			"name": "Users",
+			"parentId": "fld_027eae808d134fe4baa776d0cd2e23b7",
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_4eb8667dea6e4c9e9e23c64b65d3fd95",
+			"created": 1540140758604,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1540095532812,
+			"modified": 1540140758604,
+			"name": "Auth",
+			"parentId": "fld_027eae808d134fe4baa776d0cd2e23b7",
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_6d25239e78fd4d7eade61d63de829ee4",
+			"created": 1540140758610,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1540095532712,
+			"modified": 1540140758610,
+			"name": "Admins",
+			"parentId": "fld_027eae808d134fe4baa776d0cd2e23b7",
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_ac410670df114f5f97f691970d685a62",
+			"created": 1540140758624,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1540095532662,
+			"modified": 1540140758624,
+			"name": "Mobil Tangkis",
+			"parentId": "fld_027eae808d134fe4baa776d0cd2e23b7",
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_831e4f6064434a61ad475daae864950a",
+			"created": 1540140758632,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1540095532612,
+			"modified": 1540140758632,
+			"name": "Checklist",
+			"parentId": "fld_027eae808d134fe4baa776d0cd2e23b7",
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_6bd606539cc34d71a37f939702c015f3",
+			"created": 1540140758643,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1540133820989,
+			"modified": 1540140758643,
+			"name": "Auth",
+			"parentId": "fld_caa8bb5f9f654185ac6f7907becba142",
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_4710bef864234ed99457f9b66474d45f",
+			"created": 1540140758652,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1540133820939,
+			"modified": 1540140758652,
+			"name": "Admins",
+			"parentId": "fld_caa8bb5f9f654185ac6f7907becba142",
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_32c3edae4a7f4757a63b2d4f3ddc3d5e",
+			"created": 1540140758692,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1540132329931,
+			"modified": 1540140758692,
+			"name": "Users",
+			"parentId": "fld_caa8bb5f9f654185ac6f7907becba142",
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_5114f48d0d574a4b8c70d11096999ba7",
+			"created": 1540140758738,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1540131584427,
+			"modified": 1540140758738,
+			"name": "Mobil Tangkis",
+			"parentId": "fld_caa8bb5f9f654185ac6f7907becba142",
+			"_type": "request_group"
+		},
+		{
+			"_id": "req_e0bc6f3d7b334deba1d635b948d78457",
+			"authentication": {},
+			"body": {},
+			"created": 1540140758385,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_f8ff19ac23f84853ac71a3745ae93d3d",
+					"name": "token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJkMDNkYWFkMC1iY2YyLTExZTgtOTk3Yi00M2Q5MzljYjVkZmIiLCJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJOSVAiOiJQTi0wMDAwIiwiZnVsbE5hbWUiOiJTdXBlcmFkbWluIiwiZW1haWwiOiJzdXBlcmFkbWluQGVtYWlsLmNvbSIsIm1vYmlsZSI6IjYyODIxMjI1NTkwOTAiLCJzdGF0dXMiOiJBY3RpdmUiLCJpbWdVcmwiOm51bGwsImNyZWF0ZWRCeSI6MTIzNDU2Nzg5LCJyb2xlcyI6IlN1cGVyYWRtaW4iLCJjcmVhdGVkQXQiOiIyMDE4LTA5LTIwVDE2OjMyOjQ5LjY3N1oiLCJ1cGRhdGVkQXQiOiIyMDE4LTA5LTIwVDE2OjMyOjQ5LjY3N1oiLCJfX3YiOjAsImlhdCI6MTU0MDA5NTU5MSwiZXhwIjoxNTQwMTI0MzkxfQ.VuJXJDAf6miJrloyuSii_y3KGNHW3LYn0vveyogwKQY"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540095489324,
+			"method": "GET",
+			"modified": 1540140758385,
+			"name": "Get Users",
+			"parameters": [],
+			"parentId": "fld_863e735f9dd14291861a95de538e1225",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:3030/api/users",
+			"_type": "request"
+		},
+		{
+			"_id": "req_4a37759cab7b45b9ace25be9c48b04e2",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/x-www-form-urlencoded",
+				"params": [
+					{
+						"disabled": false,
+						"id": "pair_b83f8156c2ca478590ef11c26248253b",
+						"name": "username",
+						"value": "sopir2"
+					},
+					{
+						"id": "pair_2869c40529cf49d58cf1793b06ec507f",
+						"name": "password",
+						"value": "P@ssw0rd"
+					},
+					{
+						"id": "pair_8eefc901c9ca475885f1ef06ccd15d64",
+						"name": "NIP",
+						"value": "PN-1002"
+					},
+					{
+						"id": "pair_87add15597914607bf9b16bb0b0f6265",
+						"name": "fullName",
+						"value": "Seorang Sopir"
+					},
+					{
+						"id": "pair_72219835f32745f3a36b2c0eb373a09a",
+						"name": "email",
+						"value": "sopir2@email.com"
+					},
+					{
+						"id": "pair_5bddbd2f3e2e43a0bbda357f1fc79015",
+						"name": "mobile",
+						"value": "082122559090"
+					},
+					{
+						"id": "pair_50589e792636420d96d9571f30bb62e5",
+						"name": "roles",
+						"value": "Sopir"
+					}
+				]
+			},
+			"created": 1540140758389,
+			"description": "",
+			"headers": [
+				{
+					"disabled": false,
+					"id": "pair_534c99bbabe34c8891be009408f69197",
+					"name": "token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJkNGUyMzZhMC1kNGVlLTExZTgtYjdmNS05N2Y2MDFmYmUzZTUiLCJ1c2VybmFtZSI6ImFkbWluIiwiTklQIjoiUE4tMTAwMSIsImZ1bGxOYW1lIjoiU2VvcmFuZyBBZG1pbiIsImVtYWlsIjoiYWRtaW5AZW1haWwuY29tIiwibW9iaWxlIjoiMDgyMTIyNTU5MDkwIiwicm9sZXMiOiJBZG1pbiIsInN0YXR1cyI6IkFjdGl2ZSIsImltZ1VybCI6bnVsbCwiY3JlYXRlZEJ5Ijp7Il9pZCI6IjViNzkxYjU3M2NmMWVjMWIzMmQzMGViNSIsInVzZXJuYW1lIjoic3VwZXJhZG1pbiIsImVtYWlsIjoic3VwZXJhZG1pbkBlbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYSQxMCRIR0R4OHhJYmIxdzFTQU5EUjdhdldlMEQ5TjR3cnVTdnFMMTgwVC9ab21NbjJSYTF1QzlhZSIsIm1vYmlsZSI6bnVsbCwicm9sZXMiOiJzdXBlcmFkbWluIiwic3RhdHVzIjoxLCJpbWdVcmwiOm51bGwsImNyZWF0ZWRBdCI6IjIwMTgtMDgtMTlUMDc6MjU6MTEuNjUxWiIsInVwZGF0ZWRBdCI6IjIwMTgtMDgtMTlUMDc6MjU6MTEuNjUxWiIsIl9fdiI6MH0sImNyZWF0ZWRBdCI6IjIwMTgtMTAtMjFUMDU6MDQ6NDcuNDI4WiIsInVwZGF0ZWRBdCI6IjIwMTgtMTAtMjFUMDU6MDQ6NDcuNDI4WiIsIl9fdiI6MCwiaWF0IjoxNTQwMDk4MzQ3LCJleHAiOjE1NDAxMjcxNDd9.i3yqpBLKtONzOg-AzYZR6D8GqIOKcj_DgzuAMMBaYt0"
+				},
+				{
+					"id": "pair_2305334d5e3648fb849531a3e43470d2",
+					"name": "Content-Type",
+					"value": "application/x-www-form-urlencoded"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540095620061,
+			"method": "POST",
+			"modified": 1540140758389,
+			"name": "Create User",
+			"parameters": [],
+			"parentId": "fld_863e735f9dd14291861a95de538e1225",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:3030/api/users/add",
+			"_type": "request"
+		},
+		{
+			"_id": "req_4a515f803f234d90a8a312aa107c52f1",
+			"authentication": {},
+			"body": {},
+			"created": 1540140758393,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_f8ff19ac23f84853ac71a3745ae93d3d",
+					"name": "token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJkMDNkYWFkMC1iY2YyLTExZTgtOTk3Yi00M2Q5MzljYjVkZmIiLCJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJOSVAiOiJQTi0wMDAwIiwiZnVsbE5hbWUiOiJTdXBlcmFkbWluIiwiZW1haWwiOiJzdXBlcmFkbWluQGVtYWlsLmNvbSIsIm1vYmlsZSI6IjYyODIxMjI1NTkwOTAiLCJzdGF0dXMiOiJBY3RpdmUiLCJpbWdVcmwiOm51bGwsInJvbGVzIjoiU3VwZXJhZG1pbiIsIl9fdiI6MCwiaWF0IjoxNTQwMTAzODI2LCJleHAiOjE1NDAxMzI2MjZ9.RRCzQVZRe88wPZhA-c9VANoTE5amuVOBfyv_hL7Avjg"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540095489274,
+			"method": "DELETE",
+			"modified": 1540140758393,
+			"name": "Del User",
+			"parameters": [],
+			"parentId": "fld_863e735f9dd14291861a95de538e1225",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:3030/api/users/delete/67023620-d4fe-11e8-abe3-330ce8cd1a3e",
+			"_type": "request"
+		},
+		{
+			"_id": "req_0efa846b9bae459ba105fef4470c41fa",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/x-www-form-urlencoded",
+				"params": [
+					{
+						"id": "pair_8afabda905764745afe97ee810470fa8",
+						"name": "username",
+						"value": "admin"
+					},
+					{
+						"id": "pair_be3a5a919e4b4b3887302dcccc0f6177",
+						"name": "password",
+						"value": "P@ssw0rd"
+					}
+				]
+			},
+			"created": 1540140758399,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_59ffbece949c43ceb09d01bed1aa3bf3",
+					"name": "Content-Type",
+					"value": "application/x-www-form-urlencoded"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540095547357,
+			"method": "POST",
+			"modified": 1540140758399,
+			"name": "Login",
+			"parameters": [],
+			"parentId": "fld_0b1e527a74584923a5158fce8bf14ecd",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:3030/api/signin",
+			"_type": "request"
+		},
+		{
+			"_id": "req_5e0a28e867994ac6883a6d061972ada8",
+			"authentication": {},
+			"body": {},
+			"created": 1540140758405,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_f8ff19ac23f84853ac71a3745ae93d3d",
+					"name": "token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJkMDNkYWFkMC1iY2YyLTExZTgtOTk3Yi00M2Q5MzljYjVkZmIiLCJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJOSVAiOiJQTi0wMDAwIiwiZnVsbE5hbWUiOiJTdXBlcmFkbWluIiwiZW1haWwiOiJzdXBlcmFkbWluQGVtYWlsLmNvbSIsIm1vYmlsZSI6IjYyODIxMjI1NTkwOTAiLCJzdGF0dXMiOiJBY3RpdmUiLCJpbWdVcmwiOm51bGwsInJvbGVzIjoiU3VwZXJhZG1pbiIsIl9fdiI6MCwiaWF0IjoxNTQwMTM2ODU0LCJleHAiOjE1NDAxNjU2NTR9.3BpBwhgA4nTglNNojcfGQiqnsaKID6ezGoo75UtnzrM"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540095489324,
+			"method": "GET",
+			"modified": 1540140758405,
+			"name": "Get Admins",
+			"parameters": [],
+			"parentId": "fld_7243563a6f314192895465ff88a45cad",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:3030/api/admins",
+			"_type": "request"
+		},
+		{
+			"_id": "req_0a076f10f7b54cb88f1036f8160f60c4",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/x-www-form-urlencoded",
+				"params": [
+					{
+						"disabled": false,
+						"id": "pair_b83f8156c2ca478590ef11c26248253b",
+						"name": "username",
+						"value": "admin-2"
+					},
+					{
+						"id": "pair_2869c40529cf49d58cf1793b06ec507f",
+						"name": "password",
+						"value": "P@ssw0rd"
+					},
+					{
+						"id": "pair_8eefc901c9ca475885f1ef06ccd15d64",
+						"name": "NIP",
+						"value": "PN-1001"
+					},
+					{
+						"id": "pair_87add15597914607bf9b16bb0b0f6265",
+						"name": "fullName",
+						"value": "Seorang Admin"
+					},
+					{
+						"id": "pair_72219835f32745f3a36b2c0eb373a09a",
+						"name": "email",
+						"value": "admin-2@email.com"
+					},
+					{
+						"id": "pair_5bddbd2f3e2e43a0bbda357f1fc79015",
+						"name": "mobile",
+						"value": "082122559090"
+					},
+					{
+						"id": "pair_50589e792636420d96d9571f30bb62e5",
+						"name": "roles",
+						"value": "Admin"
+					}
+				]
+			},
+			"created": 1540140758409,
+			"description": "",
+			"headers": [
+				{
+					"disabled": false,
+					"id": "pair_534c99bbabe34c8891be009408f69197",
+					"name": "token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJkMDNkYWFkMC1iY2YyLTExZTgtOTk3Yi00M2Q5MzljYjVkZmIiLCJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJOSVAiOiJQTi0wMDAwIiwiZnVsbE5hbWUiOiJTdXBlcmFkbWluIiwiZW1haWwiOiJzdXBlcmFkbWluQGVtYWlsLmNvbSIsIm1vYmlsZSI6IjYyODIxMjI1NTkwOTAiLCJzdGF0dXMiOiJBY3RpdmUiLCJpbWdVcmwiOm51bGwsInJvbGVzIjoiU3VwZXJhZG1pbiIsIl9fdiI6MCwiaWF0IjoxNTQwMTAzODI2LCJleHAiOjE1NDAxMzI2MjZ9.RRCzQVZRe88wPZhA-c9VANoTE5amuVOBfyv_hL7Avjg"
+				},
+				{
+					"id": "pair_2305334d5e3648fb849531a3e43470d2",
+					"name": "Content-Type",
+					"value": "application/x-www-form-urlencoded"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540095620061,
+			"method": "POST",
+			"modified": 1540140758409,
+			"name": "Create Admin",
+			"parameters": [],
+			"parentId": "fld_7243563a6f314192895465ff88a45cad",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:3030/api/admins/add",
+			"_type": "request"
+		},
+		{
+			"_id": "req_54a7d0fb916b468f8a7f9b28318d03a4",
+			"authentication": {},
+			"body": {},
+			"created": 1540140758412,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_f8ff19ac23f84853ac71a3745ae93d3d",
+					"name": "token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJkMDNkYWFkMC1iY2YyLTExZTgtOTk3Yi00M2Q5MzljYjVkZmIiLCJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJOSVAiOiJQTi0wMDAwIiwiZnVsbE5hbWUiOiJTdXBlcmFkbWluIiwiZW1haWwiOiJzdXBlcmFkbWluQGVtYWlsLmNvbSIsIm1vYmlsZSI6IjYyODIxMjI1NTkwOTAiLCJzdGF0dXMiOiJBY3RpdmUiLCJpbWdVcmwiOm51bGwsInJvbGVzIjoiU3VwZXJhZG1pbiIsIl9fdiI6MCwiaWF0IjoxNTQwMTAzODI2LCJleHAiOjE1NDAxMzI2MjZ9.RRCzQVZRe88wPZhA-c9VANoTE5amuVOBfyv_hL7Avjg"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540013471900.5,
+			"method": "DELETE",
+			"modified": 1540140758412,
+			"name": "Del Admin",
+			"parameters": [],
+			"parentId": "fld_7243563a6f314192895465ff88a45cad",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:3030/api/admins/delete/52fe3a40-d4fc-11e8-8edf-6f81222c4403",
+			"_type": "request"
+		},
+		{
+			"_id": "req_0d07be5cee454a82b04081e81e213a11",
+			"authentication": {},
+			"body": {},
+			"created": 1540140758414,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_f8ff19ac23f84853ac71a3745ae93d3d",
+					"name": "token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJkMDNkYWFkMC1iY2YyLTExZTgtOTk3Yi00M2Q5MzljYjVkZmIiLCJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJOSVAiOiJQTi0wMDAwIiwiZnVsbE5hbWUiOiJTdXBlcmFkbWluIiwiZW1haWwiOiJzdXBlcmFkbWluQGVtYWlsLmNvbSIsIm1vYmlsZSI6IjYyODIxMjI1NTkwOTAiLCJzdGF0dXMiOiJBY3RpdmUiLCJpbWdVcmwiOm51bGwsInJvbGVzIjoiU3VwZXJhZG1pbiIsIl9fdiI6MCwiaWF0IjoxNTQwMTM2ODU0LCJleHAiOjE1NDAxNjU2NTR9.3BpBwhgA4nTglNNojcfGQiqnsaKID6ezGoo75UtnzrM"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540095489299,
+			"method": "GET",
+			"modified": 1540140758414,
+			"name": "Get Admins By Id",
+			"parameters": [],
+			"parentId": "fld_7243563a6f314192895465ff88a45cad",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:3030/api/admins/d4e236a0-d4ee-11e8-b7f5-97f601fbe3e5",
+			"_type": "request"
+		},
+		{
+			"_id": "req_fdef004485ae4938a718dae09f0daf39",
+			"authentication": {},
+			"body": {},
+			"created": 1540140758420,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_90d065ab31354aa6bb080c8d5e4cf832",
+					"name": "token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJkNGUyMzZhMC1kNGVlLTExZTgtYjdmNS05N2Y2MDFmYmUzZTUiLCJ1c2VybmFtZSI6ImFkbWluIiwiTklQIjoiUE4tMTAwMSIsImZ1bGxOYW1lIjoiU2VvcmFuZyBBZG1pbiIsImVtYWlsIjoiYWRtaW5AZW1haWwuY29tIiwibW9iaWxlIjoiMDgyMTIyNTU5MDkwIiwicm9sZXMiOiJBZG1pbiIsInN0YXR1cyI6IkFjdGl2ZSIsImltZ1VybCI6bnVsbCwiX192IjowLCJpYXQiOjE1NDAxMzkzODcsImV4cCI6MTU0MDE2ODE4N30.bvvNndAWlntQ-7nNbnN974kM8iCpBDMSoVg7YCRGgXQ"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540105670129,
+			"method": "GET",
+			"modified": 1540140758420,
+			"name": "Get Mobil Tangkis",
+			"parameters": [],
+			"parentId": "fld_151f527025364e30a1c8dd3db21249a5",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:3030/api/mobiltangkis",
+			"_type": "request"
+		},
+		{
+			"_id": "req_9fe1829d24d64528928186812875b1a7",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/x-www-form-urlencoded",
+				"params": [
+					{
+						"id": "pair_f3432fcd8934422d8d5e9422c02b641d",
+						"name": "nopol",
+						"value": "B 1001 AB"
+					},
+					{
+						"id": "pair_438f8100b7de4275b3f87dbde29ba13c",
+						"name": "KL",
+						"value": "24"
+					},
+					{
+						"id": "pair_eab9584b996542ca86a3961e7fece1ed",
+						"name": "year",
+						"value": "2012"
+					},
+					{
+						"id": "pair_7da00f0fc01842b0beb4aa045514c5bc",
+						"name": "status",
+						"value": "Active"
+					}
+				]
+			},
+			"created": 1540140758425,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_90d065ab31354aa6bb080c8d5e4cf832",
+					"name": "token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJkNGUyMzZhMC1kNGVlLTExZTgtYjdmNS05N2Y2MDFmYmUzZTUiLCJ1c2VybmFtZSI6ImFkbWluIiwiTklQIjoiUE4tMTAwMSIsImZ1bGxOYW1lIjoiU2VvcmFuZyBBZG1pbiIsImVtYWlsIjoiYWRtaW5AZW1haWwuY29tIiwibW9iaWxlIjoiMDgyMTIyNTU5MDkwIiwicm9sZXMiOiJBZG1pbiIsInN0YXR1cyI6IkFjdGl2ZSIsImltZ1VybCI6bnVsbCwiX192IjowLCJpYXQiOjE1NDAxMDYxMDQsImV4cCI6MTU0MDEzNDkwNH0.HbEb1FGVDNqUsdqsacYFLDihK5jo-KSq6BMK9KTxqxA"
+				},
+				{
+					"id": "pair_56cb30ad3ee44b3ea2b324aa51ca404a",
+					"name": "Content-Type",
+					"value": "application/x-www-form-urlencoded"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540105670179,
+			"method": "POST",
+			"modified": 1540140758425,
+			"name": "Create Mobil Tangki",
+			"parameters": [],
+			"parentId": "fld_151f527025364e30a1c8dd3db21249a5",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:3030/api/mobiltangkis/add",
+			"_type": "request"
+		},
+		{
+			"_id": "req_3f02688445d64b9e8b11f4ff8209881c",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/x-www-form-urlencoded",
+				"params": []
+			},
+			"created": 1540140758427,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_90d065ab31354aa6bb080c8d5e4cf832",
+					"name": "token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJkNGUyMzZhMC1kNGVlLTExZTgtYjdmNS05N2Y2MDFmYmUzZTUiLCJ1c2VybmFtZSI6ImFkbWluIiwiTklQIjoiUE4tMTAwMSIsImZ1bGxOYW1lIjoiU2VvcmFuZyBBZG1pbiIsImVtYWlsIjoiYWRtaW5AZW1haWwuY29tIiwibW9iaWxlIjoiMDgyMTIyNTU5MDkwIiwicm9sZXMiOiJBZG1pbiIsInN0YXR1cyI6IkFjdGl2ZSIsImltZ1VybCI6bnVsbCwiX192IjowLCJpYXQiOjE1NDAxMDYxMDQsImV4cCI6MTU0MDEzNDkwNH0.HbEb1FGVDNqUsdqsacYFLDihK5jo-KSq6BMK9KTxqxA"
+				},
+				{
+					"id": "pair_56cb30ad3ee44b3ea2b324aa51ca404a",
+					"name": "Content-Type",
+					"value": "application/x-www-form-urlencoded"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540105670079,
+			"method": "DELETE",
+			"modified": 1540140758427,
+			"name": "Delete Mobil Tangki",
+			"parameters": [],
+			"parentId": "fld_151f527025364e30a1c8dd3db21249a5",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:3030/api/mobiltangkis/delete/62a8adc0-d503-11e8-94e4-1b4ad8fb1ab5",
+			"_type": "request"
+		},
+		{
+			"_id": "req_fe17561b54b94d67b14a1b151ef55d65",
+			"authentication": {},
+			"body": {},
+			"created": 1540140758432,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_90d065ab31354aa6bb080c8d5e4cf832",
+					"name": "token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJkNGUyMzZhMC1kNGVlLTExZTgtYjdmNS05N2Y2MDFmYmUzZTUiLCJ1c2VybmFtZSI6ImFkbWluIiwiTklQIjoiUE4tMTAwMSIsImZ1bGxOYW1lIjoiU2VvcmFuZyBBZG1pbiIsImVtYWlsIjoiYWRtaW5AZW1haWwuY29tIiwibW9iaWxlIjoiMDgyMTIyNTU5MDkwIiwicm9sZXMiOiJBZG1pbiIsInN0YXR1cyI6IkFjdGl2ZSIsImltZ1VybCI6bnVsbCwiX192IjowLCJpYXQiOjE1NDAxMDYxMDQsImV4cCI6MTU0MDEzNDkwNH0.HbEb1FGVDNqUsdqsacYFLDihK5jo-KSq6BMK9KTxqxA"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540105670129,
+			"method": "GET",
+			"modified": 1540140758432,
+			"name": "Get Checklist",
+			"parameters": [],
+			"parentId": "fld_4dd5e144b62f4090898797a38c9a95f4",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:3030/api/checklist",
+			"_type": "request"
+		},
+		{
+			"_id": "req_8e466a4b049d4d60aaa45a16152c6578",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/x-www-form-urlencoded",
+				"params": [
+					{
+						"disabled": true,
+						"id": "pair_f3432fcd8934422d8d5e9422c02b641d",
+						"multiline": false,
+						"name": "user",
+						"type": "text",
+						"value": "B 1001 AB"
+					},
+					{
+						"disabled": true,
+						"id": "pair_438f8100b7de4275b3f87dbde29ba13c",
+						"name": "mobiltangki",
+						"value": "24"
+					},
+					{
+						"id": "pair_eab9584b996542ca86a3961e7fece1ed",
+						"name": "status",
+						"value": "Waiting"
+					},
+					{
+						"id": "pair_7da00f0fc01842b0beb4aa045514c5bc",
+						"name": "status",
+						"value": "Waiting"
+					},
+					{
+						"id": "pair_457e22a0c22f4b429632cb23bf6fbf9f",
+						"name": "ritase",
+						"value": "100"
+					},
+					{
+						"id": "pair_c64109e58aad49b4a40f91468a47e6d1",
+						"name": "odoKM",
+						"value": "20101"
+					},
+					{
+						"id": "pair_50ffec8d17204373988207940a5612c1",
+						"name": "HSSE",
+						"value": ""
+					},
+					{
+						"id": "pair_f27fb232ec844bfcb0d7fa00c195e174",
+						"name": "PWSAMT",
+						"value": ""
+					},
+					{
+						"id": "pair_c3858f183ca84c97b9daf099b2e0da46",
+						"name": "TBBM",
+						"value": ""
+					},
+					{
+						"id": "pair_c78df6fff52e466891022f9569c1c20b",
+						"name": "remarks",
+						"value": ""
+					},
+					{
+						"id": "pair_45513628854745ea88ca4ab71f739107",
+						"name": "imgUrl",
+						"value": ""
+					}
+				]
+			},
+			"created": 1540140758434,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_90d065ab31354aa6bb080c8d5e4cf832",
+					"name": "token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJkNGUyMzZhMC1kNGVlLTExZTgtYjdmNS05N2Y2MDFmYmUzZTUiLCJ1c2VybmFtZSI6ImFkbWluIiwiTklQIjoiUE4tMTAwMSIsImZ1bGxOYW1lIjoiU2VvcmFuZyBBZG1pbiIsImVtYWlsIjoiYWRtaW5AZW1haWwuY29tIiwibW9iaWxlIjoiMDgyMTIyNTU5MDkwIiwicm9sZXMiOiJBZG1pbiIsInN0YXR1cyI6IkFjdGl2ZSIsImltZ1VybCI6bnVsbCwiX192IjowLCJpYXQiOjE1NDAxMDYxMDQsImV4cCI6MTU0MDEzNDkwNH0.HbEb1FGVDNqUsdqsacYFLDihK5jo-KSq6BMK9KTxqxA"
+				},
+				{
+					"id": "pair_56cb30ad3ee44b3ea2b324aa51ca404a",
+					"name": "Content-Type",
+					"value": "application/x-www-form-urlencoded"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540105670179,
+			"method": "POST",
+			"modified": 1540140758434,
+			"name": "Create Checklist",
+			"parameters": [],
+			"parentId": "fld_4dd5e144b62f4090898797a38c9a95f4",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:3030/api/mobiltangkis/add",
+			"_type": "request"
+		},
+		{
+			"_id": "req_8f7c545b580e471eb7514c94da7f0415",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/x-www-form-urlencoded",
+				"params": []
+			},
+			"created": 1540140758437,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_90d065ab31354aa6bb080c8d5e4cf832",
+					"name": "token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJkNGUyMzZhMC1kNGVlLTExZTgtYjdmNS05N2Y2MDFmYmUzZTUiLCJ1c2VybmFtZSI6ImFkbWluIiwiTklQIjoiUE4tMTAwMSIsImZ1bGxOYW1lIjoiU2VvcmFuZyBBZG1pbiIsImVtYWlsIjoiYWRtaW5AZW1haWwuY29tIiwibW9iaWxlIjoiMDgyMTIyNTU5MDkwIiwicm9sZXMiOiJBZG1pbiIsInN0YXR1cyI6IkFjdGl2ZSIsImltZ1VybCI6bnVsbCwiX192IjowLCJpYXQiOjE1NDAxMDYxMDQsImV4cCI6MTU0MDEzNDkwNH0.HbEb1FGVDNqUsdqsacYFLDihK5jo-KSq6BMK9KTxqxA"
+				},
+				{
+					"id": "pair_56cb30ad3ee44b3ea2b324aa51ca404a",
+					"name": "Content-Type",
+					"value": "application/x-www-form-urlencoded"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540105670079,
+			"method": "DELETE",
+			"modified": 1540140758437,
+			"name": "Delete Checklist",
+			"parameters": [],
+			"parentId": "fld_4dd5e144b62f4090898797a38c9a95f4",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:3030/api/mobiltangkis/delete/62a8adc0-d503-11e8-94e4-1b4ad8fb1ab5",
+			"_type": "request"
+		},
+		{
+			"_id": "req_34c5beb95d0c4bbfb117b70fe3a2addb",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/graphql",
+				"text": "{\"query\":\"mutation signIn($username: String!, $password: String!) {\\n  signIn(username: $username, password: $password) {\\n    user {\\n      _id\\n      username\\n      NIP\\n      fullName\\n      email\\n      mobile\\n      password\\n      roles\\n      status\\n      imgUrl\\n    }\\n    token\\n  }\\n}\\n\",\"variables\":{\"username\":\"admin\",\"password\":\"P@ssw0rd\"},\"operationName\":\"signIn\"}"
+			},
+			"created": 1540140758446,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_d1c201a8629244ae8358815d4f317cc0",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540130969544,
+			"method": "POST",
+			"modified": 1540140758446,
+			"name": "Login",
+			"parameters": [],
+			"parentId": "fld_3022f123fa174655a3a101a923bcae6b",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:3030/graphql",
+			"_type": "request"
+		},
+		{
+			"_id": "req_874782832ec34bfda38b7f18af41c7ae",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/graphql",
+				"text": "{\"query\":\"query admins{\\n\\tadmins {\\n\\t\\t_id\\n\\t\\tusername\\n\\t\\tNIP\\n\\t\\tfullName\\n\\t\\temail\\n\\t\\tmobile\\n\\t\\tpassword\\n\\t\\troles\\n\\t\\tstatus\\n\\t\\timgUrl\\n\\t\\tcreatedBy{\\n\\t\\t\\tusername\\n\\t\\t}\\n\\t}\\n}\",\"operationName\":\"admins\"}"
+			},
+			"created": 1540140758453,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_7f7faec6fdf14132a74f7aaabddf2e2a",
+					"name": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"disabled": false,
+					"id": "pair_c03a425499bf4e429a6566ed3f9ffd20",
+					"name": "token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJkMDNkYWFkMC1iY2YyLTExZTgtOTk3Yi00M2Q5MzljYjVkZmIiLCJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJOSVAiOiJQTi0wMDAwIiwiZnVsbE5hbWUiOiJTdXBlcmFkbWluIiwiZW1haWwiOiJzdXBlcmFkbWluQGVtYWlsLmNvbSIsIm1vYmlsZSI6IjYyODIxMjI1NTkwOTAiLCJzdGF0dXMiOiJBY3RpdmUiLCJpbWdVcmwiOm51bGwsInJvbGVzIjoiU3VwZXJhZG1pbiIsIl9fdiI6MCwiaWF0IjoxNTQwMTM2MTQ3LCJleHAiOjE1NDAxNjQ5NDd9.gWkM32l4iAmQTeUJ8dlimf_baYw7BWrTJQ_CHaCbI6E"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540133847641,
+			"method": "POST",
+			"modified": 1540140758453,
+			"name": "Get Admins",
+			"parameters": [],
+			"parentId": "fld_200a823555fc41b0876dae406fbed51b",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:3030/graphql",
+			"_type": "request"
+		},
+		{
+			"_id": "req_b39e69000dad4c3b8cc8c85195ca1b4e",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/graphql",
+				"text": "{\"query\":\"query admin($id: ID!) {\\n  admin(id: $id) {\\n    _id\\n    username\\n    NIP\\n    fullName\\n    email\\n    mobile\\n    password\\n    roles\\n    status\\n    imgUrl\\n    createdBy {\\n      username\\n    }\\n  }\\n}\\n\",\"variables\":{\"id\":\"d4e236a0-d4ee-11e8-b7f5-97f601fbe3e5\"},\"operationName\":\"admin\"}"
+			},
+			"created": 1540140758459,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_7f7faec6fdf14132a74f7aaabddf2e2a",
+					"name": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"disabled": false,
+					"id": "pair_c03a425499bf4e429a6566ed3f9ffd20",
+					"name": "token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJkMDNkYWFkMC1iY2YyLTExZTgtOTk3Yi00M2Q5MzljYjVkZmIiLCJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJOSVAiOiJQTi0wMDAwIiwiZnVsbE5hbWUiOiJTdXBlcmFkbWluIiwiZW1haWwiOiJzdXBlcmFkbWluQGVtYWlsLmNvbSIsIm1vYmlsZSI6IjYyODIxMjI1NTkwOTAiLCJzdGF0dXMiOiJBY3RpdmUiLCJpbWdVcmwiOm51bGwsInJvbGVzIjoiU3VwZXJhZG1pbiIsIl9fdiI6MCwiaWF0IjoxNTQwMTM2MTQ3LCJleHAiOjE1NDAxNjQ5NDd9.gWkM32l4iAmQTeUJ8dlimf_baYw7BWrTJQ_CHaCbI6E"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540133128116.75,
+			"method": "POST",
+			"modified": 1540140758459,
+			"name": "Get Admin By Id",
+			"parameters": [],
+			"parentId": "fld_200a823555fc41b0876dae406fbed51b",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:3030/graphql",
+			"_type": "request"
+		},
+		{
+			"_id": "req_dc2d40bf154849aea2b903d29eea1242",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/graphql",
+				"text": "{\"query\":\"mutation createAdmin($admin: AdminInput!) {\\n  createAdmin(admin: $admin) {\\n    _id\\n    username\\n    password\\n    NIP\\n    fullName\\n    email\\n    mobile\\n    roles\\n    status\\n    imgUrl\\n    createdAt\\n    createdBy {\\n      _id\\n      username\\n      roles\\n    }\\n  }\\n}\\n\",\"variables\":{\"admin\":{\"NIP\":\"admin-2\",\"fullName\":\"Seorang Admin\",\"email\":\"admin2@email.com\",\"mobile\":\"082122559090\",\"username\":\"admin2\",\"password\":\"P@ssw0rd\",\"status\":\"Active\"}},\"operationName\":\"createAdmin\"}"
+			},
+			"created": 1540140758468,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_7f7faec6fdf14132a74f7aaabddf2e2a",
+					"name": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"disabled": false,
+					"id": "pair_c03a425499bf4e429a6566ed3f9ffd20",
+					"name": "token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJkMDNkYWFkMC1iY2YyLTExZTgtOTk3Yi00M2Q5MzljYjVkZmIiLCJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJOSVAiOiJQTi0wMDAwIiwiZnVsbE5hbWUiOiJTdXBlcmFkbWluIiwiZW1haWwiOiJzdXBlcmFkbWluQGVtYWlsLmNvbSIsIm1vYmlsZSI6IjYyODIxMjI1NTkwOTAiLCJzdGF0dXMiOiJBY3RpdmUiLCJpbWdVcmwiOm51bGwsInJvbGVzIjoiU3VwZXJhZG1pbiIsIl9fdiI6MCwiaWF0IjoxNTQwMTM2MTQ3LCJleHAiOjE1NDAxNjQ5NDd9.gWkM32l4iAmQTeUJ8dlimf_baYw7BWrTJQ_CHaCbI6E"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540133847666,
+			"method": "POST",
+			"modified": 1540140758468,
+			"name": "Create Admin",
+			"parameters": [],
+			"parentId": "fld_200a823555fc41b0876dae406fbed51b",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:3030/graphql",
+			"_type": "request"
+		},
+		{
+			"_id": "req_8fac0b4d3c3b41b5902a686ee6411f4f",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/graphql",
+				"text": "{\"query\":\"mutation deleteAdmin($id: ID!) {\\n  deleteAdmin(id: $id)\\n}\\n\",\"variables\":{\"id\":\"0a09ad70-d54b-11e8-b6e4-fdec08ec7905\"},\"operationName\":\"deleteAdmin\"}"
+			},
+			"created": 1540140758478,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_7f7faec6fdf14132a74f7aaabddf2e2a",
+					"name": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"disabled": false,
+					"id": "pair_c03a425499bf4e429a6566ed3f9ffd20",
+					"name": "token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJkMDNkYWFkMC1iY2YyLTExZTgtOTk3Yi00M2Q5MzljYjVkZmIiLCJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJOSVAiOiJQTi0wMDAwIiwiZnVsbE5hbWUiOiJTdXBlcmFkbWluIiwiZW1haWwiOiJzdXBlcmFkbWluQGVtYWlsLmNvbSIsIm1vYmlsZSI6IjYyODIxMjI1NTkwOTAiLCJzdGF0dXMiOiJBY3RpdmUiLCJpbWdVcmwiOm51bGwsInJvbGVzIjoiU3VwZXJhZG1pbiIsIl9fdiI6MCwiaWF0IjoxNTQwMTM2MTQ3LCJleHAiOjE1NDAxNjQ5NDd9.gWkM32l4iAmQTeUJ8dlimf_baYw7BWrTJQ_CHaCbI6E"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540133128066.75,
+			"method": "POST",
+			"modified": 1540140758478,
+			"name": "Delete Admin",
+			"parameters": [],
+			"parentId": "fld_200a823555fc41b0876dae406fbed51b",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:3030/graphql",
+			"_type": "request"
+		},
+		{
+			"_id": "req_81f603041eb4450f8fcf4e9b9f9efbcb",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/graphql",
+				"text": "{\"query\":\"query users {\\n  users {\\n    _id\\n    username\\n    NIP\\n    fullName\\n    email\\n    mobile\\n    password\\n    roles\\n    status\\n    imgUrl\\n    createdBy {\\n      username\\n    }\\n  }\\n}\\n\",\"operationName\":\"users\"}"
+			},
+			"created": 1540140758492,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_7f7faec6fdf14132a74f7aaabddf2e2a",
+					"name": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"disabled": false,
+					"id": "pair_c03a425499bf4e429a6566ed3f9ffd20",
+					"name": "token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJkNGUyMzZhMC1kNGVlLTExZTgtYjdmNS05N2Y2MDFmYmUzZTUiLCJ1c2VybmFtZSI6ImFkbWluIiwiTklQIjoiUE4tMTAwMSIsImZ1bGxOYW1lIjoiU2VvcmFuZyBBZG1pbiIsImVtYWlsIjoiYWRtaW5AZW1haWwuY29tIiwibW9iaWxlIjoiMDgyMTIyNTU5MDkwIiwicm9sZXMiOiJBZG1pbiIsInN0YXR1cyI6IkFjdGl2ZSIsImltZ1VybCI6bnVsbCwiX192IjowLCJpYXQiOjE1NDAxMzgxOTUsImV4cCI6MTU0MDE2Njk5NX0.YNK3NTRawhYV92G2P-sW1OieinEFb-Hi8CT4nlRyBR0"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540133847641,
+			"method": "POST",
+			"modified": 1540140758492,
+			"name": "Get Users",
+			"parameters": [],
+			"parentId": "fld_540054265c18496b87ac0f578e0d0790",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:3030/graphql",
+			"_type": "request"
+		},
+		{
+			"_id": "req_624e92caac904c2e828190d578f21225",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/graphql",
+				"text": "{\"query\":\"query user($id: ID!) {\\n  user(id: $id) {\\n    _id\\n    username\\n    NIP\\n    fullName\\n    email\\n    mobile\\n    password\\n    roles\\n    status\\n    imgUrl\\n    createdBy {\\n      username\\n    }\\n  }\\n}\\n\",\"variables\":{\"id\":\"d6058eb0-d4f3-11e8-b9c0-35fc5ec21d14\"},\"operationName\":\"user\"}"
+			},
+			"created": 1540140758499,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_7f7faec6fdf14132a74f7aaabddf2e2a",
+					"name": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"disabled": false,
+					"id": "pair_c03a425499bf4e429a6566ed3f9ffd20",
+					"name": "token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJkNGUyMzZhMC1kNGVlLTExZTgtYjdmNS05N2Y2MDFmYmUzZTUiLCJ1c2VybmFtZSI6ImFkbWluIiwiTklQIjoiUE4tMTAwMSIsImZ1bGxOYW1lIjoiU2VvcmFuZyBBZG1pbiIsImVtYWlsIjoiYWRtaW5AZW1haWwuY29tIiwibW9iaWxlIjoiMDgyMTIyNTU5MDkwIiwicm9sZXMiOiJBZG1pbiIsInN0YXR1cyI6IkFjdGl2ZSIsImltZ1VybCI6bnVsbCwiX192IjowLCJpYXQiOjE1NDAxMzgxOTUsImV4cCI6MTU0MDE2Njk5NX0.YNK3NTRawhYV92G2P-sW1OieinEFb-Hi8CT4nlRyBR0"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540133128116.75,
+			"method": "POST",
+			"modified": 1540140758499,
+			"name": "Get User By Id",
+			"parameters": [],
+			"parentId": "fld_540054265c18496b87ac0f578e0d0790",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:3030/graphql",
+			"_type": "request"
+		},
+		{
+			"_id": "req_31466db58294489497154e8071a639ad",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/graphql",
+				"text": "{\"query\":\"mutation createUser($user: UserInput!) {\\n  createUser(user: $user) {\\n    _id\\n    username\\n    password\\n    NIP\\n    fullName\\n    email\\n    mobile\\n    roles\\n    status\\n    imgUrl\\n    createdAt\\n    createdBy {\\n      _id\\n      username\\n      roles\\n    }\\n  }\\n}\\n\",\"variables\":{\"user\":{\"NIP\":\"PN 1003\",\"fullName\":\"Seorang Kernet\",\"email\":\"kernet@email.com\",\"mobile\":\"082122559090\",\"username\":\"kernet\",\"password\":\"P@ssw0rd\",\"status\":\"Active\",\"roles\":\"Kernet\"}},\"operationName\":\"createUser\"}"
+			},
+			"created": 1540140758509,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_7f7faec6fdf14132a74f7aaabddf2e2a",
+					"name": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"disabled": false,
+					"id": "pair_c03a425499bf4e429a6566ed3f9ffd20",
+					"name": "token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJkNGUyMzZhMC1kNGVlLTExZTgtYjdmNS05N2Y2MDFmYmUzZTUiLCJ1c2VybmFtZSI6ImFkbWluIiwiTklQIjoiUE4tMTAwMSIsImZ1bGxOYW1lIjoiU2VvcmFuZyBBZG1pbiIsImVtYWlsIjoiYWRtaW5AZW1haWwuY29tIiwibW9iaWxlIjoiMDgyMTIyNTU5MDkwIiwicm9sZXMiOiJBZG1pbiIsInN0YXR1cyI6IkFjdGl2ZSIsImltZ1VybCI6bnVsbCwiX192IjowLCJpYXQiOjE1NDAxMzgxOTUsImV4cCI6MTU0MDE2Njk5NX0.YNK3NTRawhYV92G2P-sW1OieinEFb-Hi8CT4nlRyBR0"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540133847666,
+			"method": "POST",
+			"modified": 1540140758509,
+			"name": "Create User",
+			"parameters": [],
+			"parentId": "fld_540054265c18496b87ac0f578e0d0790",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:3030/graphql",
+			"_type": "request"
+		},
+		{
+			"_id": "req_1ee339d8096d49cd8ab5c6aff734bfee",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/graphql",
+				"text": "{\"query\":\"mutation deleteUser($id: ID!) {\\n  deleteUser(id: $id)\\n}\\n\",\"variables\":{\"id\":\"7ed33890-d54d-11e8-a9b7-9b6bffac45f5\"},\"operationName\":\"deleteUser\"}"
+			},
+			"created": 1540140758520,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_7f7faec6fdf14132a74f7aaabddf2e2a",
+					"name": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"disabled": false,
+					"id": "pair_c03a425499bf4e429a6566ed3f9ffd20",
+					"name": "token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJkNGUyMzZhMC1kNGVlLTExZTgtYjdmNS05N2Y2MDFmYmUzZTUiLCJ1c2VybmFtZSI6ImFkbWluIiwiTklQIjoiUE4tMTAwMSIsImZ1bGxOYW1lIjoiU2VvcmFuZyBBZG1pbiIsImVtYWlsIjoiYWRtaW5AZW1haWwuY29tIiwibW9iaWxlIjoiMDgyMTIyNTU5MDkwIiwicm9sZXMiOiJBZG1pbiIsInN0YXR1cyI6IkFjdGl2ZSIsImltZ1VybCI6bnVsbCwiX192IjowLCJpYXQiOjE1NDAxMzgxOTUsImV4cCI6MTU0MDE2Njk5NX0.YNK3NTRawhYV92G2P-sW1OieinEFb-Hi8CT4nlRyBR0"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540133128066.75,
+			"method": "POST",
+			"modified": 1540140758520,
+			"name": "Delete User",
+			"parameters": [],
+			"parentId": "fld_540054265c18496b87ac0f578e0d0790",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:3030/graphql",
+			"_type": "request"
+		},
+		{
+			"_id": "req_5ca4a2626dae479781844ee0930a56ce",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/graphql",
+				"text": "{\"query\":\"query mobiltangkis {\\n  mobiltangkis {\\n    _id\\n    nopol\\n    _id\\n    year\\n    status\\n    createdBy {\\n      username\\n      roles\\n    }\\n  }\\n}\\n\",\"operationName\":\"mobiltangkis\"}"
+			},
+			"created": 1540140758537,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_7f7faec6fdf14132a74f7aaabddf2e2a",
+					"name": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"disabled": false,
+					"id": "pair_c03a425499bf4e429a6566ed3f9ffd20",
+					"name": "token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJkNGUyMzZhMC1kNGVlLTExZTgtYjdmNS05N2Y2MDFmYmUzZTUiLCJ1c2VybmFtZSI6ImFkbWluIiwiTklQIjoiUE4tMTAwMSIsImZ1bGxOYW1lIjoiU2VvcmFuZyBBZG1pbiIsImVtYWlsIjoiYWRtaW5AZW1haWwuY29tIiwibW9iaWxlIjoiMDgyMTIyNTU5MDkwIiwicm9sZXMiOiJBZG1pbiIsInN0YXR1cyI6IkFjdGl2ZSIsImltZ1VybCI6bnVsbCwiX192IjowLCJpYXQiOjE1NDAxMzgxOTUsImV4cCI6MTU0MDE2Njk5NX0.YNK3NTRawhYV92G2P-sW1OieinEFb-Hi8CT4nlRyBR0"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540133847641,
+			"method": "POST",
+			"modified": 1540140758537,
+			"name": "Get Mobil Tangkis",
+			"parameters": [],
+			"parentId": "fld_88594d705e4f4e21b51e9effc1868343",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:3030/graphql",
+			"_type": "request"
+		},
+		{
+			"_id": "req_0bee68cf6a1e4967b1f94d9086275f39",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/graphql",
+				"text": "{\"query\":\"query mobiltangki($id: ID!) {\\n  mobiltangki(id: $id) {\\n    _id\\n    nopol\\n    KL\\n    year\\n    status\\n    createdBy {\\n      username\\n    }\\n  }\\n}\\n\",\"variables\":{\"id\":\"640b8400-d501-11e8-94e4-1b4ad8fb1ab5\"},\"operationName\":\"mobiltangki\"}"
+			},
+			"created": 1540140758546,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_7f7faec6fdf14132a74f7aaabddf2e2a",
+					"name": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"disabled": false,
+					"id": "pair_c03a425499bf4e429a6566ed3f9ffd20",
+					"name": "token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJkNGUyMzZhMC1kNGVlLTExZTgtYjdmNS05N2Y2MDFmYmUzZTUiLCJ1c2VybmFtZSI6ImFkbWluIiwiTklQIjoiUE4tMTAwMSIsImZ1bGxOYW1lIjoiU2VvcmFuZyBBZG1pbiIsImVtYWlsIjoiYWRtaW5AZW1haWwuY29tIiwibW9iaWxlIjoiMDgyMTIyNTU5MDkwIiwicm9sZXMiOiJBZG1pbiIsInN0YXR1cyI6IkFjdGl2ZSIsImltZ1VybCI6bnVsbCwiX192IjowLCJpYXQiOjE1NDAxMzgxOTUsImV4cCI6MTU0MDE2Njk5NX0.YNK3NTRawhYV92G2P-sW1OieinEFb-Hi8CT4nlRyBR0"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540133128116.75,
+			"method": "POST",
+			"modified": 1540140758546,
+			"name": "Get Mobil Tangki By Id",
+			"parameters": [],
+			"parentId": "fld_88594d705e4f4e21b51e9effc1868343",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:3030/graphql",
+			"_type": "request"
+		},
+		{
+			"_id": "req_ff1d9be2e5a84852a646925f4b87fdbd",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/graphql",
+				"text": "{\"query\":\"mutation createMobilTangki($mobiltangki: MobilTangkiInput!) {\\n  createMobilTangki(mobiltangki: $mobiltangki) {\\n    _id\\n    KL\\n    year\\n    status\\n    createdBy {\\n      _id\\n    }\\n  }\\n}\\n\",\"variables\":{\"mobiltangki\":{\"nopol\":\"B 1003 BB\",\"KL\":\"24\",\"year\":2012,\"status\":\"Active\"}},\"operationName\":\"createMobilTangki\"}"
+			},
+			"created": 1540140758556,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_7f7faec6fdf14132a74f7aaabddf2e2a",
+					"name": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"disabled": false,
+					"id": "pair_c03a425499bf4e429a6566ed3f9ffd20",
+					"name": "token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJkNGUyMzZhMC1kNGVlLTExZTgtYjdmNS05N2Y2MDFmYmUzZTUiLCJ1c2VybmFtZSI6ImFkbWluIiwiTklQIjoiUE4tMTAwMSIsImZ1bGxOYW1lIjoiU2VvcmFuZyBBZG1pbiIsImVtYWlsIjoiYWRtaW5AZW1haWwuY29tIiwibW9iaWxlIjoiMDgyMTIyNTU5MDkwIiwicm9sZXMiOiJBZG1pbiIsInN0YXR1cyI6IkFjdGl2ZSIsImltZ1VybCI6bnVsbCwiX192IjowLCJpYXQiOjE1NDAxMzgxOTUsImV4cCI6MTU0MDE2Njk5NX0.YNK3NTRawhYV92G2P-sW1OieinEFb-Hi8CT4nlRyBR0"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540133847666,
+			"method": "POST",
+			"modified": 1540140758556,
+			"name": "Create Mobil Tangki",
+			"parameters": [],
+			"parentId": "fld_88594d705e4f4e21b51e9effc1868343",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:3030/graphql",
+			"_type": "request"
+		},
+		{
+			"_id": "req_146300646bab48afa9271c920a101611",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/graphql",
+				"text": "{\"query\":\"mutation deleteMobilTangki($id: ID!) {\\n  deleteMobilTangki(id: $id)\\n}\\n\",\"variables\":{\"id\":\"56b5d550-d54f-11e8-955b-ddd1208f1156\"},\"operationName\":\"deleteMobilTangki\"}"
+			},
+			"created": 1540140758568,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_7f7faec6fdf14132a74f7aaabddf2e2a",
+					"name": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"disabled": false,
+					"id": "pair_c03a425499bf4e429a6566ed3f9ffd20",
+					"name": "token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJkNGUyMzZhMC1kNGVlLTExZTgtYjdmNS05N2Y2MDFmYmUzZTUiLCJ1c2VybmFtZSI6ImFkbWluIiwiTklQIjoiUE4tMTAwMSIsImZ1bGxOYW1lIjoiU2VvcmFuZyBBZG1pbiIsImVtYWlsIjoiYWRtaW5AZW1haWwuY29tIiwibW9iaWxlIjoiMDgyMTIyNTU5MDkwIiwicm9sZXMiOiJBZG1pbiIsInN0YXR1cyI6IkFjdGl2ZSIsImltZ1VybCI6bnVsbCwiX192IjowLCJpYXQiOjE1NDAxMzgxOTUsImV4cCI6MTU0MDE2Njk5NX0.YNK3NTRawhYV92G2P-sW1OieinEFb-Hi8CT4nlRyBR0"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540133128066.75,
+			"method": "POST",
+			"modified": 1540140758568,
+			"name": "Delete Mobil Tangki",
+			"parameters": [],
+			"parentId": "fld_88594d705e4f4e21b51e9effc1868343",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:3030/graphql",
+			"_type": "request"
+		},
+		{
+			"_id": "req_16857fa7a5d54dbe8659edcdc0cd9861",
+			"authentication": {},
+			"body": {},
+			"created": 1540140758594,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_f8ff19ac23f84853ac71a3745ae93d3d",
+					"name": "token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJkMDNkYWFkMC1iY2YyLTExZTgtOTk3Yi00M2Q5MzljYjVkZmIiLCJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJOSVAiOiJQTi0wMDAwIiwiZnVsbE5hbWUiOiJTdXBlcmFkbWluIiwiZW1haWwiOiJzdXBlcmFkbWluQGVtYWlsLmNvbSIsIm1vYmlsZSI6IjYyODIxMjI1NTkwOTAiLCJzdGF0dXMiOiJBY3RpdmUiLCJpbWdVcmwiOm51bGwsImNyZWF0ZWRCeSI6MTIzNDU2Nzg5LCJyb2xlcyI6IlN1cGVyYWRtaW4iLCJjcmVhdGVkQXQiOiIyMDE4LTA5LTIwVDE2OjMyOjQ5LjY3N1oiLCJ1cGRhdGVkQXQiOiIyMDE4LTA5LTIwVDE2OjMyOjQ5LjY3N1oiLCJfX3YiOjAsImlhdCI6MTU0MDA5NTU5MSwiZXhwIjoxNTQwMTI0MzkxfQ.VuJXJDAf6miJrloyuSii_y3KGNHW3LYn0vveyogwKQY"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540095489324,
+			"method": "GET",
+			"modified": 1540140758594,
+			"name": "Get Users",
+			"parameters": [],
+			"parentId": "fld_dcd3245ffe8745ee8c04026b4af82dc8",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://seorangeksa.com:3030/api/users",
+			"_type": "request"
+		},
+		{
+			"_id": "req_00f0d8aa832c4abe858510ac3d839462",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/x-www-form-urlencoded",
+				"params": [
+					{
+						"disabled": false,
+						"id": "pair_b83f8156c2ca478590ef11c26248253b",
+						"name": "username",
+						"value": "sopir2"
+					},
+					{
+						"id": "pair_2869c40529cf49d58cf1793b06ec507f",
+						"name": "password",
+						"value": "P@ssw0rd"
+					},
+					{
+						"id": "pair_8eefc901c9ca475885f1ef06ccd15d64",
+						"name": "NIP",
+						"value": "PN-1002"
+					},
+					{
+						"id": "pair_87add15597914607bf9b16bb0b0f6265",
+						"name": "fullName",
+						"value": "Seorang Sopir"
+					},
+					{
+						"id": "pair_72219835f32745f3a36b2c0eb373a09a",
+						"name": "email",
+						"value": "sopir2@email.com"
+					},
+					{
+						"id": "pair_5bddbd2f3e2e43a0bbda357f1fc79015",
+						"name": "mobile",
+						"value": "082122559090"
+					},
+					{
+						"id": "pair_50589e792636420d96d9571f30bb62e5",
+						"name": "roles",
+						"value": "Sopir"
+					}
+				]
+			},
+			"created": 1540140758597,
+			"description": "",
+			"headers": [
+				{
+					"disabled": false,
+					"id": "pair_534c99bbabe34c8891be009408f69197",
+					"name": "token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJkNGUyMzZhMC1kNGVlLTExZTgtYjdmNS05N2Y2MDFmYmUzZTUiLCJ1c2VybmFtZSI6ImFkbWluIiwiTklQIjoiUE4tMTAwMSIsImZ1bGxOYW1lIjoiU2VvcmFuZyBBZG1pbiIsImVtYWlsIjoiYWRtaW5AZW1haWwuY29tIiwibW9iaWxlIjoiMDgyMTIyNTU5MDkwIiwicm9sZXMiOiJBZG1pbiIsInN0YXR1cyI6IkFjdGl2ZSIsImltZ1VybCI6bnVsbCwiY3JlYXRlZEJ5Ijp7Il9pZCI6IjViNzkxYjU3M2NmMWVjMWIzMmQzMGViNSIsInVzZXJuYW1lIjoic3VwZXJhZG1pbiIsImVtYWlsIjoic3VwZXJhZG1pbkBlbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYSQxMCRIR0R4OHhJYmIxdzFTQU5EUjdhdldlMEQ5TjR3cnVTdnFMMTgwVC9ab21NbjJSYTF1QzlhZSIsIm1vYmlsZSI6bnVsbCwicm9sZXMiOiJzdXBlcmFkbWluIiwic3RhdHVzIjoxLCJpbWdVcmwiOm51bGwsImNyZWF0ZWRBdCI6IjIwMTgtMDgtMTlUMDc6MjU6MTEuNjUxWiIsInVwZGF0ZWRBdCI6IjIwMTgtMDgtMTlUMDc6MjU6MTEuNjUxWiIsIl9fdiI6MH0sImNyZWF0ZWRBdCI6IjIwMTgtMTAtMjFUMDU6MDQ6NDcuNDI4WiIsInVwZGF0ZWRBdCI6IjIwMTgtMTAtMjFUMDU6MDQ6NDcuNDI4WiIsIl9fdiI6MCwiaWF0IjoxNTQwMDk4MzQ3LCJleHAiOjE1NDAxMjcxNDd9.i3yqpBLKtONzOg-AzYZR6D8GqIOKcj_DgzuAMMBaYt0"
+				},
+				{
+					"id": "pair_2305334d5e3648fb849531a3e43470d2",
+					"name": "Content-Type",
+					"value": "application/x-www-form-urlencoded"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540095620061,
+			"method": "POST",
+			"modified": 1540140758597,
+			"name": "Create User",
+			"parameters": [],
+			"parentId": "fld_dcd3245ffe8745ee8c04026b4af82dc8",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://seorangeksa.com:3030/api/users/add",
+			"_type": "request"
+		},
+		{
+			"_id": "req_c2e205dfad7b449882bff21524e5b8d6",
+			"authentication": {},
+			"body": {},
+			"created": 1540140758600,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_f8ff19ac23f84853ac71a3745ae93d3d",
+					"name": "token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJkMDNkYWFkMC1iY2YyLTExZTgtOTk3Yi00M2Q5MzljYjVkZmIiLCJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJOSVAiOiJQTi0wMDAwIiwiZnVsbE5hbWUiOiJTdXBlcmFkbWluIiwiZW1haWwiOiJzdXBlcmFkbWluQGVtYWlsLmNvbSIsIm1vYmlsZSI6IjYyODIxMjI1NTkwOTAiLCJzdGF0dXMiOiJBY3RpdmUiLCJpbWdVcmwiOm51bGwsInJvbGVzIjoiU3VwZXJhZG1pbiIsIl9fdiI6MCwiaWF0IjoxNTQwMTAzODI2LCJleHAiOjE1NDAxMzI2MjZ9.RRCzQVZRe88wPZhA-c9VANoTE5amuVOBfyv_hL7Avjg"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540095489274,
+			"method": "DELETE",
+			"modified": 1540140758600,
+			"name": "Del User",
+			"parameters": [],
+			"parentId": "fld_dcd3245ffe8745ee8c04026b4af82dc8",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://seorangeksa.com:3030/api/users/delete/67023620-d4fe-11e8-abe3-330ce8cd1a3e",
+			"_type": "request"
+		},
+		{
+			"_id": "req_32aaa674c8044402a081dd06f09ba635",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/x-www-form-urlencoded",
+				"params": [
+					{
+						"id": "pair_8afabda905764745afe97ee810470fa8",
+						"name": "username",
+						"value": "admin"
+					},
+					{
+						"id": "pair_be3a5a919e4b4b3887302dcccc0f6177",
+						"name": "password",
+						"value": "P@ssw0rd"
+					}
+				]
+			},
+			"created": 1540140758606,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_59ffbece949c43ceb09d01bed1aa3bf3",
+					"name": "Content-Type",
+					"value": "application/x-www-form-urlencoded"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540095547357,
+			"method": "POST",
+			"modified": 1540140758606,
+			"name": "Login",
+			"parameters": [],
+			"parentId": "fld_4eb8667dea6e4c9e9e23c64b65d3fd95",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://seorangeksa.com:3030/api/signin",
+			"_type": "request"
+		},
+		{
+			"_id": "req_6d992fd163bc49498c31317341b6b27f",
+			"authentication": {},
+			"body": {},
+			"created": 1540140758612,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_f8ff19ac23f84853ac71a3745ae93d3d",
+					"name": "token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJkMDNkYWFkMC1iY2YyLTExZTgtOTk3Yi00M2Q5MzljYjVkZmIiLCJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJOSVAiOiJQTi0wMDAwIiwiZnVsbE5hbWUiOiJTdXBlcmFkbWluIiwiZW1haWwiOiJzdXBlcmFkbWluQGVtYWlsLmNvbSIsIm1vYmlsZSI6IjYyODIxMjI1NTkwOTAiLCJzdGF0dXMiOiJBY3RpdmUiLCJpbWdVcmwiOm51bGwsInJvbGVzIjoiU3VwZXJhZG1pbiIsIl9fdiI6MCwiaWF0IjoxNTQwMTAzODI2LCJleHAiOjE1NDAxMzI2MjZ9.RRCzQVZRe88wPZhA-c9VANoTE5amuVOBfyv_hL7Avjg"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540095489324,
+			"method": "GET",
+			"modified": 1540140758612,
+			"name": "Get Admins",
+			"parameters": [],
+			"parentId": "fld_6d25239e78fd4d7eade61d63de829ee4",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://seorangeksa.com:3030/api/admins",
+			"_type": "request"
+		},
+		{
+			"_id": "req_1f8f62af4cf347a5974f0e7046e12f44",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/x-www-form-urlencoded",
+				"params": [
+					{
+						"disabled": false,
+						"id": "pair_b83f8156c2ca478590ef11c26248253b",
+						"name": "username",
+						"value": "admin-2"
+					},
+					{
+						"id": "pair_2869c40529cf49d58cf1793b06ec507f",
+						"name": "password",
+						"value": "P@ssw0rd"
+					},
+					{
+						"id": "pair_8eefc901c9ca475885f1ef06ccd15d64",
+						"name": "NIP",
+						"value": "PN-1001"
+					},
+					{
+						"id": "pair_87add15597914607bf9b16bb0b0f6265",
+						"name": "fullName",
+						"value": "Seorang Admin"
+					},
+					{
+						"id": "pair_72219835f32745f3a36b2c0eb373a09a",
+						"name": "email",
+						"value": "admin-2@email.com"
+					},
+					{
+						"id": "pair_5bddbd2f3e2e43a0bbda357f1fc79015",
+						"name": "mobile",
+						"value": "082122559090"
+					},
+					{
+						"id": "pair_50589e792636420d96d9571f30bb62e5",
+						"name": "roles",
+						"value": "Admin"
+					}
+				]
+			},
+			"created": 1540140758616,
+			"description": "",
+			"headers": [
+				{
+					"disabled": false,
+					"id": "pair_534c99bbabe34c8891be009408f69197",
+					"name": "token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJkMDNkYWFkMC1iY2YyLTExZTgtOTk3Yi00M2Q5MzljYjVkZmIiLCJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJOSVAiOiJQTi0wMDAwIiwiZnVsbE5hbWUiOiJTdXBlcmFkbWluIiwiZW1haWwiOiJzdXBlcmFkbWluQGVtYWlsLmNvbSIsIm1vYmlsZSI6IjYyODIxMjI1NTkwOTAiLCJzdGF0dXMiOiJBY3RpdmUiLCJpbWdVcmwiOm51bGwsInJvbGVzIjoiU3VwZXJhZG1pbiIsIl9fdiI6MCwiaWF0IjoxNTQwMTAzODI2LCJleHAiOjE1NDAxMzI2MjZ9.RRCzQVZRe88wPZhA-c9VANoTE5amuVOBfyv_hL7Avjg"
+				},
+				{
+					"id": "pair_2305334d5e3648fb849531a3e43470d2",
+					"name": "Content-Type",
+					"value": "application/x-www-form-urlencoded"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540095620061,
+			"method": "POST",
+			"modified": 1540140758616,
+			"name": "Create Admin",
+			"parameters": [],
+			"parentId": "fld_6d25239e78fd4d7eade61d63de829ee4",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://seorangeksa.com:3030/api/admins/add",
+			"_type": "request"
+		},
+		{
+			"_id": "req_315cdef22e5f443ba3c761e6831407a5",
+			"authentication": {},
+			"body": {},
+			"created": 1540140758619,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_f8ff19ac23f84853ac71a3745ae93d3d",
+					"name": "token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJkMDNkYWFkMC1iY2YyLTExZTgtOTk3Yi00M2Q5MzljYjVkZmIiLCJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJOSVAiOiJQTi0wMDAwIiwiZnVsbE5hbWUiOiJTdXBlcmFkbWluIiwiZW1haWwiOiJzdXBlcmFkbWluQGVtYWlsLmNvbSIsIm1vYmlsZSI6IjYyODIxMjI1NTkwOTAiLCJzdGF0dXMiOiJBY3RpdmUiLCJpbWdVcmwiOm51bGwsInJvbGVzIjoiU3VwZXJhZG1pbiIsIl9fdiI6MCwiaWF0IjoxNTQwMTAzODI2LCJleHAiOjE1NDAxMzI2MjZ9.RRCzQVZRe88wPZhA-c9VANoTE5amuVOBfyv_hL7Avjg"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540013471900.5,
+			"method": "DELETE",
+			"modified": 1540140758619,
+			"name": "Del Admin",
+			"parameters": [],
+			"parentId": "fld_6d25239e78fd4d7eade61d63de829ee4",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://seorangeksa.com:3030/api/admins/delete/52fe3a40-d4fc-11e8-8edf-6f81222c4403",
+			"_type": "request"
+		},
+		{
+			"_id": "req_6c04e255daa641f5b330348a4dcb2d05",
+			"authentication": {},
+			"body": {},
+			"created": 1540140758626,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_90d065ab31354aa6bb080c8d5e4cf832",
+					"name": "token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJkNGUyMzZhMC1kNGVlLTExZTgtYjdmNS05N2Y2MDFmYmUzZTUiLCJ1c2VybmFtZSI6ImFkbWluIiwiTklQIjoiUE4tMTAwMSIsImZ1bGxOYW1lIjoiU2VvcmFuZyBBZG1pbiIsImVtYWlsIjoiYWRtaW5AZW1haWwuY29tIiwibW9iaWxlIjoiMDgyMTIyNTU5MDkwIiwicm9sZXMiOiJBZG1pbiIsInN0YXR1cyI6IkFjdGl2ZSIsImltZ1VybCI6bnVsbCwiX192IjowLCJpYXQiOjE1NDAxMDYxMDQsImV4cCI6MTU0MDEzNDkwNH0.HbEb1FGVDNqUsdqsacYFLDihK5jo-KSq6BMK9KTxqxA"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540105670129,
+			"method": "GET",
+			"modified": 1540140758626,
+			"name": "Get Mobil Tangkis",
+			"parameters": [],
+			"parentId": "fld_ac410670df114f5f97f691970d685a62",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://seorangeksa.com:3030/api/mobiltangkis",
+			"_type": "request"
+		},
+		{
+			"_id": "req_4db0c53e1b674cdea0ec8e0133f5ee48",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/x-www-form-urlencoded",
+				"params": [
+					{
+						"id": "pair_f3432fcd8934422d8d5e9422c02b641d",
+						"name": "nopol",
+						"value": "B 1001 AB"
+					},
+					{
+						"id": "pair_438f8100b7de4275b3f87dbde29ba13c",
+						"name": "KL",
+						"value": "24"
+					},
+					{
+						"id": "pair_eab9584b996542ca86a3961e7fece1ed",
+						"name": "year",
+						"value": "2012"
+					},
+					{
+						"id": "pair_7da00f0fc01842b0beb4aa045514c5bc",
+						"name": "status",
+						"value": "Active"
+					}
+				]
+			},
+			"created": 1540140758628,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_90d065ab31354aa6bb080c8d5e4cf832",
+					"name": "token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJkNGUyMzZhMC1kNGVlLTExZTgtYjdmNS05N2Y2MDFmYmUzZTUiLCJ1c2VybmFtZSI6ImFkbWluIiwiTklQIjoiUE4tMTAwMSIsImZ1bGxOYW1lIjoiU2VvcmFuZyBBZG1pbiIsImVtYWlsIjoiYWRtaW5AZW1haWwuY29tIiwibW9iaWxlIjoiMDgyMTIyNTU5MDkwIiwicm9sZXMiOiJBZG1pbiIsInN0YXR1cyI6IkFjdGl2ZSIsImltZ1VybCI6bnVsbCwiX192IjowLCJpYXQiOjE1NDAxMDYxMDQsImV4cCI6MTU0MDEzNDkwNH0.HbEb1FGVDNqUsdqsacYFLDihK5jo-KSq6BMK9KTxqxA"
+				},
+				{
+					"id": "pair_56cb30ad3ee44b3ea2b324aa51ca404a",
+					"name": "Content-Type",
+					"value": "application/x-www-form-urlencoded"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540105670179,
+			"method": "POST",
+			"modified": 1540140758628,
+			"name": "Create Mobil Tangki",
+			"parameters": [],
+			"parentId": "fld_ac410670df114f5f97f691970d685a62",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://seorangeksa.com:3030/api/mobiltangkis/add",
+			"_type": "request"
+		},
+		{
+			"_id": "req_3743c15a9e5a47ccac3c2487645d6b56",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/x-www-form-urlencoded",
+				"params": []
+			},
+			"created": 1540140758630,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_90d065ab31354aa6bb080c8d5e4cf832",
+					"name": "token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJkNGUyMzZhMC1kNGVlLTExZTgtYjdmNS05N2Y2MDFmYmUzZTUiLCJ1c2VybmFtZSI6ImFkbWluIiwiTklQIjoiUE4tMTAwMSIsImZ1bGxOYW1lIjoiU2VvcmFuZyBBZG1pbiIsImVtYWlsIjoiYWRtaW5AZW1haWwuY29tIiwibW9iaWxlIjoiMDgyMTIyNTU5MDkwIiwicm9sZXMiOiJBZG1pbiIsInN0YXR1cyI6IkFjdGl2ZSIsImltZ1VybCI6bnVsbCwiX192IjowLCJpYXQiOjE1NDAxMDYxMDQsImV4cCI6MTU0MDEzNDkwNH0.HbEb1FGVDNqUsdqsacYFLDihK5jo-KSq6BMK9KTxqxA"
+				},
+				{
+					"id": "pair_56cb30ad3ee44b3ea2b324aa51ca404a",
+					"name": "Content-Type",
+					"value": "application/x-www-form-urlencoded"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540105670079,
+			"method": "DELETE",
+			"modified": 1540140758630,
+			"name": "Delete Mobil Tangki",
+			"parameters": [],
+			"parentId": "fld_ac410670df114f5f97f691970d685a62",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://seorangeksa.com:3030/api/mobiltangkis/delete/62a8adc0-d503-11e8-94e4-1b4ad8fb1ab5",
+			"_type": "request"
+		},
+		{
+			"_id": "req_0889380ef9134893a67df0b8b5df9a22",
+			"authentication": {},
+			"body": {},
+			"created": 1540140758634,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_90d065ab31354aa6bb080c8d5e4cf832",
+					"name": "token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJkNGUyMzZhMC1kNGVlLTExZTgtYjdmNS05N2Y2MDFmYmUzZTUiLCJ1c2VybmFtZSI6ImFkbWluIiwiTklQIjoiUE4tMTAwMSIsImZ1bGxOYW1lIjoiU2VvcmFuZyBBZG1pbiIsImVtYWlsIjoiYWRtaW5AZW1haWwuY29tIiwibW9iaWxlIjoiMDgyMTIyNTU5MDkwIiwicm9sZXMiOiJBZG1pbiIsInN0YXR1cyI6IkFjdGl2ZSIsImltZ1VybCI6bnVsbCwiX192IjowLCJpYXQiOjE1NDAxMDYxMDQsImV4cCI6MTU0MDEzNDkwNH0.HbEb1FGVDNqUsdqsacYFLDihK5jo-KSq6BMK9KTxqxA"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540105670129,
+			"method": "GET",
+			"modified": 1540140758634,
+			"name": "Get Checklist",
+			"parameters": [],
+			"parentId": "fld_831e4f6064434a61ad475daae864950a",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://seorangeksa.com:3030/api/checklist",
+			"_type": "request"
+		},
+		{
+			"_id": "req_5d6e54eced884c11923f877b272dbe65",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/x-www-form-urlencoded",
+				"params": [
+					{
+						"disabled": true,
+						"id": "pair_f3432fcd8934422d8d5e9422c02b641d",
+						"multiline": false,
+						"name": "user",
+						"type": "text",
+						"value": "B 1001 AB"
+					},
+					{
+						"disabled": true,
+						"id": "pair_438f8100b7de4275b3f87dbde29ba13c",
+						"name": "mobiltangki",
+						"value": "24"
+					},
+					{
+						"id": "pair_eab9584b996542ca86a3961e7fece1ed",
+						"name": "status",
+						"value": "Waiting"
+					},
+					{
+						"id": "pair_7da00f0fc01842b0beb4aa045514c5bc",
+						"name": "status",
+						"value": "Waiting"
+					},
+					{
+						"id": "pair_457e22a0c22f4b429632cb23bf6fbf9f",
+						"name": "ritase",
+						"value": "100"
+					},
+					{
+						"id": "pair_c64109e58aad49b4a40f91468a47e6d1",
+						"name": "odoKM",
+						"value": "20101"
+					},
+					{
+						"id": "pair_50ffec8d17204373988207940a5612c1",
+						"name": "HSSE",
+						"value": ""
+					},
+					{
+						"id": "pair_f27fb232ec844bfcb0d7fa00c195e174",
+						"name": "PWSAMT",
+						"value": ""
+					},
+					{
+						"id": "pair_c3858f183ca84c97b9daf099b2e0da46",
+						"name": "TBBM",
+						"value": ""
+					},
+					{
+						"id": "pair_c78df6fff52e466891022f9569c1c20b",
+						"name": "remarks",
+						"value": ""
+					},
+					{
+						"id": "pair_45513628854745ea88ca4ab71f739107",
+						"name": "imgUrl",
+						"value": ""
+					}
+				]
+			},
+			"created": 1540140758636,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_90d065ab31354aa6bb080c8d5e4cf832",
+					"name": "token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJkNGUyMzZhMC1kNGVlLTExZTgtYjdmNS05N2Y2MDFmYmUzZTUiLCJ1c2VybmFtZSI6ImFkbWluIiwiTklQIjoiUE4tMTAwMSIsImZ1bGxOYW1lIjoiU2VvcmFuZyBBZG1pbiIsImVtYWlsIjoiYWRtaW5AZW1haWwuY29tIiwibW9iaWxlIjoiMDgyMTIyNTU5MDkwIiwicm9sZXMiOiJBZG1pbiIsInN0YXR1cyI6IkFjdGl2ZSIsImltZ1VybCI6bnVsbCwiX192IjowLCJpYXQiOjE1NDAxMDYxMDQsImV4cCI6MTU0MDEzNDkwNH0.HbEb1FGVDNqUsdqsacYFLDihK5jo-KSq6BMK9KTxqxA"
+				},
+				{
+					"id": "pair_56cb30ad3ee44b3ea2b324aa51ca404a",
+					"name": "Content-Type",
+					"value": "application/x-www-form-urlencoded"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540105670179,
+			"method": "POST",
+			"modified": 1540140758636,
+			"name": "Create Checklist",
+			"parameters": [],
+			"parentId": "fld_831e4f6064434a61ad475daae864950a",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://seorangeksa.com:3030/api/checklist/add",
+			"_type": "request"
+		},
+		{
+			"_id": "req_47a594c902044a329f7d63db4a6ad9fd",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/x-www-form-urlencoded",
+				"params": []
+			},
+			"created": 1540140758639,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_90d065ab31354aa6bb080c8d5e4cf832",
+					"name": "token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJkNGUyMzZhMC1kNGVlLTExZTgtYjdmNS05N2Y2MDFmYmUzZTUiLCJ1c2VybmFtZSI6ImFkbWluIiwiTklQIjoiUE4tMTAwMSIsImZ1bGxOYW1lIjoiU2VvcmFuZyBBZG1pbiIsImVtYWlsIjoiYWRtaW5AZW1haWwuY29tIiwibW9iaWxlIjoiMDgyMTIyNTU5MDkwIiwicm9sZXMiOiJBZG1pbiIsInN0YXR1cyI6IkFjdGl2ZSIsImltZ1VybCI6bnVsbCwiX192IjowLCJpYXQiOjE1NDAxMDYxMDQsImV4cCI6MTU0MDEzNDkwNH0.HbEb1FGVDNqUsdqsacYFLDihK5jo-KSq6BMK9KTxqxA"
+				},
+				{
+					"id": "pair_56cb30ad3ee44b3ea2b324aa51ca404a",
+					"name": "Content-Type",
+					"value": "application/x-www-form-urlencoded"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540105670079,
+			"method": "DELETE",
+			"modified": 1540140758639,
+			"name": "Delete Checklist",
+			"parameters": [],
+			"parentId": "fld_831e4f6064434a61ad475daae864950a",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://seorangeksa.com:3030/api/checklist/delete/62a8adc0-d503-11e8-94e4-1b4ad8fb1ab5",
+			"_type": "request"
+		},
+		{
+			"_id": "req_a6545b3b70344fe2a1c632a2401924ef",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/graphql",
+				"text": "{\"query\":\"mutation signIn($username: String!, $password: String!) {\\n  signIn(username: $username, password: $password) {\\n    user {\\n      _id\\n      username\\n      NIP\\n      fullName\\n      email\\n      mobile\\n      password\\n      roles\\n      status\\n      imgUrl\\n    }\\n    token\\n  }\\n}\\n\",\"variables\":{\"username\":\"admin\",\"password\":\"P@ssw0rd\"},\"operationName\":\"signIn\"}"
+			},
+			"created": 1540140758644,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_d1c201a8629244ae8358815d4f317cc0",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540130969544,
+			"method": "POST",
+			"modified": 1540140758644,
+			"name": "Login",
+			"parameters": [],
+			"parentId": "fld_6bd606539cc34d71a37f939702c015f3",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://seorangeksa.com:3030/graphql",
+			"_type": "request"
+		},
+		{
+			"_id": "req_1f7e291363384b33adba9b924ca0834f",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/graphql",
+				"text": "{\"query\":\"query admins{\\n\\tadmins {\\n\\t\\t_id\\n\\t\\tusername\\n\\t\\tNIP\\n\\t\\tfullName\\n\\t\\temail\\n\\t\\tmobile\\n\\t\\tpassword\\n\\t\\troles\\n\\t\\tstatus\\n\\t\\timgUrl\\n\\t\\tcreatedBy{\\n\\t\\t\\tusername\\n\\t\\t}\\n\\t}\\n}\",\"operationName\":\"admins\"}"
+			},
+			"created": 1540140758654,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_7f7faec6fdf14132a74f7aaabddf2e2a",
+					"name": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"disabled": false,
+					"id": "pair_c03a425499bf4e429a6566ed3f9ffd20",
+					"name": "token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJkMDNkYWFkMC1iY2YyLTExZTgtOTk3Yi00M2Q5MzljYjVkZmIiLCJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJOSVAiOiJQTi0wMDAwIiwiZnVsbE5hbWUiOiJTdXBlcmFkbWluIiwiZW1haWwiOiJzdXBlcmFkbWluQGVtYWlsLmNvbSIsIm1vYmlsZSI6IjYyODIxMjI1NTkwOTAiLCJzdGF0dXMiOiJBY3RpdmUiLCJpbWdVcmwiOm51bGwsInJvbGVzIjoiU3VwZXJhZG1pbiIsIl9fdiI6MCwiaWF0IjoxNTQwMTM2MTQ3LCJleHAiOjE1NDAxNjQ5NDd9.gWkM32l4iAmQTeUJ8dlimf_baYw7BWrTJQ_CHaCbI6E"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540133847641,
+			"method": "POST",
+			"modified": 1540140758654,
+			"name": "Get Admins",
+			"parameters": [],
+			"parentId": "fld_4710bef864234ed99457f9b66474d45f",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://seorangeksa.com:3030/graphql",
+			"_type": "request"
+		},
+		{
+			"_id": "req_b52b4abf146945aeabf73b5d7998cdf9",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/graphql",
+				"text": "{\"query\":\"query admin($id: ID!) {\\n  admin(id: $id) {\\n    _id\\n    username\\n    NIP\\n    fullName\\n    email\\n    mobile\\n    password\\n    roles\\n    status\\n    imgUrl\\n    createdBy {\\n      username\\n    }\\n  }\\n}\\n\",\"variables\":{\"id\":\"d4e236a0-d4ee-11e8-b7f5-97f601fbe3e5\"},\"operationName\":\"admin\"}"
+			},
+			"created": 1540140758659,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_7f7faec6fdf14132a74f7aaabddf2e2a",
+					"name": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"disabled": false,
+					"id": "pair_c03a425499bf4e429a6566ed3f9ffd20",
+					"name": "token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJkMDNkYWFkMC1iY2YyLTExZTgtOTk3Yi00M2Q5MzljYjVkZmIiLCJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJOSVAiOiJQTi0wMDAwIiwiZnVsbE5hbWUiOiJTdXBlcmFkbWluIiwiZW1haWwiOiJzdXBlcmFkbWluQGVtYWlsLmNvbSIsIm1vYmlsZSI6IjYyODIxMjI1NTkwOTAiLCJzdGF0dXMiOiJBY3RpdmUiLCJpbWdVcmwiOm51bGwsInJvbGVzIjoiU3VwZXJhZG1pbiIsIl9fdiI6MCwiaWF0IjoxNTQwMTM2MTQ3LCJleHAiOjE1NDAxNjQ5NDd9.gWkM32l4iAmQTeUJ8dlimf_baYw7BWrTJQ_CHaCbI6E"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540133128116.75,
+			"method": "POST",
+			"modified": 1540140758659,
+			"name": "Get Admin By Id",
+			"parameters": [],
+			"parentId": "fld_4710bef864234ed99457f9b66474d45f",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://seorangeksa.com:3030/graphql",
+			"_type": "request"
+		},
+		{
+			"_id": "req_914cb5a0232f4a508064199862334ddd",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/graphql",
+				"text": "{\"query\":\"mutation createAdmin($admin: AdminInput!) {\\n  createAdmin(admin: $admin) {\\n    _id\\n    username\\n    password\\n    NIP\\n    fullName\\n    email\\n    mobile\\n    roles\\n    status\\n    imgUrl\\n    createdAt\\n    createdBy {\\n      _id\\n      username\\n      roles\\n    }\\n  }\\n}\\n\",\"variables\":{\"admin\":{\"NIP\":\"admin-2\",\"fullName\":\"Seorang Admin\",\"email\":\"admin2@email.com\",\"mobile\":\"082122559090\",\"username\":\"admin2\",\"password\":\"P@ssw0rd\",\"status\":\"Active\"}},\"operationName\":\"createAdmin\"}"
+			},
+			"created": 1540140758667,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_7f7faec6fdf14132a74f7aaabddf2e2a",
+					"name": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"disabled": false,
+					"id": "pair_c03a425499bf4e429a6566ed3f9ffd20",
+					"name": "token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJkMDNkYWFkMC1iY2YyLTExZTgtOTk3Yi00M2Q5MzljYjVkZmIiLCJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJOSVAiOiJQTi0wMDAwIiwiZnVsbE5hbWUiOiJTdXBlcmFkbWluIiwiZW1haWwiOiJzdXBlcmFkbWluQGVtYWlsLmNvbSIsIm1vYmlsZSI6IjYyODIxMjI1NTkwOTAiLCJzdGF0dXMiOiJBY3RpdmUiLCJpbWdVcmwiOm51bGwsInJvbGVzIjoiU3VwZXJhZG1pbiIsIl9fdiI6MCwiaWF0IjoxNTQwMTM2MTQ3LCJleHAiOjE1NDAxNjQ5NDd9.gWkM32l4iAmQTeUJ8dlimf_baYw7BWrTJQ_CHaCbI6E"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540133847666,
+			"method": "POST",
+			"modified": 1540140758667,
+			"name": "Create Admin",
+			"parameters": [],
+			"parentId": "fld_4710bef864234ed99457f9b66474d45f",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://seorangeksa.com:3030/graphql",
+			"_type": "request"
+		},
+		{
+			"_id": "req_a766042d8cc9410da783bbfa681e07ae",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/graphql",
+				"text": "{\"query\":\"mutation deleteAdmin($id: ID!) {\\n  deleteAdmin(id: $id)\\n}\\n\",\"variables\":{\"id\":\"0a09ad70-d54b-11e8-b6e4-fdec08ec7905\"},\"operationName\":\"deleteAdmin\"}"
+			},
+			"created": 1540140758680,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_7f7faec6fdf14132a74f7aaabddf2e2a",
+					"name": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"disabled": false,
+					"id": "pair_c03a425499bf4e429a6566ed3f9ffd20",
+					"name": "token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJkMDNkYWFkMC1iY2YyLTExZTgtOTk3Yi00M2Q5MzljYjVkZmIiLCJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJOSVAiOiJQTi0wMDAwIiwiZnVsbE5hbWUiOiJTdXBlcmFkbWluIiwiZW1haWwiOiJzdXBlcmFkbWluQGVtYWlsLmNvbSIsIm1vYmlsZSI6IjYyODIxMjI1NTkwOTAiLCJzdGF0dXMiOiJBY3RpdmUiLCJpbWdVcmwiOm51bGwsInJvbGVzIjoiU3VwZXJhZG1pbiIsIl9fdiI6MCwiaWF0IjoxNTQwMTM2MTQ3LCJleHAiOjE1NDAxNjQ5NDd9.gWkM32l4iAmQTeUJ8dlimf_baYw7BWrTJQ_CHaCbI6E"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540133128066.75,
+			"method": "POST",
+			"modified": 1540140758680,
+			"name": "Delete Admin",
+			"parameters": [],
+			"parentId": "fld_4710bef864234ed99457f9b66474d45f",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://seorangeksa.com:3030/graphql",
+			"_type": "request"
+		},
+		{
+			"_id": "req_c0821b39f3764f46a73ce75db6dc0d70",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/graphql",
+				"text": "{\"query\":\"query users {\\n  users {\\n    _id\\n    username\\n    NIP\\n    fullName\\n    email\\n    mobile\\n    password\\n    roles\\n    status\\n    imgUrl\\n    createdBy {\\n      username\\n    }\\n  }\\n}\\n\",\"operationName\":\"users\"}"
+			},
+			"created": 1540140758693,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_7f7faec6fdf14132a74f7aaabddf2e2a",
+					"name": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"disabled": false,
+					"id": "pair_c03a425499bf4e429a6566ed3f9ffd20",
+					"name": "token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJkNGUyMzZhMC1kNGVlLTExZTgtYjdmNS05N2Y2MDFmYmUzZTUiLCJ1c2VybmFtZSI6ImFkbWluIiwiTklQIjoiUE4tMTAwMSIsImZ1bGxOYW1lIjoiU2VvcmFuZyBBZG1pbiIsImVtYWlsIjoiYWRtaW5AZW1haWwuY29tIiwibW9iaWxlIjoiMDgyMTIyNTU5MDkwIiwicm9sZXMiOiJBZG1pbiIsInN0YXR1cyI6IkFjdGl2ZSIsImltZ1VybCI6bnVsbCwiX192IjowLCJpYXQiOjE1NDAxMzgxOTUsImV4cCI6MTU0MDE2Njk5NX0.YNK3NTRawhYV92G2P-sW1OieinEFb-Hi8CT4nlRyBR0"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540133847641,
+			"method": "POST",
+			"modified": 1540140758693,
+			"name": "Get Users",
+			"parameters": [],
+			"parentId": "fld_32c3edae4a7f4757a63b2d4f3ddc3d5e",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://seorangeksa.com:3030/graphql",
+			"_type": "request"
+		},
+		{
+			"_id": "req_37a33874c4ea462c9ef1d632551498bb",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/graphql",
+				"text": "{\"query\":\"query user($id: ID!) {\\n  user(id: $id) {\\n    _id\\n    username\\n    NIP\\n    fullName\\n    email\\n    mobile\\n    password\\n    roles\\n    status\\n    imgUrl\\n    createdBy {\\n      username\\n    }\\n  }\\n}\\n\",\"variables\":{\"id\":\"d6058eb0-d4f3-11e8-b9c0-35fc5ec21d14\"},\"operationName\":\"user\"}"
+			},
+			"created": 1540140758702,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_7f7faec6fdf14132a74f7aaabddf2e2a",
+					"name": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"disabled": false,
+					"id": "pair_c03a425499bf4e429a6566ed3f9ffd20",
+					"name": "token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJkNGUyMzZhMC1kNGVlLTExZTgtYjdmNS05N2Y2MDFmYmUzZTUiLCJ1c2VybmFtZSI6ImFkbWluIiwiTklQIjoiUE4tMTAwMSIsImZ1bGxOYW1lIjoiU2VvcmFuZyBBZG1pbiIsImVtYWlsIjoiYWRtaW5AZW1haWwuY29tIiwibW9iaWxlIjoiMDgyMTIyNTU5MDkwIiwicm9sZXMiOiJBZG1pbiIsInN0YXR1cyI6IkFjdGl2ZSIsImltZ1VybCI6bnVsbCwiX192IjowLCJpYXQiOjE1NDAxMzgxOTUsImV4cCI6MTU0MDE2Njk5NX0.YNK3NTRawhYV92G2P-sW1OieinEFb-Hi8CT4nlRyBR0"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540133128116.75,
+			"method": "POST",
+			"modified": 1540140758702,
+			"name": "Get User By Id",
+			"parameters": [],
+			"parentId": "fld_32c3edae4a7f4757a63b2d4f3ddc3d5e",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://seorangeksa.com:3030/graphql",
+			"_type": "request"
+		},
+		{
+			"_id": "req_9e16f5ca66b24dfe8c156cbe5683cf8a",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/graphql",
+				"text": "{\"query\":\"mutation createUser($user: UserInput!) {\\n  createUser(user: $user) {\\n    _id\\n    username\\n    password\\n    NIP\\n    fullName\\n    email\\n    mobile\\n    roles\\n    status\\n    imgUrl\\n    createdAt\\n    createdBy {\\n      _id\\n      username\\n      roles\\n    }\\n  }\\n}\\n\",\"variables\":{\"user\":{\"NIP\":\"PN 1003\",\"fullName\":\"Seorang Kernet\",\"email\":\"kernet@email.com\",\"mobile\":\"082122559090\",\"username\":\"kernet\",\"password\":\"P@ssw0rd\",\"status\":\"Active\",\"roles\":\"Kernet\"}},\"operationName\":\"createUser\"}"
+			},
+			"created": 1540140758711,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_7f7faec6fdf14132a74f7aaabddf2e2a",
+					"name": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"disabled": false,
+					"id": "pair_c03a425499bf4e429a6566ed3f9ffd20",
+					"name": "token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJkNGUyMzZhMC1kNGVlLTExZTgtYjdmNS05N2Y2MDFmYmUzZTUiLCJ1c2VybmFtZSI6ImFkbWluIiwiTklQIjoiUE4tMTAwMSIsImZ1bGxOYW1lIjoiU2VvcmFuZyBBZG1pbiIsImVtYWlsIjoiYWRtaW5AZW1haWwuY29tIiwibW9iaWxlIjoiMDgyMTIyNTU5MDkwIiwicm9sZXMiOiJBZG1pbiIsInN0YXR1cyI6IkFjdGl2ZSIsImltZ1VybCI6bnVsbCwiX192IjowLCJpYXQiOjE1NDAxMzgxOTUsImV4cCI6MTU0MDE2Njk5NX0.YNK3NTRawhYV92G2P-sW1OieinEFb-Hi8CT4nlRyBR0"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540133847666,
+			"method": "POST",
+			"modified": 1540140758711,
+			"name": "Create User",
+			"parameters": [],
+			"parentId": "fld_32c3edae4a7f4757a63b2d4f3ddc3d5e",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://seorangeksa.com:3030/graphql",
+			"_type": "request"
+		},
+		{
+			"_id": "req_f6bfba99530d4eeca54fb6ed8e8842d5",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/graphql",
+				"text": "{\"query\":\"mutation deleteUser($id: ID!) {\\n  deleteUser(id: $id)\\n}\\n\",\"variables\":{\"id\":\"7ed33890-d54d-11e8-a9b7-9b6bffac45f5\"},\"operationName\":\"deleteUser\"}"
+			},
+			"created": 1540140758723,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_7f7faec6fdf14132a74f7aaabddf2e2a",
+					"name": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"disabled": false,
+					"id": "pair_c03a425499bf4e429a6566ed3f9ffd20",
+					"name": "token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJkNGUyMzZhMC1kNGVlLTExZTgtYjdmNS05N2Y2MDFmYmUzZTUiLCJ1c2VybmFtZSI6ImFkbWluIiwiTklQIjoiUE4tMTAwMSIsImZ1bGxOYW1lIjoiU2VvcmFuZyBBZG1pbiIsImVtYWlsIjoiYWRtaW5AZW1haWwuY29tIiwibW9iaWxlIjoiMDgyMTIyNTU5MDkwIiwicm9sZXMiOiJBZG1pbiIsInN0YXR1cyI6IkFjdGl2ZSIsImltZ1VybCI6bnVsbCwiX192IjowLCJpYXQiOjE1NDAxMzgxOTUsImV4cCI6MTU0MDE2Njk5NX0.YNK3NTRawhYV92G2P-sW1OieinEFb-Hi8CT4nlRyBR0"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540133128066.75,
+			"method": "POST",
+			"modified": 1540140758723,
+			"name": "Delete User",
+			"parameters": [],
+			"parentId": "fld_32c3edae4a7f4757a63b2d4f3ddc3d5e",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://seorangeksa.com:3030/graphql",
+			"_type": "request"
+		},
+		{
+			"_id": "req_ebb78a3436984d75864fce6ba2070d68",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/graphql",
+				"text": "{\"query\":\"query mobiltangkis {\\n  mobiltangkis {\\n    _id\\n    nopol\\n    _id\\n    year\\n    status\\n    createdBy {\\n      username\\n      roles\\n    }\\n  }\\n}\\n\",\"operationName\":\"mobiltangkis\"}"
+			},
+			"created": 1540140758740,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_7f7faec6fdf14132a74f7aaabddf2e2a",
+					"name": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"disabled": false,
+					"id": "pair_c03a425499bf4e429a6566ed3f9ffd20",
+					"name": "token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJkNGUyMzZhMC1kNGVlLTExZTgtYjdmNS05N2Y2MDFmYmUzZTUiLCJ1c2VybmFtZSI6ImFkbWluIiwiTklQIjoiUE4tMTAwMSIsImZ1bGxOYW1lIjoiU2VvcmFuZyBBZG1pbiIsImVtYWlsIjoiYWRtaW5AZW1haWwuY29tIiwibW9iaWxlIjoiMDgyMTIyNTU5MDkwIiwicm9sZXMiOiJBZG1pbiIsInN0YXR1cyI6IkFjdGl2ZSIsImltZ1VybCI6bnVsbCwiX192IjowLCJpYXQiOjE1NDAxMzgxOTUsImV4cCI6MTU0MDE2Njk5NX0.YNK3NTRawhYV92G2P-sW1OieinEFb-Hi8CT4nlRyBR0"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540133847641,
+			"method": "POST",
+			"modified": 1540140758740,
+			"name": "Get Mobil Tangkis",
+			"parameters": [],
+			"parentId": "fld_5114f48d0d574a4b8c70d11096999ba7",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://seorangeksa.com:3030/graphql",
+			"_type": "request"
+		},
+		{
+			"_id": "req_4ed5937d472e44afb4f2dc4b3520427e",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/graphql",
+				"text": "{\"query\":\"query mobiltangki($id: ID!) {\\n  mobiltangki(id: $id) {\\n    _id\\n    nopol\\n    KL\\n    year\\n    status\\n    createdBy {\\n      username\\n    }\\n  }\\n}\\n\",\"variables\":{\"id\":\"640b8400-d501-11e8-94e4-1b4ad8fb1ab5\"},\"operationName\":\"mobiltangki\"}"
+			},
+			"created": 1540140758751,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_7f7faec6fdf14132a74f7aaabddf2e2a",
+					"name": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"disabled": false,
+					"id": "pair_c03a425499bf4e429a6566ed3f9ffd20",
+					"name": "token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJkNGUyMzZhMC1kNGVlLTExZTgtYjdmNS05N2Y2MDFmYmUzZTUiLCJ1c2VybmFtZSI6ImFkbWluIiwiTklQIjoiUE4tMTAwMSIsImZ1bGxOYW1lIjoiU2VvcmFuZyBBZG1pbiIsImVtYWlsIjoiYWRtaW5AZW1haWwuY29tIiwibW9iaWxlIjoiMDgyMTIyNTU5MDkwIiwicm9sZXMiOiJBZG1pbiIsInN0YXR1cyI6IkFjdGl2ZSIsImltZ1VybCI6bnVsbCwiX192IjowLCJpYXQiOjE1NDAxMzgxOTUsImV4cCI6MTU0MDE2Njk5NX0.YNK3NTRawhYV92G2P-sW1OieinEFb-Hi8CT4nlRyBR0"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540133128116.75,
+			"method": "POST",
+			"modified": 1540140758751,
+			"name": "Get Mobil Tangki By Id",
+			"parameters": [],
+			"parentId": "fld_5114f48d0d574a4b8c70d11096999ba7",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://seorangeksa.com:3030/graphql",
+			"_type": "request"
+		},
+		{
+			"_id": "req_4c43c2d6403a49b583b1a87f454a7b06",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/graphql",
+				"text": "{\"query\":\"mutation createMobilTangki($mobiltangki: MobilTangkiInput!) {\\n  createMobilTangki(mobiltangki: $mobiltangki) {\\n    _id\\n    KL\\n    year\\n    status\\n    createdBy {\\n      _id\\n    }\\n  }\\n}\\n\",\"variables\":{\"mobiltangki\":{\"nopol\":\"B 1003 BB\",\"KL\":\"24\",\"year\":2012,\"status\":\"Active\"}},\"operationName\":\"createMobilTangki\"}"
+			},
+			"created": 1540140758762,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_7f7faec6fdf14132a74f7aaabddf2e2a",
+					"name": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"disabled": false,
+					"id": "pair_c03a425499bf4e429a6566ed3f9ffd20",
+					"name": "token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJkNGUyMzZhMC1kNGVlLTExZTgtYjdmNS05N2Y2MDFmYmUzZTUiLCJ1c2VybmFtZSI6ImFkbWluIiwiTklQIjoiUE4tMTAwMSIsImZ1bGxOYW1lIjoiU2VvcmFuZyBBZG1pbiIsImVtYWlsIjoiYWRtaW5AZW1haWwuY29tIiwibW9iaWxlIjoiMDgyMTIyNTU5MDkwIiwicm9sZXMiOiJBZG1pbiIsInN0YXR1cyI6IkFjdGl2ZSIsImltZ1VybCI6bnVsbCwiX192IjowLCJpYXQiOjE1NDAxMzgxOTUsImV4cCI6MTU0MDE2Njk5NX0.YNK3NTRawhYV92G2P-sW1OieinEFb-Hi8CT4nlRyBR0"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540133847666,
+			"method": "POST",
+			"modified": 1540140758762,
+			"name": "Create Mobil Tangki",
+			"parameters": [],
+			"parentId": "fld_5114f48d0d574a4b8c70d11096999ba7",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://seorangeksa.com:3030/graphql",
+			"_type": "request"
+		},
+		{
+			"_id": "req_4c05c38f254c4095a635c3c4101aa8fa",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/graphql",
+				"text": "{\"query\":\"mutation deleteMobilTangki($id: ID!) {\\n  deleteMobilTangki(id: $id)\\n}\\n\",\"variables\":{\"id\":\"56b5d550-d54f-11e8-955b-ddd1208f1156\"},\"operationName\":\"deleteMobilTangki\"}"
+			},
+			"created": 1540140758777,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_7f7faec6fdf14132a74f7aaabddf2e2a",
+					"name": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"disabled": false,
+					"id": "pair_c03a425499bf4e429a6566ed3f9ffd20",
+					"name": "token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJkNGUyMzZhMC1kNGVlLTExZTgtYjdmNS05N2Y2MDFmYmUzZTUiLCJ1c2VybmFtZSI6ImFkbWluIiwiTklQIjoiUE4tMTAwMSIsImZ1bGxOYW1lIjoiU2VvcmFuZyBBZG1pbiIsImVtYWlsIjoiYWRtaW5AZW1haWwuY29tIiwibW9iaWxlIjoiMDgyMTIyNTU5MDkwIiwicm9sZXMiOiJBZG1pbiIsInN0YXR1cyI6IkFjdGl2ZSIsImltZ1VybCI6bnVsbCwiX192IjowLCJpYXQiOjE1NDAxMzgxOTUsImV4cCI6MTU0MDE2Njk5NX0.YNK3NTRawhYV92G2P-sW1OieinEFb-Hi8CT4nlRyBR0"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540133128066.75,
+			"method": "POST",
+			"modified": 1540140758777,
+			"name": "Delete Mobil Tangki",
+			"parameters": [],
+			"parentId": "fld_5114f48d0d574a4b8c70d11096999ba7",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://seorangeksa.com:3030/graphql",
+			"_type": "request"
+		}
+	]
+}
