@@ -8,6 +8,8 @@ module.exports = gql`
     user(id: ID!): User!
     mobiltangkis: [MobilTangki!]
     mobiltangki(id: ID!): MobilTangki!
+    checklists: [CheckList!]
+    checklist(id: ID!): CheckList!
   }
 
   type Mutation {
@@ -21,6 +23,9 @@ module.exports = gql`
     createMobilTangki(mobiltangki: MobilTangkiInput!): MobilTangki!
     updateMobilTangki(id: ID!, mobiltangki: MobilTangkiInput!): MobilTangki!
     deleteMobilTangki(id: ID!): Boolean
+    createCheckList(checklist: CheckListInput!): CheckList!
+    updateCheckList(id: ID!, checklist: CheckListInput!): CheckList!
+    deleteCheckList(id: ID!): Boolean
   }
 
   type User {
@@ -88,9 +93,155 @@ module.exports = gql`
     status: StatusActive!
   }
 
+  type CheckList {
+    _id: ID!
+    createdBy: User
+    mobiltangki: MobilTangki
+    status: StatusApproval
+    ritase: Int
+    odoKM: Int
+    HSSE: Int
+    PWSAMT: String
+    TBBM: String
+    remarks: String
+    imgUrl: String
+    kondisiRem: Int
+    kondisiRemReason: String
+    kondisiBan: Int
+    kondisiBanReason: String
+    kondisiWiper: Int
+    kondisiWiperReason: String
+    kondisiLampu: Int
+    kondisiLampuReason: String
+    kondisiKompartemen: Int
+    kondisiKompartemenReason: String
+    kondisiApar: Int
+    kondisiAparReason: String
+    kondisiOliMesin: Int
+    kondisiOliMesinReason: String
+    kondisiAirRadiator: Int
+    kondisiAirRadiatorReason: String
+    keberadaanSTNK: Int
+    keberadaanSTNKReason: String
+    keberadaanSuratKeur: Int
+    keberadaanSuratKeurReason: String
+    keberadaanSuratTera: Int
+    keberadaanSuratTeraReason: String
+    keberadaanP3K: Int
+    keberadaanP3KReason: String
+    keberadaanFlameTrap: Int
+    keberadaanFlameTrapReason: String
+    keberadaanBanSerep: Int
+    keberadaanBanSerepReason: String
+    keberadaanToolkit: Int
+    keberadaanToolKitReason: String
+    keberadaanGroundingCable: Int
+    keberadaanGroundingCableReason: String
+    keberadaanSelangBongkar: Int
+    keberadaanSelangBongkarReason: String
+    keberadaanSpillKit: Int
+    keberadaanSpillKitReason: String
+    membawaSIM: Int
+    membawaSIMReason: String
+    membawaSuratIjinArea: Int
+    membawaSuratIjinAreaReason: String
+    membawaBukuSaku: Int
+    membawaBukuSakuReason: String
+    membawaCatatanPerjalanan: Int
+    membawaCatatanPerjalananReason: String
+    menggunakanSeragam: Int
+    menggunakanSeragamReason: String
+    menggunakanSafetyShoes: Int
+    menggunakanSafetyShoesReason: String
+    menggunakanSafetyHelm: Int
+    menggunakanSafetyHelmReason: String
+    menggunakanIDCard: Int
+    menggunakanIDCardReason: String
+    menggunakanSarungTangan: Int
+    menggunakanSarungTanganReason: String
+    menggunakanJasHujan: Int
+    menggunakanJamHujanReason: String
+  }
+
+  input CheckListInput {
+    # createdBy: User
+    mobiltangki: MobilTangkiInput
+    status: StatusApproval
+    ritase: Int
+    odoKM: Int
+    HSSE: Int
+    PWSAMT: String
+    TBBM: String
+    remarks: String
+    imgUrl: String
+    kondisiRem: Int
+    kondisiRemReason: String
+    kondisiBan: Int
+    kondisiBanReason: String
+    kondisiWiper: Int
+    kondisiWiperReason: String
+    kondisiLampu: Int
+    kondisiLampuReason: String
+    kondisiKompartemen: Int
+    kondisiKompartemenReason: String
+    kondisiApar: Int
+    kondisiAparReason: String
+    kondisiOliMesin: Int
+    kondisiOliMesinReason: String
+    kondisiAirRadiator: Int
+    kondisiAirRadiatorReason: String
+    keberadaanSTNK: Int
+    keberadaanSTNKReason: String
+    keberadaanSuratKeur: Int
+    keberadaanSuratKeurReason: String
+    keberadaanSuratTera: Int
+    keberadaanSuratTeraReason: String
+    keberadaanP3K: Int
+    keberadaanP3KReason: String
+    keberadaanFlameTrap: Int
+    keberadaanFlameTrapReason: String
+    keberadaanBanSerep: Int
+    keberadaanBanSerepReason: String
+    keberadaanToolkit: Int
+    keberadaanToolKitReason: String
+    keberadaanGroundingCable: Int
+    keberadaanGroundingCableReason: String
+    keberadaanSelangBongkar: Int
+    keberadaanSelangBongkarReason: String
+    keberadaanSpillKit: Int
+    keberadaanSpillKitReason: String
+    membawaSIM: Int
+    membawaSIMReason: String
+    membawaSuratIjinArea: Int
+    membawaSuratIjinAreaReason: String
+    membawaBukuSaku: Int
+    membawaBukuSakuReason: String
+    membawaCatatanPerjalanan: Int
+    membawaCatatanPerjalananReason: String
+    menggunakanSeragam: Int
+    menggunakanSeragamReason: String
+    menggunakanSafetyShoes: Int
+    menggunakanSafetyShoesReason: String
+    menggunakanSafetyHelm: Int
+    menggunakanSafetyHelmReason: String
+    menggunakanIDCard: Int
+    menggunakanIDCardReason: String
+    menggunakanSarungTangan: Int
+    menggunakanSarungTanganReason: String
+    menggunakanJasHujan: Int
+    menggunakanJamHujanReason: String
+  }
+
   enum StatusActive {
     Active
     NonActive
+  }
+
+  enum StatusApproval {
+    Waiting
+    Request
+    Approved
+    Rejected
   }
 
   enum RoleAccess {
