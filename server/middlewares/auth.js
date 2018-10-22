@@ -118,7 +118,12 @@ const validateTokenUser = async (req, res, next) => {
   if (token) {
     try {
       const decode = await jwt.verify(token, process.env.JWT_KEY)
-      if (decode.roles === 'Superadmin' || decode.roles === 'Admin' || decode.roles === 'User') {
+      if (
+        decode.roles === 'Superadmin' ||
+        decode.roles === 'Admin' ||
+        decode.roles === 'Sopir' ||
+        decode.roles === 'Kernet'
+      ) {
         req.authUser = decode
         next()
       } else {
@@ -178,7 +183,7 @@ const gqlValidateTokenAdmin = combineResolvers(
 const gqlValidateTokenUser = combineResolvers(
   isAuthenticated,
   (parent, args, { authUser: { roles } }) =>
-    roles === 'Superadmin' || roles === 'Admin' || roles === 'User'
+    roles === 'Superadmin' || roles === 'Admin' || roles === 'Sopir' || roles === 'Kernet'
       ? skip
       : new ForbiddenError('You dont have authentication!')
 )
