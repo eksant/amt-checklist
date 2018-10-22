@@ -48,6 +48,8 @@ Access the endpoints checklist by visiting [http://localhost:3030/api/checklist]
 | 4  | user(id: ID!): User!                                                       | Read Data User By Id          |
 | 5  | mobiltangkis: [MobilTangki!]                                               | Read All Data Mobil Tangkis   |
 | 6  | mobiltangki(id: ID!): MobilTangki!                                         | Read Data Mobil Tangki By Id  |
+| 8  | checklists: [CheckList!]                                                   | Read All Data Checklist       |
+| 9  | checklist(id: ID!): CheckList!                                             | Read Data Checklist By Id     |
 
 ### Schema Mutation GraphQL :
 | No | Query                                                                      | Description                   |
@@ -56,12 +58,15 @@ Access the endpoints checklist by visiting [http://localhost:3030/api/checklist]
 | 2  | createAdmin(admin: AdminInput!): User!                                     | Create Admin                  |
 | 3  | createUser(user: UserInput!): User!                                        | Create User                   |
 | 4  | createMobilTangki(mobiltangki: MobilTangkiInput!): MobilTangki!            | Create Mobil Tangki           |
-| 5  | updateAdmin(id: ID!, admin: AdminInput!): User!                            | Update Admin By Id            |
-| 6  | updateUser(id: ID!, user: UserInput!): User!                               | Update User By Id             |
-| 7  | updateMobilTangki(id: ID!, mobiltangki: MobilTangkiInput!): MobilTangki!   | Update Mobil Tangki By Id     |
-| 8  | deleteAdmin(id: ID!): Boolean                                              | Delete Admin By Id            |
-| 9  | deleteUser(id: ID!): Boolean                                               | Delete User By Id             |
-| 10 | deleteMobilTangki(id: ID!): Boolean                                        | Delete Mobil Tangki By Id     |
+| 5  | createCheckList(checklist: CheckListInput!): CheckList!                    | Create Checklist              |
+| 6  | updateAdmin(id: ID!, admin: AdminInput!): User!                            | Update Admin By Id            |
+| 7  | updateUser(id: ID!, user: UserInput!): User!                               | Update User By Id             |
+| 8  | updateMobilTangki(id: ID!, mobiltangki: MobilTangkiInput!): MobilTangki!   | Update Mobil Tangki By Id     |
+| 9  | updateCheckList(id: ID!, checklist: CheckListInput!): CheckList!           | Update Checklist By Id        |
+| 10 | deleteAdmin(id: ID!): Boolean                                              | Delete Admin By Id            |
+| 11 | deleteUser(id: ID!): Boolean                                               | Delete User By Id             |
+| 12 | deleteMobilTangki(id: ID!): Boolean                                        | Delete Mobil Tangki By Id     |
+| 13 | deleteCheckList(id: ID!): Boolean                                          | Delete Checklist By Id        |
 
 Access the graphql by visiting [http://localhost:3030/graphql](http://localhost:3030/graphql)  
 
