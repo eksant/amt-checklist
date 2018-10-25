@@ -89,6 +89,7 @@ module.exports = {
         })
       } catch (error) {
         res.status(400).json({
+          status: 400,
           message: 'Bad request',
           error,
         })
@@ -108,6 +109,7 @@ module.exports = {
       })
     } catch (error) {
       res.status(400).json({
+        status: 400,
         message: 'Bad request',
         error,
       })
@@ -126,6 +128,7 @@ module.exports = {
       })
     } catch (error) {
       res.status(400).json({
+        status: 400,
         message: 'Bad request',
         error,
       })
@@ -137,7 +140,7 @@ module.exports = {
       const checklist = await readId(req.params.id)
 
       if (checklist) {
-        const data = await update({
+        const itemData = {
           // user: req.authUser,
           // mobiltangki: req.body.mobiltangkiId,
           status: req.body.status,
@@ -204,8 +207,42 @@ module.exports = {
           menggunakanSarungTanganReason: req.body.menggunakanSarungTanganReason || null,
           menggunakanJasHujan: req.body.menggunakanJasHujan || null,
           menggunakanJamHujanReason: req.body.menggunakanJamHujanReason || null,
-        })
+        }
 
+        const data = await update(checklist._id, itemData)
+        client.del('checklistCache')
+        res.status(200).json({
+          status: 200,
+          message: 'Success to update approval record!',
+          data,
+        })
+      } else {
+        res.status(200).json({
+          status: 200,
+          message: 'Data not found!',
+        })
+      }
+    } catch (error) {
+      res.status(400).json({
+        status: 400,
+        message: 'Bad request',
+        error,
+      })
+    }
+  },
+
+  approval: async (req, res) => {
+    try {
+      const checklist = await readId(req.params.id)
+
+      if (checklist) {
+        const itemData = {
+          approvedBy: req.authUser,
+          status: req.body.status,
+          rejectedReason: req.body.rejectedReason,
+        }
+
+        const data = await update(checklist._id, itemData)
         client.del('checklistCache')
         res.status(200).json({
           status: 200,
@@ -214,11 +251,13 @@ module.exports = {
         })
       } else {
         res.status(200).json({
+          status: 200,
           message: 'Data not found!',
         })
       }
     } catch (error) {
       res.status(400).json({
+        status: 400,
         message: 'Bad request',
         error,
       })
@@ -237,6 +276,7 @@ module.exports = {
       })
     } catch (error) {
       res.status(400).json({
+        status: 400,
         message: 'Bad request',
         error,
       })

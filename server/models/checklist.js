@@ -279,6 +279,18 @@ var schema = new Schema(
       type: String,
       trim: true,
     },
+    approvedBy: {
+      type: {
+        type: Schema.Types.Object,
+        ref: 'User',
+      },
+      // type: Schema.Types.Object,
+      // ref: 'User',
+    },
+    rejectedReason: {
+      type: String,
+      trim: true,
+    },
   },
   {
     // createdAt: { type: Date, default: Date.now },
