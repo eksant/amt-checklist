@@ -39,6 +39,13 @@ Access the endpoints users by visiting [http://localhost:3030/api/users](http://
 Access the endpoints mobil tangkis by visiting [http://localhost:3030/api/mobiltangkis](http://localhost:3030/api/mobiltangkis)  
 Access the endpoints checklist by visiting [http://localhost:3030/api/checklist](http://localhost:3030/api/checklist)  
 
+### Endpoint API Approval Checklist :
+| No | Method   | End Point     | Description         |
+| -- | ---------|---------------|---------------------|
+| 1  | PUT      | /approval/:id | Approval checklist  |
+
+Access the endpoints by visiting [http://localhost:3030/api/checklist](http://localhost:3030/api/checklist)  
+
 ### Schema Query GraphQL :
 | No | Query                                                                      | Description                   |
 |----|----------------------------------------------------------------------------|-------------------------------|
