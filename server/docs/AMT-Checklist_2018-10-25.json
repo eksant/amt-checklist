@@ -1,341 +1,341 @@
 {
 	"_type": "export",
 	"__export_format": 3,
-	"__export_date": "2018-10-22T16:27:21.608Z",
+	"__export_date": "2018-10-25T06:15:51.350Z",
 	"__export_source": "insomnia.desktop.app:v6.0.2",
 	"resources": [
 		{
-			"_id": "wrk_c104cfb340a9454482aeda255c9028b5",
-			"created": 1540225544511,
+			"_id": "wrk_f8cfcabacfbd4ddea80950a10662bdbf",
+			"created": 1540448089058,
 			"description": "",
-			"modified": 1540225544511,
+			"modified": 1540448089058,
 			"name": "AMT Checklist",
 			"parentId": null,
 			"_type": "workspace"
 		},
 		{
-			"_id": "env_ab698fd5566e4affb02c02bcf1f5f050",
+			"_id": "env_f294e8eb7a734e53ac7c5ede1fc6151d",
 			"color": null,
-			"created": 1540225544525,
+			"created": 1540448089076,
 			"data": {},
 			"isPrivate": false,
-			"metaSortKey": 1540225544525,
-			"modified": 1540225544525,
+			"metaSortKey": 1540448089076,
+			"modified": 1540448089076,
 			"name": "New Environment",
-			"parentId": "wrk_c104cfb340a9454482aeda255c9028b5",
+			"parentId": "wrk_f8cfcabacfbd4ddea80950a10662bdbf",
 			"_type": "environment"
 		},
 		{
-			"_id": "jar_2818f851ea724d20a0d62f53dc74ae3e",
+			"_id": "jar_7c50652622cc4a049ac399a330d083a5",
 			"cookies": [],
-			"created": 1540225544530,
-			"modified": 1540225544530,
+			"created": 1540448089079,
+			"modified": 1540448089079,
 			"name": "Default Jar",
-			"parentId": "wrk_c104cfb340a9454482aeda255c9028b5",
+			"parentId": "wrk_f8cfcabacfbd4ddea80950a10662bdbf",
 			"_type": "cookie_jar"
 		},
 		{
-			"_id": "fld_b28e609b7a5b41f49c880935e41df666",
-			"created": 1540225583529,
+			"_id": "fld_38f828d6f6cd4050b0af10db2ca7856e",
+			"created": 1540448104720,
 			"description": "",
 			"environment": {},
 			"metaSortKey": -1535267393122,
-			"modified": 1540225606183,
+			"modified": 1540448121078,
 			"name": "AMT-Checklist",
-			"parentId": "wrk_c104cfb340a9454482aeda255c9028b5",
+			"parentId": "wrk_f8cfcabacfbd4ddea80950a10662bdbf",
 			"_type": "request_group"
 		},
 		{
-			"_id": "fld_1b9ec89ccac64fd382ee824fcd4baf8c",
-			"created": 1540225583531,
+			"_id": "fld_8a68a8c39a46444cb2f5ebd4c0c6857f",
+			"created": 1540448104726,
 			"description": "",
 			"environment": {},
 			"metaSortKey": -1540095464487,
-			"modified": 1540225583531,
+			"modified": 1540448104726,
 			"name": "Localhost",
-			"parentId": "fld_b28e609b7a5b41f49c880935e41df666",
+			"parentId": "fld_38f828d6f6cd4050b0af10db2ca7856e",
 			"_type": "request_group"
 		},
 		{
-			"_id": "fld_8d1222e9ec2a4fe9894b9ce86219b7de",
-			"created": 1540225583918,
+			"_id": "fld_47d3ea8b5bdb473399d212d2f15084f4",
+			"created": 1540448105310,
 			"description": "",
 			"environment": {},
 			"metaSortKey": -1540006610808,
-			"modified": 1540225583918,
+			"modified": 1540448105310,
 			"name": "Google Cloud",
-			"parentId": "fld_b28e609b7a5b41f49c880935e41df666",
+			"parentId": "fld_38f828d6f6cd4050b0af10db2ca7856e",
 			"_type": "request_group"
 		},
 		{
-			"_id": "fld_c58d8fb09fc849c48f4865e6b072c6cc",
-			"created": 1540225583532,
+			"_id": "fld_bb99d4ad29ff4457b77f573fb3e93e55",
+			"created": 1540448104727,
 			"description": "",
 			"environment": {},
 			"metaSortKey": -1540130560235,
-			"modified": 1540225583532,
+			"modified": 1540448104727,
 			"name": "Rest API",
-			"parentId": "fld_1b9ec89ccac64fd382ee824fcd4baf8c",
+			"parentId": "fld_8a68a8c39a46444cb2f5ebd4c0c6857f",
 			"_type": "request_group"
 		},
 		{
-			"_id": "fld_b9fdcdc585c54c79b2a26c2f7753908f",
-			"created": 1540225583594,
+			"_id": "fld_34ddf6ed148b4a3fbd8fd80c78875db3",
+			"created": 1540448104870,
 			"description": "",
 			"environment": {},
 			"metaSortKey": -1540130636776,
-			"modified": 1540225583594,
+			"modified": 1540448104870,
 			"name": "GraphQL",
-			"parentId": "fld_1b9ec89ccac64fd382ee824fcd4baf8c",
+			"parentId": "fld_8a68a8c39a46444cb2f5ebd4c0c6857f",
 			"_type": "request_group"
 		},
 		{
-			"_id": "fld_37086232b42e4721b5fb51deb227ba9d",
-			"created": 1540225583920,
+			"_id": "fld_2f065e8973934b71a393e61e58bf0f6f",
+			"created": 1540448105311,
 			"description": "",
 			"environment": {},
 			"metaSortKey": -1540130796295,
-			"modified": 1540225583920,
+			"modified": 1540448105311,
 			"name": "Rest API",
-			"parentId": "fld_8d1222e9ec2a4fe9894b9ce86219b7de",
+			"parentId": "fld_47d3ea8b5bdb473399d212d2f15084f4",
 			"_type": "request_group"
 		},
 		{
-			"_id": "fld_81df7261c64849e3983768754084f45c",
-			"created": 1540225583987,
+			"_id": "fld_f97ab7d98fcc40a1b76f7b8793aae2a9",
+			"created": 1540448105402,
 			"description": "",
 			"environment": {},
 			"metaSortKey": -1540130796345,
-			"modified": 1540225583987,
+			"modified": 1540448105402,
 			"name": "GraphQL",
-			"parentId": "fld_8d1222e9ec2a4fe9894b9ce86219b7de",
+			"parentId": "fld_47d3ea8b5bdb473399d212d2f15084f4",
 			"_type": "request_group"
 		},
 		{
-			"_id": "fld_d958a5be566e4001b575ed04f3cb114e",
-			"created": 1540225583534,
+			"_id": "fld_c6eb4910d68c4d01b6e5d8c6f23424b6",
+			"created": 1540448104728,
 			"description": "",
 			"environment": {},
 			"metaSortKey": -1540095532724.5,
-			"modified": 1540225583534,
+			"modified": 1540448104728,
 			"name": "Users",
-			"parentId": "fld_c58d8fb09fc849c48f4865e6b072c6cc",
+			"parentId": "fld_bb99d4ad29ff4457b77f573fb3e93e55",
 			"_type": "request_group"
 		},
 		{
-			"_id": "fld_522b6e8d1717445db2c9300acea3ab75",
-			"created": 1540225583550,
+			"_id": "fld_c27d6ed9bea74215bacb5648869b7fec",
+			"created": 1540448104762,
 			"description": "",
 			"environment": {},
 			"metaSortKey": -1540095532762,
-			"modified": 1540225583550,
+			"modified": 1540448104762,
 			"name": "Auth",
-			"parentId": "fld_c58d8fb09fc849c48f4865e6b072c6cc",
+			"parentId": "fld_bb99d4ad29ff4457b77f573fb3e93e55",
 			"_type": "request_group"
 		},
 		{
-			"_id": "fld_2bccbf87296a446dbad82a84954b8dae",
-			"created": 1540225583557,
+			"_id": "fld_043feb6fb34c4b9097c9446d7ef5ba9e",
+			"created": 1540448104772,
 			"description": "",
 			"environment": {},
 			"metaSortKey": -1540095532737,
-			"modified": 1540225583557,
+			"modified": 1540448104772,
 			"name": "Admins",
-			"parentId": "fld_c58d8fb09fc849c48f4865e6b072c6cc",
+			"parentId": "fld_bb99d4ad29ff4457b77f573fb3e93e55",
 			"_type": "request_group"
 		},
 		{
-			"_id": "fld_a74a99b2695e463b9b86d7c62caaab7c",
-			"created": 1540225583571,
+			"_id": "fld_3cd9ddd71ba84aefa38a5b25658cfec3",
+			"created": 1540448104813,
 			"description": "",
 			"environment": {},
 			"metaSortKey": -1540095532718.25,
-			"modified": 1540225583571,
+			"modified": 1540448104813,
 			"name": "Mobil Tangkis",
-			"parentId": "fld_c58d8fb09fc849c48f4865e6b072c6cc",
+			"parentId": "fld_bb99d4ad29ff4457b77f573fb3e93e55",
 			"_type": "request_group"
 		},
 		{
-			"_id": "fld_922a982d3d5e40b188285d543a159671",
-			"created": 1540225583584,
+			"_id": "fld_f40c69bc23d04502923b52c7ac4e294f",
+			"created": 1540448104842,
 			"description": "",
 			"environment": {},
 			"metaSortKey": -1540095532712,
-			"modified": 1540225583584,
+			"modified": 1540448104842,
 			"name": "Checklist",
-			"parentId": "fld_c58d8fb09fc849c48f4865e6b072c6cc",
+			"parentId": "fld_bb99d4ad29ff4457b77f573fb3e93e55",
 			"_type": "request_group"
 		},
 		{
-			"_id": "fld_acf52044fea9448d9eb3e25df35fbb02",
-			"created": 1540225583596,
+			"_id": "fld_60cc70832a7341338f48f297fd8fc6d2",
+			"created": 1540448104875,
 			"description": "",
 			"environment": {},
 			"metaSortKey": -1540133820989,
-			"modified": 1540225583596,
+			"modified": 1540448104875,
 			"name": "Auth",
-			"parentId": "fld_b9fdcdc585c54c79b2a26c2f7753908f",
+			"parentId": "fld_34ddf6ed148b4a3fbd8fd80c78875db3",
 			"_type": "request_group"
 		},
 		{
-			"_id": "fld_eea0913402334a9e9951c0371e254b99",
-			"created": 1540225583602,
+			"_id": "fld_21e86838dce249138acc60303c20db5f",
+			"created": 1540448104887,
 			"description": "",
 			"environment": {},
 			"metaSortKey": -1540133820939,
-			"modified": 1540225583602,
+			"modified": 1540448104887,
 			"name": "Admins",
-			"parentId": "fld_b9fdcdc585c54c79b2a26c2f7753908f",
+			"parentId": "fld_34ddf6ed148b4a3fbd8fd80c78875db3",
 			"_type": "request_group"
 		},
 		{
-			"_id": "fld_b00d33b6613443b986eece3cc8361a5f",
-			"created": 1540225583644,
+			"_id": "fld_2831fcbe674843f2b44a063f7545af73",
+			"created": 1540448104951,
 			"description": "",
 			"environment": {},
 			"metaSortKey": -1540132329931,
-			"modified": 1540225583644,
+			"modified": 1540448104951,
 			"name": "Users",
-			"parentId": "fld_b9fdcdc585c54c79b2a26c2f7753908f",
+			"parentId": "fld_34ddf6ed148b4a3fbd8fd80c78875db3",
 			"_type": "request_group"
 		},
 		{
-			"_id": "fld_a3d25fc34b1647158c0e427ccc6d6f05",
-			"created": 1540225583734,
+			"_id": "fld_cb3963c57e2341de8714ca0b7d154994",
+			"created": 1540448105043,
 			"description": "",
 			"environment": {},
 			"metaSortKey": -1540131584427,
-			"modified": 1540225583734,
+			"modified": 1540448105043,
 			"name": "Mobil Tangkis",
-			"parentId": "fld_b9fdcdc585c54c79b2a26c2f7753908f",
+			"parentId": "fld_34ddf6ed148b4a3fbd8fd80c78875db3",
 			"_type": "request_group"
 		},
 		{
-			"_id": "fld_21de8974d1b4466eab79d85db7363725",
-			"created": 1540225583802,
+			"_id": "fld_2a38ad00d03a48f6ab94967e3cb48827",
+			"created": 1540448105160,
 			"description": "",
 			"environment": {},
 			"metaSortKey": -1540131190386,
-			"modified": 1540225583802,
+			"modified": 1540448105160,
 			"name": "Checklist",
-			"parentId": "fld_b9fdcdc585c54c79b2a26c2f7753908f",
+			"parentId": "fld_34ddf6ed148b4a3fbd8fd80c78875db3",
 			"_type": "request_group"
 		},
 		{
-			"_id": "fld_db9f6d040130451788a7389950cfbd22",
-			"created": 1540225583922,
+			"_id": "fld_8dd59439945d458383b729ae23423ebc",
+			"created": 1540448105312,
 			"description": "",
 			"environment": {},
 			"metaSortKey": -1540095532762,
-			"modified": 1540225583922,
+			"modified": 1540448105312,
 			"name": "Users",
-			"parentId": "fld_37086232b42e4721b5fb51deb227ba9d",
+			"parentId": "fld_2f065e8973934b71a393e61e58bf0f6f",
 			"_type": "request_group"
 		},
 		{
-			"_id": "fld_c0f0b27083f74f07b3378e3ac8a9559f",
-			"created": 1540225583936,
+			"_id": "fld_46eb6c6ea2344102a3c1df1cacccf99b",
+			"created": 1540448105329,
 			"description": "",
 			"environment": {},
 			"metaSortKey": -1540095532812,
-			"modified": 1540225583936,
+			"modified": 1540448105329,
 			"name": "Auth",
-			"parentId": "fld_37086232b42e4721b5fb51deb227ba9d",
+			"parentId": "fld_2f065e8973934b71a393e61e58bf0f6f",
 			"_type": "request_group"
 		},
 		{
-			"_id": "fld_7dada3e9a8c048fbabac1ffc56ea85e0",
-			"created": 1540225583944,
+			"_id": "fld_13d0372197fc4528b042ebeb7695cb7e",
+			"created": 1540448105340,
 			"description": "",
 			"environment": {},
 			"metaSortKey": -1540095532712,
-			"modified": 1540225583944,
+			"modified": 1540448105340,
 			"name": "Admins",
-			"parentId": "fld_37086232b42e4721b5fb51deb227ba9d",
+			"parentId": "fld_2f065e8973934b71a393e61e58bf0f6f",
 			"_type": "request_group"
 		},
 		{
-			"_id": "fld_d1def1bffe8748aa8e0c222d2f774800",
-			"created": 1540225583954,
+			"_id": "fld_c1a859317ae548baaf29adf395c2fe39",
+			"created": 1540448105353,
 			"description": "",
 			"environment": {},
 			"metaSortKey": -1540095532662,
-			"modified": 1540225583954,
+			"modified": 1540448105353,
 			"name": "Mobil Tangkis",
-			"parentId": "fld_37086232b42e4721b5fb51deb227ba9d",
+			"parentId": "fld_2f065e8973934b71a393e61e58bf0f6f",
 			"_type": "request_group"
 		},
 		{
-			"_id": "fld_e4d9ca4171f549ef9d0a42dbe1dff732",
-			"created": 1540225583971,
+			"_id": "fld_d8c701c520de49e185982730710b1245",
+			"created": 1540448105380,
 			"description": "",
 			"environment": {},
 			"metaSortKey": -1540095532612,
-			"modified": 1540225583971,
+			"modified": 1540448105380,
 			"name": "Checklist",
-			"parentId": "fld_37086232b42e4721b5fb51deb227ba9d",
+			"parentId": "fld_2f065e8973934b71a393e61e58bf0f6f",
 			"_type": "request_group"
 		},
 		{
-			"_id": "fld_489bacb5468240d49d02bc7734d4f580",
-			"created": 1540225583988,
+			"_id": "fld_523ebff965ab4f60ac3f53e229ce1e43",
+			"created": 1540448105406,
 			"description": "",
 			"environment": {},
 			"metaSortKey": -1540133820989,
-			"modified": 1540225583988,
+			"modified": 1540448105406,
 			"name": "Auth",
-			"parentId": "fld_81df7261c64849e3983768754084f45c",
+			"parentId": "fld_f97ab7d98fcc40a1b76f7b8793aae2a9",
 			"_type": "request_group"
 		},
 		{
-			"_id": "fld_f9c2b079c0ac4da4bb1be10ae30217c7",
-			"created": 1540225583999,
+			"_id": "fld_2fcb33891ab147adb421cee3ae48299a",
+			"created": 1540448105424,
 			"description": "",
 			"environment": {},
 			"metaSortKey": -1540133820939,
-			"modified": 1540225583999,
+			"modified": 1540448105424,
 			"name": "Admins",
-			"parentId": "fld_81df7261c64849e3983768754084f45c",
+			"parentId": "fld_f97ab7d98fcc40a1b76f7b8793aae2a9",
 			"_type": "request_group"
 		},
 		{
-			"_id": "fld_e1f4503922c04b61a5a5052d1c6f398b",
-			"created": 1540225584085,
+			"_id": "fld_be2edac5cc824ec1b528519f8ab042ac",
+			"created": 1540448105508,
 			"description": "",
 			"environment": {},
 			"metaSortKey": -1540132329931,
-			"modified": 1540225584085,
+			"modified": 1540448105508,
 			"name": "Users",
-			"parentId": "fld_81df7261c64849e3983768754084f45c",
+			"parentId": "fld_f97ab7d98fcc40a1b76f7b8793aae2a9",
 			"_type": "request_group"
 		},
 		{
-			"_id": "fld_43de34a3893245dfb4b2e76f7f1d0937",
-			"created": 1540225584179,
+			"_id": "fld_a4628eb564d748aea626823f779fd075",
+			"created": 1540448105644,
 			"description": "",
 			"environment": {},
 			"metaSortKey": -1540131584427,
-			"modified": 1540225584179,
+			"modified": 1540448105644,
 			"name": "Mobil Tangkis",
-			"parentId": "fld_81df7261c64849e3983768754084f45c",
+			"parentId": "fld_f97ab7d98fcc40a1b76f7b8793aae2a9",
 			"_type": "request_group"
 		},
 		{
-			"_id": "fld_6c719c74237845ca80346bbfa162467c",
-			"created": 1540225584269,
+			"_id": "fld_442fe73b3885445cbb9fe91a8609f79a",
+			"created": 1540448105806,
 			"description": "",
 			"environment": {},
 			"metaSortKey": -1540131584377,
-			"modified": 1540225584269,
+			"modified": 1540448105806,
 			"name": "Checklist",
-			"parentId": "fld_81df7261c64849e3983768754084f45c",
+			"parentId": "fld_f97ab7d98fcc40a1b76f7b8793aae2a9",
 			"_type": "request_group"
 		},
 		{
-			"_id": "req_a9f14c9aa42c41a689156deac447e9c2",
+			"_id": "req_0d3975368efa41fe811b4f66a5ce9c1d",
 			"authentication": {},
 			"body": {},
-			"created": 1540225583537,
+			"created": 1540448104737,
 			"description": "",
 			"headers": [
 				{
@@ -347,10 +347,10 @@
 			"isPrivate": false,
 			"metaSortKey": -1540095489324,
 			"method": "GET",
-			"modified": 1540225583537,
+			"modified": 1540448104737,
 			"name": "Get Users",
 			"parameters": [],
-			"parentId": "fld_d958a5be566e4001b575ed04f3cb114e",
+			"parentId": "fld_c6eb4910d68c4d01b6e5d8c6f23424b6",
 			"settingDisableRenderRequestBody": false,
 			"settingEncodeUrl": true,
 			"settingMaxTimelineDataSize": 1000,
@@ -361,7 +361,7 @@
 			"_type": "request"
 		},
 		{
-			"_id": "req_b8a88410da4d4f95b2a48ad0a77f2d83",
+			"_id": "req_2d59a27a67e54338a64608e00ed38813",
 			"authentication": {},
 			"body": {
 				"mimeType": "application/x-www-form-urlencoded",
@@ -404,7 +404,7 @@
 					}
 				]
 			},
-			"created": 1540225583541,
+			"created": 1540448104743,
 			"description": "",
 			"headers": [
 				{
@@ -422,10 +422,10 @@
 			"isPrivate": false,
 			"metaSortKey": -1540095620061,
 			"method": "POST",
-			"modified": 1540225583541,
+			"modified": 1540448104743,
 			"name": "Create User",
 			"parameters": [],
-			"parentId": "fld_d958a5be566e4001b575ed04f3cb114e",
+			"parentId": "fld_c6eb4910d68c4d01b6e5d8c6f23424b6",
 			"settingDisableRenderRequestBody": false,
 			"settingEncodeUrl": true,
 			"settingMaxTimelineDataSize": 1000,
@@ -436,10 +436,10 @@
 			"_type": "request"
 		},
 		{
-			"_id": "req_5f4dfcf78857499686996e23b818111e",
+			"_id": "req_5148f25be2ae41eb8c6400d7a599c9f0",
 			"authentication": {},
 			"body": {},
-			"created": 1540225583547,
+			"created": 1540448104751,
 			"description": "",
 			"headers": [
 				{
@@ -451,10 +451,10 @@
 			"isPrivate": false,
 			"metaSortKey": -1540095489274,
 			"method": "DELETE",
-			"modified": 1540225583547,
+			"modified": 1540448104751,
 			"name": "Del User",
 			"parameters": [],
-			"parentId": "fld_d958a5be566e4001b575ed04f3cb114e",
+			"parentId": "fld_c6eb4910d68c4d01b6e5d8c6f23424b6",
 			"settingDisableRenderRequestBody": false,
 			"settingEncodeUrl": true,
 			"settingMaxTimelineDataSize": 1000,
@@ -465,7 +465,7 @@
 			"_type": "request"
 		},
 		{
-			"_id": "req_f7a38beb46f142749ff3aef92562c163",
+			"_id": "req_9303631ca1ce44dd8bf3a4a1ff2689be",
 			"authentication": {},
 			"body": {
 				"mimeType": "application/x-www-form-urlencoded",
@@ -482,7 +482,7 @@
 					}
 				]
 			},
-			"created": 1540225583553,
+			"created": 1540448104766,
 			"description": "",
 			"headers": [
 				{
@@ -494,10 +494,10 @@
 			"isPrivate": false,
 			"metaSortKey": -1540095547357,
 			"method": "POST",
-			"modified": 1540225583553,
+			"modified": 1540448104766,
 			"name": "Login",
 			"parameters": [],
-			"parentId": "fld_522b6e8d1717445db2c9300acea3ab75",
+			"parentId": "fld_c27d6ed9bea74215bacb5648869b7fec",
 			"settingDisableRenderRequestBody": false,
 			"settingEncodeUrl": true,
 			"settingMaxTimelineDataSize": 1000,
@@ -508,10 +508,10 @@
 			"_type": "request"
 		},
 		{
-			"_id": "req_ebc318bc3737473db915a135dbbad202",
+			"_id": "req_bb8283894d1b4b23a5d9c613db62aaef",
 			"authentication": {},
 			"body": {},
-			"created": 1540225583559,
+			"created": 1540448104779,
 			"description": "",
 			"headers": [
 				{
@@ -523,10 +523,10 @@
 			"isPrivate": false,
 			"metaSortKey": -1540095489324,
 			"method": "GET",
-			"modified": 1540225583559,
+			"modified": 1540448104779,
 			"name": "Get Admins",
 			"parameters": [],
-			"parentId": "fld_2bccbf87296a446dbad82a84954b8dae",
+			"parentId": "fld_043feb6fb34c4b9097c9446d7ef5ba9e",
 			"settingDisableRenderRequestBody": false,
 			"settingEncodeUrl": true,
 			"settingMaxTimelineDataSize": 1000,
@@ -537,7 +537,7 @@
 			"_type": "request"
 		},
 		{
-			"_id": "req_02933aef970545dd9fae38fe7c93fbf9",
+			"_id": "req_4b9d557b23674e5a8b477b18f9928dda",
 			"authentication": {},
 			"body": {
 				"mimeType": "application/x-www-form-urlencoded",
@@ -580,7 +580,7 @@
 					}
 				]
 			},
-			"created": 1540225583561,
+			"created": 1540448104787,
 			"description": "",
 			"headers": [
 				{
@@ -598,10 +598,10 @@
 			"isPrivate": false,
 			"metaSortKey": -1540095620061,
 			"method": "POST",
-			"modified": 1540225583561,
+			"modified": 1540448104787,
 			"name": "Create Admin",
 			"parameters": [],
-			"parentId": "fld_2bccbf87296a446dbad82a84954b8dae",
+			"parentId": "fld_043feb6fb34c4b9097c9446d7ef5ba9e",
 			"settingDisableRenderRequestBody": false,
 			"settingEncodeUrl": true,
 			"settingMaxTimelineDataSize": 1000,
@@ -612,10 +612,10 @@
 			"_type": "request"
 		},
 		{
-			"_id": "req_5c33a85539d74fb09631b79e65df1351",
+			"_id": "req_bb08ab1cd5f44c72afc2a9e4d73d1dc5",
 			"authentication": {},
 			"body": {},
-			"created": 1540225583563,
+			"created": 1540448104795,
 			"description": "",
 			"headers": [
 				{
@@ -627,10 +627,10 @@
 			"isPrivate": false,
 			"metaSortKey": -1540013471900.5,
 			"method": "DELETE",
-			"modified": 1540225583563,
+			"modified": 1540448104795,
 			"name": "Del Admin",
 			"parameters": [],
-			"parentId": "fld_2bccbf87296a446dbad82a84954b8dae",
+			"parentId": "fld_043feb6fb34c4b9097c9446d7ef5ba9e",
 			"settingDisableRenderRequestBody": false,
 			"settingEncodeUrl": true,
 			"settingMaxTimelineDataSize": 1000,
@@ -641,10 +641,10 @@
 			"_type": "request"
 		},
 		{
-			"_id": "req_43ac2846a6484ccb925d6e26647c9b84",
+			"_id": "req_d4ec68d73aac441d808b646d4be0923e",
 			"authentication": {},
 			"body": {},
-			"created": 1540225583567,
+			"created": 1540448104805,
 			"description": "",
 			"headers": [
 				{
@@ -656,10 +656,10 @@
 			"isPrivate": false,
 			"metaSortKey": -1540095489299,
 			"method": "GET",
-			"modified": 1540225583567,
+			"modified": 1540448104805,
 			"name": "Get Admins By Id",
 			"parameters": [],
-			"parentId": "fld_2bccbf87296a446dbad82a84954b8dae",
+			"parentId": "fld_043feb6fb34c4b9097c9446d7ef5ba9e",
 			"settingDisableRenderRequestBody": false,
 			"settingEncodeUrl": true,
 			"settingMaxTimelineDataSize": 1000,
@@ -670,10 +670,10 @@
 			"_type": "request"
 		},
 		{
-			"_id": "req_7a9be41daabd46fba7bfef720bf99f54",
+			"_id": "req_91a8995b558c48feaf8885d42e860bbd",
 			"authentication": {},
 			"body": {},
-			"created": 1540225583576,
+			"created": 1540448104817,
 			"description": "",
 			"headers": [
 				{
@@ -685,10 +685,10 @@
 			"isPrivate": false,
 			"metaSortKey": -1540105670129,
 			"method": "GET",
-			"modified": 1540225583576,
+			"modified": 1540448104817,
 			"name": "Get Mobil Tangkis",
 			"parameters": [],
-			"parentId": "fld_a74a99b2695e463b9b86d7c62caaab7c",
+			"parentId": "fld_3cd9ddd71ba84aefa38a5b25658cfec3",
 			"settingDisableRenderRequestBody": false,
 			"settingEncodeUrl": true,
 			"settingMaxTimelineDataSize": 1000,
@@ -699,7 +699,7 @@
 			"_type": "request"
 		},
 		{
-			"_id": "req_05cc1d0212014affafec4de4ab5f47c9",
+			"_id": "req_b85442fceb6f471aa70afa48306fad67",
 			"authentication": {},
 			"body": {
 				"mimeType": "application/x-www-form-urlencoded",
@@ -726,7 +726,7 @@
 					}
 				]
 			},
-			"created": 1540225583578,
+			"created": 1540448104829,
 			"description": "",
 			"headers": [
 				{
@@ -743,10 +743,10 @@
 			"isPrivate": false,
 			"metaSortKey": -1540105670179,
 			"method": "POST",
-			"modified": 1540225583578,
+			"modified": 1540448104829,
 			"name": "Create Mobil Tangki",
 			"parameters": [],
-			"parentId": "fld_a74a99b2695e463b9b86d7c62caaab7c",
+			"parentId": "fld_3cd9ddd71ba84aefa38a5b25658cfec3",
 			"settingDisableRenderRequestBody": false,
 			"settingEncodeUrl": true,
 			"settingMaxTimelineDataSize": 1000,
@@ -757,13 +757,13 @@
 			"_type": "request"
 		},
 		{
-			"_id": "req_f387b2708cec4b0e949bda9ae710c876",
+			"_id": "req_43a1ad1e4c8a4cdaa90ec390e8e96b1b",
 			"authentication": {},
 			"body": {
 				"mimeType": "application/x-www-form-urlencoded",
 				"params": []
 			},
-			"created": 1540225583582,
+			"created": 1540448104835,
 			"description": "",
 			"headers": [
 				{
@@ -780,10 +780,10 @@
 			"isPrivate": false,
 			"metaSortKey": -1540105670079,
 			"method": "DELETE",
-			"modified": 1540225583582,
+			"modified": 1540448104835,
 			"name": "Delete Mobil Tangki",
 			"parameters": [],
-			"parentId": "fld_a74a99b2695e463b9b86d7c62caaab7c",
+			"parentId": "fld_3cd9ddd71ba84aefa38a5b25658cfec3",
 			"settingDisableRenderRequestBody": false,
 			"settingEncodeUrl": true,
 			"settingMaxTimelineDataSize": 1000,
@@ -794,25 +794,25 @@
 			"_type": "request"
 		},
 		{
-			"_id": "req_7da1ebcfbdac429a94ca34b3120c1523",
+			"_id": "req_136fab5917f04233a67174c7fcdf532d",
 			"authentication": {},
 			"body": {},
-			"created": 1540225583586,
+			"created": 1540448104846,
 			"description": "",
 			"headers": [
 				{
 					"id": "pair_90d065ab31354aa6bb080c8d5e4cf832",
 					"name": "token",
-					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJkNGUyMzZhMC1kNGVlLTExZTgtYjdmNS05N2Y2MDFmYmUzZTUiLCJ1c2VybmFtZSI6ImFkbWluIiwiTklQIjoiUE4tMTAwMSIsImZ1bGxOYW1lIjoiU2VvcmFuZyBBZG1pbiIsImVtYWlsIjoiYWRtaW5AZW1haWwuY29tIiwibW9iaWxlIjoiMDgyMTIyNTU5MDkwIiwicm9sZXMiOiJBZG1pbiIsInN0YXR1cyI6IkFjdGl2ZSIsImltZ1VybCI6bnVsbCwiX192IjowLCJpYXQiOjE1NDAxMDYxMDQsImV4cCI6MTU0MDEzNDkwNH0.HbEb1FGVDNqUsdqsacYFLDihK5jo-KSq6BMK9KTxqxA"
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJkNjA1OGViMC1kNGYzLTExZTgtYjljMC0zNWZjNWVjMjFkMTQiLCJ1c2VybmFtZSI6InNvcGlyIiwiTklQIjoiUE4tMTAwMiIsImZ1bGxOYW1lIjoiU2VvcmFuZyBTb3BpciIsImVtYWlsIjoic29waXJAZW1haWwuY29tIiwibW9iaWxlIjoiMDgyMTIyNTU5MDkwIiwicm9sZXMiOiJTb3BpciIsInN0YXR1cyI6IkFjdGl2ZSIsImltZ1VybCI6bnVsbCwiX192IjowLCJpYXQiOjE1NDA0NDU5MDQsImV4cCI6MTU0MDQ3NDcwNH0.l_uRISFGmOQ4nK6PEYMJnObMMYtiWykHUqsqoe-tc5c"
 				}
 			],
 			"isPrivate": false,
 			"metaSortKey": -1540105670129,
 			"method": "GET",
-			"modified": 1540225583586,
+			"modified": 1540448104846,
 			"name": "Get Checklist",
 			"parameters": [],
-			"parentId": "fld_922a982d3d5e40b188285d543a159671",
+			"parentId": "fld_f40c69bc23d04502923b52c7ac4e294f",
 			"settingDisableRenderRequestBody": false,
 			"settingEncodeUrl": true,
 			"settingMaxTimelineDataSize": 1000,
@@ -823,7 +823,7 @@
 			"_type": "request"
 		},
 		{
-			"_id": "req_ba72b344781d40ae845311232823df47",
+			"_id": "req_343346f65d534f2e9172d59126f581f4",
 			"authentication": {},
 			"body": {
 				"mimeType": "application/x-www-form-urlencoded",
@@ -889,7 +889,7 @@
 					}
 				]
 			},
-			"created": 1540225583590,
+			"created": 1540448104852,
 			"description": "",
 			"headers": [
 				{
@@ -906,10 +906,10 @@
 			"isPrivate": false,
 			"metaSortKey": -1540105670179,
 			"method": "POST",
-			"modified": 1540225583590,
+			"modified": 1540448104852,
 			"name": "Create Checklist",
 			"parameters": [],
-			"parentId": "fld_922a982d3d5e40b188285d543a159671",
+			"parentId": "fld_f40c69bc23d04502923b52c7ac4e294f",
 			"settingDisableRenderRequestBody": false,
 			"settingEncodeUrl": true,
 			"settingMaxTimelineDataSize": 1000,
@@ -920,13 +920,13 @@
 			"_type": "request"
 		},
 		{
-			"_id": "req_0c70ba23d0534f8a8ea0fd71d7d2d50b",
+			"_id": "req_75dd4dcb16c04cdfbc41002817995036",
 			"authentication": {},
 			"body": {
 				"mimeType": "application/x-www-form-urlencoded",
 				"params": []
 			},
-			"created": 1540225583592,
+			"created": 1540448104859,
 			"description": "",
 			"headers": [
 				{
@@ -943,10 +943,10 @@
 			"isPrivate": false,
 			"metaSortKey": -1540105670079,
 			"method": "DELETE",
-			"modified": 1540225583592,
+			"modified": 1540448104859,
 			"name": "Delete Checklist",
 			"parameters": [],
-			"parentId": "fld_922a982d3d5e40b188285d543a159671",
+			"parentId": "fld_f40c69bc23d04502923b52c7ac4e294f",
 			"settingDisableRenderRequestBody": false,
 			"settingEncodeUrl": true,
 			"settingMaxTimelineDataSize": 1000,
@@ -957,13 +957,61 @@
 			"_type": "request"
 		},
 		{
-			"_id": "req_7b97d233f51047569f49eb9fa59ea2c8",
+			"_id": "req_a40eda6f00004009bf7c8f44f5b041d1",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/x-www-form-urlencoded",
+				"params": [
+					{
+						"id": "pair_207b1b5ef8424041b51e328815077888",
+						"name": "status",
+						"value": "Rejected"
+					},
+					{
+						"id": "pair_f2f00a8fa31644a6998aa844aeefc282",
+						"name": "rejectedReason",
+						"value": "Sopir nya kegantengan bingit"
+					}
+				]
+			},
+			"created": 1540448104863,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_90d065ab31354aa6bb080c8d5e4cf832",
+					"name": "token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJkNGUyMzZhMC1kNGVlLTExZTgtYjdmNS05N2Y2MDFmYmUzZTUiLCJ1c2VybmFtZSI6ImFkbWluIiwiTklQIjoiUE4tMTAwMSIsImZ1bGxOYW1lIjoiU2VvcmFuZyBBZG1pbiIsImVtYWlsIjoiYWRtaW5AZW1haWwuY29tIiwibW9iaWxlIjoiMDgyMTIyNTU5MDkwIiwicm9sZXMiOiJBZG1pbiIsInN0YXR1cyI6IkFjdGl2ZSIsImltZ1VybCI6bnVsbCwiX192IjowLCJpYXQiOjE1NDA0NDYxMjksImV4cCI6MTU0MDQ3NDkyOX0.O4wGXbq5ZoGpMjXp9tdEPwlSCf6COHdA9tlO47PyzAc"
+				},
+				{
+					"id": "pair_53afe23de16545a08ebb52e8b54301ed",
+					"name": "Content-Type",
+					"value": "application/x-www-form-urlencoded"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540105670104,
+			"method": "PUT",
+			"modified": 1540448104863,
+			"name": "Approval (Admin)",
+			"parameters": [],
+			"parentId": "fld_f40c69bc23d04502923b52c7ac4e294f",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:3030/api/checklist/approval/13cfa500-d616-11e8-a30c-df0553541f17",
+			"_type": "request"
+		},
+		{
+			"_id": "req_00370af2598f4c46a21915718e34af27",
 			"authentication": {},
 			"body": {
 				"mimeType": "application/graphql",
 				"text": "{\"query\":\"mutation signIn($username: String!, $password: String!) {\\n  signIn(username: $username, password: $password) {\\n    user {\\n      _id\\n      username\\n      NIP\\n      fullName\\n      email\\n      mobile\\n      password\\n      roles\\n      status\\n      imgUrl\\n    }\\n    token\\n  }\\n}\\n\",\"variables\":{\"username\":\"sopir\",\"password\":\"P@ssw0rd\"},\"operationName\":\"signIn\"}"
 			},
-			"created": 1540225583598,
+			"created": 1540448104878,
 			"description": "",
 			"headers": [
 				{
@@ -975,10 +1023,10 @@
 			"isPrivate": false,
 			"metaSortKey": -1540130969544,
 			"method": "POST",
-			"modified": 1540225583598,
+			"modified": 1540448104878,
 			"name": "Login",
 			"parameters": [],
-			"parentId": "fld_acf52044fea9448d9eb3e25df35fbb02",
+			"parentId": "fld_60cc70832a7341338f48f297fd8fc6d2",
 			"settingDisableRenderRequestBody": false,
 			"settingEncodeUrl": true,
 			"settingMaxTimelineDataSize": 1000,
@@ -989,13 +1037,13 @@
 			"_type": "request"
 		},
 		{
-			"_id": "req_e80522555a1e4f14bf57d90b2dc3500d",
+			"_id": "req_a4fa33f36acf4a428c0e9cd75b55ebab",
 			"authentication": {},
 			"body": {
 				"mimeType": "application/graphql",
 				"text": "{\"query\":\"query admins{\\n\\tadmins {\\n\\t\\t_id\\n\\t\\tusername\\n\\t\\tNIP\\n\\t\\tfullName\\n\\t\\temail\\n\\t\\tmobile\\n\\t\\tpassword\\n\\t\\troles\\n\\t\\tstatus\\n\\t\\timgUrl\\n\\t\\tcreatedBy{\\n\\t\\t\\tusername\\n\\t\\t}\\n\\t}\\n}\",\"operationName\":\"admins\"}"
 			},
-			"created": 1540225583604,
+			"created": 1540448104892,
 			"description": "",
 			"headers": [
 				{
@@ -1013,10 +1061,10 @@
 			"isPrivate": false,
 			"metaSortKey": -1540133847641,
 			"method": "POST",
-			"modified": 1540225583604,
+			"modified": 1540448104892,
 			"name": "Get Admins",
 			"parameters": [],
-			"parentId": "fld_eea0913402334a9e9951c0371e254b99",
+			"parentId": "fld_21e86838dce249138acc60303c20db5f",
 			"settingDisableRenderRequestBody": false,
 			"settingEncodeUrl": true,
 			"settingMaxTimelineDataSize": 1000,
@@ -1027,13 +1075,13 @@
 			"_type": "request"
 		},
 		{
-			"_id": "req_c133453881624312aceb3d6b0a95c4d7",
+			"_id": "req_76b7845dd55f4d9da90161745bf05593",
 			"authentication": {},
 			"body": {
 				"mimeType": "application/graphql",
 				"text": "{\"query\":\"query admin($id: ID!) {\\n  admin(id: $id) {\\n    _id\\n    username\\n    NIP\\n    fullName\\n    email\\n    mobile\\n    password\\n    roles\\n    status\\n    imgUrl\\n    createdBy {\\n      username\\n    }\\n  }\\n}\\n\",\"variables\":{\"id\":\"d4e236a0-d4ee-11e8-b7f5-97f601fbe3e5\"},\"operationName\":\"admin\"}"
 			},
-			"created": 1540225583609,
+			"created": 1540448104898,
 			"description": "",
 			"headers": [
 				{
@@ -1051,10 +1099,10 @@
 			"isPrivate": false,
 			"metaSortKey": -1540133128116.75,
 			"method": "POST",
-			"modified": 1540225583609,
+			"modified": 1540448104898,
 			"name": "Get Admin By Id",
 			"parameters": [],
-			"parentId": "fld_eea0913402334a9e9951c0371e254b99",
+			"parentId": "fld_21e86838dce249138acc60303c20db5f",
 			"settingDisableRenderRequestBody": false,
 			"settingEncodeUrl": true,
 			"settingMaxTimelineDataSize": 1000,
@@ -1065,13 +1113,13 @@
 			"_type": "request"
 		},
 		{
-			"_id": "req_a56f1925bf6b43daa5ff7d007c8b1269",
+			"_id": "req_c18b800d6339498c89f0fd1bceac5517",
 			"authentication": {},
 			"body": {
 				"mimeType": "application/graphql",
 				"text": "{\"query\":\"mutation createAdmin($admin: AdminInput!) {\\n  createAdmin(admin: $admin) {\\n    _id\\n    username\\n    password\\n    NIP\\n    fullName\\n    email\\n    mobile\\n    roles\\n    status\\n    imgUrl\\n    createdAt\\n    createdBy {\\n      _id\\n      username\\n      roles\\n    }\\n  }\\n}\\n\",\"variables\":{\"admin\":{\"NIP\":\"admin-2\",\"fullName\":\"Seorang Admin\",\"email\":\"admin2@email.com\",\"mobile\":\"082122559090\",\"username\":\"admin2\",\"password\":\"P@ssw0rd\",\"status\":\"Active\"}},\"operationName\":\"createAdmin\"}"
 			},
-			"created": 1540225583616,
+			"created": 1540448104913,
 			"description": "",
 			"headers": [
 				{
@@ -1089,10 +1137,10 @@
 			"isPrivate": false,
 			"metaSortKey": -1540133847666,
 			"method": "POST",
-			"modified": 1540225583616,
+			"modified": 1540448104913,
 			"name": "Create Admin",
 			"parameters": [],
-			"parentId": "fld_eea0913402334a9e9951c0371e254b99",
+			"parentId": "fld_21e86838dce249138acc60303c20db5f",
 			"settingDisableRenderRequestBody": false,
 			"settingEncodeUrl": true,
 			"settingMaxTimelineDataSize": 1000,
@@ -1103,13 +1151,13 @@
 			"_type": "request"
 		},
 		{
-			"_id": "req_1aa32e979a0f4274b71e1b8879428066",
+			"_id": "req_12d0e12a3bc74f4fa55a4caefb21e2d5",
 			"authentication": {},
 			"body": {
 				"mimeType": "application/graphql",
 				"text": "{\"query\":\"mutation deleteAdmin($id: ID!) {\\n  deleteAdmin(id: $id)\\n}\\n\",\"variables\":{\"id\":\"0a09ad70-d54b-11e8-b6e4-fdec08ec7905\"},\"operationName\":\"deleteAdmin\"}"
 			},
-			"created": 1540225583626,
+			"created": 1540448104930,
 			"description": "",
 			"headers": [
 				{
@@ -1127,10 +1175,10 @@
 			"isPrivate": false,
 			"metaSortKey": -1540133128066.75,
 			"method": "POST",
-			"modified": 1540225583626,
+			"modified": 1540448104930,
 			"name": "Delete Admin",
 			"parameters": [],
-			"parentId": "fld_eea0913402334a9e9951c0371e254b99",
+			"parentId": "fld_21e86838dce249138acc60303c20db5f",
 			"settingDisableRenderRequestBody": false,
 			"settingEncodeUrl": true,
 			"settingMaxTimelineDataSize": 1000,
@@ -1141,13 +1189,13 @@
 			"_type": "request"
 		},
 		{
-			"_id": "req_0e3cd08a442d4e64a7adf1bc403c6691",
+			"_id": "req_3609eac2a0b84f72b2465cf3b4312a8e",
 			"authentication": {},
 			"body": {
 				"mimeType": "application/graphql",
 				"text": "{\"query\":\"query users {\\n  users {\\n    _id\\n    username\\n    NIP\\n    fullName\\n    email\\n    mobile\\n    password\\n    roles\\n    status\\n    imgUrl\\n    createdBy {\\n      username\\n    }\\n  }\\n}\\n\",\"operationName\":\"users\"}"
 			},
-			"created": 1540225583646,
+			"created": 1540448104958,
 			"description": "",
 			"headers": [
 				{
@@ -1165,10 +1213,10 @@
 			"isPrivate": false,
 			"metaSortKey": -1540133847641,
 			"method": "POST",
-			"modified": 1540225583646,
+			"modified": 1540448104958,
 			"name": "Get Users",
 			"parameters": [],
-			"parentId": "fld_b00d33b6613443b986eece3cc8361a5f",
+			"parentId": "fld_2831fcbe674843f2b44a063f7545af73",
 			"settingDisableRenderRequestBody": false,
 			"settingEncodeUrl": true,
 			"settingMaxTimelineDataSize": 1000,
@@ -1179,13 +1227,13 @@
 			"_type": "request"
 		},
 		{
-			"_id": "req_071853b5b6f5462fa0995d70afa34817",
+			"_id": "req_091c4557769e4f0790b1bccd58cd5bd9",
 			"authentication": {},
 			"body": {
 				"mimeType": "application/graphql",
 				"text": "{\"query\":\"query user($id: ID!) {\\n  user(id: $id) {\\n    _id\\n    username\\n    NIP\\n    fullName\\n    email\\n    mobile\\n    password\\n    roles\\n    status\\n    imgUrl\\n    createdBy {\\n      username\\n    }\\n  }\\n}\\n\",\"variables\":{\"id\":\"d6058eb0-d4f3-11e8-b9c0-35fc5ec21d14\"},\"operationName\":\"user\"}"
 			},
-			"created": 1540225583691,
+			"created": 1540448104969,
 			"description": "",
 			"headers": [
 				{
@@ -1203,10 +1251,10 @@
 			"isPrivate": false,
 			"metaSortKey": -1540133128116.75,
 			"method": "POST",
-			"modified": 1540225583691,
+			"modified": 1540448104969,
 			"name": "Get User By Id",
 			"parameters": [],
-			"parentId": "fld_b00d33b6613443b986eece3cc8361a5f",
+			"parentId": "fld_2831fcbe674843f2b44a063f7545af73",
 			"settingDisableRenderRequestBody": false,
 			"settingEncodeUrl": true,
 			"settingMaxTimelineDataSize": 1000,
@@ -1217,13 +1265,13 @@
 			"_type": "request"
 		},
 		{
-			"_id": "req_6c6fff2ded32466896235abd8249a6ef",
+			"_id": "req_dec3fecc5c964463896a1d4b7d4f11d9",
 			"authentication": {},
 			"body": {
 				"mimeType": "application/graphql",
 				"text": "{\"query\":\"mutation createUser($user: UserInput!) {\\n  createUser(user: $user) {\\n    _id\\n    username\\n    password\\n    NIP\\n    fullName\\n    email\\n    mobile\\n    roles\\n    status\\n    imgUrl\\n    createdAt\\n    createdBy {\\n      _id\\n      username\\n      roles\\n    }\\n  }\\n}\\n\",\"variables\":{\"user\":{\"NIP\":\"PN 1003\",\"fullName\":\"Seorang Kernet\",\"email\":\"kernet@email.com\",\"mobile\":\"082122559090\",\"username\":\"kernet\",\"password\":\"P@ssw0rd\",\"status\":\"Active\",\"roles\":\"Kernet\"}},\"operationName\":\"createUser\"}"
 			},
-			"created": 1540225583700,
+			"created": 1540448104988,
 			"description": "",
 			"headers": [
 				{
@@ -1241,10 +1289,10 @@
 			"isPrivate": false,
 			"metaSortKey": -1540133847666,
 			"method": "POST",
-			"modified": 1540225583700,
+			"modified": 1540448104988,
 			"name": "Create User",
 			"parameters": [],
-			"parentId": "fld_b00d33b6613443b986eece3cc8361a5f",
+			"parentId": "fld_2831fcbe674843f2b44a063f7545af73",
 			"settingDisableRenderRequestBody": false,
 			"settingEncodeUrl": true,
 			"settingMaxTimelineDataSize": 1000,
@@ -1255,13 +1303,13 @@
 			"_type": "request"
 		},
 		{
-			"_id": "req_0e1ff15897c141b99e1836589709729d",
+			"_id": "req_00d935570c2244d893851ed92dd2fc6f",
 			"authentication": {},
 			"body": {
 				"mimeType": "application/graphql",
 				"text": "{\"query\":\"mutation deleteUser($id: ID!) {\\n  deleteUser(id: $id)\\n}\\n\",\"variables\":{\"id\":\"7ed33890-d54d-11e8-a9b7-9b6bffac45f5\"},\"operationName\":\"deleteUser\"}"
 			},
-			"created": 1540225583715,
+			"created": 1540448105011,
 			"description": "",
 			"headers": [
 				{
@@ -1279,10 +1327,10 @@
 			"isPrivate": false,
 			"metaSortKey": -1540133128066.75,
 			"method": "POST",
-			"modified": 1540225583715,
+			"modified": 1540448105011,
 			"name": "Delete User",
 			"parameters": [],
-			"parentId": "fld_b00d33b6613443b986eece3cc8361a5f",
+			"parentId": "fld_2831fcbe674843f2b44a063f7545af73",
 			"settingDisableRenderRequestBody": false,
 			"settingEncodeUrl": true,
 			"settingMaxTimelineDataSize": 1000,
@@ -1293,13 +1341,13 @@
 			"_type": "request"
 		},
 		{
-			"_id": "req_f36a5d5787954b5dbabde21e71a15645",
+			"_id": "req_8df816deb634415ab4cd7945a398ab50",
 			"authentication": {},
 			"body": {
 				"mimeType": "application/graphql",
 				"text": "{\"query\":\"query mobiltangkis {\\n  mobiltangkis {\\n    _id\\n    nopol\\n    _id\\n    year\\n    status\\n    createdBy {\\n      username\\n      roles\\n    }\\n  }\\n}\\n\",\"operationName\":\"mobiltangkis\"}"
 			},
-			"created": 1540225583737,
+			"created": 1540448105045,
 			"description": "",
 			"headers": [
 				{
@@ -1317,10 +1365,10 @@
 			"isPrivate": false,
 			"metaSortKey": -1540133847641,
 			"method": "POST",
-			"modified": 1540225583737,
+			"modified": 1540448105045,
 			"name": "Get Mobil Tangkis",
 			"parameters": [],
-			"parentId": "fld_a3d25fc34b1647158c0e427ccc6d6f05",
+			"parentId": "fld_cb3963c57e2341de8714ca0b7d154994",
 			"settingDisableRenderRequestBody": false,
 			"settingEncodeUrl": true,
 			"settingMaxTimelineDataSize": 1000,
@@ -1331,13 +1379,13 @@
 			"_type": "request"
 		},
 		{
-			"_id": "req_6dac12522d0a43aeb164ac107d39c199",
+			"_id": "req_6aa7e453c3f945ef84cbaf37bd28a916",
 			"authentication": {},
 			"body": {
 				"mimeType": "application/graphql",
 				"text": "{\"query\":\"query mobiltangki($id: ID!) {\\n  mobiltangki(id: $id) {\\n    _id\\n    nopol\\n    KL\\n    year\\n    status\\n    createdBy {\\n      username\\n    }\\n  }\\n}\\n\",\"variables\":{\"id\":\"640b8400-d501-11e8-94e4-1b4ad8fb1ab5\"},\"operationName\":\"mobiltangki\"}"
 			},
-			"created": 1540225583749,
+			"created": 1540448105063,
 			"description": "",
 			"headers": [
 				{
@@ -1355,10 +1403,10 @@
 			"isPrivate": false,
 			"metaSortKey": -1540133128116.75,
 			"method": "POST",
-			"modified": 1540225583749,
+			"modified": 1540448105063,
 			"name": "Get Mobil Tangki By Id",
 			"parameters": [],
-			"parentId": "fld_a3d25fc34b1647158c0e427ccc6d6f05",
+			"parentId": "fld_cb3963c57e2341de8714ca0b7d154994",
 			"settingDisableRenderRequestBody": false,
 			"settingEncodeUrl": true,
 			"settingMaxTimelineDataSize": 1000,
@@ -1369,13 +1417,13 @@
 			"_type": "request"
 		},
 		{
-			"_id": "req_b1b13514036f4aa9a6c4eb80e6ad0ea4",
+			"_id": "req_cad5ebdaa60c4dc29c117cac749a3325",
 			"authentication": {},
 			"body": {
 				"mimeType": "application/graphql",
 				"text": "{\"query\":\"mutation createMobilTangki($mobiltangki: MobilTangkiInput!) {\\n  createMobilTangki(mobiltangki: $mobiltangki) {\\n    _id\\n    KL\\n    year\\n    status\\n    createdBy {\\n      _id\\n    }\\n  }\\n}\\n\",\"variables\":{\"mobiltangki\":{\"nopol\":\"B 1003 BB\",\"KL\":\"24\",\"year\":2012,\"status\":\"Active\"}},\"operationName\":\"createMobilTangki\"}"
 			},
-			"created": 1540225583763,
+			"created": 1540448105095,
 			"description": "",
 			"headers": [
 				{
@@ -1393,10 +1441,10 @@
 			"isPrivate": false,
 			"metaSortKey": -1540133847666,
 			"method": "POST",
-			"modified": 1540225583763,
+			"modified": 1540448105095,
 			"name": "Create Mobil Tangki",
 			"parameters": [],
-			"parentId": "fld_a3d25fc34b1647158c0e427ccc6d6f05",
+			"parentId": "fld_cb3963c57e2341de8714ca0b7d154994",
 			"settingDisableRenderRequestBody": false,
 			"settingEncodeUrl": true,
 			"settingMaxTimelineDataSize": 1000,
@@ -1407,13 +1455,13 @@
 			"_type": "request"
 		},
 		{
-			"_id": "req_797ca31e4ac348a7a10bf8b9820897a7",
+			"_id": "req_2893beaad5fd415182a17b2a218e6067",
 			"authentication": {},
 			"body": {
 				"mimeType": "application/graphql",
 				"text": "{\"query\":\"mutation deleteMobilTangki($id: ID!) {\\n  deleteMobilTangki(id: $id)\\n}\\n\",\"variables\":{\"id\":\"56b5d550-d54f-11e8-955b-ddd1208f1156\"},\"operationName\":\"deleteMobilTangki\"}"
 			},
-			"created": 1540225583781,
+			"created": 1540448105127,
 			"description": "",
 			"headers": [
 				{
@@ -1431,10 +1479,10 @@
 			"isPrivate": false,
 			"metaSortKey": -1540133128066.75,
 			"method": "POST",
-			"modified": 1540225583781,
+			"modified": 1540448105127,
 			"name": "Delete Mobil Tangki",
 			"parameters": [],
-			"parentId": "fld_a3d25fc34b1647158c0e427ccc6d6f05",
+			"parentId": "fld_cb3963c57e2341de8714ca0b7d154994",
 			"settingDisableRenderRequestBody": false,
 			"settingEncodeUrl": true,
 			"settingMaxTimelineDataSize": 1000,
@@ -1445,13 +1493,13 @@
 			"_type": "request"
 		},
 		{
-			"_id": "req_0fd470a4259343cca9400ed26822b3c9",
+			"_id": "req_7c325fcbca6a47789421112af0f01b83",
 			"authentication": {},
 			"body": {
 				"mimeType": "application/graphql",
 				"text": "{\"query\":\"query checklists {\\n  checklists {\\n    _id\\n\\t\\tcreatedBy{\\n\\t\\t\\tusername\\n\\t\\t\\troles\\n\\t\\t}\\n\\t\\tmobiltangki{\\n\\t\\t\\tnopol\\n\\t\\t}\\n\\t\\tstatus\\n\\t\\tritase\\n\\t\\todoKM\\n\\t\\tHSSE\\n\\t\\tPWSAMT\\n\\t\\tTBBM\\n\\t\\tremarks\\n\\t\\timgUrl\\n\\t\\tkondisiRem\\n\\t\\tkondisiRemReason\\n\\t\\tkondisiBan\\n    kondisiBanReason\\n    kondisiWiper\\n    kondisiWiperReason\\n    kondisiLampu\\n    kondisiLampuReason\\n    kondisiKompartemen\\n    kondisiKompartemenReason\\n    kondisiApar\\n    kondisiAparReason\\n    kondisiOliMesin\\n    kondisiOliMesinReason\\n    kondisiAirRadiator\\n    kondisiAirRadiatorReason\\n    keberadaanSTNK\\n    keberadaanSTNKReason\\n    keberadaanSuratKeur\\n    keberadaanSuratKeurReason\\n    keberadaanSuratTera\\n    keberadaanSuratTeraReason\\n    keberadaanP3K\\n    keberadaanP3KReason\\n    keberadaanFlameTrap\\n    keberadaanFlameTrapReason\\n    keberadaanBanSerep\\n    keberadaanBanSerepReason\\n    keberadaanToolkit\\n    keberadaanToolKitReason\\n    keberadaanGroundingCable\\n    keberadaanGroundingCableReason\\n    keberadaanSelangBongkar\\n    keberadaanSelangBongkarReason\\n    keberadaanSpillKit\\n    keberadaanSpillKitReason\\n    membawaSIM\\n    membawaSIMReason\\n    membawaSuratIjinArea\\n    membawaSuratIjinAreaReason\\n    membawaBukuSaku\\n    membawaBukuSakuReason\\n    membawaCatatanPerjalanan\\n    membawaCatatanPerjalananReason\\n    menggunakanSeragam\\n    menggunakanSeragamReason\\n    menggunakanSafetyShoes\\n    menggunakanSafetyShoesReason\\n    menggunakanSafetyHelm\\n    menggunakanSafetyHelmReason\\n    menggunakanIDCard\\n    menggunakanIDCardReason\\n    menggunakanSarungTangan\\n    menggunakanSarungTanganReason\\n    menggunakanJasHujan\\n    menggunakanJamHujanReason\\n  }\\n}\\n\",\"operationName\":\"checklists\"}"
 			},
-			"created": 1540225583804,
+			"created": 1540448105162,
 			"description": "",
 			"headers": [
 				{
@@ -1469,10 +1517,10 @@
 			"isPrivate": false,
 			"metaSortKey": -1540133847641,
 			"method": "POST",
-			"modified": 1540225583804,
+			"modified": 1540448105162,
 			"name": "Get Checklist",
 			"parameters": [],
-			"parentId": "fld_21de8974d1b4466eab79d85db7363725",
+			"parentId": "fld_2a38ad00d03a48f6ab94967e3cb48827",
 			"settingDisableRenderRequestBody": false,
 			"settingEncodeUrl": true,
 			"settingMaxTimelineDataSize": 1000,
@@ -1483,13 +1531,13 @@
 			"_type": "request"
 		},
 		{
-			"_id": "req_6f33e868a6414c3091fc29ff5735ff2b",
+			"_id": "req_30b72d61386947c2b57c6f29d8c2211a",
 			"authentication": {},
 			"body": {
 				"mimeType": "application/graphql",
 				"text": "{\"query\":\"query checklist($id: ID!) {\\n  checklist(id: $id) {\\n    _id\\n\\t\\tcreatedBy{\\n\\t\\t\\tusername\\n\\t\\t\\troles\\n\\t\\t}\\n\\t\\tmobiltangki{\\n\\t\\t\\tnopol\\n\\t\\t}\\n\\t\\tstatus\\n\\t\\tritase\\n\\t\\todoKM\\n\\t\\tHSSE\\n\\t\\tPWSAMT\\n\\t\\tTBBM\\n\\t\\tremarks\\n\\t\\timgUrl\\n\\t\\tkondisiRem\\n\\t\\tkondisiRemReason\\n\\t\\tkondisiBan\\n    kondisiBanReason\\n    kondisiWiper\\n    kondisiWiperReason\\n    kondisiLampu\\n    kondisiLampuReason\\n    kondisiKompartemen\\n    kondisiKompartemenReason\\n    kondisiApar\\n    kondisiAparReason\\n    kondisiOliMesin\\n    kondisiOliMesinReason\\n    kondisiAirRadiator\\n    kondisiAirRadiatorReason\\n    keberadaanSTNK\\n    keberadaanSTNKReason\\n    keberadaanSuratKeur\\n    keberadaanSuratKeurReason\\n    keberadaanSuratTera\\n    keberadaanSuratTeraReason\\n    keberadaanP3K\\n    keberadaanP3KReason\\n    keberadaanFlameTrap\\n    keberadaanFlameTrapReason\\n    keberadaanBanSerep\\n    keberadaanBanSerepReason\\n    keberadaanToolkit\\n    keberadaanToolKitReason\\n    keberadaanGroundingCable\\n    keberadaanGroundingCableReason\\n    keberadaanSelangBongkar\\n    keberadaanSelangBongkarReason\\n    keberadaanSpillKit\\n    keberadaanSpillKitReason\\n    membawaSIM\\n    membawaSIMReason\\n    membawaSuratIjinArea\\n    membawaSuratIjinAreaReason\\n    membawaBukuSaku\\n    membawaBukuSakuReason\\n    membawaCatatanPerjalanan\\n    membawaCatatanPerjalananReason\\n    menggunakanSeragam\\n    menggunakanSeragamReason\\n    menggunakanSafetyShoes\\n    menggunakanSafetyShoesReason\\n    menggunakanSafetyHelm\\n    menggunakanSafetyHelmReason\\n    menggunakanIDCard\\n    menggunakanIDCardReason\\n    menggunakanSarungTangan\\n    menggunakanSarungTanganReason\\n    menggunakanJasHujan\\n    menggunakanJamHujanReason\\n  }\\n}\\n\",\"variables\":{\"id\":\"13cfa500-d616-11e8-a30c-df0553541f17\"},\"operationName\":\"checklist\"}"
 			},
-			"created": 1540225583819,
+			"created": 1540448105199,
 			"description": "",
 			"headers": [
 				{
@@ -1507,10 +1555,10 @@
 			"isPrivate": false,
 			"metaSortKey": -1540133128116.75,
 			"method": "POST",
-			"modified": 1540225583819,
+			"modified": 1540448105199,
 			"name": "Get Checklist By Id",
 			"parameters": [],
-			"parentId": "fld_21de8974d1b4466eab79d85db7363725",
+			"parentId": "fld_2a38ad00d03a48f6ab94967e3cb48827",
 			"settingDisableRenderRequestBody": false,
 			"settingEncodeUrl": true,
 			"settingMaxTimelineDataSize": 1000,
@@ -1521,13 +1569,13 @@
 			"_type": "request"
 		},
 		{
-			"_id": "req_4d470781756a41e9847ce15da9dcdd2c",
+			"_id": "req_07bc42c30f2b498094af2290e49a6715",
 			"authentication": {},
 			"body": {
 				"mimeType": "application/graphql",
 				"text": "{\"query\":\"mutation createCheckList($checklist: CheckListInput!) {\\n  createCheckList(checklist: $checklist) {\\n    _id\\n    createdBy {\\n      username\\n      roles\\n    }\\n    mobiltangki {\\n      nopol\\n    }\\n    status\\n    ritase\\n    odoKM\\n    HSSE\\n    PWSAMT\\n    TBBM\\n    remarks\\n    imgUrl\\n    kondisiRem\\n    kondisiRemReason\\n    kondisiBan\\n    kondisiBanReason\\n    kondisiWiper\\n    kondisiWiperReason\\n    kondisiLampu\\n    kondisiLampuReason\\n    kondisiKompartemen\\n    kondisiKompartemenReason\\n    kondisiApar\\n    kondisiAparReason\\n    kondisiOliMesin\\n    kondisiOliMesinReason\\n    kondisiAirRadiator\\n    kondisiAirRadiatorReason\\n    keberadaanSTNK\\n    keberadaanSTNKReason\\n    keberadaanSuratKeur\\n    keberadaanSuratKeurReason\\n    keberadaanSuratTera\\n    keberadaanSuratTeraReason\\n    keberadaanP3K\\n    keberadaanP3KReason\\n    keberadaanFlameTrap\\n    keberadaanFlameTrapReason\\n    keberadaanBanSerep\\n    keberadaanBanSerepReason\\n    keberadaanToolkit\\n    keberadaanToolKitReason\\n    keberadaanGroundingCable\\n    keberadaanGroundingCableReason\\n    keberadaanSelangBongkar\\n    keberadaanSelangBongkarReason\\n    keberadaanSpillKit\\n    keberadaanSpillKitReason\\n    membawaSIM\\n    membawaSIMReason\\n    membawaSuratIjinArea\\n    membawaSuratIjinAreaReason\\n    membawaBukuSaku\\n    membawaBukuSakuReason\\n    membawaCatatanPerjalanan\\n    membawaCatatanPerjalananReason\\n    menggunakanSeragam\\n    menggunakanSeragamReason\\n    menggunakanSafetyShoes\\n    menggunakanSafetyShoesReason\\n    menggunakanSafetyHelm\\n    menggunakanSafetyHelmReason\\n    menggunakanIDCard\\n    menggunakanIDCardReason\\n    menggunakanSarungTangan\\n    menggunakanSarungTanganReason\\n    menggunakanJasHujan\\n    menggunakanJamHujanReason\\n  }\\n}\\n\",\"variables\":{\"checklist\":{\"mobiltangki\":{\"nopol\":\"B 1000 AB\",\"year\":2012,\"status\":\"Active\"},\"status\":\"Waiting\",\"ritase\":100,\"odoKM\":50,\"HSSE\":250,\"PWSAMT\":\"Bagus\",\"TBBM\":\"Good\",\"kondisiRem\":0,\"kondisiRemReason\":\"\",\"kondisiBan\":1,\"kondisiBanReason\":\"Ban mulai gundul\"}},\"operationName\":\"createCheckList\"}"
 			},
-			"created": 1540225583844,
+			"created": 1540448105229,
 			"description": "",
 			"headers": [
 				{
@@ -1545,10 +1593,10 @@
 			"isPrivate": false,
 			"metaSortKey": -1540133847666,
 			"method": "POST",
-			"modified": 1540225583844,
+			"modified": 1540448105229,
 			"name": "Create Checklist",
 			"parameters": [],
-			"parentId": "fld_21de8974d1b4466eab79d85db7363725",
+			"parentId": "fld_2a38ad00d03a48f6ab94967e3cb48827",
 			"settingDisableRenderRequestBody": false,
 			"settingEncodeUrl": true,
 			"settingMaxTimelineDataSize": 1000,
@@ -1559,13 +1607,13 @@
 			"_type": "request"
 		},
 		{
-			"_id": "req_771546aeafdd4b25828176997213a5ba",
+			"_id": "req_1bbc093919194c489d0010cc91111470",
 			"authentication": {},
 			"body": {
 				"mimeType": "application/graphql",
 				"text": "{\"query\":\"mutation deleteCheckList($id: ID!) {\\n  deleteCheckList(id: $id)\\n}\\n\",\"variables\":{\"id\":\"5bfea600-d616-11e8-a30c-df0553541f17\"},\"operationName\":\"deleteCheckList\"}"
 			},
-			"created": 1540225583863,
+			"created": 1540448105271,
 			"description": "",
 			"headers": [
 				{
@@ -1583,10 +1631,10 @@
 			"isPrivate": false,
 			"metaSortKey": -1540133128066.75,
 			"method": "POST",
-			"modified": 1540225583863,
+			"modified": 1540448105271,
 			"name": "Delete Checklist",
 			"parameters": [],
-			"parentId": "fld_21de8974d1b4466eab79d85db7363725",
+			"parentId": "fld_2a38ad00d03a48f6ab94967e3cb48827",
 			"settingDisableRenderRequestBody": false,
 			"settingEncodeUrl": true,
 			"settingMaxTimelineDataSize": 1000,
@@ -1597,10 +1645,10 @@
 			"_type": "request"
 		},
 		{
-			"_id": "req_d4ef2ca218e74c7ba47e8be54576f1fa",
+			"_id": "req_5c56be8bf38f456cadc12db9eca19447",
 			"authentication": {},
 			"body": {},
-			"created": 1540225583925,
+			"created": 1540448105317,
 			"description": "",
 			"headers": [
 				{
@@ -1612,10 +1660,10 @@
 			"isPrivate": false,
 			"metaSortKey": -1540095489324,
 			"method": "GET",
-			"modified": 1540225583925,
+			"modified": 1540448105317,
 			"name": "Get Users",
 			"parameters": [],
-			"parentId": "fld_db9f6d040130451788a7389950cfbd22",
+			"parentId": "fld_8dd59439945d458383b729ae23423ebc",
 			"settingDisableRenderRequestBody": false,
 			"settingEncodeUrl": true,
 			"settingMaxTimelineDataSize": 1000,
@@ -1626,7 +1674,7 @@
 			"_type": "request"
 		},
 		{
-			"_id": "req_849602265e914e00a873c8d85e009899",
+			"_id": "req_4e00047885c44c068f376a273e489d41",
 			"authentication": {},
 			"body": {
 				"mimeType": "application/x-www-form-urlencoded",
@@ -1669,7 +1717,7 @@
 					}
 				]
 			},
-			"created": 1540225583929,
+			"created": 1540448105324,
 			"description": "",
 			"headers": [
 				{
@@ -1687,10 +1735,10 @@
 			"isPrivate": false,
 			"metaSortKey": -1540095620061,
 			"method": "POST",
-			"modified": 1540225583929,
+			"modified": 1540448105324,
 			"name": "Create User",
 			"parameters": [],
-			"parentId": "fld_db9f6d040130451788a7389950cfbd22",
+			"parentId": "fld_8dd59439945d458383b729ae23423ebc",
 			"settingDisableRenderRequestBody": false,
 			"settingEncodeUrl": true,
 			"settingMaxTimelineDataSize": 1000,
@@ -1701,10 +1749,10 @@
 			"_type": "request"
 		},
 		{
-			"_id": "req_f941fdd356c04abebcd0708962dbedff",
+			"_id": "req_e5ac3ff7d6094c4cb0bd3ad85d167074",
 			"authentication": {},
 			"body": {},
-			"created": 1540225583932,
+			"created": 1540448105327,
 			"description": "",
 			"headers": [
 				{
@@ -1716,10 +1764,10 @@
 			"isPrivate": false,
 			"metaSortKey": -1540095489274,
 			"method": "DELETE",
-			"modified": 1540225583932,
+			"modified": 1540448105327,
 			"name": "Del User",
 			"parameters": [],
-			"parentId": "fld_db9f6d040130451788a7389950cfbd22",
+			"parentId": "fld_8dd59439945d458383b729ae23423ebc",
 			"settingDisableRenderRequestBody": false,
 			"settingEncodeUrl": true,
 			"settingMaxTimelineDataSize": 1000,
@@ -1730,7 +1778,7 @@
 			"_type": "request"
 		},
 		{
-			"_id": "req_b3804d9517224b8f8193374920e5b0e4",
+			"_id": "req_d5fced9e88164734864767152c88f46b",
 			"authentication": {},
 			"body": {
 				"mimeType": "application/x-www-form-urlencoded",
@@ -1747,7 +1795,7 @@
 					}
 				]
 			},
-			"created": 1540225583939,
+			"created": 1540448105332,
 			"description": "",
 			"headers": [
 				{
@@ -1759,10 +1807,10 @@
 			"isPrivate": false,
 			"metaSortKey": -1540095547357,
 			"method": "POST",
-			"modified": 1540225583939,
+			"modified": 1540448105332,
 			"name": "Login",
 			"parameters": [],
-			"parentId": "fld_c0f0b27083f74f07b3378e3ac8a9559f",
+			"parentId": "fld_46eb6c6ea2344102a3c1df1cacccf99b",
 			"settingDisableRenderRequestBody": false,
 			"settingEncodeUrl": true,
 			"settingMaxTimelineDataSize": 1000,
@@ -1773,10 +1821,10 @@
 			"_type": "request"
 		},
 		{
-			"_id": "req_4ae84723824044369eb93983a6cabd62",
+			"_id": "req_3adc3b7a02524ec8b1b366c911f39848",
 			"authentication": {},
 			"body": {},
-			"created": 1540225583946,
+			"created": 1540448105342,
 			"description": "",
 			"headers": [
 				{
@@ -1788,10 +1836,10 @@
 			"isPrivate": false,
 			"metaSortKey": -1540095489324,
 			"method": "GET",
-			"modified": 1540225583946,
+			"modified": 1540448105342,
 			"name": "Get Admins",
 			"parameters": [],
-			"parentId": "fld_7dada3e9a8c048fbabac1ffc56ea85e0",
+			"parentId": "fld_13d0372197fc4528b042ebeb7695cb7e",
 			"settingDisableRenderRequestBody": false,
 			"settingEncodeUrl": true,
 			"settingMaxTimelineDataSize": 1000,
@@ -1802,7 +1850,7 @@
 			"_type": "request"
 		},
 		{
-			"_id": "req_827d827c7bc947a395ebfba4832de375",
+			"_id": "req_677803e3ddb84034aee3f0dbfb8a68da",
 			"authentication": {},
 			"body": {
 				"mimeType": "application/x-www-form-urlencoded",
@@ -1845,7 +1893,7 @@
 					}
 				]
 			},
-			"created": 1540225583949,
+			"created": 1540448105344,
 			"description": "",
 			"headers": [
 				{
@@ -1863,10 +1911,10 @@
 			"isPrivate": false,
 			"metaSortKey": -1540095620061,
 			"method": "POST",
-			"modified": 1540225583949,
+			"modified": 1540448105344,
 			"name": "Create Admin",
 			"parameters": [],
-			"parentId": "fld_7dada3e9a8c048fbabac1ffc56ea85e0",
+			"parentId": "fld_13d0372197fc4528b042ebeb7695cb7e",
 			"settingDisableRenderRequestBody": false,
 			"settingEncodeUrl": true,
 			"settingMaxTimelineDataSize": 1000,
@@ -1877,10 +1925,10 @@
 			"_type": "request"
 		},
 		{
-			"_id": "req_631e5a8125db433eb67be43121707b64",
+			"_id": "req_91ee3bd63e544794becd736c8ef702b0",
 			"authentication": {},
 			"body": {},
-			"created": 1540225583951,
+			"created": 1540448105346,
 			"description": "",
 			"headers": [
 				{
@@ -1892,10 +1940,10 @@
 			"isPrivate": false,
 			"metaSortKey": -1540013471900.5,
 			"method": "DELETE",
-			"modified": 1540225583951,
+			"modified": 1540448105346,
 			"name": "Del Admin",
 			"parameters": [],
-			"parentId": "fld_7dada3e9a8c048fbabac1ffc56ea85e0",
+			"parentId": "fld_13d0372197fc4528b042ebeb7695cb7e",
 			"settingDisableRenderRequestBody": false,
 			"settingEncodeUrl": true,
 			"settingMaxTimelineDataSize": 1000,
@@ -1906,10 +1954,10 @@
 			"_type": "request"
 		},
 		{
-			"_id": "req_b2bd362240fd45748af4b65c6bd95ce6",
+			"_id": "req_418fa8432aa147feada8827bd177f3d8",
 			"authentication": {},
 			"body": {},
-			"created": 1540225583956,
+			"created": 1540448105363,
 			"description": "",
 			"headers": [
 				{
@@ -1921,10 +1969,10 @@
 			"isPrivate": false,
 			"metaSortKey": -1540105670129,
 			"method": "GET",
-			"modified": 1540225583956,
+			"modified": 1540448105363,
 			"name": "Get Mobil Tangkis",
 			"parameters": [],
-			"parentId": "fld_d1def1bffe8748aa8e0c222d2f774800",
+			"parentId": "fld_c1a859317ae548baaf29adf395c2fe39",
 			"settingDisableRenderRequestBody": false,
 			"settingEncodeUrl": true,
 			"settingMaxTimelineDataSize": 1000,
@@ -1935,7 +1983,7 @@
 			"_type": "request"
 		},
 		{
-			"_id": "req_ba770a42200c46eeba1b25086fe9c85c",
+			"_id": "req_31f9216248ce4a8684a8ad8550b1dea3",
 			"authentication": {},
 			"body": {
 				"mimeType": "application/x-www-form-urlencoded",
@@ -1962,7 +2010,7 @@
 					}
 				]
 			},
-			"created": 1540225583966,
+			"created": 1540448105372,
 			"description": "",
 			"headers": [
 				{
@@ -1979,10 +2027,10 @@
 			"isPrivate": false,
 			"metaSortKey": -1540105670179,
 			"method": "POST",
-			"modified": 1540225583966,
+			"modified": 1540448105372,
 			"name": "Create Mobil Tangki",
 			"parameters": [],
-			"parentId": "fld_d1def1bffe8748aa8e0c222d2f774800",
+			"parentId": "fld_c1a859317ae548baaf29adf395c2fe39",
 			"settingDisableRenderRequestBody": false,
 			"settingEncodeUrl": true,
 			"settingMaxTimelineDataSize": 1000,
@@ -1993,13 +2041,13 @@
 			"_type": "request"
 		},
 		{
-			"_id": "req_e667f9234cea480ea719345e0cd92432",
+			"_id": "req_fe5e66c16b384efc8095d75fcef9ad94",
 			"authentication": {},
 			"body": {
 				"mimeType": "application/x-www-form-urlencoded",
 				"params": []
 			},
-			"created": 1540225583969,
+			"created": 1540448105378,
 			"description": "",
 			"headers": [
 				{
@@ -2016,10 +2064,10 @@
 			"isPrivate": false,
 			"metaSortKey": -1540105670079,
 			"method": "DELETE",
-			"modified": 1540225583969,
+			"modified": 1540448105378,
 			"name": "Delete Mobil Tangki",
 			"parameters": [],
-			"parentId": "fld_d1def1bffe8748aa8e0c222d2f774800",
+			"parentId": "fld_c1a859317ae548baaf29adf395c2fe39",
 			"settingDisableRenderRequestBody": false,
 			"settingEncodeUrl": true,
 			"settingMaxTimelineDataSize": 1000,
@@ -2030,25 +2078,25 @@
 			"_type": "request"
 		},
 		{
-			"_id": "req_b890a9cd5ce54692839ff1b84219e709",
+			"_id": "req_73a37b2455e9413992b92abbd3151e93",
 			"authentication": {},
 			"body": {},
-			"created": 1540225583975,
+			"created": 1540448105384,
 			"description": "",
 			"headers": [
 				{
 					"id": "pair_90d065ab31354aa6bb080c8d5e4cf832",
 					"name": "token",
-					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJkNGUyMzZhMC1kNGVlLTExZTgtYjdmNS05N2Y2MDFmYmUzZTUiLCJ1c2VybmFtZSI6ImFkbWluIiwiTklQIjoiUE4tMTAwMSIsImZ1bGxOYW1lIjoiU2VvcmFuZyBBZG1pbiIsImVtYWlsIjoiYWRtaW5AZW1haWwuY29tIiwibW9iaWxlIjoiMDgyMTIyNTU5MDkwIiwicm9sZXMiOiJBZG1pbiIsInN0YXR1cyI6IkFjdGl2ZSIsImltZ1VybCI6bnVsbCwiX192IjowLCJpYXQiOjE1NDAxMDYxMDQsImV4cCI6MTU0MDEzNDkwNH0.HbEb1FGVDNqUsdqsacYFLDihK5jo-KSq6BMK9KTxqxA"
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI4MDI4ZGM0MC1iNjNhLTExZTgtYWU3YS01MzljNDMzMjIzOGUiLCJOSVAiOiJQTi0xMDAxIiwiZnVsbE5hbWUiOiJBZG1pbiIsImVtYWlsIjoiYWRtaW5AZW1haWwuY29tIiwibW9iaWxlIjpudWxsLCJ1c2VybmFtZSI6ImFkbWluIiwic3RhdHVzIjoiQWN0aXZlIiwicm9sZXMiOiJBZG1pbiIsIl9fdiI6MCwiaWF0IjoxNTQwNDQ3ODIzLCJleHAiOjE1NDA0NzY2MjN9.kJusKIs4ZJ4qjtIlnJWxNrfM-xX-1IKjYr2opRWt2wI"
 				}
 			],
 			"isPrivate": false,
 			"metaSortKey": -1540105670129,
 			"method": "GET",
-			"modified": 1540225583975,
+			"modified": 1540448105384,
 			"name": "Get Checklist",
 			"parameters": [],
-			"parentId": "fld_e4d9ca4171f549ef9d0a42dbe1dff732",
+			"parentId": "fld_d8c701c520de49e185982730710b1245",
 			"settingDisableRenderRequestBody": false,
 			"settingEncodeUrl": true,
 			"settingMaxTimelineDataSize": 1000,
@@ -2059,7 +2107,7 @@
 			"_type": "request"
 		},
 		{
-			"_id": "req_7856bdc3c1894afe8fe24eac9a4e87b8",
+			"_id": "req_e25d812b30414befa57d2b356dc3a8e2",
 			"authentication": {},
 			"body": {
 				"mimeType": "application/x-www-form-urlencoded",
@@ -2125,7 +2173,7 @@
 					}
 				]
 			},
-			"created": 1540225583978,
+			"created": 1540448105389,
 			"description": "",
 			"headers": [
 				{
@@ -2142,10 +2190,10 @@
 			"isPrivate": false,
 			"metaSortKey": -1540105670179,
 			"method": "POST",
-			"modified": 1540225583978,
+			"modified": 1540448105389,
 			"name": "Create Checklist",
 			"parameters": [],
-			"parentId": "fld_e4d9ca4171f549ef9d0a42dbe1dff732",
+			"parentId": "fld_d8c701c520de49e185982730710b1245",
 			"settingDisableRenderRequestBody": false,
 			"settingEncodeUrl": true,
 			"settingMaxTimelineDataSize": 1000,
@@ -2156,13 +2204,13 @@
 			"_type": "request"
 		},
 		{
-			"_id": "req_7ec4d9674fb545fda29bf18eab8cd06f",
+			"_id": "req_3d57730035114cfbad1ffe342ec850f7",
 			"authentication": {},
 			"body": {
 				"mimeType": "application/x-www-form-urlencoded",
 				"params": []
 			},
-			"created": 1540225583983,
+			"created": 1540448105391,
 			"description": "",
 			"headers": [
 				{
@@ -2179,10 +2227,10 @@
 			"isPrivate": false,
 			"metaSortKey": -1540105670079,
 			"method": "DELETE",
-			"modified": 1540225583983,
+			"modified": 1540448105391,
 			"name": "Delete Checklist",
 			"parameters": [],
-			"parentId": "fld_e4d9ca4171f549ef9d0a42dbe1dff732",
+			"parentId": "fld_d8c701c520de49e185982730710b1245",
 			"settingDisableRenderRequestBody": false,
 			"settingEncodeUrl": true,
 			"settingMaxTimelineDataSize": 1000,
@@ -2193,13 +2241,61 @@
 			"_type": "request"
 		},
 		{
-			"_id": "req_3c444e2e56ba4b6bb7ca7219b7b493ee",
+			"_id": "req_03db97a267d846d6aa75b8f71ccf7768",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/x-www-form-urlencoded",
+				"params": [
+					{
+						"id": "pair_207b1b5ef8424041b51e328815077888",
+						"name": "status",
+						"value": "Rejected"
+					},
+					{
+						"id": "pair_f2f00a8fa31644a6998aa844aeefc282",
+						"name": "rejectedReason",
+						"value": "Sopir nya kegantengan bingit"
+					}
+				]
+			},
+			"created": 1540448105393,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_90d065ab31354aa6bb080c8d5e4cf832",
+					"name": "token",
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI4MDI4ZGM0MC1iNjNhLTExZTgtYWU3YS01MzljNDMzMjIzOGUiLCJOSVAiOiJQTi0xMDAxIiwiZnVsbE5hbWUiOiJBZG1pbiIsImVtYWlsIjoiYWRtaW5AZW1haWwuY29tIiwibW9iaWxlIjpudWxsLCJ1c2VybmFtZSI6ImFkbWluIiwic3RhdHVzIjoiQWN0aXZlIiwicm9sZXMiOiJBZG1pbiIsIl9fdiI6MCwiaWF0IjoxNTQwNDQ3ODgwLCJleHAiOjE1NDA0NzY2ODB9.HU9_ui5D2iWVZjhdK8wWhQnm-NlhW-7upBT0bf3OuUg"
+				},
+				{
+					"id": "pair_53afe23de16545a08ebb52e8b54301ed",
+					"name": "Content-Type",
+					"value": "application/x-www-form-urlencoded"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1540105670154,
+			"method": "PUT",
+			"modified": 1540448105393,
+			"name": "Approval (Admin)",
+			"parameters": [],
+			"parentId": "fld_d8c701c520de49e185982730710b1245",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://seorangeksa.com:3030/api/checklist/approval/512ce6d0-d6d7-11e8-8db3-e104b9b1f42e",
+			"_type": "request"
+		},
+		{
+			"_id": "req_f1521d180a86443bab23696df806c536",
 			"authentication": {},
 			"body": {
 				"mimeType": "application/graphql",
 				"text": "{\"query\":\"mutation signIn($username: String!, $password: String!) {\\n  signIn(username: $username, password: $password) {\\n    user {\\n      _id\\n      username\\n      NIP\\n      fullName\\n      email\\n      mobile\\n      password\\n      roles\\n      status\\n      imgUrl\\n    }\\n    token\\n  }\\n}\\n\",\"variables\":{\"username\":\"superadmin\",\"password\":\"P@ssw0rd\"},\"operationName\":\"signIn\"}"
 			},
-			"created": 1540225583990,
+			"created": 1540448105409,
 			"description": "",
 			"headers": [
 				{
@@ -2211,10 +2307,10 @@
 			"isPrivate": false,
 			"metaSortKey": -1540130969544,
 			"method": "POST",
-			"modified": 1540225583990,
+			"modified": 1540448105409,
 			"name": "Login",
 			"parameters": [],
-			"parentId": "fld_489bacb5468240d49d02bc7734d4f580",
+			"parentId": "fld_523ebff965ab4f60ac3f53e229ce1e43",
 			"settingDisableRenderRequestBody": false,
 			"settingEncodeUrl": true,
 			"settingMaxTimelineDataSize": 1000,
@@ -2225,13 +2321,13 @@
 			"_type": "request"
 		},
 		{
-			"_id": "req_780ec1e310e24a158a2c1c727d0deae3",
+			"_id": "req_0f46801c1c5c48d7823afffe50e11c44",
 			"authentication": {},
 			"body": {
 				"mimeType": "application/graphql",
 				"text": "{\"query\":\"query admins{\\n\\tadmins {\\n\\t\\t_id\\n\\t\\tusername\\n\\t\\tNIP\\n\\t\\tfullName\\n\\t\\temail\\n\\t\\tmobile\\n\\t\\tpassword\\n\\t\\troles\\n\\t\\tstatus\\n\\t\\timgUrl\\n\\t\\tcreatedBy{\\n\\t\\t\\tusername\\n\\t\\t}\\n\\t}\\n}\",\"operationName\":\"admins\"}"
 			},
-			"created": 1540225584003,
+			"created": 1540448105426,
 			"description": "",
 			"headers": [
 				{
@@ -2249,10 +2345,10 @@
 			"isPrivate": false,
 			"metaSortKey": -1540133847641,
 			"method": "POST",
-			"modified": 1540225584003,
+			"modified": 1540448105426,
 			"name": "Get Admins",
 			"parameters": [],
-			"parentId": "fld_f9c2b079c0ac4da4bb1be10ae30217c7",
+			"parentId": "fld_2fcb33891ab147adb421cee3ae48299a",
 			"settingDisableRenderRequestBody": false,
 			"settingEncodeUrl": true,
 			"settingMaxTimelineDataSize": 1000,
@@ -2263,13 +2359,13 @@
 			"_type": "request"
 		},
 		{
-			"_id": "req_0561b6f8924048ccb3ec4565cc3a8384",
+			"_id": "req_fb82c394ffcc49fb807d303506c358aa",
 			"authentication": {},
 			"body": {
 				"mimeType": "application/graphql",
 				"text": "{\"query\":\"query admin($id: ID!) {\\n  admin(id: $id) {\\n    _id\\n    username\\n    NIP\\n    fullName\\n    email\\n    mobile\\n    password\\n    roles\\n    status\\n    imgUrl\\n    createdBy {\\n      username\\n    }\\n  }\\n}\\n\",\"variables\":{\"id\":\"d4e236a0-d4ee-11e8-b7f5-97f601fbe3e5\"},\"operationName\":\"admin\"}"
 			},
-			"created": 1540225584027,
+			"created": 1540448105437,
 			"description": "",
 			"headers": [
 				{
@@ -2287,10 +2383,10 @@
 			"isPrivate": false,
 			"metaSortKey": -1540133128116.75,
 			"method": "POST",
-			"modified": 1540225584027,
+			"modified": 1540448105437,
 			"name": "Get Admin By Id",
 			"parameters": [],
-			"parentId": "fld_f9c2b079c0ac4da4bb1be10ae30217c7",
+			"parentId": "fld_2fcb33891ab147adb421cee3ae48299a",
 			"settingDisableRenderRequestBody": false,
 			"settingEncodeUrl": true,
 			"settingMaxTimelineDataSize": 1000,
@@ -2301,13 +2397,13 @@
 			"_type": "request"
 		},
 		{
-			"_id": "req_229d359e7ef44680a8c6a760cdbde91e",
+			"_id": "req_540a7803ee624a9f9b7b6292d0b3c282",
 			"authentication": {},
 			"body": {
 				"mimeType": "application/graphql",
 				"text": "{\"query\":\"mutation createAdmin($admin: AdminInput!) {\\n  createAdmin(admin: $admin) {\\n    _id\\n    username\\n    password\\n    NIP\\n    fullName\\n    email\\n    mobile\\n    roles\\n    status\\n    imgUrl\\n    createdAt\\n    createdBy {\\n      _id\\n      username\\n      roles\\n    }\\n  }\\n}\\n\",\"variables\":{\"admin\":{\"NIP\":\"admin-2\",\"fullName\":\"Seorang Admin\",\"email\":\"admin2@email.com\",\"mobile\":\"082122559090\",\"username\":\"admin2\",\"password\":\"P@ssw0rd\",\"status\":\"Active\"}},\"operationName\":\"createAdmin\"}"
 			},
-			"created": 1540225584044,
+			"created": 1540448105456,
 			"description": "",
 			"headers": [
 				{
@@ -2325,10 +2421,10 @@
 			"isPrivate": false,
 			"metaSortKey": -1540133847666,
 			"method": "POST",
-			"modified": 1540225584044,
+			"modified": 1540448105456,
 			"name": "Create Admin",
 			"parameters": [],
-			"parentId": "fld_f9c2b079c0ac4da4bb1be10ae30217c7",
+			"parentId": "fld_2fcb33891ab147adb421cee3ae48299a",
 			"settingDisableRenderRequestBody": false,
 			"settingEncodeUrl": true,
 			"settingMaxTimelineDataSize": 1000,
@@ -2339,13 +2435,13 @@
 			"_type": "request"
 		},
 		{
-			"_id": "req_ff9af9861b884ea2ae2835099584f0cb",
+			"_id": "req_7dcf089f51ba4d769d7f12bc7d2c3da1",
 			"authentication": {},
 			"body": {
 				"mimeType": "application/graphql",
 				"text": "{\"query\":\"mutation deleteAdmin($id: ID!) {\\n  deleteAdmin(id: $id)\\n}\\n\",\"variables\":{\"id\":\"0a09ad70-d54b-11e8-b6e4-fdec08ec7905\"},\"operationName\":\"deleteAdmin\"}"
 			},
-			"created": 1540225584062,
+			"created": 1540448105476,
 			"description": "",
 			"headers": [
 				{
@@ -2363,10 +2459,10 @@
 			"isPrivate": false,
 			"metaSortKey": -1540133128066.75,
 			"method": "POST",
-			"modified": 1540225584062,
+			"modified": 1540448105476,
 			"name": "Delete Admin",
 			"parameters": [],
-			"parentId": "fld_f9c2b079c0ac4da4bb1be10ae30217c7",
+			"parentId": "fld_2fcb33891ab147adb421cee3ae48299a",
 			"settingDisableRenderRequestBody": false,
 			"settingEncodeUrl": true,
 			"settingMaxTimelineDataSize": 1000,
@@ -2377,13 +2473,13 @@
 			"_type": "request"
 		},
 		{
-			"_id": "req_488d869fdb5049809f32f70d8ad69458",
+			"_id": "req_59cd2ada76f84c5887d28ace4b739933",
 			"authentication": {},
 			"body": {
 				"mimeType": "application/graphql",
 				"text": "{\"query\":\"query users {\\n  users {\\n    _id\\n    username\\n    NIP\\n    fullName\\n    email\\n    mobile\\n    password\\n    roles\\n    status\\n    imgUrl\\n    createdBy {\\n      username\\n    }\\n  }\\n}\\n\",\"operationName\":\"users\"}"
 			},
-			"created": 1540225584088,
+			"created": 1540448105510,
 			"description": "",
 			"headers": [
 				{
@@ -2401,10 +2497,10 @@
 			"isPrivate": false,
 			"metaSortKey": -1540133847641,
 			"method": "POST",
-			"modified": 1540225584088,
+			"modified": 1540448105510,
 			"name": "Get Users",
 			"parameters": [],
-			"parentId": "fld_e1f4503922c04b61a5a5052d1c6f398b",
+			"parentId": "fld_be2edac5cc824ec1b528519f8ab042ac",
 			"settingDisableRenderRequestBody": false,
 			"settingEncodeUrl": true,
 			"settingMaxTimelineDataSize": 1000,
@@ -2415,13 +2511,13 @@
 			"_type": "request"
 		},
 		{
-			"_id": "req_b266612f586c4d83967ef21bdd1325b6",
+			"_id": "req_aa809415c57e442684034fa480c0a23e",
 			"authentication": {},
 			"body": {
 				"mimeType": "application/graphql",
 				"text": "{\"query\":\"query user($id: ID!) {\\n  user(id: $id) {\\n    _id\\n    username\\n    NIP\\n    fullName\\n    email\\n    mobile\\n    password\\n    roles\\n    status\\n    imgUrl\\n    createdBy {\\n      username\\n    }\\n  }\\n}\\n\",\"variables\":{\"id\":\"d6058eb0-d4f3-11e8-b9c0-35fc5ec21d14\"},\"operationName\":\"user\"}"
 			},
-			"created": 1540225584104,
+			"created": 1540448105559,
 			"description": "",
 			"headers": [
 				{
@@ -2439,10 +2535,10 @@
 			"isPrivate": false,
 			"metaSortKey": -1540133128116.75,
 			"method": "POST",
-			"modified": 1540225584104,
+			"modified": 1540448105559,
 			"name": "Get User By Id",
 			"parameters": [],
-			"parentId": "fld_e1f4503922c04b61a5a5052d1c6f398b",
+			"parentId": "fld_be2edac5cc824ec1b528519f8ab042ac",
 			"settingDisableRenderRequestBody": false,
 			"settingEncodeUrl": true,
 			"settingMaxTimelineDataSize": 1000,
@@ -2453,13 +2549,13 @@
 			"_type": "request"
 		},
 		{
-			"_id": "req_073638489a7c4dd7903087af95a84c72",
+			"_id": "req_e01373ad43b24d97ac37a6a1ec35f05c",
 			"authentication": {},
 			"body": {
 				"mimeType": "application/graphql",
 				"text": "{\"query\":\"mutation createUser($user: UserInput!) {\\n  createUser(user: $user) {\\n    _id\\n    username\\n    password\\n    NIP\\n    fullName\\n    email\\n    mobile\\n    roles\\n    status\\n    imgUrl\\n    createdAt\\n    createdBy {\\n      _id\\n      username\\n      roles\\n    }\\n  }\\n}\\n\",\"variables\":{\"user\":{\"NIP\":\"PN 1003\",\"fullName\":\"Seorang Kernet\",\"email\":\"kernet@email.com\",\"mobile\":\"082122559090\",\"username\":\"kernet\",\"password\":\"P@ssw0rd\",\"status\":\"Active\",\"roles\":\"Kernet\"}},\"operationName\":\"createUser\"}"
 			},
-			"created": 1540225584122,
+			"created": 1540448105580,
 			"description": "",
 			"headers": [
 				{
@@ -2477,10 +2573,10 @@
 			"isPrivate": false,
 			"metaSortKey": -1540133847666,
 			"method": "POST",
-			"modified": 1540225584122,
+			"modified": 1540448105580,
 			"name": "Create User",
 			"parameters": [],
-			"parentId": "fld_e1f4503922c04b61a5a5052d1c6f398b",
+			"parentId": "fld_be2edac5cc824ec1b528519f8ab042ac",
 			"settingDisableRenderRequestBody": false,
 			"settingEncodeUrl": true,
 			"settingMaxTimelineDataSize": 1000,
@@ -2491,13 +2587,13 @@
 			"_type": "request"
 		},
 		{
-			"_id": "req_26beb23dd9a946d5b87649caba4b42d6",
+			"_id": "req_174f20d0f6014d58b73bcd0ff82d07d3",
 			"authentication": {},
 			"body": {
 				"mimeType": "application/graphql",
 				"text": "{\"query\":\"mutation deleteUser($id: ID!) {\\n  deleteUser(id: $id)\\n}\\n\",\"variables\":{\"id\":\"7ed33890-d54d-11e8-a9b7-9b6bffac45f5\"},\"operationName\":\"deleteUser\"}"
 			},
-			"created": 1540225584146,
+			"created": 1540448105612,
 			"description": "",
 			"headers": [
 				{
@@ -2515,10 +2611,10 @@
 			"isPrivate": false,
 			"metaSortKey": -1540133128066.75,
 			"method": "POST",
-			"modified": 1540225584146,
+			"modified": 1540448105612,
 			"name": "Delete User",
 			"parameters": [],
-			"parentId": "fld_e1f4503922c04b61a5a5052d1c6f398b",
+			"parentId": "fld_be2edac5cc824ec1b528519f8ab042ac",
 			"settingDisableRenderRequestBody": false,
 			"settingEncodeUrl": true,
 			"settingMaxTimelineDataSize": 1000,
@@ -2529,13 +2625,13 @@
 			"_type": "request"
 		},
 		{
-			"_id": "req_e36eacc9146048ef9966d17abd42f07d",
+			"_id": "req_0fa6a1f56e2b472cb2206b18f022b8a8",
 			"authentication": {},
 			"body": {
 				"mimeType": "application/graphql",
 				"text": "{\"query\":\"query mobiltangkis {\\n  mobiltangkis {\\n    _id\\n    nopol\\n    _id\\n    year\\n    status\\n    createdBy {\\n      username\\n      roles\\n    }\\n  }\\n}\\n\",\"operationName\":\"mobiltangkis\"}"
 			},
-			"created": 1540225584182,
+			"created": 1540448105646,
 			"description": "",
 			"headers": [
 				{
@@ -2553,10 +2649,10 @@
 			"isPrivate": false,
 			"metaSortKey": -1540133847641,
 			"method": "POST",
-			"modified": 1540225584182,
+			"modified": 1540448105646,
 			"name": "Get Mobil Tangkis",
 			"parameters": [],
-			"parentId": "fld_43de34a3893245dfb4b2e76f7f1d0937",
+			"parentId": "fld_a4628eb564d748aea626823f779fd075",
 			"settingDisableRenderRequestBody": false,
 			"settingEncodeUrl": true,
 			"settingMaxTimelineDataSize": 1000,
@@ -2567,13 +2663,13 @@
 			"_type": "request"
 		},
 		{
-			"_id": "req_8ff0f90000be4201b5bc66997cc4b3bb",
+			"_id": "req_c8d24d16601941f0996de0cb45ee6a58",
 			"authentication": {},
 			"body": {
 				"mimeType": "application/graphql",
 				"text": "{\"query\":\"query mobiltangki($id: ID!) {\\n  mobiltangki(id: $id) {\\n    _id\\n    nopol\\n    KL\\n    year\\n    status\\n    createdBy {\\n      username\\n    }\\n  }\\n}\\n\",\"variables\":{\"id\":\"640b8400-d501-11e8-94e4-1b4ad8fb1ab5\"},\"operationName\":\"mobiltangki\"}"
 			},
-			"created": 1540225584207,
+			"created": 1540448105677,
 			"description": "",
 			"headers": [
 				{
@@ -2591,10 +2687,10 @@
 			"isPrivate": false,
 			"metaSortKey": -1540133128116.75,
 			"method": "POST",
-			"modified": 1540225584207,
+			"modified": 1540448105677,
 			"name": "Get Mobil Tangki By Id",
 			"parameters": [],
-			"parentId": "fld_43de34a3893245dfb4b2e76f7f1d0937",
+			"parentId": "fld_a4628eb564d748aea626823f779fd075",
 			"settingDisableRenderRequestBody": false,
 			"settingEncodeUrl": true,
 			"settingMaxTimelineDataSize": 1000,
@@ -2605,13 +2701,13 @@
 			"_type": "request"
 		},
 		{
-			"_id": "req_57542c52824749a28273c9d54ff1b278",
+			"_id": "req_b08d152f741b49ee9ad626498de9398c",
 			"authentication": {},
 			"body": {
 				"mimeType": "application/graphql",
 				"text": "{\"query\":\"mutation createMobilTangki($mobiltangki: MobilTangkiInput!) {\\n  createMobilTangki(mobiltangki: $mobiltangki) {\\n    _id\\n    KL\\n    year\\n    status\\n    createdBy {\\n      _id\\n    }\\n  }\\n}\\n\",\"variables\":{\"mobiltangki\":{\"nopol\":\"B 1003 BB\",\"KL\":\"24\",\"year\":2012,\"status\":\"Active\"}},\"operationName\":\"createMobilTangki\"}"
 			},
-			"created": 1540225584230,
+			"created": 1540448105694,
 			"description": "",
 			"headers": [
 				{
@@ -2629,10 +2725,10 @@
 			"isPrivate": false,
 			"metaSortKey": -1540133847666,
 			"method": "POST",
-			"modified": 1540225584230,
+			"modified": 1540448105694,
 			"name": "Create Mobil Tangki",
 			"parameters": [],
-			"parentId": "fld_43de34a3893245dfb4b2e76f7f1d0937",
+			"parentId": "fld_a4628eb564d748aea626823f779fd075",
 			"settingDisableRenderRequestBody": false,
 			"settingEncodeUrl": true,
 			"settingMaxTimelineDataSize": 1000,
@@ -2643,13 +2739,13 @@
 			"_type": "request"
 		},
 		{
-			"_id": "req_d8e55e53ad844a1d8677e3fd5b93531f",
+			"_id": "req_ddc9de3faa2c4e838bfb487359ee000f",
 			"authentication": {},
 			"body": {
 				"mimeType": "application/graphql",
 				"text": "{\"query\":\"mutation deleteMobilTangki($id: ID!) {\\n  deleteMobilTangki(id: $id)\\n}\\n\",\"variables\":{\"id\":\"56b5d550-d54f-11e8-955b-ddd1208f1156\"},\"operationName\":\"deleteMobilTangki\"}"
 			},
-			"created": 1540225584247,
+			"created": 1540448105747,
 			"description": "",
 			"headers": [
 				{
@@ -2667,10 +2763,10 @@
 			"isPrivate": false,
 			"metaSortKey": -1540133128066.75,
 			"method": "POST",
-			"modified": 1540225584247,
+			"modified": 1540448105747,
 			"name": "Delete Mobil Tangki",
 			"parameters": [],
-			"parentId": "fld_43de34a3893245dfb4b2e76f7f1d0937",
+			"parentId": "fld_a4628eb564d748aea626823f779fd075",
 			"settingDisableRenderRequestBody": false,
 			"settingEncodeUrl": true,
 			"settingMaxTimelineDataSize": 1000,
@@ -2681,13 +2777,13 @@
 			"_type": "request"
 		},
 		{
-			"_id": "req_ff63650bbc71454fa6842797f99c137f",
+			"_id": "req_d68a23490d2f48f886283f13ff9211b1",
 			"authentication": {},
 			"body": {
 				"mimeType": "application/graphql",
 				"text": "{\"query\":\"query checklists {\\n  checklists {\\n    _id\\n\\t\\tcreatedBy{\\n\\t\\t\\tusername\\n\\t\\t\\troles\\n\\t\\t}\\n\\t\\tmobiltangki{\\n\\t\\t\\tnopol\\n\\t\\t}\\n\\t\\tstatus\\n\\t\\tritase\\n\\t\\todoKM\\n\\t\\tHSSE\\n\\t\\tPWSAMT\\n\\t\\tTBBM\\n\\t\\tremarks\\n\\t\\timgUrl\\n\\t\\tkondisiRem\\n\\t\\tkondisiRemReason\\n\\t\\tkondisiBan\\n    kondisiBanReason\\n    kondisiWiper\\n    kondisiWiperReason\\n    kondisiLampu\\n    kondisiLampuReason\\n    kondisiKompartemen\\n    kondisiKompartemenReason\\n    kondisiApar\\n    kondisiAparReason\\n    kondisiOliMesin\\n    kondisiOliMesinReason\\n    kondisiAirRadiator\\n    kondisiAirRadiatorReason\\n    keberadaanSTNK\\n    keberadaanSTNKReason\\n    keberadaanSuratKeur\\n    keberadaanSuratKeurReason\\n    keberadaanSuratTera\\n    keberadaanSuratTeraReason\\n    keberadaanP3K\\n    keberadaanP3KReason\\n    keberadaanFlameTrap\\n    keberadaanFlameTrapReason\\n    keberadaanBanSerep\\n    keberadaanBanSerepReason\\n    keberadaanToolkit\\n    keberadaanToolKitReason\\n    keberadaanGroundingCable\\n    keberadaanGroundingCableReason\\n    keberadaanSelangBongkar\\n    keberadaanSelangBongkarReason\\n    keberadaanSpillKit\\n    keberadaanSpillKitReason\\n    membawaSIM\\n    membawaSIMReason\\n    membawaSuratIjinArea\\n    membawaSuratIjinAreaReason\\n    membawaBukuSaku\\n    membawaBukuSakuReason\\n    membawaCatatanPerjalanan\\n    membawaCatatanPerjalananReason\\n    menggunakanSeragam\\n    menggunakanSeragamReason\\n    menggunakanSafetyShoes\\n    menggunakanSafetyShoesReason\\n    menggunakanSafetyHelm\\n    menggunakanSafetyHelmReason\\n    menggunakanIDCard\\n    menggunakanIDCardReason\\n    menggunakanSarungTangan\\n    menggunakanSarungTanganReason\\n    menggunakanJasHujan\\n    menggunakanJamHujanReason\\n  }\\n}\\n\",\"operationName\":\"checklists\"}"
 			},
-			"created": 1540225584272,
+			"created": 1540448105812,
 			"description": "",
 			"headers": [
 				{
@@ -2705,10 +2801,10 @@
 			"isPrivate": false,
 			"metaSortKey": -1540133847641,
 			"method": "POST",
-			"modified": 1540225584272,
+			"modified": 1540448105812,
 			"name": "Get Checklist",
 			"parameters": [],
-			"parentId": "fld_6c719c74237845ca80346bbfa162467c",
+			"parentId": "fld_442fe73b3885445cbb9fe91a8609f79a",
 			"settingDisableRenderRequestBody": false,
 			"settingEncodeUrl": true,
 			"settingMaxTimelineDataSize": 1000,
@@ -2719,13 +2815,13 @@
 			"_type": "request"
 		},
 		{
-			"_id": "req_095738ff07ff491084ca5d774d99d1d2",
+			"_id": "req_58059a8c7cef40f6815d8363969519a2",
 			"authentication": {},
 			"body": {
 				"mimeType": "application/graphql",
 				"text": "{\"query\":\"query checklist($id: ID!) {\\n  checklist(id: $id) {\\n    _id\\n\\t\\tcreatedBy{\\n\\t\\t\\tusername\\n\\t\\t\\troles\\n\\t\\t}\\n\\t\\tmobiltangki{\\n\\t\\t\\tnopol\\n\\t\\t}\\n\\t\\tstatus\\n\\t\\tritase\\n\\t\\todoKM\\n\\t\\tHSSE\\n\\t\\tPWSAMT\\n\\t\\tTBBM\\n\\t\\tremarks\\n\\t\\timgUrl\\n\\t\\tkondisiRem\\n\\t\\tkondisiRemReason\\n\\t\\tkondisiBan\\n    kondisiBanReason\\n    kondisiWiper\\n    kondisiWiperReason\\n    kondisiLampu\\n    kondisiLampuReason\\n    kondisiKompartemen\\n    kondisiKompartemenReason\\n    kondisiApar\\n    kondisiAparReason\\n    kondisiOliMesin\\n    kondisiOliMesinReason\\n    kondisiAirRadiator\\n    kondisiAirRadiatorReason\\n    keberadaanSTNK\\n    keberadaanSTNKReason\\n    keberadaanSuratKeur\\n    keberadaanSuratKeurReason\\n    keberadaanSuratTera\\n    keberadaanSuratTeraReason\\n    keberadaanP3K\\n    keberadaanP3KReason\\n    keberadaanFlameTrap\\n    keberadaanFlameTrapReason\\n    keberadaanBanSerep\\n    keberadaanBanSerepReason\\n    keberadaanToolkit\\n    keberadaanToolKitReason\\n    keberadaanGroundingCable\\n    keberadaanGroundingCableReason\\n    keberadaanSelangBongkar\\n    keberadaanSelangBongkarReason\\n    keberadaanSpillKit\\n    keberadaanSpillKitReason\\n    membawaSIM\\n    membawaSIMReason\\n    membawaSuratIjinArea\\n    membawaSuratIjinAreaReason\\n    membawaBukuSaku\\n    membawaBukuSakuReason\\n    membawaCatatanPerjalanan\\n    membawaCatatanPerjalananReason\\n    menggunakanSeragam\\n    menggunakanSeragamReason\\n    menggunakanSafetyShoes\\n    menggunakanSafetyShoesReason\\n    menggunakanSafetyHelm\\n    menggunakanSafetyHelmReason\\n    menggunakanIDCard\\n    menggunakanIDCardReason\\n    menggunakanSarungTangan\\n    menggunakanSarungTanganReason\\n    menggunakanJasHujan\\n    menggunakanJamHujanReason\\n  }\\n}\\n\",\"variables\":{\"id\":\"13cfa500-d616-11e8-a30c-df0553541f17\"},\"operationName\":\"checklist\"}"
 			},
-			"created": 1540225584303,
+			"created": 1540448105862,
 			"description": "",
 			"headers": [
 				{
@@ -2743,10 +2839,10 @@
 			"isPrivate": false,
 			"metaSortKey": -1540133128116.75,
 			"method": "POST",
-			"modified": 1540225584303,
+			"modified": 1540448105862,
 			"name": "Get Checklist By Id",
 			"parameters": [],
-			"parentId": "fld_6c719c74237845ca80346bbfa162467c",
+			"parentId": "fld_442fe73b3885445cbb9fe91a8609f79a",
 			"settingDisableRenderRequestBody": false,
 			"settingEncodeUrl": true,
 			"settingMaxTimelineDataSize": 1000,
@@ -2757,13 +2853,13 @@
 			"_type": "request"
 		},
 		{
-			"_id": "req_14e34719568c4e52897240c8615ebfac",
+			"_id": "req_a1ea1373e7314ccca60e71445098ffee",
 			"authentication": {},
 			"body": {
 				"mimeType": "application/graphql",
-				"text": "{\"query\":\"mutation createCheckList($checklist: CheckListInput!) {\\n  createCheckList(checklist: $checklist) {\\n    _id\\n    createdBy {\\n      username\\n      roles\\n    }\\n    mobiltangki {\\n      nopol\\n    }\\n    status\\n    ritase\\n    odoKM\\n    HSSE\\n    PWSAMT\\n    TBBM\\n    remarks\\n    imgUrl\\n    kondisiRem\\n    kondisiRemReason\\n    kondisiBan\\n    kondisiBanReason\\n    kondisiWiper\\n    kondisiWiperReason\\n    kondisiLampu\\n    kondisiLampuReason\\n    kondisiKompartemen\\n    kondisiKompartemenReason\\n    kondisiApar\\n    kondisiAparReason\\n    kondisiOliMesin\\n    kondisiOliMesinReason\\n    kondisiAirRadiator\\n    kondisiAirRadiatorReason\\n    keberadaanSTNK\\n    keberadaanSTNKReason\\n    keberadaanSuratKeur\\n    keberadaanSuratKeurReason\\n    keberadaanSuratTera\\n    keberadaanSuratTeraReason\\n    keberadaanP3K\\n    keberadaanP3KReason\\n    keberadaanFlameTrap\\n    keberadaanFlameTrapReason\\n    keberadaanBanSerep\\n    keberadaanBanSerepReason\\n    keberadaanToolkit\\n    keberadaanToolKitReason\\n    keberadaanGroundingCable\\n    keberadaanGroundingCableReason\\n    keberadaanSelangBongkar\\n    keberadaanSelangBongkarReason\\n    keberadaanSpillKit\\n    keberadaanSpillKitReason\\n    membawaSIM\\n    membawaSIMReason\\n    membawaSuratIjinArea\\n    membawaSuratIjinAreaReason\\n    membawaBukuSaku\\n    membawaBukuSakuReason\\n    membawaCatatanPerjalanan\\n    membawaCatatanPerjalananReason\\n    menggunakanSeragam\\n    menggunakanSeragamReason\\n    menggunakanSafetyShoes\\n    menggunakanSafetyShoesReason\\n    menggunakanSafetyHelm\\n    menggunakanSafetyHelmReason\\n    menggunakanIDCard\\n    menggunakanIDCardReason\\n    menggunakanSarungTangan\\n    menggunakanSarungTanganReason\\n    menggunakanJasHujan\\n    menggunakanJamHujanReason\\n  }\\n}\\n\",\"variables\":{\"checklist\":{\"mobiltangki\":{\"nopol\":\"B 1000 AB\",\"year\":2012,\"status\":\"Active\"},\"status\":\"Waiting\",\"ritase\":100,\"odoKM\":50,\"HSSE\":250,\"PWSAMT\":\"Bagus\",\"TBBM\":\"Good\",\"kondisiRem\":0,\"kondisiRemReason\":\"\",\"kondisiBan\":1,\"kondisiBanReason\":\"Ban mulai gundul\"}},\"operationName\":\"createCheckList\"}"
+				"text": "{\"query\":\"mutation createCheckList($checklist: CheckListInput!) {\\n  createCheckList(checklist: $checklist) {\\n    _id\\n    createdBy {\\n      username\\n      roles\\n    }\\n    mobiltangki {\\n      nopol\\n    }\\n    status\\n    ritase\\n    odoKM\\n    HSSE\\n    PWSAMT\\n    TBBM\\n    remarks\\n    imgUrl\\n    kondisiRem\\n    kondisiRemReason\\n    kondisiBan\\n    kondisiBanReason\\n    kondisiWiper\\n    kondisiWiperReason\\n    kondisiLampu\\n    kondisiLampuReason\\n    kondisiKompartemen\\n    kondisiKompartemenReason\\n    kondisiApar\\n    kondisiAparReason\\n    kondisiOliMesin\\n    kondisiOliMesinReason\\n    kondisiAirRadiator\\n    kondisiAirRadiatorReason\\n    keberadaanSTNK\\n    keberadaanSTNKReason\\n    keberadaanSuratKeur\\n    keberadaanSuratKeurReason\\n    keberadaanSuratTera\\n    keberadaanSuratTeraReason\\n    keberadaanP3K\\n    keberadaanP3KReason\\n    keberadaanFlameTrap\\n    keberadaanFlameTrapReason\\n    keberadaanBanSerep\\n    keberadaanBanSerepReason\\n    keberadaanToolkit\\n    keberadaanToolKitReason\\n    keberadaanGroundingCable\\n    keberadaanGroundingCableReason\\n    keberadaanSelangBongkar\\n    keberadaanSelangBongkarReason\\n    keberadaanSpillKit\\n    keberadaanSpillKitReason\\n    membawaSIM\\n    membawaSIMReason\\n    membawaSuratIjinArea\\n    membawaSuratIjinAreaReason\\n    membawaBukuSaku\\n    membawaBukuSakuReason\\n    membawaCatatanPerjalanan\\n    membawaCatatanPerjalananReason\\n    menggunakanSeragam\\n    menggunakanSeragamReason\\n    menggunakanSafetyShoes\\n    menggunakanSafetyShoesReason\\n    menggunakanSafetyHelm\\n    menggunakanSafetyHelmReason\\n    menggunakanIDCard\\n    menggunakanIDCardReason\\n    menggunakanSarungTangan\\n    menggunakanSarungTanganReason\\n    menggunakanJasHujan\\n    menggunakanJamHujanReason\\n  }\\n}\\n\",\"variables\":{\"checklist\":{\"mobiltangki\":{\"nopol\":\"B 1001 AB\",\"year\":2012,\"status\":\"Active\"},\"status\":\"Waiting\",\"ritase\":100,\"odoKM\":50,\"HSSE\":250,\"PWSAMT\":\"Bagus\",\"TBBM\":\"Good\",\"kondisiRem\":0,\"kondisiRemReason\":\"\",\"kondisiBan\":1,\"kondisiBanReason\":\"Ban mulai gundul\"}},\"operationName\":\"createCheckList\"}"
 			},
-			"created": 1540225584333,
+			"created": 1540448105910,
 			"description": "",
 			"headers": [
 				{
@@ -2775,16 +2871,16 @@
 					"disabled": false,
 					"id": "pair_c03a425499bf4e429a6566ed3f9ffd20",
 					"name": "token",
-					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJkNjA1OGViMC1kNGYzLTExZTgtYjljMC0zNWZjNWVjMjFkMTQiLCJ1c2VybmFtZSI6InNvcGlyIiwiTklQIjoiUE4tMTAwMiIsImZ1bGxOYW1lIjoiU2VvcmFuZyBTb3BpciIsImVtYWlsIjoic29waXJAZW1haWwuY29tIiwibW9iaWxlIjoiMDgyMTIyNTU5MDkwIiwicm9sZXMiOiJTb3BpciIsInN0YXR1cyI6IkFjdGl2ZSIsImltZ1VybCI6bnVsbCwiX192IjowLCJpYXQiOjE1NDAyMjQ5MTgsImV4cCI6MTU0MDI1MzcxOH0.DOWvMjz4zexdRA40vaoo3gF6R3HELisxw3R6dT5PJpY"
+					"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiIwOTZkMmNkMC1iNjMyLTExZTgtYmZhOS02YmY2MzVmMzQ1MDYiLCJ1c2VybmFtZSI6InN1cGVyYWRtaW4iLCJOSVAiOiJQTi0wMDAwIiwiZnVsbE5hbWUiOiJTdXBlcmFkbWluIiwiZW1haWwiOiJzdXBlcmFkbWluQGVtYWlsLmNvbSIsIm1vYmlsZSI6IjYyODIxMjI1NTkwOTAiLCJzdGF0dXMiOiJBY3RpdmUiLCJpbWdVcmwiOm51bGwsInJvbGVzIjoiU3VwZXJhZG1pbiIsIl9fdiI6MCwiaWF0IjoxNTQwMzA4Mjg5LCJleHAiOjE1NDAzMzcwODl9.DQBdXUkkxZq5zuGHSSp6EFAzR7rWO6PYAAJ2_MgDERY"
 				}
 			],
 			"isPrivate": false,
 			"metaSortKey": -1540133847666,
 			"method": "POST",
-			"modified": 1540225584333,
+			"modified": 1540448105910,
 			"name": "Create Checklist",
 			"parameters": [],
-			"parentId": "fld_6c719c74237845ca80346bbfa162467c",
+			"parentId": "fld_442fe73b3885445cbb9fe91a8609f79a",
 			"settingDisableRenderRequestBody": false,
 			"settingEncodeUrl": true,
 			"settingMaxTimelineDataSize": 1000,
@@ -2795,13 +2891,13 @@
 			"_type": "request"
 		},
 		{
-			"_id": "req_931ac13767b3430daa91742e8b93df94",
+			"_id": "req_a4c41c7ac72743fe8c46ca002bbab4b4",
 			"authentication": {},
 			"body": {
 				"mimeType": "application/graphql",
 				"text": "{\"query\":\"mutation deleteCheckList($id: ID!) {\\n  deleteCheckList(id: $id)\\n}\\n\",\"variables\":{\"id\":\"5bfea600-d616-11e8-a30c-df0553541f17\"},\"operationName\":\"deleteCheckList\"}"
 			},
-			"created": 1540225584369,
+			"created": 1540448105977,
 			"description": "",
 			"headers": [
 				{
@@ -2819,10 +2915,10 @@
 			"isPrivate": false,
 			"metaSortKey": -1540133128066.75,
 			"method": "POST",
-			"modified": 1540225584369,
+			"modified": 1540448105977,
 			"name": "Delete Checklist",
 			"parameters": [],
-			"parentId": "fld_6c719c74237845ca80346bbfa162467c",
+			"parentId": "fld_442fe73b3885445cbb9fe91a8609f79a",
 			"settingDisableRenderRequestBody": false,
 			"settingEncodeUrl": true,
 			"settingMaxTimelineDataSize": 1000,
