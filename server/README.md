@@ -79,6 +79,9 @@ Access the endpoints by visiting [http://localhost:3030/api/checklist](http://lo
 
 Access the graphql by visiting [http://localhost:3030/graphql](http://localhost:3030/graphql)  
 
+### For Testing by Insomnia :
+Please import json format in [https://github.com/eksant/amt-checklist/tree/master/server/docs](https://github.com/eksant/amt-checklist/tree/master/server/docs)
+
 ### A Typical Top-Level Directory :
     .
     ├── ...
