@@ -27,7 +27,7 @@ class DefaultLayout extends Component {
     super(props)
 
     this.state = {
-      group: null,
+      groupAccess: null,
       navGroup: {
         items: [],
       },
@@ -35,16 +35,25 @@ class DefaultLayout extends Component {
   }
 
   componentDidMount() {
-    const group = localStorage.getItem('group')
+    const groupAccess = localStorage.getItem('group')
 
-    if (group) {
-      this.setState({ group })
+    if (groupAccess) {
+      this.setState({ groupAccess })
       this.setState({
         navGroup: {
-          items:
-            group !== 'Superadmin'
-              ? navigation.items.filter(item => item.group !== 'Superadmin')
-              : navigation.items,
+          items: navigation.items.filter(item => {
+            if (item.groups && item.groups.length > 0) {
+              var groupMenu = item.groups.filter(group => {
+                return group === groupAccess
+              })
+
+              if (groupMenu && groupMenu.length > 0) {
+                return item
+              }
+            } else {
+              return item
+            }
+          }),
         },
       })
     }
