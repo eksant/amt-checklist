@@ -15,37 +15,11 @@ const createToken = user => {
   // console.log('token user', tokenUser)
 
   return jwt.sign(tokenUser, process.env.JWT_KEY, {
-    expiresIn: '8h',
+    expiresIn: process.env.JWT_EXPIRED || '9h',
   })
 }
 
 // Using for Rest API Authentication
-// const getRoleByToken = async (req, res, next) => {
-//   const token = req.headers.token
-//   console.log('CEK TOKEN')
-
-//   if (token) {
-//     try {
-//       const decode = await jwt.verify(token, process.env.JWT_KEY)
-//       console.log(decode)
-//       return decode.roles
-//     } catch (error) {
-//       res.status(203).json({
-//         status: 203,
-//         message: 'Your session expired. Sign in again!',
-//         error,
-//       })
-//       next(error)
-//     }
-//   } else {
-//     res.status(203).json({
-//       status: 203,
-//       message: 'You dont have authentication!',
-//     })
-//     next('You dont have authentication!')
-//   }
-// }
-
 const validateTokenSuperadmin = async (req, res, next) => {
   const token = req.headers.token
 
@@ -190,7 +164,6 @@ const gqlValidateTokenUser = combineResolvers(
 
 module.exports = {
   createToken,
-  // getRoleByToken,
   validateTokenSuperadmin,
   validateTokenAdmin,
   validateTokenUser,
