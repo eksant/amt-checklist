@@ -1,48 +1,48 @@
 import {
-  USER_LOGIN_LOADING,
-  USER_LOGIN_ERROR,
-  USER_LOGIN_SUCCESS,
-  USER_LOGOUT_SUCCESS,
+  AUTH_EXPIRED_TOKEN,
+  AUTH_LOGIN_LOADING,
+  AUTH_LOGIN_ERROR,
+  AUTH_LOGIN_SUCCESS,
 } from './auth.actionType'
 
 const initialState = {
   loading: false,
   error: false,
-  isUserLogin: false,
-  token: null,
+  message: null,
   userProfile: null,
+  exptoken: null,
 }
 
 const reducers = (state = initialState, action) => {
   switch (action.type) {
-    case USER_LOGIN_LOADING:
+    case AUTH_EXPIRED_TOKEN:
+      return {
+        ...state,
+        exptoken: action.payload,
+      }
+    case AUTH_LOGIN_LOADING:
       return {
         ...state,
         loading: true,
         error: false,
+        userProfile: null,
+        message: null,
       }
-    case USER_LOGIN_ERROR:
-      console.log('redurces USER_LOGIN_ERROR', action.payload)
+    case AUTH_LOGIN_ERROR:
       return {
         ...state,
         loading: false,
         error: true,
-        isUserLogin: false,
+        userProfile: null,
+        message: action.payload,
       }
-    case USER_LOGIN_SUCCESS:
-      console.log('redurces USER_LOGIN_SUCCESS', action.payload)
+    case AUTH_LOGIN_SUCCESS:
       return {
         ...state,
         loading: false,
         error: false,
-        isUserLogin: true,
-        token: null,
-        userProfile: null,
-      }
-    case USER_LOGOUT_SUCCESS:
-      return {
-        ...state,
-        isUserLogin: false,
+        userProfile: action.payload,
+        message: null,
       }
     default:
       return state

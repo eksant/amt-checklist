@@ -1,33 +1,68 @@
+import { apiSendData, setAsyncToken, getAsyncToken, delAsyncToken } from '../../utils'
 import {
-  USER_LOGIN_LOADING,
-  USER_LOGIN_ERROR,
-  USER_LOGIN_SUCCESS,
-  USER_LOGOUT_SUCCESS,
+  AUTH_EXPIRED_TOKEN,
+  AUTH_LOGIN_LOADING,
+  AUTH_LOGIN_ERROR,
+  AUTH_LOGIN_SUCCESS,
 } from './auth.actionType'
 
-const UserLoginLoading = () => ({
-  type: USER_LOGIN_LOADING,
-})
-
-const UserLoadingError = payload => ({
-  type: USER_LOGIN_ERROR,
+const authExpiredToken = payload => ({
+  type: AUTH_EXPIRED_TOKEN,
   payload,
 })
 
-const UserLoginSuccess = payload => ({
-  type: USER_LOGIN_SUCCESS,
-  payload: payload,
+const authLoginLoading = () => ({
+  type: AUTH_LOGIN_LOADING,
 })
 
-export const postUserLogin = payload => {
+const authLoginError = payload => ({
+  type: AUTH_LOGIN_ERROR,
+  payload,
+})
+
+const authLoginSuccess = payload => ({
+  type: AUTH_LOGIN_SUCCESS,
+  payload,
+})
+
+export const userLogin = payload => {
   return dispatch => {
-    // dispatch(UserLoginLoading())
-    dispatch(UserLoginSuccess())
+    dispatch(authLoginLoading())
+    // console.log('PAYLOAD', payload)
+    return apiSendData('signin', payload)
+      .then(resp => {
+        console.log('RESP', resp)
+        if (resp.token) {
+          setAsyncToken(resp.token)
+          dispatch(authLoginSuccess(resp.user))
+          dispatch(authExpiredToken(resp.expired))
+        } else {
+          dispatch(authLoginError(resp.error))
+        }
+        return Promise.resolve(resp)
+      })
+      .catch(err => {
+        // console.log('ERR', err)
+        dispatch(authLoginError(err.message))
+        return Promise.reject(err)
+      })
   }
 }
 
-export const userLogout = () => {
-  return {
-    type: USER_LOGOUT_SUCCESS,
+export const getUserLogin = () => {
+  return dispatch => {
+    getAsyncToken()
+      .then(token => {
+        // console.log('TOKEN', token)
+        if (token) {
+          dispatch(authLoginSuccess())
+        } else {
+          // dispatch(authLoginError('You Must to Login!'))
+        }
+      })
+      .catch(err => {
+        // console.log('ERR', err.message)
+        dispatch(authLoginError(err.message))
+      })
   }
 }

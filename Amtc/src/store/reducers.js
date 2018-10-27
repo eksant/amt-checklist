@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux'
-import { reducer as formReducer } from 'redux-form'
 
-import Auth from './auth/auth.reducers'
+import auth from './auth/auth.reducers'
+import checklist from './checklist/checklist.reducers'
 
 const reducers = combineReducers({
-  auth: Auth,
-  form: formReducer,
+  auth,
+  checklist,
 })
 
 export default reducers
