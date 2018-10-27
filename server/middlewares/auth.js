@@ -20,19 +20,18 @@ const createToken = user => {
 }
 
 // Using for Rest API Authentication
-// const validateToken = async (req, res, next) => {
+// const getRoleByToken = async (req, res, next) => {
 //   const token = req.headers.token
-//   // console.log('token', token)
+//   console.log('CEK TOKEN')
 
 //   if (token) {
 //     try {
 //       const decode = await jwt.verify(token, process.env.JWT_KEY)
-//       console.log('decode', decode)
-//       req.authUser = decode || decode.user
-//       console.log('req authUser', req.authUser)
-//       next()
+//       console.log(decode)
+//       return decode.roles
 //     } catch (error) {
 //       res.status(203).json({
+//         status: 203,
 //         message: 'Your session expired. Sign in again!',
 //         error,
 //       })
@@ -40,6 +39,7 @@ const createToken = user => {
 //     }
 //   } else {
 //     res.status(203).json({
+//       status: 203,
 //       message: 'You dont have authentication!',
 //     })
 //     next('You dont have authentication!')
@@ -118,6 +118,7 @@ const validateTokenUser = async (req, res, next) => {
   if (token) {
     try {
       const decode = await jwt.verify(token, process.env.JWT_KEY)
+      console.log('ROLES', decode)
       if (
         decode.roles === 'Superadmin' ||
         decode.roles === 'Admin' ||
@@ -190,7 +191,7 @@ const gqlValidateTokenUser = combineResolvers(
 
 module.exports = {
   createToken,
-  // validateToken,
+  // getRoleByToken,
   validateTokenSuperadmin,
   validateTokenAdmin,
   validateTokenUser,
