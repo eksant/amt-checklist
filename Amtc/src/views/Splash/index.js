@@ -1,7 +1,13 @@
 import React, { Component } from 'react'
+// import { connect } from 'react-redux'
+// import { bindActionCreators } from 'redux'
 import { Dimensions, StyleSheet, Text, View, Image } from 'react-native'
 import { Container } from 'native-base'
-import * as Progress from 'react-native-progress'
+import { Actions } from 'react-native-router-flux'
+// import * as Progress from 'react-native-progress'
+
+import { getAsyncToken } from '../../utils'
+// import { getUserLogin } from '../../store/auth/auth.actions'
 
 const deviceHeight = Dimensions.get('window').height
 const logoPertamina = require('../../assets/img/brand/logo-symbol.png')
@@ -15,7 +21,7 @@ class Splash extends Component {
     }
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     let self = this
 
     setTimeout(() => {
@@ -25,7 +31,9 @@ class Splash extends Component {
 
   async handleCloseSplashScreen() {
     await this.setState({ isVisible: false })
-    this.props.navigation.navigate('Login')
+    // Actions.replace('login')
+    const token = await getAsyncToken()
+    token ? Actions.replace('home') : Actions.replace('auth')
   }
 
   // constructor(props) {
@@ -115,5 +123,24 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
 })
+
+// const mapStateToProps = state => {
+//   return {
+//     auth: state.auth,
+//   }
+// }
+
+// const mapDispatchToProps = dispatch =>
+//   bindActionCreators(
+//     {
+//       getUserLogin,
+//     },
+//     dispatch
+//   )
+
+// export default connect(
+//   null, //mapStateToProps,
+//   mapDispatchToProps
+// )(Splash)
 
 export default Splash
