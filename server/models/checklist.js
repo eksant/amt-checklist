@@ -280,12 +280,12 @@ var schema = new Schema(
       trim: true,
     },
     approvedBy: {
-      type: {
-        type: Schema.Types.Object,
-        ref: 'User',
-      },
-      // type: Schema.Types.Object,
-      // ref: 'User',
+      // type: {
+      //   type: Schema.Types.Object,
+      //   ref: 'User',
+      // },
+      type: Schema.Types.Object,
+      ref: 'User',
     },
     rejectedReason: {
       type: String,
@@ -315,6 +315,22 @@ const read = async () => {
   return await CheckList.find()
 }
 
+const readSelf = async createdById => {
+  // console.log('createdById', createdById)
+  return await CheckList.find({
+    createdBy: createdById,
+  })
+
+  // return await CheckList.find()
+  //   .populate({
+  //     path: 'createdBy',
+  //     model: 'User',
+  //     match: { _id: { $ne: createdById } },
+  //   })
+  //   .exec()
+  // .where()
+}
+
 const readId = async id => {
   return await CheckList.findOne({
     // _id: ObjectId(id)
@@ -339,4 +355,4 @@ const destroy = id => {
   })
 }
 
-module.exports = { CheckList, create, read, readId, update, destroy }
+module.exports = { CheckList, create, read, readId, readSelf, update, destroy }
