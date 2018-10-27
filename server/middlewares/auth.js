@@ -118,7 +118,6 @@ const validateTokenUser = async (req, res, next) => {
   if (token) {
     try {
       const decode = await jwt.verify(token, process.env.JWT_KEY)
-      console.log('ROLES', decode)
       if (
         decode.roles === 'Superadmin' ||
         decode.roles === 'Admin' ||
