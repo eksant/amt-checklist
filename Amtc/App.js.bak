@@ -1,0 +1,370 @@
+import React, { Component } from 'react'
+// import { connect } from 'react-redux'
+// import { bindActionCreators } from 'redux'
+import { Router, Scene, Lightbox, Reducer } from 'react-native-router-flux'
+import {
+  TouchableOpacity,
+  SafeAreaView,
+  StyleSheet,
+  View,
+  ScrollView,
+  Image,
+  Text,
+} from 'react-native'
+import SideMenu from 'react-native-side-menu'
+
+// import Icon from 'react-native-vector-icons/FontAwesome'
+// import {
+//   createDrawerNavigator,
+//   createStackNavigator,
+//   createSwitchNavigator,
+//   DrawerItems,
+// } from 'react-navigation'
+
+import AlertProvider from './src/components/AlertProvider'
+// import { setUserLogout } from './src/store/auth/auth.actions'
+// import { delAsyncToken } from './src/utils'
+
+import Splash from './src/views/Splash'
+import Login from './src/views/Login'
+import Dashboard from './src/views/Dashboard'
+import Sidebar from './src/views/Sidebar'
+// import Home from './src/views/Home'
+// import Profile from './src/views/Profile'
+// import Scanner from './src/views/Scanner'
+// import Checklist from './src/views/Checklist'
+// import Histories from './src/views/Histories'
+// import Logout from './src/views/Logout'
+
+/* create reducer for router */
+const reducerCreate = params => {
+  const defaultReducer = new Reducer(params)
+  return (state, action) => {
+    // console.log('ACTION:', action)
+    return defaultReducer(state, action)
+  }
+}
+
+/* wrap component sidebar and content */
+const WrapperComponent = ComposedComponent =>
+  class extends Component {
+    constructor(props) {
+      super(props)
+
+      this.toggle = this.toggle.bind(this)
+
+      this.state = {
+        isOpen: false,
+      }
+    }
+
+    toggle() {
+      this.setState({
+        isOpen: !this.state.isOpen,
+      })
+    }
+
+    updateMenuState(isOpen) {
+      this.setState({ isOpen })
+    }
+
+    onMenuItemSelected = item =>
+      this.setState({
+        isOpen: false,
+      })
+
+    render() {
+      const menu = <Sidebar onItemSelected={this.onMenuItemSelected} />
+
+      return (
+        <SideMenu
+          menu={menu}
+          isOpen={this.state.isOpen}
+          onChange={isOpen => this.updateMenuState(isOpen)}
+        >
+          <View>
+            {/* <Header style={styles.header}>
+              <Left style={styles.headerLeftButton}>
+                <Button transparent onPress={this.toggle}>
+                  <FAIcon name="navicon" size={22} style={styles.colorBlack} />
+                </Button>
+              </Left>
+              <Image
+                style={styles.headerLogo}
+                source={require('./assets/img/brands/isley_logo.png')}
+              />
+              <Right style={styles.headerRightButton}>
+                <Button transparent>
+                  <FAIcon name="bell" size={22} style={styles.colorBlack} />
+                </Button>
+              </Right>
+            </Header> */}
+            <View style={styles.content}>
+              <ScrollView
+                showsHorizontalScrollIndicator={false}
+                showsVerticalScrollIndicator={false}
+              >
+                <ComposedComponent {...this.props} />
+              </ScrollView>
+            </View>
+          </View>
+        </SideMenu>
+      )
+    }
+  }
+
+class App extends Component {
+  render() {
+    const getSceneStyle = (props, computedProps) => {
+      const style = {
+        backgroundColor: 'transparent',
+        shadowColor: null,
+        shadowOffset: null,
+        shadowOpacity: null,
+        shadowRadius: null,
+      }
+      return style
+    }
+
+    return (
+      <AlertProvider>
+        <Router createReducer={reducerCreate} getSceneStyle={getSceneStyle}>
+          <Lightbox>
+            <Scene key="root">
+              <Scene key="splash" component={Splash} hideNavBar initial />
+              <Scene key="login" component={Login} hideNavBar />
+              <Scene key="home" component={WrapperComponent(Dashboard)} />
+              {/* <Scene key="profile" component={WrapperComponent(Profile)} /> */}
+              {/* <Scene key="histories" component={WrapperComponent(Histories)} /> */}
+            </Scene>
+          </Lightbox>
+        </Router>
+      </AlertProvider>
+    )
+  }
+}
+
+const styles = StyleSheet.create({
+  content: {
+    // padding: 15,
+    paddingHorizontal: 15,
+    paddingVertical: 5,
+  },
+})
+
+// const styles = StyleSheet.create({
+//   header: {
+//     elevation: 0,
+//     borderBottomWidth: 1,
+//     backgroundColor: '#FFF',
+//   },
+// })
+
+// const CustomDrawerContentComponent = props => {
+//   return (
+//     <View style={{ flex: 1 }}>
+//       <SafeAreaView forceInset={{ top: 'always', horizontal: 'never' }}>
+//         <View
+//           style={{
+//             paddingVertical: 25,
+//             borderBottomColor: 'rgba(255, 255, 255, 0.4)',
+//             borderBottomWidth: 1,
+//             alignItems: 'center',
+//           }}
+//         >
+//           <Image
+//             style={{ height: 150, width: 150 }}
+//             source={require('./src/assets/img/brand/header-sidebar.jpeg')}
+//             resizeMode="cover"
+//           />
+//           <Text style={{ fontSize: 24, marginTop: 12, color: '#fff' }}>
+//             {/* {this.props.auth && this.props.auth.fullName} */}
+//           </Text>
+//         </View>
+//         <DrawerItems
+//           {...props}
+//           activeTintColor="#2196f3"
+//           activeBackgroundColor="rgba(0, 0, 0, .1)"
+//           inactiveTintColor="rgba(0, 0, 0, .87)"
+//           inactiveBackgroundColor="transparent"
+//           style={{ backgroundColor: '#000000' }}
+//           labelStyle={{ color: '#ffffff', fontSize: 16, fontWeight: '200' }}
+//         />
+//         <TouchableOpacity
+//           onPress={() => {
+//             // delAsyncToken()
+//             // props.setUserLogout()
+
+//             // setTimeout(() => {
+//             //   props.navigation.navigate('Home')
+//             // }, 2000)
+//           }}
+//         >
+//           <Text style={{ color: 'red', paddingLeft: 18 }}>Log Out</Text>
+//         </TouchableOpacity>
+//       </SafeAreaView>
+//     </View>
+//   )
+// }
+
+// const LoginScreen = createStackNavigator(
+//   {
+//     Login: {
+//       screen: Login,
+//       navigationOptions: {
+//         header: null,
+//       },
+//     },
+//   },
+//   {
+//     initialRouteName: 'Login',
+//   }
+// )
+
+// const DashboardScreen = createStackNavigator(
+//   {
+//     Dashboard: {
+//       screen: Home,
+//       navigationOptions: ({ navigation }) => ({
+//         headerStyle: styles.header,
+//         headerTitle: 'Daily AMT Checklist',
+//         headerLeft: (
+//           <TouchableOpacity onPress={() => navigation.navigate('Dashboard')}>
+//             <Icon name="home" size={20} style={{ paddingLeft: 10 }} />
+//           </TouchableOpacity>
+//         ),
+//         headerRight: (
+//           <TouchableOpacity onPress={() => navigation.openDrawer()}>
+//             <Icon name="user-circle-o" size={20} style={{ paddingRight: 10 }} />
+//           </TouchableOpacity>
+//         ),
+//       }),
+//     },
+//     Scanner: {
+//       screen: Scanner,
+//       navigationOptions: ({ navigation }) => ({
+//         headerStyle: styles.header,
+//         headerTitle: 'QRCode Scanner',
+//         headerLeft: (
+//           <TouchableOpacity onPress={() => navigation.navigate('Dashboard')}>
+//             <Icon name="home" size={20} style={{ paddingLeft: 10 }} />
+//           </TouchableOpacity>
+//         ),
+//         headerRight: (
+//           <TouchableOpacity onPress={() => navigation.openDrawer()}>
+//             <Icon name="user-circle-o" size={20} style={{ paddingRight: 10 }} />
+//           </TouchableOpacity>
+//         ),
+//       }),
+//     },
+//     Checklist: {
+//       screen: Checklist,
+//       navigationOptions: ({ navigation }) => ({
+//         headerStyle: styles.header,
+//         headerTitle: 'Form Checklist',
+//         headerRight: (
+//           <TouchableOpacity onPress={() => navigation.openDrawer()}>
+//             <Icon name="user-circle-o" size={20} style={{ paddingRight: 10 }} />
+//           </TouchableOpacity>
+//         ),
+//       }),
+//     },
+//     Histories: {
+//       screen: Histories,
+//       navigationOptions: ({ navigation }) => ({
+//         headerStyle: styles.header,
+//         headerTitle: 'History',
+//         headerLeft: (
+//           <TouchableOpacity onPress={() => navigation.navigate('Dashboard')}>
+//             <Icon name="home" size={20} style={{ paddingLeft: 10 }} />
+//           </TouchableOpacity>
+//         ),
+//         headerRight: (
+//           <TouchableOpacity onPress={() => navigation.openDrawer()}>
+//             <Icon name="user-circle-o" size={20} style={{ paddingRight: 10 }} />
+//           </TouchableOpacity>
+//         ),
+//       }),
+//     },
+//   },
+//   {
+//     initialRouteName: 'Dashboard',
+//     headerLayoutPreset: 'center',
+//   }
+// )
+
+// const HomeScreen = createDrawerNavigator(
+//   {
+//     Dashboard: {
+//       screen: DashboardScreen,
+//     },
+//     Profile: {
+//       screen: Profile,
+//       navigationOptions: {
+//         headerStyle: styles.header,
+//         headerTitle: 'Profile',
+//         headerTintColor: '#FFF',
+//       },
+//     },
+//     // Logout: {
+//     //   screen: Logout,
+//     //   navigationOptions: {
+//     //     headerStyle: styles.header,
+//     //     headerTitle: 'Profile',
+//     //     headerTintColor: '#FFF',
+//     //   },
+//     // },
+//   },
+//   {
+//     initialRouteName: 'Dashboard',
+//     headerMode: 'float',
+//     drawerPosition: 'left',
+//     drawerOpenRoute: 'DrawerOpen',
+//     drawerCloseRoute: 'DrawerClose',
+//     drawerToggleRoute: 'DrawerToggle',
+//     drawerBackgroundColor: 'rgba(0, 0, 0, .5)',
+//     contentComponent: CustomDrawerContentComponent,
+//   }
+// )
+
+// const RootStack = createSwitchNavigator(
+//   {
+//     Splash: { screen: Splash },
+//     Login: { screen: LoginScreen },
+//     Home: { screen: HomeScreen },
+//   },
+//   {
+//     initialRouteName: 'Splash',
+//     // initialRouteName: 'Home',
+//   }
+// )
+
+// class App extends Component {
+//   render() {
+//     const { userProfile } = this.props.auth
+//     console.log('USER PROFILE', userProfile)
+
+//     return <RootStack />
+//   }
+// }
+
+// const mapStateToProps = state => {
+//   return {
+//     auth: state.auth,
+//   }
+// }
+
+// const mapDispatchToProps = dispatch =>
+//   bindActionCreators(
+//     {
+//       setUserLogout,
+//     },
+//     dispatch
+//   )
+
+// export default connect(
+//   mapStateToProps,
+//   mapDispatchToProps
+// )(App)
+
+export default App

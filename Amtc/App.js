@@ -1,190 +1,176 @@
 import React, { Component } from 'react'
-import { StyleSheet, View, Image, TouchableOpacity } from 'react-native'
-import { Text } from 'native-base'
-import Icon from 'react-native-vector-icons/FontAwesome'
-import {
-  createDrawerNavigator,
-  createStackNavigator,
-  createSwitchNavigator,
-  DrawerItems,
-} from 'react-navigation'
+import { Router, Scene, Lightbox, Reducer } from 'react-native-router-flux'
+import SideMenu from 'react-native-side-menu'
+import { Header, Left, Right, Button, Text } from 'native-base'
+import { StyleSheet, View, ScrollView } from 'react-native'
+import FAIcon from 'react-native-vector-icons/FontAwesome'
+import AlertProvider from './src/components/AlertProvider'
 
 import Splash from './src/views/Splash'
 import Login from './src/views/Login'
 import Dashboard from './src/views/Dashboard'
-// import Logout from './src/views/Logout'
-// import Profile from './src/views/Profile'
+import Sidebar from './src/views/Sidebar'
+import Profile from './src/views/Profile'
 import Scanner from './src/views/Scanner'
 import Checklist from './src/views/Checklist'
 import Histories from './src/views/Histories'
 
+/* create reducer for router */
+const reducerCreate = params => {
+  const defaultReducer = new Reducer(params)
+  return (state, action) => {
+    // console.log('ACTION:', action)
+    return defaultReducer(state, action)
+  }
+}
+
+/* wrap component sidebar and content */
+const WrapperComponent = ComposedComponent =>
+  class extends Component {
+    constructor(props) {
+      super(props)
+
+      this.toggle = this.toggle.bind(this)
+
+      this.state = {
+        isOpen: false,
+      }
+    }
+
+    toggle() {
+      this.setState({
+        isOpen: !this.state.isOpen,
+      })
+    }
+
+    updateMenuState(isOpen) {
+      this.setState({ isOpen })
+    }
+
+    onMenuItemSelected = item =>
+      this.setState({
+        isOpen: false,
+      })
+
+    render() {
+      const menu = <Sidebar onItemSelected={this.onMenuItemSelected} />
+
+      return (
+        <SideMenu
+          menu={menu}
+          isOpen={this.state.isOpen}
+          onChange={isOpen => this.updateMenuState(isOpen)}
+        >
+          <View>
+            <Header style={styles.header}>
+              <Left style={styles.headerLeftButton}>
+                <Button transparent onPress={this.toggle}>
+                  <FAIcon name="navicon" size={22} style={styles.headerIcon} />
+                </Button>
+              </Left>
+              <View style={styles.headerTitleContent}>
+                <Text style={styles.headerTitle}>AMT Daily Checklist</Text>
+              </View>
+              <Right style={styles.headerRightButton}>
+                <Button transparent>
+                  <FAIcon name="bell" size={22} style={styles.headerIcon} />
+                </Button>
+              </Right>
+            </Header>
+            <View style={styles.content}>
+              <ScrollView
+                showsHorizontalScrollIndicator={false}
+                showsVerticalScrollIndicator={false}
+              >
+                <ComposedComponent {...this.props} />
+              </ScrollView>
+            </View>
+          </View>
+        </SideMenu>
+      )
+    }
+  }
+
+class App extends Component {
+  render() {
+    const getSceneStyle = (props, computedProps) => {
+      const style = {
+        backgroundColor: 'transparent',
+        shadowColor: null,
+        shadowOffset: null,
+        shadowOpacity: null,
+        shadowRadius: null,
+      }
+      return style
+    }
+
+    return (
+      <AlertProvider>
+        <Router createReducer={reducerCreate} getSceneStyle={getSceneStyle}>
+          <Lightbox>
+            <Scene key="splash" component={Splash} hideNavBar initial />
+            <Scene key="auth">
+              <Scene key="login" component={Login} hideNavBar initial />
+            </Scene>
+            <Scene
+              key="home"
+              hideNavBar
+              // title="AMT DAILY CHECKLIST"
+              // navigationBarStyle={styles.header}
+              // titleStyle={[styles.headerTitleContent, styles.headerTitle]}
+              // onLeft={() => alert('hello')}
+              // leftTitle={<FAIcon name="navicon" size={22} style={styles.headerIcon} />}
+              // onRight={() => alert('hello')}
+              // rightTitle={<FAIcon name="bell" size={22} style={styles.headerIcon} />}
+            >
+              <Scene key="dashboard" component={WrapperComponent(Dashboard)} initial />
+              <Scene key="profile" component={WrapperComponent(Profile)} />
+              <Scene key="histories" component={WrapperComponent(Histories)} />
+              <Scene key="formchecklist" hideNavBar>
+                <Scene key="qrcode" component={WrapperComponent(Scanner)} initial />
+                <Scene key="checklist" component={WrapperComponent(Checklist)} />
+              </Scene>
+            </Scene>
+
+            {/* <Scene key="root" hideNavBar> */}
+            {/* <Scene key="splash" component={Splash} hideNavBar initial /> */}
+            {/* <Scene key="login" component={Login} hideNavBar /> */}
+            {/* <Scene key="home" component={WrapperComponent(Dashboard)} /> */}
+            {/* <Scene key="profile" component={WrapperComponent(Profile)} /> */}
+            {/* <Scene key="histories" component={WrapperComponent(Histories)} /> */}
+            {/* </Scene> */}
+          </Lightbox>
+        </Router>
+      </AlertProvider>
+    )
+  }
+}
+
 const styles = StyleSheet.create({
+  content: {
+    padding: 0,
+  },
   header: {
-    elevation: 0,
-    borderBottomWidth: 1,
-    backgroundColor: '#FFF',
+    borderBottomWidth: 0.5,
+    backgroundColor: '#4553B4',
+    borderBottomColor: '#CBCBCB',
+  },
+  headerLeftButton: {
+    flex: 1,
+  },
+  headerIcon: {
+    color: '#fff',
+  },
+  headerTitleContent: {
+    alignSelf: 'center',
+  },
+  headerTitle: {
+    color: '#fff',
+    alignItems: 'center',
+  },
+  headerRightButton: {
+    flex: 1,
   },
 })
 
-const CustomDrawerContentComponent = prop => {
-  return (
-    <View style={{ flex: 1 }}>
-      <View
-        style={{
-          paddingVertical: 25,
-          borderBottomColor: 'rgba(255, 255, 255, 0.4)',
-          borderBottomWidth: 1,
-          alignItems: 'center',
-        }}
-      >
-        <Image
-          style={{ height: 150, width: 150 }}
-          source={require('./src/assets/img/brand/header-sidebar.jpeg')}
-        />
-        <Text style={{ fontSize: 24, marginTop: 12, color: '#fff' }}>{'Seorang Eksa'}</Text>
-      </View>
-      <DrawerItems
-        {...prop}
-        activeTintColor="#2196f3"
-        activeBackgroundColor="rgba(0, 0, 0, .1)"
-        inactiveTintColor="rgba(0, 0, 0, .87)"
-        inactiveBackgroundColor="transparent"
-        style={{ backgroundColor: '#000000' }}
-        labelStyle={{ color: '#ffffff', fontSize: 16, fontWeight: '200' }}
-      />
-    </View>
-  )
-}
-
-const LoginScreen = createStackNavigator(
-  {
-    Login: {
-      screen: Login,
-      navigationOptions: {
-        header: null,
-      },
-    },
-  },
-  {
-    initialRouteName: 'Login',
-  }
-)
-
-const DashboardScreen = createStackNavigator(
-  {
-    Dashboard: {
-      screen: Dashboard,
-      navigationOptions: ({ navigation }) => ({
-        headerStyle: styles.header,
-        headerTitle: 'Daily AMT Checklist',
-        headerLeft: (
-          <TouchableOpacity onPress={() => navigation.navigate('Dashboard')}>
-            <Icon name="home" size={20} style={{ paddingLeft: 10 }} />
-          </TouchableOpacity>
-        ),
-        headerRight: (
-          <TouchableOpacity onPress={() => navigation.openDrawer()}>
-            <Icon name="user-circle-o" size={20} style={{ paddingRight: 10 }} />
-          </TouchableOpacity>
-        ),
-      }),
-    },
-    Scanner: {
-      screen: Scanner,
-      navigationOptions: ({ navigation }) => ({
-        headerStyle: styles.header,
-        headerTitle: 'QRCode Scanner',
-        headerLeft: (
-          <TouchableOpacity onPress={() => navigation.navigate('Dashboard')}>
-            <Icon name="home" size={20} style={{ paddingLeft: 10 }} />
-          </TouchableOpacity>
-        ),
-        headerRight: (
-          <TouchableOpacity onPress={() => navigation.openDrawer()}>
-            <Icon name="user-circle-o" size={20} style={{ paddingRight: 10 }} />
-          </TouchableOpacity>
-        ),
-      }),
-    },
-    Checklist: {
-      screen: Checklist,
-      navigationOptions: ({ navigation }) => ({
-        headerStyle: styles.header,
-        headerTitle: 'Form Checklist',
-        headerRight: (
-          <TouchableOpacity onPress={() => navigation.openDrawer()}>
-            <Icon name="user-circle-o" size={20} style={{ paddingRight: 10 }} />
-          </TouchableOpacity>
-        ),
-      }),
-    },
-    Histories: {
-      screen: Histories,
-      navigationOptions: ({ navigation }) => ({
-        headerStyle: styles.header,
-        headerTitle: 'History',
-        headerLeft: (
-          <TouchableOpacity onPress={() => navigation.navigate('Dashboard')}>
-            <Icon name="home" size={20} style={{ paddingLeft: 10 }} />
-          </TouchableOpacity>
-        ),
-        headerRight: (
-          <TouchableOpacity onPress={() => navigation.openDrawer()}>
-            <Icon name="user-circle-o" size={20} style={{ paddingRight: 10 }} />
-          </TouchableOpacity>
-        ),
-      }),
-    },
-  },
-  {
-    initialRouteName: 'Dashboard',
-    headerLayoutPreset: 'center',
-  }
-)
-
-const HomeScreen = createDrawerNavigator(
-  {
-    Dashboard: {
-      screen: DashboardScreen,
-    },
-    // Profile: {
-    //   screen: Profile,
-    //   navigationOptions: {
-    //     headerStyle: styles.header,
-    //     headerTitle: 'Profile',
-    //     headerTintColor: '#FFF',
-    //   },
-    // },
-    // Logout: {
-    //   screen: Logout,
-    // },
-  },
-  {
-    initialRouteName: 'Dashboard',
-    headerMode: 'float',
-    drawerPosition: 'left',
-    drawerOpenRoute: 'DrawerOpen',
-    drawerCloseRoute: 'DrawerClose',
-    drawerToggleRoute: 'DrawerToggle',
-    drawerBackgroundColor: 'rgba(0, 0, 0, .5)',
-    contentComponent: CustomDrawerContentComponent,
-  }
-)
-
-const RootStack = createSwitchNavigator(
-  {
-    Splash: { screen: Splash },
-    Login: { screen: LoginScreen },
-    Home: { screen: HomeScreen },
-  },
-  {
-    initialRouteName: 'Splash',
-    // initialRouteName: 'Home',
-  }
-)
-
-export default class App extends Component {
-  render() {
-    return <RootStack />
-  }
-}
+export default App
