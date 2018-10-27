@@ -1,91 +1,107 @@
 import React, { Component } from 'react'
-import Icon from 'react-native-vector-icons/FontAwesome'
-import {
-  Container,
-  Content,
-  Card,
-  CardItem,
-  Button,
-  Text,
-  List,
-  ListItem,
-  Left,
-  Right,
-  Body,
-} from 'native-base'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { StyleSheet, Dimensions, View } from 'react-native'
+import { Actions } from 'react-native-router-flux'
+import { Container, Content, Card, CardItem, Button, Text, Left, Right } from 'native-base'
+import FAIcon from 'react-native-vector-icons/FontAwesome'
+
+import Loading from '../../components/Loading'
+import Message from '../../components/Message'
+import ConnectAlert from '../../components/ConnectAlert'
+import HistoryList from '../Histories/HistoryList'
+import { getChecklist } from '../../store/checklist/checklist.actions'
+
+const window = Dimensions.get('window')
+const { height } = window
 
 class Dashboard extends Component {
+  async componentDidMount() {
+    const resp = await this.props.getChecklist()
+    // console.log('RESP HISTORY DID MOUNT', resp)
+    if (resp.error && resp.error.name === 'JsonWebTokenError') {
+      this.props.alertWithType('error', 'Error', resp.message)
+      Actions.replace('auth')
+    }
+  }
+
   render() {
+    // console.log('PROPS DASHBOARD', this.props.checklist)
+    const { loading, error, message, checklist } = this.props.checklist
+    const topFiveChecklist = checklist.length > 0 ? checklist.slice(0, 5) : []
+
     return (
-      <Container>
-        <Content padder>
-          <Card transparent>
-            <CardItem>
-              <Left style={{ flex: 1 }}>
-                <Button iconLeft success onPress={() => this.props.navigation.navigate('Checklist')}>
-                  <Icon name="file" style={{ fontSize: 20, left: 10, color: '#FFF' }} />
-                  <Text>Form Checklist</Text>
-                </Button>
-              </Left>
-              <Right style={{ flex: 0 }}>
-                <Button iconLeft info>
-                  <Icon name="copy" style={{ fontSize: 20, left: 10, color: '#FFF' }} />
-                  <Text>History</Text>
-                </Button>
-              </Right>
-            </CardItem>
-          </Card>
-          <Card>
-            <CardItem header bordered>
-              <Text>Checklist Previous</Text>
-            </CardItem>
-            <CardItem>
-              <Content>
-                <List>
-                  <ListItem avatar>
-                    <Left>
-                      <Icon name="check" style={{ fontSize: 20, color: 'green' }} />
-                    </Left>
-                    <Body>
-                      <Text>Request Approved</Text>
-                      <Text note>No Reason</Text>
-                    </Body>
-                    <Right>
-                      <Text note>14/09/2018</Text>
-                    </Right>
-                  </ListItem>
-                  <ListItem avatar>
-                    <Left>
-                      <Icon name="times" style={{ fontSize: 20, color: 'red' }} />
-                    </Left>
-                    <Body>
-                      <Text>Request Rejected</Text>
-                      <Text note>Reason: Sopir dan Kernet kurang ganteng..</Text>
-                    </Body>
-                    <Right>
-                      <Text note>14/09/2018</Text>
-                    </Right>
-                  </ListItem>
-                  <ListItem avatar>
-                    <Left>
-                      <Icon name="history" style={{ fontSize: 20, color: 'blue' }} />
-                    </Left>
-                    <Body>
-                      <Text>Request Onprocess</Text>
-                      <Text note>No Reason</Text>
-                    </Body>
-                    <Right>
-                      <Text note>14/09/2018</Text>
-                    </Right>
-                  </ListItem>
-                </List>
-              </Content>
-            </CardItem>
-          </Card>
-        </Content>
-      </Container>
+      <View style={styles.container}>
+        <Container>
+          <Content padder>
+            <Card transparent>
+              <CardItem>
+                <Left style={{ flex: 1 }}>
+                  <Button iconLeft success onPress={() => Actions.replace('checklistform')}>
+                    <FAIcon
+                      name="calendar-check-o"
+                      style={{ fontSize: 20, left: 10, color: '#FFF' }}
+                    />
+                    <Text>Form Checklist</Text>
+                  </Button>
+                </Left>
+                <Right style={{ flex: 0 }}>
+                  <Button iconLeft info onPress={() => Actions.replace('histories')}>
+                    <FAIcon name="wpforms" style={{ fontSize: 20, left: 10, color: '#FFF' }} />
+                    <Text>History</Text>
+                  </Button>
+                </Right>
+              </CardItem>
+            </Card>
+            <Card>
+              <CardItem header bordered>
+                <Text>Checklist Previous</Text>
+              </CardItem>
+              <CardItem>
+                <Content style={styles.content}>
+                  {loading ? (
+                    <Loading />
+                  ) : error ? (
+                    <Message error message={message} />
+                  ) : (
+                    <HistoryList items={topFiveChecklist} />
+                  )}
+                </Content>
+              </CardItem>
+            </Card>
+          </Content>
+        </Container>
+      </View>
     )
   }
 }
 
-export default Dashboard
+const styles = StyleSheet.create({
+  container: {
+    flex: 2,
+    flexDirection: 'row',
+  },
+  content: {
+    height: height / 1.67,
+    marginBottom: 5,
+  },
+})
+
+const mapStateToProps = state => {
+  return {
+    checklist: state.checklist,
+  }
+}
+
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      getChecklist,
+    },
+    dispatch
+  )
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ConnectAlert(Dashboard))
