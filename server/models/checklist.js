@@ -11,14 +11,18 @@ var schema = new Schema(
       type: String,
       default: uuidv1(),
     },
+    createdById: String,
     createdBy: {
       type: Schema.Types.Object,
       ref: 'User',
+      field: 'createdById',
       required: [true, 'CreateBy required!'],
     },
+    mobiltangkiId: String,
     mobiltangki: {
       type: Schema.Types.Object,
       ref: 'MobilTangki',
+      field: 'mobiltangkiId',
       required: [true, 'Mobil tangki required!'],
     },
     status: {
@@ -279,13 +283,11 @@ var schema = new Schema(
       type: String,
       trim: true,
     },
+    approvedById: String,
     approvedBy: {
-      // type: {
-      //   type: Schema.Types.Object,
-      //   ref: 'User',
-      // },
       type: Schema.Types.Object,
       ref: 'User',
+      field: 'approvedById',
     },
     rejectedReason: {
       type: String,
@@ -318,7 +320,7 @@ const read = async () => {
 const readSelf = async createdById => {
   // console.log('createdById', createdById)
   return await CheckList.find({
-    createdBy: createdById,
+    createdById: createdById,
   })
 
   // return await CheckList.find()
