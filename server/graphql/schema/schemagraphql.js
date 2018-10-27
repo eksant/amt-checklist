@@ -25,6 +25,7 @@ module.exports = gql`
     deleteMobilTangki(id: ID!): Boolean
     createCheckList(checklist: CheckListInput!): CheckList!
     updateCheckList(id: ID!, checklist: CheckListInput!): CheckList!
+    approvalCheckList(id: ID!, approval: ApprovalChecklistInput!): CheckList!
     deleteCheckList(id: ID!): Boolean
   }
 
@@ -161,10 +162,12 @@ module.exports = gql`
     menggunakanSarungTanganReason: String
     menggunakanJasHujan: Int
     menggunakanJamHujanReason: String
+    approvedBy: User
+    rejectedReason: String
   }
 
   input CheckListInput {
-    # createdBy: User
+    createdBy: UserInput
     mobiltangki: MobilTangkiInput
     status: StatusApproval
     ritase: Int
@@ -230,6 +233,11 @@ module.exports = gql`
     menggunakanSarungTanganReason: String
     menggunakanJasHujan: Int
     menggunakanJamHujanReason: String
+  }
+
+  input ApprovalChecklistInput {
+    status: StatusApproval
+    rejectedReason: String
   }
 
   enum StatusActive {
