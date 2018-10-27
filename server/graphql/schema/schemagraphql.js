@@ -101,7 +101,7 @@ module.exports = gql`
     status: StatusApproval
     ritase: Int
     odoKM: Int
-    HSSE: Int
+    HSSE: String
     PWSAMT: String
     TBBM: String
     remarks: String

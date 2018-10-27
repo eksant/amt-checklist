@@ -35,6 +35,7 @@ module.exports = {
           } else {
             return await create({
               ...checklist,
+              createdById: { ...authUser._id },
               createdBy: { ...authUser },
             })
           }
@@ -62,15 +63,16 @@ module.exports = {
     approvalCheckList: combineResolvers(
       gqlValidateTokenAdmin,
       async (parent, { id, approval }, { authUser }) => {
-        const approvalAdmin = {
-          ...approval,
-          approvedBy: authUser,
-        }
-
         try {
           if (authUser.roles === 'Sopir' || authUser.roles === 'Kernet') {
             new ForbiddenError('You dont have authentication!')
           } else {
+            const approvalAdmin = {
+              ...approval,
+              approvedById: authUser._id,
+              approvedBy: authUser,
+            }
+
             return await update(id, approvalAdmin)
           }
         } catch (error) {
