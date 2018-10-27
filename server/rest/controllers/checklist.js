@@ -94,6 +94,11 @@ module.exports = {
             message: 'Success to create record!',
             data,
           })
+        } else {
+          res.status(200).json({
+            status: 200,
+            message: 'Data not found!',
+          })
         }
       } catch (error) {
         res.status(400).json({
