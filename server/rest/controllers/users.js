@@ -10,12 +10,20 @@ module.exports = {
     signIn(req.body.username, req.body.password, (error, user) => {
       if (!error) {
         const token = auth.createToken(user)
+        const expIn = Number(process.env.JWT_EXPIRED.charAt(0)) || 9
+        const setHour = new Date()
+        setHour.setHours(expIn)
+        // console.log('set hours', setHour)
+        const numDate = Number(setHour)
+        // console.log('set hours', numDate)
+        // console.log('set hours', new Date(numDate))
 
         req.headers.token = token
         res.status(200).json({
           message: 'User signed in successfully',
           user,
           token,
+          expired: numDate,
         })
       } else {
         res.status(203).json({
