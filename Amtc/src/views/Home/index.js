@@ -1,49 +1,51 @@
 import React, { Component } from 'react'
-import { StyleSheet, View } from 'react-native'
-import { Container, Text } from 'native-base'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 
-// const { Dimensions } = React
-// const deviceHeight = Dimensions.get('window').height
+import { setUserLogin } from '../../store/auth/auth.actions'
+
+import Dashboard from '../Dashboard'
+import Login from '../Login'
 
 class Home extends Component {
+  handleSubmit(itemData) {
+    this.props.setUserLogin(itemData)
+  }
+
   render() {
-    return (
-      <Container style={styles.container}>
-        <View style={styles.logoContainer}>
-          <Text style={styles.title}>HOME</Text>
-        </View>
-      </Container>
-    )
+    const { loading, error, message, isUserLogin, userProfile } = this.props.auth
+    console.log('ISLOGIN HOME', isUserLogin)
+
+    if (isUserLogin) {
+      return <Dashboard userProfile={userProfile} />
+    } else {
+      return (
+        <Login
+          loading={loading}
+          error={error}
+          message={message}
+          onSubmit={this.handleSubmit.bind(this)}
+        />
+      )
+    }
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    // backgroundColor: '#635DB7',
-    width: null,
-    height: null,
-  },
-  logoContainer: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  logo: {
-    flex: 1,
-    width: 250,
-    height: null,
-    alignSelf: 'center',
-    resizeMode: 'contain',
-    marginTop: 20, //deviceHeight / 5,
-  },
-  title: {
-    flex: 1,
-    color: '#D8D8D8',
-    fontSize: 25,
-    fontWeight: 'bold',
-    alignSelf: 'center',
-  },
-})
+const mapStateToProps = state => {
+  return {
+    auth: state.auth,
+  }
+}
 
-export default Home
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      setUserLogin,
+    },
+    dispatch
+  )
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Home)
