@@ -18,7 +18,6 @@ import {
   Item,
   Icon as NBIcon,
 } from 'native-base'
-import { Field, reduxForm } from 'redux-form'
 
 import CheckKondisi from './CheckKondisi'
 import CheckKeberadaan from './CheckKeberadaan'
@@ -78,18 +77,8 @@ class Checklist extends Component {
                 type="text"
                 // placeholder="User"
               />
-              <Field
-                name="mobiltangki"
-                component={this.handleInput}
-                label="No. Pol:"
-                type="text"
-              />
-              <Field
-                name="ritase"
-                component={this.handleInput}
-                label="Ritase:"
-                type="text"
-              />
+              <Field name="mobiltangki" component={this.handleInput} label="No. Pol:" type="text" />
+              <Field name="ritase" component={this.handleInput} label="Ritase:" type="text" />
               {/* <Field name="mobiltangki" component={this.handleInput} /> */}
               {/* <Field name="ritase" component={this.handleInput} /> */}
               {/* <Field name="HSSE" component={this.handleInput} /> */}
@@ -126,7 +115,4 @@ class Checklist extends Component {
   }
 }
 
-export default reduxForm({
-  form: 'formChecklist',
-  validate,
-})(Checklist)
+export default Checklist
