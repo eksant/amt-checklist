@@ -51,7 +51,7 @@ Password: P@ssw0rd
     - [ ] Show Detail Daily AMT Checklist
     - [ ] Approved or Rejected With Reason Actions
 - Reporting
-  - [ ] QRCode AMT
+  - [x] QRCode AMT
   - [ ] Daily Report AMT Checklist With Status
 
 ### Browsers support :
