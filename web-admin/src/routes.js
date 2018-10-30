@@ -42,6 +42,11 @@ const Login = Loadable({
   loading: Loading,
 })
 
+const QRCodeAMT = Loadable({
+  loader: () => import('./containers/AccountLayout/QRCodeAMT'),
+  loading: Loading,
+})
+
 // https://github.com/ReactTraining/react-router/tree/master/packages/react-router-config
 const routes = [
   { path: '/', exact: true, name: 'Home', component: DefaultLayout },
@@ -51,6 +56,7 @@ const routes = [
   { path: '/users', exact: true, name: 'Users', component: Users },
   { path: '/amts', name: 'AMT', component: MobilTangkis },
   { path: '/checklist', name: 'Checklist', component: Checklist },
+  { path: '/report-qrcode-amt', name: 'QRCode AMT', component: QRCodeAMT },
   // { path: '/users/:id', exact: true, name: 'User Details', component: User },
 ]
 

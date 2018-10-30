@@ -45,7 +45,7 @@ export default {
     },
     {
       name: "Daily AMT Check",
-      url: "/theme/colors",
+      url: "/approval-amt-check",
       icon: "fa fa-check-square-o",
       groups: ['Superadmin', 'Admin'],
     },
@@ -60,8 +60,14 @@ export default {
       groups: ['Superadmin', 'Admin'],
     },
     {
+      name: 'QRCode AMT',
+      url: '/report-qrcode-amt',
+      icon: 'fa fa-qrcode',
+      groups: ['Superadmin', 'Admin'],
+    },
+    {
       name: 'Daily Report',
-      url: '/theme/colors',
+      url: '/report-daily',
       icon: 'fa fa-list-alt',
       groups: ['Superadmin', 'Admin'],
     },
