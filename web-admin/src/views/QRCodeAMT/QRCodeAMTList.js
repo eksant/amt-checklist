@@ -86,20 +86,24 @@ export default props => {
             <Col className="gutter-row" span={16}>
               <div className="gutter-box" style={gutterInfo}>
                 <Row>
-                  <Col span={6}>No.Pol</Col>
-                  <Col span={10}>{item.nopol}</Col>
+                  <Col span={8}>No. Pol</Col>
+                  <Col span={10}>: {item.nopol}</Col>
                 </Row>
                 <Row>
-                  <Col span={6}>KL</Col>
-                  <Col span={10}>{item.KL}</Col>
+                  <Col span={8}>KL</Col>
+                  <Col span={10}>: {item.KL}</Col>
                 </Row>
                 <Row>
-                  <Col span={6}>Year</Col>
-                  <Col span={10}>{item.year}</Col>
+                  <Col span={8}>Year</Col>
+                  <Col span={10}>: {item.year}</Col>
                 </Row>
                 <Row>
-                  <Col span={6}>Status</Col>
-                  <Col span={10}>{item.status}</Col>
+                  <Col span={8}>Status</Col>
+                  <Col span={10}>: {item.status}</Col>
+                </Row>
+                <Row>
+                  <Col span={8}>Created By</Col>
+                  <Col span={10}>: {item.createdBy.username}</Col>
                 </Row>
               </div>
             </Col>
