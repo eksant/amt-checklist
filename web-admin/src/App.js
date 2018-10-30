@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { Component } from 'react'
-import { HashRouter, Switch } from 'react-router-dom'
+import { HashRouter } from 'react-router-dom'
 import { ApolloProvider } from 'react-apollo'
 import ApolloClient from 'apollo-boost'
 // import { ApolloClient } from 'apollo-client'
@@ -170,13 +170,11 @@ class App extends Component {
     return (
       <HashRouter>
         <ApolloProvider client={client}>
-          {/* <Switch> */}
-            {!localStorage.getItem('token') ? (
-              <Login onSubmitLogin={this.onSubmitLogin} />
-            ) : (
-              <DefaultLayout />
-            )}
-          {/* </Switch> */}
+          {!localStorage.getItem('token') ? (
+            <Login onSubmitLogin={this.onSubmitLogin} />
+          ) : (
+            <DefaultLayout />
+          )}
         </ApolloProvider>
       </HashRouter>
     )
