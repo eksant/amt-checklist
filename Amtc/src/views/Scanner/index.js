@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
-import { StyleSheet, Text } from 'react-native'
-// import Icon from 'react-native-vector-icons/FontAwesome'
-// import { Button } from 'native-base'
+import { StyleSheet, Dimensions, View } from 'react-native'
+import { Container, Content, Card, CardItem, Text } from 'native-base'
 import QRCodeScanner from '../../components/QRCodeScanner'
+
+const window = Dimensions.get('window')
+const { height } = window
 
 class Scanner extends Component {
   constructor(props) {
@@ -25,24 +27,48 @@ class Scanner extends Component {
     const { nopol } = this.state
 
     return (
-      <QRCodeScanner
-        showMarker={true}
-        onRead={this.onSuccess.bind(this)}
-        topContent={<Text style={styles.centerText}>No.Pol: {nopol}</Text>}
-        // bottomContent={
-        //   <Button iconRight success onPress={() => this.props.navigation.navigate('Scanner')} style={styles.buttonTouchable}>
-        //     <Icon name="file" style={{ fontSize: 20, left: 10, color: '#FFF' }} />
-        //     <Text>Next</Text>
-        //   </Button>
-        // }
-      />
+      <View style={styles.container}>
+        <Container>
+          <Content padder>
+            <Card>
+              <CardItem header bordered>
+                <Text>QR Code No. Pol : {nopol}</Text>
+              </CardItem>
+              <CardItem>
+                <Content style={styles.content}>
+                  <QRCodeScanner
+                    showMarker={true}
+                    onRead={this.onSuccess.bind(this)}
+                    topContent={<Text style={styles.centerText}>No.Pol: {nopol}</Text>}
+                    // bottomContent={
+                    //   <Button iconRight success onPress={() => this.props.navigation.navigate('Scanner')} style={styles.buttonTouchable}>
+                    //     <Icon name="file" style={{ fontSize: 20, left: 10, color: '#FFF' }} />
+                    //     <Text>Next</Text>
+                    //   </Button>
+                    // }
+                  />
+                </Content>
+              </CardItem>
+            </Card>
+          </Content>
+        </Container>
+      </View>
     )
   }
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 2,
+    flexDirection: 'row',
+    backgroundColor: '#fff',
+  },
+  content: {
+    height: height / 1.4,
+    marginBottom: 5,
+  },
   centerText: {
-    flex: 1,
+    flex: 2,
     fontSize: 16,
     padding: 36,
     color: '#000',

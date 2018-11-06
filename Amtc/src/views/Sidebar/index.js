@@ -40,7 +40,7 @@ export default function Menu({ onItemSelected }) {
 
       <View style={styles.sidebarItemContainer}>
         <FAIcon name="calendar-check-o" size={22} style={styles.sidebarIcon} />
-        <Text onPress={() => Actions.replace('checklist')} style={styles.sidebarItem}>
+        <Text onPress={() => Actions.replace('formchecklist')} style={styles.sidebarItem}>
           Checklist Form
         </Text>
       </View>
