@@ -37,7 +37,7 @@ class Dashboard extends Component {
             <Card transparent>
               <CardItem>
                 <Left style={{ flex: 1 }}>
-                  <Button iconLeft success onPress={() => Actions.replace('checklistform')}>
+                  <Button iconLeft success onPress={() => Actions.replace('formchecklist')}>
                     <FAIcon
                       name="calendar-check-o"
                       style={{ fontSize: 20, left: 10, color: '#FFF' }}

@@ -127,8 +127,8 @@ class App extends Component {
               <Scene key="profile" component={WrapperComponent(Profile)} />
               <Scene key="histories" component={WrapperComponent(Histories)} />
               <Scene key="formchecklist" hideNavBar>
-                <Scene key="qrcode" component={WrapperComponent(Scanner)} initial />
-                <Scene key="checklist" component={WrapperComponent(Checklist)} />
+                <Scene key="qrcode" component={Scanner} />
+                <Scene key="checklist" component={WrapperComponent(Checklist)} initial />
               </Scene>
             </Scene>
 
