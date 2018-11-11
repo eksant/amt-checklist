@@ -40,7 +40,7 @@ module.exports = gql`
     roles: RoleAccess
     status: StatusActive
     imgUrl: String
-    createdAt: String
+    createdAt: Date
     createdBy: User
   }
 
@@ -83,8 +83,9 @@ module.exports = gql`
     KL: String
     year: String
     status: StatusActive
-    createdAt: String
     createdBy: User
+    createdAt: Date
+    updatedAt: Date
   }
 
   input MobilTangkiInput {
@@ -97,8 +98,8 @@ module.exports = gql`
   type CheckList {
     _id: ID!
     createdBy: User
-    createdAt: Int
-    updatedAt: Int
+    createdAt: Date
+    updatedAt: Date
     mobiltangki: MobilTangki
     status: StatusApproval
     ritase: Int
@@ -240,8 +241,8 @@ module.exports = gql`
   input ApprovalChecklistInput {
     status: StatusApproval
     rejectedReason: String
-    createdAt: Int
-    updatedAt: Int
+    createdAt: Date
+    updatedAt: Date
   }
 
   enum StatusActive {
@@ -262,4 +263,6 @@ module.exports = gql`
     Sopir
     Kernet
   }
+
+  scalar Date
 `
