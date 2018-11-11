@@ -97,6 +97,8 @@ module.exports = gql`
   type CheckList {
     _id: ID!
     createdBy: User
+    createdAt: Int
+    updatedAt: Int
     mobiltangki: MobilTangki
     status: StatusApproval
     ritase: Int
@@ -238,6 +240,8 @@ module.exports = gql`
   input ApprovalChecklistInput {
     status: StatusApproval
     rejectedReason: String
+    createdAt: Int
+    updatedAt: Int
   }
 
   enum StatusActive {
