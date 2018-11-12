@@ -48,3 +48,28 @@ export const getChecklist = () => {
       })
   }
 }
+
+export const createCheckList = payload => {
+  return dispatch => {
+    dispatch(checklistLoading())
+    try {
+      return apiSendData('checklist/add', payload)
+        .then(resp => {
+          if (resp.status === 200) {
+            dispatch(checklistSuccess(resp.data))
+          } else {
+            dispatch(checklistError(resp.message))
+          }
+          return Promise.resolve(resp)
+        })
+        .catch(err => {
+          dispatch(checklistError(err))
+          return Promise.reject(err)
+        })
+    } catch (error) {
+      dispatch(checklistError(error))
+      return Promise.reject(error)
+    }
+  }
+}
+
