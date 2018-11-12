@@ -2,5 +2,5 @@
   "name": "Checklist",
   "version": "0.0.0",
   "private": true,
-  "main": "./Checklist.js"
+  "main": "./ChecklistRequest.js"
 }

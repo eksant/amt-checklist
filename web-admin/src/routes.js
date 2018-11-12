@@ -12,6 +12,11 @@ function Loading() {
   )
 }
 
+const Login = Loadable({
+  loader: () => import('./views/Login'),
+  loading: Loading,
+})
+
 const Dashboard = Loadable({
   loader: () => import('./views/Dashboard'),
   loading: Loading,
@@ -33,12 +38,7 @@ const MobilTangkis = Loadable({
 })
 
 const Checklist = Loadable({
-  loader: () => import('./views/Checklist'),
-  loading: Loading,
-})
-
-const Login = Loadable({
-  loader: () => import('./views/Login'),
+  loader: () => import('./containers/AccountLayout/Checklist'),
   loading: Loading,
 })
 
@@ -55,7 +55,7 @@ const routes = [
   { path: '/admins', exact: true, name: 'Admins', component: Admins },
   { path: '/users', exact: true, name: 'Users', component: Users },
   { path: '/amts', name: 'AMT', component: MobilTangkis },
-  { path: '/checklist', name: 'Checklist', component: Checklist },
+  { path: '/approval-checklist', name: 'Daily AMT Check', component: Checklist },
   { path: '/report-qrcode-amt', name: 'QRCode AMT', component: QRCodeAMT },
   // { path: '/users/:id', exact: true, name: 'User Details', component: User },
 ]
