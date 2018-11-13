@@ -14,7 +14,7 @@ class Home extends Component {
 
   render() {
     const { loading, error, message, isUserLogin, userProfile } = this.props.auth
-    console.log('ISLOGIN HOME', isUserLogin)
+    // console.log('ISLOGIN HOME', isUserLogin)
 
     if (isUserLogin) {
       return <Dashboard userProfile={userProfile} />
