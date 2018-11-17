@@ -46,8 +46,8 @@ Password: P@ssw0rd
     - [x] Delete AMT
 - Approval AMT Checklist
   - Daily AMT Check
-    - [ ] List Daily AMT Checklist With Status
-    - [ ] Filter Daily AMT Checklist With Status
+    - [x] List Daily AMT Checklist With Status
+    - [x] Filter Daily AMT Checklist With Status
     - [ ] Show Detail Daily AMT Checklist
     - [ ] Approved or Rejected With Reason Actions
 - Reporting

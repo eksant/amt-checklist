@@ -20,12 +20,16 @@ const HistoryList = ({ items }) => {
                 <FAIcon name={iconName} style={{ fontSize: 20, color: colorStatus }} />
               </Left>
               <Body>
-                <Text>Check AMT {item.mobiltangki && item.mobiltangki.nopol}</Text>
-                <Text>Status {item.status}</Text>
-                <Text note>{item.rejectedReason}</Text>
+                <Text style={{ fontSize: 12 }}>
+                  AMT {item.mobiltangki && item.mobiltangki.nopol}
+                </Text>
+                <Text style={{ fontSize: 10 }}>Status {item.status}</Text>
+                <Text style={{ fontSize: 9 }} note>
+                  {item.rejectedReason}
+                </Text>
               </Body>
               <Right>
-                <Text note>{moment(item.updatedAt).format('DD/MM/YYYY')}</Text>
+                <Text note>{moment(item.updatedAt).format('DD MMM YYYY hh:mm')}</Text>
               </Right>
             </ListItem>
           )

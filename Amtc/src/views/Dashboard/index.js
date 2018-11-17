@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   content: {
-    height: height / 1.67,
+    height: height / 1.9,
     marginBottom: 5,
   },
 })
