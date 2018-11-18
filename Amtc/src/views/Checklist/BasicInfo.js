@@ -7,6 +7,7 @@ import {
   Label,
   Input
 } from 'native-base'
+import { StyleSheet } from 'react-native';
 
 export default class BasicInfo extends Component {
 
@@ -19,60 +20,89 @@ export default class BasicInfo extends Component {
     return (
       <Container>
         <Content padder>
-          <Form>
-            <Item fixedLabel>
+          <Form style={{marginTop: 20}}>
+            <Item fixedLabel style={styles.myItem}>
               <Label>Ritase</Label>
               <Input 
+                underlineColorAndroid='transparent'
+                style={styles.myInput}
                 value={data.ritase}
                 onChangeText={(ritase) => setState({ritase})}
               />
             </Item>
-            <Item fixedLabel>
+            <Item fixedLabel style={styles.myItem}>
               <Label>Odo KM</Label>
               <Input 
+                underlineColorAndroid='transparent'
+                style={styles.myInput}
                 value={data.odoKM}
                 onChangeText={(odoKM) => setState({odoKM})}
               />
             </Item>
-            <Item fixedLabel>
+            <Item fixedLabel style={styles.myItem}>
               <Label>HSSE</Label>
               <Input 
+                underlineColorAndroid='transparent'
+                style={styles.myInput}
                 value={data.HSSE}
                 onChangeText={(HSSE) => setState({HSSE})}
               />
             </Item>
-            <Item fixedLabel>
+            <Item fixedLabel style={styles.myItem}>
               <Label>PWSAMT</Label>
               <Input 
+                underlineColorAndroid='transparent'
+                style={styles.myInput}
                 value={data.PWSAMT}
                 onChangeText={(PWSAMT) => setState({PWSAMT})}
               />
             </Item>
-            <Item fixedLabel>
+            <Item fixedLabel style={styles.myItem}>
               <Label>TBBM</Label>
               <Input 
+                underlineColorAndroid='transparent'
+                style={styles.myInput}
                 value={data.TBBM}
                 onChangeText={(TBBM) => setState({TBBM})}
               />
             </Item>
-            <Item fixedLabel>
+            <Item fixedLabel style={styles.myItem}>
               <Label>Remarks</Label>
               <Input 
+                underlineColorAndroid='transparent'
+                style={styles.myInput}
                 value={data.remarks}
                 onChangeText={(remarks) => setState({remarks})}
               />
             </Item>
-            <Item fixedLabel last>
+            <Item fixedLabel last style={styles.myItem}>
               <Label>Img URL</Label>
               <Input 
+                underlineColorAndroid='transparent'
+                style={styles.myInput}
                 value={data.imgUrl}
                 onChangeText={(imgUrl) => setState({imgUrl})}
               />
             </Item>
-  
           </Form>
         </Content>
       </Container>
     )
   }
 }
+
+const styles = StyleSheet.create({
+  myItem: {
+    borderColor: 'transparent',
+    marginBottom: 10,
+    marginRight: 10
+  },
+
+  myInput:{
+    borderWidth: 2, 
+    borderColor: 'lightgrey',  
+    paddingLeft: 10,
+    height: 50
+  }
+
+});
