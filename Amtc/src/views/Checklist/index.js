@@ -44,42 +44,42 @@ class Checklist extends Component {
       itemsKondisi: [
         {
           name: 'Kondisi Rem',
-          status: 0,
+          status: 1,
           reason: ''
         },
         {
           name: 'Kondisi Ban',
-          status: 0,
+          status: 1,
           reason: ''
         },
         {
           name: 'Kondisi Wiper',
-          status: 0,
+          status: 1,
           reason: ''
         },
         {
           name: 'Kondisi Lampu',
-          status: 0,
+          status: 1,
           reason: ''
         },
         {
           name: 'Kondisi Kompartemen',
-          status: 0,
+          status: 1,
           reason: ''
         },
         {
           name: 'Kondisi Apar',
-          status: 0,
+          status: 1,
           reason: ''
         },
         {
           name: 'Kondisi Oli Mesin',
-          status: 0,
+          status: 1,
           reason: ''
         },
         {
           name: 'Kondisi Air Radiator',
-          status: 0,
+          status: 1,
           reason: ''
         },
       ],   
@@ -87,52 +87,52 @@ class Checklist extends Component {
       itemsKeberadaan: [
         {
           name: 'Keberadaan STNK',
-          status: 0,
+          status: 1,
           reason: ''
         },
         {
           name: 'Keberadaan Surat Keur',
-          status: 0,
+          status: 1,
           reason: ''
         },
         {
           name: 'Keberadaan Surat Tera',
-          status: 0,
+          status: 1,
           reason: ''
         },
         {
           name: 'Keberadaan P3K',
-          status: 0,
+          status: 1,
           reason: ''
         },
         {
           name: 'Keberadaan Flame Trap',
-          status: 0,
+          status: 1,
           reason: ''
         },
         {
           name: 'Keberadaan Ban Serep',
-          status: 0,
+          status: 1,
           reason: ''
         },
         {
           name: 'Keberadaan Toolkit',
-          status: 0,
+          status: 1,
           reason: ''
         },
         {
           name: 'Keberadaan Grounding Cable',
-          status: 0,
+          status: 1,
           reason: ''
         },
         {
           name: 'Keberadaan Selang Bongkar',
-          status: 0,
+          status: 1,
           reason: ''
         },
         {
           name: 'Keberadaan Spill Kit',
-          status: 0,
+          status: 1,
           reason: ''
         },
       ],
@@ -140,22 +140,22 @@ class Checklist extends Component {
       itemsMembawa: [
         {
           name: 'Membawa SIM',
-          status: 0,
+          status: 1,
           reason: ''
         },
         {
           name: 'Membawa Surat Ijin Area',
-          status: 0,
+          status: 1,
           reason: ''
         },
         {
           name: 'Membawa Buku Saku',
-          status: 0,
+          status: 1,
           reason: ''
         },
         {
           name: 'Membawa Catatan Perjalanan',
-          status: 0,
+          status: 1,
           reason: ''
         }
       ],
@@ -163,43 +163,45 @@ class Checklist extends Component {
       itemsMenggunakan: [
         {
           name: 'Menggunakan Seragam',
-          status: 0,
+          status: 1,
           reason: ''
         },
         {
           name: 'Menggunakan Safety Shoes',
-          status: 0,
+          status: 1,
           reason: ''
         },
         {
           name: 'Menggunakan Safety Helm',
-          status: 0,
+          status: 1,
           reason: ''
         },
         {
           name: 'Menggunakan ID Card',
-          status: 0,
+          status: 1,
           reason: ''
         },
         {
           name: 'Menggunakan Sarung Tangan',
-          status: 0,
+          status: 1,
           reason: ''
         },
         {
           name: 'Menggunakan Jas Hujan',
-          status: 0,
+          status: 1,
           reason: ''
         }
       ],
 
     };
 
-    this.handleActionConfirm = this.handleActionConfirm.bind(this);
+    this.baseState = this.state;
+
+    this.handleChangeStatus = this.handleChangeStatus.bind(this);
     this.handleChangeReason = this.handleChangeReason.bind(this);
   }
 
-  handleSubmit() {
+  handleSubmit = () => {
 
     const item = {
       mobiltangkiId: this.state.mobiltangkiId,
@@ -284,70 +286,42 @@ class Checklist extends Component {
       })
   }
 
-  handleClear() {
-    this.setState({
-      mobiltangkiId: 'f972d090-d563-11e8-b064-ed4d58da7351',
-      status: 'Waiting',
-      ritase: '',
-      odoKM: '',
-      HSSE: '',
-      PWSAMT: '',
-      TBBM: '',
-      remarks: '',
-      imgUrl: ''
-    });
+  handleClear = () => {
+    this.setState(this.baseState);
   }
 
-  handleActionConfirm = (index) => {
-    Alert.alert(
-        'Please Confirm',
-        'What do you want to do ?',
-        [
-          {
-            text: 'Accept', 
-            onPress: () => this.changeStatus(index,1)
-          },
-          {
-            text: 'Reject', 
-            onPress: () => this.changeStatus(index,2)
-          },
-          {
-            text: 'Nothing', 
-            onPress: () => this.changeStatus(index,0)
-          },
-        ],
-        { cancelable: true }
-      )
-  }
-
-  changeStatus = (index,value) => {
+  handleChangeStatus = (index) => {
     const {currentTab} = this.state;
     
     if(currentTab === 1){
       let itemsKondisi = [...this.state.itemsKondisi];
       let item = {...itemsKondisi[index]};
-      item.status = value;
+      item.status === 0 ? item.status = 1 : item.status = 0;
+      item.reason = "";
       itemsKondisi[index] = item;
       this.setState({itemsKondisi});
     }
     else if(currentTab === 2){
       let itemsKeberadaan = [...this.state.itemsKeberadaan];
       let item = {...itemsKeberadaan[index]};
-      item.status = value;
+      item.status === 0 ? item.status = 1 : item.status = 0;
+      item.reason = "";
       itemsKeberadaan[index] = item;
       this.setState({itemsKeberadaan});
     }
     else if(currentTab === 3){
       let itemsMembawa = [...this.state.itemsMembawa];
       let item = {...itemsMembawa[index]};
-      item.status = value;
+      item.status === 0 ? item.status = 1 : item.status = 0;
+      item.reason = "";
       itemsMembawa[index] = item;
       this.setState({itemsMembawa});
     }
     else if(currentTab === 4){
       let itemsMenggunakan = [...this.state.itemsMenggunakan];
       let item = {...itemsMenggunakan[index]};
-      item.status = value;
+      item.status === 0 ? item.status = 1 : item.status = 0;
+      item.reason = "";
       itemsMenggunakan[index] = item;
       this.setState({itemsMenggunakan});
     }
@@ -419,31 +393,30 @@ class Checklist extends Component {
             <Tab heading="Basic Info">
               <BasicInfo 
                   data={this.state}
-                  setState={p=>{this.setState(p)}} 
-              />
+                  setState={p=>{this.setState(p)}}/>
             </Tab>
             <Tab heading="Cek Kondisi">
               <CheckKondisi 
                 data={this.state.itemsKondisi}
-                onActionConfirm={this.handleActionConfirm}
+                onChangeStatus={this.handleChangeStatus}
                 onChangeReason={this.handleChangeReason}/>
             </Tab>
             <Tab heading="Cek Keberadaan">
               <CheckKondisi 
                 data={this.state.itemsKeberadaan}
-                onActionConfirm={this.handleActionConfirm}
+                onChangeStatus={this.handleChangeStatus}
                 onChangeReason={this.handleChangeReason}/>
             </Tab>
             <Tab heading="Cek Bawaan">
               <CheckKondisi 
                 data={this.state.itemsMembawa}
-                onActionConfirm={this.handleActionConfirm}
+                onChangeStatus={this.handleChangeStatus}
                 onChangeReason={this.handleChangeReason}/>
             </Tab>
             <Tab heading="Cek Penggunaan">
               <CheckKondisi 
                 data={this.state.itemsMenggunakan}
-                onActionConfirm={this.handleActionConfirm}
+                onChangeStatus={this.handleChangeStatus}
                 onChangeReason={this.handleChangeReason}/>
             </Tab>
         </Tabs>
