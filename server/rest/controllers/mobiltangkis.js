@@ -1,7 +1,7 @@
 const redis = require('redis')
 const client = redis.createClient()
 
-const { create, read, readId, update, destroy } = require('../../models/mobiltangkis')
+const { create, read, readId, readNoPol, update, destroy } = require('../../models/mobiltangkis')
 
 module.exports = {
   create: async (req, res) => {
@@ -49,6 +49,24 @@ module.exports = {
   readById: async (req, res) => {
     try {
       const data = await readId(req.params.id)
+
+      client.set('mobiltangkiCache', JSON.stringify(data), 'EX', 500)
+      res.status(200).json({
+        status: 200,
+        message: 'Success to read record!',
+        data,
+      })
+    } catch (error) {
+      res.status(400).json({
+        message: 'Bad request',
+        error,
+      })
+    }
+  },
+
+  readByNopol: async (req, res) => {
+    try {
+      const data = await readNoPol(req.params.nopol)
 
       client.set('mobiltangkiCache', JSON.stringify(data), 'EX', 500)
       res.status(200).json({

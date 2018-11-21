@@ -73,6 +73,12 @@ const readMobilTangkiId = async id => {
   })
 }
 
+const readNoPol = async nopol => {
+  return await MobilTangki.findOne({
+    nopol: nopol,
+  })
+}
+
 const update = async (id, data) => {
   return await MobilTangki.findOneAndUpdate(
     // { _id: ObjectId(id) },
@@ -90,4 +96,13 @@ const destroy = id => {
   })
 }
 
-module.exports = { MobilTangki, create, read, readId, readMobilTangkiId, update, destroy }
+module.exports = {
+  MobilTangki,
+  create,
+  read,
+  readId,
+  readMobilTangkiId,
+  readNoPol,
+  update,
+  destroy,
+}
