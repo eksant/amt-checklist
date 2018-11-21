@@ -10,12 +10,12 @@ const Message = ({ info, success, warning, error, message }) => {
         info
           ? styles.messageBgColorInfo
           : success
-            ? styles.messageBgColorSuccess
-            : warning
-              ? styles.messageBgColorWarning
-              : error
-                ? styles.messageBgColorError
-                : [],
+          ? styles.messageBgColorSuccess
+          : warning
+          ? styles.messageBgColorWarning
+          : error
+          ? styles.messageBgColorError
+          : [],
       ]}
     >
       <View style={styles.messageIcon}>
@@ -24,12 +24,12 @@ const Message = ({ info, success, warning, error, message }) => {
             info
               ? 'info-circle'
               : success
-                ? 'check-circle'
-                : warning
-                  ? 'warning'
-                  : error
-                    ? 'times-circle'
-                    : ''
+              ? 'check-circle'
+              : warning
+              ? 'warning'
+              : error
+              ? 'times-circle'
+              : ''
           }
           size={21}
           style={styles.colorWhite}
