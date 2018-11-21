@@ -12,9 +12,8 @@ const { width, height } = window
 export default function Menu({ onItemSelected }) {
   const handleLogout = async () => {
     const token = await delAsyncToken()
-    // console.log('TOKEN', token)
     if (!token || token === undefined) {
-      Actions.replace('auth')
+      Actions.replace('login')
     }
   }
 
@@ -26,28 +25,28 @@ export default function Menu({ onItemSelected }) {
           source={require('../../assets/img/avatars/user-default.png')}
         />
         <Text style={styles.sidebarProfile}>Your name</Text>
-        <Text style={styles.sidebarEditProfile} onPress={() => Actions.replace('profile')}>
+        <Text style={styles.sidebarEditProfile} onPress={() => onItemSelected('profile', 'pop')}>
           Edit Profile
         </Text>
       </View>
 
       <View style={styles.sidebarItemContainer}>
         <FAIcon name="home" size={22} style={styles.sidebarIcon} />
-        <Text onPress={() => Actions.replace('dashboard')} style={styles.sidebarItem}>
+        <Text onPress={() => onItemSelected('dashboard')} style={styles.sidebarItem}>
           Home
         </Text>
       </View>
 
       <View style={styles.sidebarItemContainer}>
         <FAIcon name="calendar-check-o" size={22} style={styles.sidebarIcon} />
-        <Text onPress={() => Actions.replace('formchecklist')} style={styles.sidebarItem}>
+        <Text onPress={() => onItemSelected('formchecklist', 'pop')} style={styles.sidebarItem}>
           Checklist Form
         </Text>
       </View>
 
       <View style={styles.sidebarItemContainer}>
         <FAIcon name="wpforms" size={22} style={styles.sidebarIcon} />
-        <Text onPress={() => Actions.replace('histories')} style={styles.sidebarItem}>
+        <Text onPress={() => onItemSelected('histories', 'pop')} style={styles.sidebarItem}>
           History Daily
         </Text>
       </View>
@@ -103,7 +102,7 @@ const styles = StyleSheet.create({
     textDecorationLine: 'underline',
   },
   sidebarItemContainer: {
-    paddingLeft: 65,
+    paddingLeft: 45,
     marginBottom: 25,
     flex: 1,
     flexDirection: 'row',
