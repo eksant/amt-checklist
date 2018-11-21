@@ -20,7 +20,7 @@ export const getAsyncToken = async () => {
 
 export const delAsyncToken = async () => {
   try {
-    await AsyncStorage.removeItem(tokenName)
+    return await AsyncStorage.removeItem(tokenName)
   } catch (error) {
     console.log('AsyncStorage Error', error.message)
   }

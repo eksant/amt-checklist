@@ -31,12 +31,17 @@ export const apiGetData = async endpoint => {
       'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
     },
   })
-    .then(response => response.json())
+    .then(response => {
+      // console.log('GET RESPONSE', response)
+      return response.json()
+    })
     .then(data => {
       // console.log('GET RESPONSE DATA', data)
-      return data
+      return data ? data : null
     })
-    .catch(error => error)
+    .catch(error => {
+      return error
+    })
 }
 
 export const apiSendData = async (endpoint, payload) => {
@@ -74,7 +79,7 @@ export const apiPutData = (endpoint, payload) => {
     .then(response => response.json())
     .then(data => {
       // console.log('SET RESPONSE DATA', data)
-      return data
+      return data ? data : null
     })
     .catch(error => {
       return error
