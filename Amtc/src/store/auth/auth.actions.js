@@ -31,7 +31,7 @@ export const userLogin = payload => {
     // console.log('PAYLOAD', payload)
     return apiSendData('signin', payload)
       .then(resp => {
-        console.log('RESP', resp)
+        // console.log('RESP', resp)
         if (resp.token) {
           setAsyncToken(resp.token)
           dispatch(authLoginSuccess(resp.user))
