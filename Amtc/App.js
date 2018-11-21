@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import { Router, Scene, Lightbox, Reducer } from 'react-native-router-flux'
-import SideMenu from 'react-native-side-menu'
+import { Router, Scene, Lightbox, Reducer, Actions } from 'react-native-router-flux'
 import { Header, Left, Right, Button, Text } from 'native-base'
 import { StyleSheet, View, ScrollView } from 'react-native'
+import SideMenu from 'react-native-side-menu'
 import FAIcon from 'react-native-vector-icons/FontAwesome'
 import AlertProvider from './src/components/AlertProvider'
 
@@ -11,6 +11,7 @@ import Login from './src/views/Login'
 import Dashboard from './src/views/Dashboard'
 import Sidebar from './src/views/Sidebar'
 import Profile from './src/views/Profile'
+import FormMethod from './src/views/FormMethod'
 import Scanner from './src/views/Scanner'
 import Checklist from './src/views/Checklist'
 import Histories from './src/views/Histories'
@@ -19,13 +20,12 @@ import Histories from './src/views/Histories'
 const reducerCreate = params => {
   const defaultReducer = new Reducer(params)
   return (state, action) => {
-    // console.log('ACTION:', action)
     return defaultReducer(state, action)
   }
 }
 
 /* wrap component sidebar and content */
-const WrapperComponent = ComposedComponent =>
+const WrapperComponent = (ComposedComponent, isActionBack, isForm) =>
   class extends Component {
     constructor(props) {
       super(props)
@@ -47,13 +47,17 @@ const WrapperComponent = ComposedComponent =>
       this.setState({ isOpen })
     }
 
-    onMenuItemSelected = item =>
-      this.setState({
-        isOpen: false,
-      })
+    onMenuItemSelected(item, act = 'replace') {
+      act === 'replace' ? Actions.replace(item) : Actions.push(item)
+      this.setState({ isOpen: false })
+    }
+
+    onActionBack() {
+      Actions.pop()
+    }
 
     render() {
-      const menu = <Sidebar onItemSelected={this.onMenuItemSelected} />
+      const menu = <Sidebar onItemSelected={this.onMenuItemSelected.bind(this)} />
 
       return (
         <SideMenu
@@ -62,21 +66,30 @@ const WrapperComponent = ComposedComponent =>
           onChange={isOpen => this.updateMenuState(isOpen)}
         >
           <View>
-            <Header style={styles.header}>
-              <Left style={styles.headerLeftButton}>
-                <Button transparent onPress={this.toggle}>
-                  <FAIcon name="navicon" size={22} style={styles.headerIcon} />
-                </Button>
-              </Left>
-              <View style={styles.headerTitleContent}>
-                <Text style={styles.headerTitle}>AMT Daily Checklist</Text>
-              </View>
-              <Right style={styles.headerRightButton}>
-                <Button transparent>
-                  <FAIcon name="bell" size={22} style={styles.headerIcon} />
-                </Button>
-              </Right>
-            </Header>
+            {!isForm && (
+              <Header style={styles.header}>
+                <Left style={styles.headerLeftButton}>
+                  <Button transparent onPress={isActionBack ? this.onActionBack : this.toggle}>
+                    <FAIcon
+                      name={isActionBack ? 'chevron-circle-left' : 'navicon'}
+                      size={22}
+                      style={styles.headerIcon}
+                    />
+                  </Button>
+                </Left>
+                <View style={styles.headerTitleContent}>
+                  <Text style={styles.headerTitle}>
+                    {isForm ? 'Form Checklist' : 'AMT Daily Checklist'}
+                  </Text>
+                </View>
+                <Right style={styles.headerRightButton}>
+                  <Button transparent>
+                    <FAIcon name="bell" size={22} style={styles.headerIcon} />
+                  </Button>
+                </Right>
+              </Header>
+            )}
+
             <View style={styles.content}>
               <ScrollView
                 showsHorizontalScrollIndicator={false}
@@ -109,36 +122,21 @@ class App extends Component {
         <Router createReducer={reducerCreate} getSceneStyle={getSceneStyle}>
           <Lightbox>
             <Scene key="splash" component={Splash} hideNavBar initial />
-            <Scene key="auth">
-              <Scene key="login" component={Login} hideNavBar initial />
-            </Scene>
-            <Scene
-              key="home"
-              hideNavBar
-              // title="AMT DAILY CHECKLIST"
-              // navigationBarStyle={styles.header}
-              // titleStyle={[styles.headerTitleContent, styles.headerTitle]}
-              // onLeft={() => alert('hello')}
-              // leftTitle={<FAIcon name="navicon" size={22} style={styles.headerIcon} />}
-              // onRight={() => alert('hello')}
-              // rightTitle={<FAIcon name="bell" size={22} style={styles.headerIcon} />}
-            >
+            <Scene key="login" component={Login} hideNavBar />
+            <Scene key="home" hideNavBar>
               <Scene key="dashboard" component={WrapperComponent(Dashboard)} initial />
               <Scene key="profile" component={WrapperComponent(Profile)} />
-              <Scene key="histories" component={WrapperComponent(Histories)} />
+              <Scene key="histories" component={WrapperComponent(Histories, true, false)} />
               <Scene key="formchecklist" hideNavBar>
-                <Scene key="qrcode" component={Scanner}  />
-                <Scene key="checklist" component={Checklist} initial />
+                <Scene
+                  key="formmethod"
+                  component={WrapperComponent(FormMethod, true, false)}
+                  initial
+                />
+                <Scene key="scanner" component={WrapperComponent(Scanner, true, false)} />
+                <Scene key="checklist" component={WrapperComponent(Checklist, true, true)} />
               </Scene>
             </Scene>
-
-            {/* <Scene key="root" hideNavBar> */}
-            {/* <Scene key="splash" component={Splash} hideNavBar initial /> */}
-            {/* <Scene key="login" component={Login} hideNavBar /> */}
-            {/* <Scene key="home" component={WrapperComponent(Dashboard)} /> */}
-            {/* <Scene key="profile" component={WrapperComponent(Profile)} /> */}
-            {/* <Scene key="histories" component={WrapperComponent(Histories)} /> */}
-            {/* </Scene> */}
           </Lightbox>
         </Router>
       </AlertProvider>
