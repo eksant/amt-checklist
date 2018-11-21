@@ -1,7 +1,13 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { RNCamera } from 'react-native-camera'
+import { Actions } from 'react-native-router-flux'
 import { StyleSheet, Dimensions, View } from 'react-native'
 import { Container, Content, Card, CardItem, Text } from 'native-base'
-import QRCodeScanner from '../../components/QRCodeScanner'
+
+import ConnectAlert from '../../components/ConnectAlert'
+import { getMobilTangkiByNoPol } from '../../store/mobiltangkis/mobiltangki.actions'
 
 const window = Dimensions.get('window')
 const { height } = window
@@ -15,12 +21,31 @@ class Scanner extends Component {
     }
   }
 
-  async onSuccess(e) {
-    await this.setState({ nopol: e.data })
-    setTimeout(() => {
-      this.props.navigation.navigate('Checklist')
-    }, 1000)
-    // Linking.openURL(e.data).catch(err => console.error('An error occured', err))
+  onBarCodeRead(result) {
+    if (!this.state.nopol) {
+      this.props
+        .getMobilTangkiByNoPol(result.data)
+        .then(resp => {
+          // console.log(resp)
+          if (resp.status === 200) {
+            this.setState({ nopol: resp.data.nopol })
+
+            setTimeout(() => {
+              Actions.checklist({ amt: resp.data })
+            }, 2000)
+          } else {
+            this.setState({ nopol: resp.message })
+            this.props.alertWithType('error', 'Error', resp.message)
+
+            setTimeout(() => {
+              this.setState({ nopol: null })
+            }, 2000)
+          }
+        })
+        .catch(err => {
+          console.log(err.message)
+        })
+    }
   }
 
   render() {
@@ -32,22 +57,26 @@ class Scanner extends Component {
           <Content padder>
             <Card>
               <CardItem header bordered>
-                <Text>QR Code No. Pol : {nopol}</Text>
+                <Text>No. Pol : {nopol}</Text>
               </CardItem>
               <CardItem>
-                <Content style={styles.content}>
-                  <QRCodeScanner
-                    showMarker={true}
-                    onRead={this.onSuccess.bind(this)}
-                    topContent={<Text style={styles.centerText}>No.Pol: {nopol}</Text>}
-                    // bottomContent={
-                    //   <Button iconRight success onPress={() => this.props.navigation.navigate('Scanner')} style={styles.buttonTouchable}>
-                    //     <Icon name="file" style={{ fontSize: 20, left: 10, color: '#FFF' }} />
-                    //     <Text>Next</Text>
-                    //   </Button>
-                    // }
-                  />
-                </Content>
+                <View style={styles.content}>
+                  <RNCamera
+                    style={styles.camera}
+                    type={RNCamera.Constants.Type.back}
+                    flashMode={RNCamera.Constants.FlashMode.on}
+                    permissionDialogTitle={'Permission to use camera'}
+                    permissionDialogMessage={'We need your permission to use your camera phone'}
+                    onBarCodeRead={this.onBarCodeRead.bind(this)}
+                    onGoogleVisionBarcodesDetected={({ barcodes }) => {
+                      console.log(barcodes)
+                    }}
+                  >
+                    <View style={styles.rectangleContainer}>
+                      <View style={styles.rectangle} />
+                    </View>
+                  </RNCamera>
+                </View>
               </CardItem>
             </Card>
           </Content>
@@ -59,14 +88,80 @@ class Scanner extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 2,
-    flexDirection: 'row',
-    backgroundColor: '#fff',
+    flex: 1,
+    // flex: 2,
+    // flexDirection: 'row',
+    // backgroundColor: '#fff',
+    backgroundColor: 'transparent',
+  },
+  contentContainer: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'transparent',
   },
   content: {
-    height: height / 1.4,
+    flex: 1,
+    height: height / 1.5,
     marginBottom: 5,
+    alignItems: 'center',
+    backgroundColor: 'transparent',
   },
+  camera: {
+    // flex: 1,
+    height: height / 1.5,
+    alignItems: 'center',
+    // backgroundColor: 'red'
+  },
+  rectangleContainer: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'transparent',
+  },
+  rectangle: {
+    height: 250,
+    width: 250,
+    borderWidth: 2,
+    borderColor: '#00FF00',
+    backgroundColor: 'transparent',
+  },
+  // list: {
+  //   // flex: 2,
+  //   flexDirection: 'row',
+  //   justifyContent: 'space-between',
+  //   padding: 8,
+  //   backgroundColor: 'grey',
+  // },
+  // listLeft: {
+  //   // flex: 2,
+  //   alignItems: 'flex-start',
+  //   justifyContent: 'center',
+  //   backgroundColor: 'blue',
+  // },
+  // listText: {
+  //   flexDirection: 'row',
+  //   justifyContent: 'flex-start',
+  // },
+  // listRight: {
+  //   alignItems: 'center',
+  // },
+  // listRightImage: {
+  //   flexDirection: 'row',
+  //   alignItems: 'center',
+  //   justifyContent: 'flex-end',
+  //   alignSelf: 'flex-end',
+  //   height: 64,
+  //   width: 64,
+  // },
+
+  line: {
+    borderBottomColor: '#CBCBCB',
+    borderBottomWidth: 0.7,
+    marginTop: 10,
+    marginBottom: 10,
+  },
+
   centerText: {
     flex: 2,
     fontSize: 16,
@@ -87,4 +182,15 @@ const styles = StyleSheet.create({
   },
 })
 
-export default Scanner
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      getMobilTangkiByNoPol,
+    },
+    dispatch
+  )
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(ConnectAlert(Scanner))

@@ -15,18 +15,23 @@ const window = Dimensions.get('window')
 const { height } = window
 
 class Histories extends Component {
-  async componentDidMount() {
+  componentDidMount() {
+    this.handleRefresh()
+  }
+
+  async handleRefresh() {
     const resp = await this.props.getChecklist()
     // console.log('RESP HISTORY DID MOUNT', resp)
     if (resp.error && resp.error.name === 'JsonWebTokenError') {
       this.props.alertWithType('error', 'Error', resp.message)
-      Actions.replace('auth')
+      Actions.replace('login')
     }
   }
 
   render() {
     // console.log('PROPS HISTORIES', this.props.checklist)
     const { loading, error, message, checklist } = this.props.checklist
+    // console.log(checklist)
 
     return (
       <View style={styles.container}>

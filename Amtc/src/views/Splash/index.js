@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
-// import { connect } from 'react-redux'
-// import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 import { Dimensions, StyleSheet, Text, View, Image } from 'react-native'
 import { Container } from 'native-base'
 import { Actions } from 'react-native-router-flux'
 // import * as Progress from 'react-native-progress'
 
 import { getAsyncToken } from '../../utils'
-// import { getUserLogin } from '../../store/auth/auth.actions'
+import { getChecklist } from '../../store/checklist/checklist.actions'
 
 const deviceHeight = Dimensions.get('window').height
 const logoPertamina = require('../../assets/img/brand/logo-symbol.png')
@@ -31,9 +31,14 @@ class Splash extends Component {
 
   async handleCloseSplashScreen() {
     await this.setState({ isVisible: false })
-    // Actions.replace('login')
-    const token = await getAsyncToken()
-    token ? Actions.replace('home') : Actions.replace('auth')
+
+    const resp = await this.props.getChecklist()
+    if (resp.error && resp.error.name === 'TokenExpiredError') {
+      Actions.replace('login')
+    } else {
+      const token = await getAsyncToken()
+      token ? Actions.replace('home') : Actions.replace('login')
+    }
   }
 
   // constructor(props) {
@@ -124,23 +129,21 @@ const styles = StyleSheet.create({
   },
 })
 
-// const mapStateToProps = state => {
-//   return {
-//     auth: state.auth,
-//   }
-// }
+const mapStateToProps = state => {
+  return {
+    checklist: state.checklist,
+  }
+}
 
-// const mapDispatchToProps = dispatch =>
-//   bindActionCreators(
-//     {
-//       getUserLogin,
-//     },
-//     dispatch
-//   )
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      getChecklist,
+    },
+    dispatch
+  )
 
-// export default connect(
-//   null, //mapStateToProps,
-//   mapDispatchToProps
-// )(Splash)
-
-export default Splash
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Splash)

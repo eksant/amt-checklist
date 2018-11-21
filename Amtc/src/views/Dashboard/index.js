@@ -16,12 +16,16 @@ const window = Dimensions.get('window')
 const { height } = window
 
 class Dashboard extends Component {
-  async componentDidMount() {
+  componentDidMount() {
+    this.handleRefresh()
+  }
+
+  async handleRefresh() {
     const resp = await this.props.getChecklist()
     // console.log('RESP HISTORY DID MOUNT', resp)
     if (resp.error && resp.error.name === 'JsonWebTokenError') {
       this.props.alertWithType('error', 'Error', resp.message)
-      Actions.replace('auth')
+      Actions.replace('login')
     }
   }
 
@@ -37,7 +41,12 @@ class Dashboard extends Component {
             <Card transparent>
               <CardItem>
                 <Left style={{ flex: 1 }}>
-                  <Button iconLeft success onPress={() => Actions.replace('formchecklist')}>
+                  <Button
+                    iconLeft
+                    success
+                    onPress={() => Actions.push('formchecklist')}
+                    disabled={error}
+                  >
                     <FAIcon
                       name="calendar-check-o"
                       style={{ fontSize: 20, left: 10, color: '#FFF' }}
@@ -46,7 +55,7 @@ class Dashboard extends Component {
                   </Button>
                 </Left>
                 <Right style={{ flex: 0 }}>
-                  <Button iconLeft info onPress={() => Actions.replace('histories')}>
+                  <Button iconLeft info onPress={() => Actions.push('histories')} disabled={error}>
                     <FAIcon name="wpforms" style={{ fontSize: 20, left: 10, color: '#FFF' }} />
                     <Text>History</Text>
                   </Button>
