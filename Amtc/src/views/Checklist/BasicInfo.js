@@ -1,90 +1,85 @@
 import React, { Component } from 'react'
-import { 
-  Container, 
-  Content, 
-  Form,
-  Item,
-  Label,
-  Input
-} from 'native-base'
-import { StyleSheet } from 'react-native';
+import { Container, Content, Form, Item, Label, Input } from 'native-base'
+import { StyleSheet, Dimensions, ScrollView } from 'react-native'
+
+const window = Dimensions.get('window')
+const { width } = window
 
 export default class BasicInfo extends Component {
-
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const { data, setState } = this.props
+
     return (
       <Container>
         <Content padder>
-          <Form style={{marginTop: 20}}>
-            <Item fixedLabel style={styles.myItem}>
-              <Label>Ritase</Label>
-              <Input 
-                underlineColorAndroid='transparent'
-                style={styles.myInput}
+          <ScrollView>
+            <Form style={styles.formStyle}>
+              <Item fixedLabel style={styles.itemStyle}>
+                <Label style={styles.formLabel}>No.Pol</Label>
+                <Label style={styles.formLabel}>{data.nopol}</Label>
+                {/* <Input
+                underlineColorAndroid="transparent"
+                style={styles.formInput}
                 value={data.ritase}
-                onChangeText={(ritase) => setState({ritase})}
-              />
-            </Item>
-            <Item fixedLabel style={styles.myItem}>
-              <Label>Odo KM</Label>
-              <Input 
-                underlineColorAndroid='transparent'
-                style={styles.myInput}
-                value={data.odoKM}
-                onChangeText={(odoKM) => setState({odoKM})}
-              />
-            </Item>
-            <Item fixedLabel style={styles.myItem}>
-              <Label>HSSE</Label>
-              <Input 
-                underlineColorAndroid='transparent'
-                style={styles.myInput}
-                value={data.HSSE}
-                onChangeText={(HSSE) => setState({HSSE})}
-              />
-            </Item>
-            <Item fixedLabel style={styles.myItem}>
-              <Label>PWSAMT</Label>
-              <Input 
-                underlineColorAndroid='transparent'
-                style={styles.myInput}
-                value={data.PWSAMT}
-                onChangeText={(PWSAMT) => setState({PWSAMT})}
-              />
-            </Item>
-            <Item fixedLabel style={styles.myItem}>
-              <Label>TBBM</Label>
-              <Input 
-                underlineColorAndroid='transparent'
-                style={styles.myInput}
-                value={data.TBBM}
-                onChangeText={(TBBM) => setState({TBBM})}
-              />
-            </Item>
-            <Item fixedLabel style={styles.myItem}>
-              <Label>Remarks</Label>
-              <Input 
-                underlineColorAndroid='transparent'
-                style={styles.myInput}
-                value={data.remarks}
-                onChangeText={(remarks) => setState({remarks})}
-              />
-            </Item>
-            <Item fixedLabel last style={styles.myItem}>
-              <Label>Img URL</Label>
-              <Input 
-                underlineColorAndroid='transparent'
-                style={styles.myInput}
-                value={data.imgUrl}
-                onChangeText={(imgUrl) => setState({imgUrl})}
-              />
-            </Item>
-          </Form>
+                onChangeText={ritase => setState({ ritase })}
+              /> */}
+              </Item>
+              <Item fixedLabel style={styles.itemStyle}>
+                <Label style={styles.formLabel}>Ritase</Label>
+                <Input
+                  underlineColorAndroid="transparent"
+                  style={styles.formInput}
+                  value={data.ritase}
+                  onChangeText={ritase => setState({ ritase })}
+                />
+              </Item>
+              <Item fixedLabel style={styles.itemStyle}>
+                <Label style={styles.formLabel}>Odo KM</Label>
+                <Input
+                  underlineColorAndroid="transparent"
+                  style={styles.formInput}
+                  value={data.odoKM}
+                  onChangeText={odoKM => setState({ odoKM })}
+                />
+              </Item>
+              <Item fixedLabel style={styles.itemStyle}>
+                <Label style={styles.formLabel}>HSSE</Label>
+                <Input
+                  underlineColorAndroid="transparent"
+                  style={styles.formInput}
+                  value={data.HSSE}
+                  onChangeText={HSSE => setState({ HSSE })}
+                />
+              </Item>
+              <Item fixedLabel style={styles.itemStyle}>
+                <Label style={styles.formLabel}>PWSAMT</Label>
+                <Input
+                  underlineColorAndroid="transparent"
+                  style={styles.formInput}
+                  value={data.PWSAMT}
+                  onChangeText={PWSAMT => setState({ PWSAMT })}
+                />
+              </Item>
+              <Item fixedLabel style={styles.itemStyle}>
+                <Label style={styles.formLabel}>TBBM</Label>
+                <Input
+                  underlineColorAndroid="transparent"
+                  style={styles.formInput}
+                  value={data.TBBM}
+                  onChangeText={TBBM => setState({ TBBM })}
+                />
+              </Item>
+              <Item fixedLabel style={styles.itemStyle}>
+                <Label style={styles.formLabel}>Remarks</Label>
+                <Input
+                  underlineColorAndroid="transparent"
+                  style={styles.formInput}
+                  value={data.remarks}
+                  onChangeText={remarks => setState({ remarks })}
+                />
+              </Item>
+            </Form>
+          </ScrollView>
         </Content>
       </Container>
     )
@@ -92,17 +87,47 @@ export default class BasicInfo extends Component {
 }
 
 const styles = StyleSheet.create({
-  myItem: {
+  formStyle: {
+    marginTop: 10,
+  },
+  itemStyle: {
     borderColor: 'transparent',
     marginBottom: 10,
-    marginRight: 10
+    marginRight: 10,
+  },
+  formLabel: {
+    fontSize: 12,
+    alignItems: 'flex-start',
+  },
+  formInput: {
+    fontSize: 12,
+    borderWidth: 1,
+    borderColor: 'lightgrey',
+    paddingLeft: 5,
+    paddingBottom: 3,
+    height: 30,
   },
 
-  myInput:{
-    borderWidth: 2, 
-    borderColor: 'lightgrey',  
-    paddingLeft: 10,
-    height: 50
-  }
-
-});
+  formContainer: {
+    backgroundColor: 'white',
+    width: width - 30,
+    borderRadius: 10,
+    // paddingTop: 20,
+    alignItems: 'center',
+  },
+  inputContainer: {
+    height: 35,
+    marginVertical: 5,
+    backgroundColor: 'rgba(232, 147, 142, 0.70)',
+  },
+  inputIcon: {
+    color: 'rgba(255, 255, 255, 0.4)',
+    backgroundColor: 'transparent',
+    paddingHorizontal: 10,
+  },
+  inputText: {
+    fontSize: 14,
+    paddingBottom: 5,
+    color: '#FFFFFF',
+  },
+})
