@@ -370,7 +370,7 @@
 						"disabled": false,
 						"id": "pair_b83f8156c2ca478590ef11c26248253b",
 						"name": "username",
-						"value": "sopir2"
+						"value": "supir2"
 					},
 					{
 						"id": "pair_2869c40529cf49d58cf1793b06ec507f",
@@ -385,12 +385,12 @@
 					{
 						"id": "pair_87add15597914607bf9b16bb0b0f6265",
 						"name": "fullName",
-						"value": "Seorang Sopir"
+						"value": "Seorang Supir"
 					},
 					{
 						"id": "pair_72219835f32745f3a36b2c0eb373a09a",
 						"name": "email",
-						"value": "sopir2@email.com"
+						"value": "supir2@email.com"
 					},
 					{
 						"id": "pair_5bddbd2f3e2e43a0bbda357f1fc79015",
@@ -400,7 +400,7 @@
 					{
 						"id": "pair_50589e792636420d96d9571f30bb62e5",
 						"name": "roles",
-						"value": "Sopir"
+						"value": "Supir"
 					}
 				]
 			},
@@ -473,7 +473,7 @@
 					{
 						"id": "pair_8afabda905764745afe97ee810470fa8",
 						"name": "username",
-						"value": "sopir2"
+						"value": "supir2"
 					},
 					{
 						"id": "pair_be3a5a919e4b4b3887302dcccc0f6177",
@@ -979,7 +979,7 @@
 					{
 						"id": "pair_f2f00a8fa31644a6998aa844aeefc282",
 						"name": "rejectedReason",
-						"value": "Sopir nya kegantengan bingit"
+						"value": "Supir nya kegantengan bingit"
 					}
 				]
 			},
@@ -1797,7 +1797,7 @@
 						"disabled": false,
 						"id": "pair_b83f8156c2ca478590ef11c26248253b",
 						"name": "username",
-						"value": "sopir2"
+						"value": "supir2"
 					},
 					{
 						"id": "pair_2869c40529cf49d58cf1793b06ec507f",
@@ -1812,12 +1812,12 @@
 					{
 						"id": "pair_87add15597914607bf9b16bb0b0f6265",
 						"name": "fullName",
-						"value": "Seorang Sopir"
+						"value": "Seorang Supir"
 					},
 					{
 						"id": "pair_72219835f32745f3a36b2c0eb373a09a",
 						"name": "email",
-						"value": "sopir2@email.com"
+						"value": "supir2@email.com"
 					},
 					{
 						"id": "pair_5bddbd2f3e2e43a0bbda357f1fc79015",
@@ -1827,7 +1827,7 @@
 					{
 						"id": "pair_50589e792636420d96d9571f30bb62e5",
 						"name": "roles",
-						"value": "Sopir"
+						"value": "Supir"
 					}
 				]
 			},
@@ -1900,7 +1900,7 @@
 					{
 						"id": "pair_8afabda905764745afe97ee810470fa8",
 						"name": "username",
-						"value": "sopir2"
+						"value": "supir2"
 					},
 					{
 						"id": "pair_be3a5a919e4b4b3887302dcccc0f6177",
@@ -2271,7 +2271,7 @@
 					{
 						"id": "pair_f2f00a8fa31644a6998aa844aeefc282",
 						"name": "rejectedReason",
-						"value": "Sopir nya kegantengan bingit"
+						"value": "Supir nya kegantengan bingit"
 					}
 				]
 			},
@@ -2705,7 +2705,7 @@
 			"authentication": {},
 			"body": {
 				"mimeType": "application/graphql",
-				"text": "{\"query\":\"mutation createUser($user: UserInput!) {\\n  createUser(user: $user) {\\n    _id\\n    username\\n    password\\n    NIP\\n    fullName\\n    email\\n    mobile\\n    roles\\n    status\\n    imgUrl\\n    createdAt\\n    createdBy {\\n      _id\\n      username\\n      roles\\n    }\\n  }\\n}\\n\",\"variables\":{\"user\":{\"NIP\":\"PN 1002\",\"fullName\":\"Seorang Sopir\",\"email\":\"sopir2@email.com\",\"mobile\":\"082122559090\",\"username\":\"sopir2\",\"password\":\"P@ssw0rd\",\"status\":\"Active\",\"roles\":\"Sopir\"}},\"operationName\":\"createUser\"}"
+				"text": "{\"query\":\"mutation createUser($user: UserInput!) {\\n  createUser(user: $user) {\\n    _id\\n    username\\n    password\\n    NIP\\n    fullName\\n    email\\n    mobile\\n    roles\\n    status\\n    imgUrl\\n    createdAt\\n    createdBy {\\n      _id\\n      username\\n      roles\\n    }\\n  }\\n}\\n\",\"variables\":{\"user\":{\"NIP\":\"PN 1002\",\"fullName\":\"Seorang Supir\",\"email\":\"supir2@email.com\",\"mobile\":\"082122559090\",\"username\":\"supir2\",\"password\":\"P@ssw0rd\",\"status\":\"Active\",\"roles\":\"Supir\"}},\"operationName\":\"createUser\"}"
 			},
 			"created": 1540657413209,
 			"description": "",
