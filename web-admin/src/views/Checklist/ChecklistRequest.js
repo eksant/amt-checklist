@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import moment from 'moment'
-import { Row, Col, Card, Tag, Divider, Radio, Table, Icon, Alert, Modal, Button } from 'antd'
+import { Row, Col, Tabs, Card, Tag, Divider, Radio, Table, Icon, Alert, Modal, Button } from 'antd'
 
 class ChecklistRequest extends Component {
   constructor(props) {
@@ -10,6 +10,7 @@ class ChecklistRequest extends Component {
       status: 'Waiting',
       visibleDetail: false,
       item: null,
+      cekKondisi: null,
     }
   }
 
@@ -82,8 +83,61 @@ class ChecklistRequest extends Component {
     })
   }
 
-  handleShowDetail(item) {
-    this.setState({
+  async handleShowDetail(item) {
+    var arrCekKondisi = []
+
+    for (const key of Object.keys(item)) {
+      if (key.includes('kondisi')) {
+        console.log(key, item[key])
+        arrCekKondisi.push({
+          status: item[key],
+          name:
+            key === 'kondisiRem'
+              ? 'Kondisi Rem'
+              : key === 'kondisiBan'
+              ? 'Kondisi Ban'
+              : key === 'kondisiWiper'
+              ? 'Kondisi Wiper'
+              : key === 'kondisiLampu'
+              ? 'Kondisi Lampu'
+              : key === 'kondisiKompartemen'
+              ? 'Kondisi Kompartemen'
+              : key === 'kondisiApar'
+              ? 'Kondisi Apar'
+              : key === 'kondisiOliMesin'
+              ? 'Kondisi Oli Mesin'
+              : key === 'kondisiAirRadiator'
+              ? 'Kondisi Air Radiator'
+              : null,
+          reason:
+            key === 'kondisiRemReason'
+              ? item[key]
+              : key === 'kondisiBanReason'
+              ? item[key]
+              : key === 'kondisiWiperReason'
+              ? item[key]
+              : key === 'kondisiLampuReason'
+              ? item[key]
+              : key === 'kondisiKompartemenReason'
+              ? item[key]
+              : key === 'kondisiAparReason'
+              ? item[key]
+              : key === 'kondisiOliMesinReason'
+              ? item[key]
+              : key === 'kondisiAirRadiatorReason'
+              ? item[key]
+              : null,
+        })
+      }
+    }
+    // arrCekKondisi.filter(item => {
+    //   if (item.name === null) {
+    //     console.log('kosong', item.na)
+    //   }
+    // })
+    console.log(arrCekKondisi)
+
+    await this.setState({
       item: item,
       visibleDetail: true,
     })
@@ -102,7 +156,7 @@ class ChecklistRequest extends Component {
 
   render() {
     // console.log('checklist list props: ', props)
-    const { status, visibleDetail } = this.state
+    const { status, visibleDetail, item } = this.state
     const { loading, error, onRefresh, checklists = [] } = this.props
     const itemChecklists =
       checklists !== null ? checklists.map(checklist => ({ ...checklist, key: checklist._id })) : []
@@ -110,6 +164,8 @@ class ChecklistRequest extends Component {
       status === 'All'
         ? itemChecklists
         : itemChecklists.filter(checklist => checklist.status === status)
+
+    // console.log(item)
 
     return (
       <div className="animated fadeIn">
@@ -148,7 +204,9 @@ class ChecklistRequest extends Component {
               />
               <Modal
                 visible={visibleDetail}
-                title="Detail AMT Checklist"
+                title={`Detail AMT Checklist ${item && item.mobiltangki.nopol} - ${item &&
+                  item.createdBy.username}`}
+                width="700px"
                 // onOk={this.handleApproval.bind(this)}
                 onCancel={this.handleCloseDetail.bind(this)}
                 footer={[
@@ -165,11 +223,95 @@ class ChecklistRequest extends Component {
                     </Button>
                   ) : null,
                 ]}>
-                <p>Some contents...</p>
-                <p>Some contents...</p>
-                <p>Some contents...</p>
-                <p>Some contents...</p>
-                <p>Some contents...</p>
+                <Tabs type="card">
+                  <Tabs.TabPane tab="Basic Info" key="basicinfo">
+                    <Row>
+                      <Col span={18} push={6}>
+                        : {item && moment(item.createdAt).format('DD MMM YYYY hh:mm')}
+                      </Col>
+                      <Col span={6} pull={18}>
+                        Created Date
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col span={18} push={6}>
+                        : {item && item.createdBy.username}
+                      </Col>
+                      <Col span={6} pull={18}>
+                        Created By
+                      </Col>
+                    </Row>
+
+                    <Row>
+                      <Col span={18} push={6}>
+                        : {item && item.mobiltangki.nopol}
+                      </Col>
+                      <Col span={6} pull={18}>
+                        AMT
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col span={18} push={6}>
+                        : {item && item.ritase}
+                      </Col>
+                      <Col span={6} pull={18}>
+                        Ritase
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col span={18} push={6}>
+                        : {item && item.odoKM}
+                      </Col>
+                      <Col span={6} pull={18}>
+                        Odo KM
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col span={18} push={6}>
+                        : {item && item.HSSE}
+                      </Col>
+                      <Col span={6} pull={18}>
+                        HSSE
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col span={18} push={6}>
+                        : {item && item.PWSAMT}
+                      </Col>
+                      <Col span={6} pull={18}>
+                        PWSAMT
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col span={18} push={6}>
+                        : {item && item.TBBM}
+                      </Col>
+                      <Col span={6} pull={18}>
+                        TBBM
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col span={18} push={6}>
+                        : {item && item.remarks}
+                      </Col>
+                      <Col span={6} pull={18}>
+                        Remarks
+                      </Col>
+                    </Row>
+                  </Tabs.TabPane>
+                  <Tabs.TabPane tab="Cek Kondisi" key="cekkondisi">
+                    Content of Tab Pane 2
+                  </Tabs.TabPane>
+                  <Tabs.TabPane tab="Cek Keberadaan" key="cekkeberadaan">
+                    Content of Tab Pane 3
+                  </Tabs.TabPane>
+                  <Tabs.TabPane tab="Cek Bawaan" key="cekbawaan">
+                    Content of Tab Pane 3
+                  </Tabs.TabPane>
+                  <Tabs.TabPane tab="Cek Penggunaan" key="cekpenggunaan">
+                    Content of Tab Pane 3
+                  </Tabs.TabPane>
+                </Tabs>
               </Modal>
             </div>
           )}
