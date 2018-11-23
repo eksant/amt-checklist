@@ -56,7 +56,7 @@ class MobilTangkiForm extends Component {
 
     return (
       <div className="animated fadeIn">
-        <Card title={!itemData ? 'Create AMT' : 'Edit AMT'}>
+        <Card title={!itemData ? 'Create Mobil Tangki' : 'Edit Mobil Tangki'}>
           {error ? (
             <Alert message="Error" description={this.props.error.message} type="error" showIcon />
           ) : (

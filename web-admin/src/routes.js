@@ -54,7 +54,7 @@ const routes = [
   { path: '/login', exact: true, name: 'Login', component: Login },
   { path: '/admins', exact: true, name: 'Admins', component: Admins },
   { path: '/users', exact: true, name: 'Users', component: Users },
-  { path: '/amts', name: 'AMT', component: MobilTangkis },
+  { path: '/mobil-tangki', name: 'Mobil Tangki', component: MobilTangkis },
   { path: '/approval-checklist', name: 'Daily AMT Check', component: Checklist },
   { path: '/report-qrcode-amt', name: 'QRCode AMT', component: QRCodeAMT },
   // { path: '/users/:id', exact: true, name: 'User Details', component: User },

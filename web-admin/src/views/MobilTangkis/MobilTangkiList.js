@@ -27,7 +27,7 @@ export default props => {
       title: 'Action',
       render: record => (
         <span>
-          <a href="#/amts" onClick={() => onEditItem(record)}>
+          <a href="#/mobil-tangki" onClick={() => onEditItem(record)}>
             <Icon type="edit" theme="outlined" /> Edit
           </a>
           <Divider type="vertical" />
@@ -36,7 +36,7 @@ export default props => {
             onConfirm={() => onDeleteItem(record._id)}
             okText="Yes"
             cancelText="No">
-            <a href="#/amts" className="ant-btn-danger ant-btn-background-ghost">
+            <a href="#/mobil-tangki" className="ant-btn-danger ant-btn-background-ghost">
               <Icon type="delete" theme="outlined" /> Delete
             </a>
           </Popconfirm>
@@ -48,16 +48,16 @@ export default props => {
   return (
     <div className="animated fadeIn">
       <Card
-        title="Manage AMT"
+        title="Manage Mobil Tangki"
         extra={
           <span>
             <a
-              href="#/amts"
+              href="#/mobil-tangki"
               onClick={() => onRefresh()}
               style={{ marginRight: '10px', color: '#A6A6A6' }}>
               <i className="fa fa-refresh" /> Refresh
             </a>
-            <a href="#/amts" onClick={() => onAddItem()}>
+            <a href="#/mobil-tangki" onClick={() => onAddItem()}>
               <i className="fa fa-plus-square" /> Create New
             </a>
           </span>

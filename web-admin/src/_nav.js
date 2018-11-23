@@ -28,8 +28,8 @@ export default {
       groups: ['Superadmin', 'Admin'],
     },
     {
-      name: 'Manage AMT',
-      url: '/amts',
+      name: 'Manage Mobil Tangki',
+      url: '/mobil-tangki',
       icon: 'fa fa-truck',
       groups: ['Superadmin', 'Admin'],
     },
