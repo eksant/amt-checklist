@@ -47,7 +47,7 @@ export default props => {
       title: 'Action',
       render: record => (
         <span>
-          <a href="#/report-qrcode-amt" onClick={() => showQRCodeDetail(record)}>
+          <a href="#/report-qrcode-mt" onClick={() => showQRCodeDetail(record)}>
             <Icon type="search" theme="outlined" /> Show Detail
           </a>
         </span>
@@ -116,7 +116,7 @@ export default props => {
 
   return (
     <div className="animated fadeIn">
-      <Card title="Report QRCode AMT">
+      <Card title="Report QRCode Mobil Tangki">
         {error ? (
           <Alert message="Error" description={this.props.error.message} type="error" showIcon />
         ) : (

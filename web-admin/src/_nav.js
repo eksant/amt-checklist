@@ -60,8 +60,8 @@ export default {
       groups: ['Superadmin', 'Admin'],
     },
     {
-      name: 'QRCode AMT',
-      url: '/report-qrcode-amt',
+      name: 'QRCode Mobil Tangki',
+      url: '/report-qrcode-mt',
       icon: 'fa fa-qrcode',
       groups: ['Superadmin', 'Admin'],
     },
