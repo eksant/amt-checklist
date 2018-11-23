@@ -58,6 +58,6 @@ enum StatusActive {
 enum RoleAccess {
   Superadmin
   Admin
-  Sopir
+  Supir
   Kernet
 }

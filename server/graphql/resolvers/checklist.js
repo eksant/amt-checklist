@@ -8,7 +8,7 @@ module.exports = {
   Query: {
     checklists: combineResolvers(gqlValidateTokenUser, async (parent, args, { authUser }) => {
       try {
-        return (await authUser.roles) === 'Sopir' || authUser.roles === 'Kernet'
+        return (await authUser.roles) === 'Supir' || authUser.roles === 'Kernet'
           ? readSelf(authUser)
           : read()
       } catch (error) {
@@ -64,7 +64,7 @@ module.exports = {
       gqlValidateTokenAdmin,
       async (parent, { id, approval }, { authUser }) => {
         try {
-          if (authUser.roles === 'Sopir' || authUser.roles === 'Kernet') {
+          if (authUser.roles === 'Supir' || authUser.roles === 'Kernet') {
             new ForbiddenError('You dont have authentication!')
           } else {
             const approvalAdmin = {

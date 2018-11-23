@@ -197,7 +197,7 @@ class UserForm extends Component {
                       rules: [{ required: true, message: 'Please choose role!' }],
                     })(
                       <Select placeholder="Please select role.." style={{ width: '100%' }}>
-                        <Select.Option value="Sopir">Sopir</Select.Option>
+                        <Select.Option value="Supir">Supir</Select.Option>
                         <Select.Option value="Kernet">Kernet</Select.Option>
                       </Select>
                     )}

@@ -95,7 +95,7 @@ const validateTokenUser = async (req, res, next) => {
       if (
         decode.roles === 'Superadmin' ||
         decode.roles === 'Admin' ||
-        decode.roles === 'Sopir' ||
+        decode.roles === 'Supir' ||
         decode.roles === 'Kernet'
       ) {
         req.authUser = decode
@@ -157,7 +157,7 @@ const gqlValidateTokenAdmin = combineResolvers(
 const gqlValidateTokenUser = combineResolvers(
   isAuthenticated,
   (parent, args, { authUser: { roles } }) =>
-    roles === 'Superadmin' || roles === 'Admin' || roles === 'Sopir' || roles === 'Kernet'
+    roles === 'Superadmin' || roles === 'Admin' || roles === 'Supir' || roles === 'Kernet'
       ? skip
       : new ForbiddenError('You dont have authentication!')
 )

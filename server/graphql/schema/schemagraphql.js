@@ -260,7 +260,7 @@ module.exports = gql`
   enum RoleAccess {
     Superadmin
     Admin
-    Sopir
+    Supir
     Kernet
   }
 

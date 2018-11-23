@@ -54,7 +54,7 @@ const schema = new Schema(
     },
     roles: {
       type: String,
-      enum: ['Superadmin', 'Admin', 'Sopir', 'Kernet'],
+      enum: ['Superadmin', 'Admin', 'Supir', 'Kernet'],
       required: [true, 'Roles required!'],
     },
     status: {
@@ -152,14 +152,14 @@ const readSuperadmin = async () => {
 }
 
 const readUser = async () => {
-  return await User.find({ roles: { $in: ['Sopir', 'Kernet'] } })
+  return await User.find({ roles: { $in: ['Supir', 'Kernet'] } })
 }
 
 const readUserId = async id => {
   return await User.findOne({
     // _id: ObjectId(id),
     _id: id,
-    roles: { $in: ['Sopir', 'Kernet'] },
+    roles: { $in: ['Supir', 'Kernet'] },
   })
 }
 

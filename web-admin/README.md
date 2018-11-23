@@ -34,7 +34,7 @@ Password: P@ssw0rd
     - [x] List Admins
     - [x] Update Admin
     - [x] Delete Admin
-  - Manage Users (Sopir and Kernet Roles)
+  - Manage Users (Supir and Kernet Roles)
     - [x] Create User
     - [x] List Users
     - [x] Update User
