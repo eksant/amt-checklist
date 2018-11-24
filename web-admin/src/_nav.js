@@ -44,9 +44,9 @@ export default {
       groups: ['Superadmin', 'Admin'],
     },
     {
-      name: "Daily AMT Check",
-      url: "/approval-checklist",
-      icon: "fa fa-check-square-o",
+      name: 'Approval Checklist',
+      url: '/approval-checklist',
+      icon: 'fa fa-check-square-o',
       groups: ['Superadmin', 'Admin'],
     },
     {
@@ -65,11 +65,11 @@ export default {
       icon: 'fa fa-qrcode',
       groups: ['Superadmin', 'Admin'],
     },
-    // {
-    //   name: 'Daily Report',
-    //   url: '/report-daily',
-    //   icon: 'fa fa-list-alt',
-    //   groups: ['Superadmin', 'Admin'],
-    // },
+    {
+      name: 'Daily AMT Checklist',
+      url: '/report-daily-checklist',
+      icon: 'fa fa-list-alt',
+      groups: ['Superadmin', 'Admin'],
+    },
   ],
 }

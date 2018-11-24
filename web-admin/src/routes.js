@@ -47,6 +47,11 @@ const QRCodeAMT = Loadable({
   loading: Loading,
 })
 
+const ReportDaily = Loadable({
+  loader: () => import('./containers/AccountLayout/ReportDaily'),
+  loading: Loading,
+})
+
 // https://github.com/ReactTraining/react-router/tree/master/packages/react-router-config
 const routes = [
   { path: '/', exact: true, name: 'Home', component: DefaultLayout },
@@ -55,8 +60,9 @@ const routes = [
   { path: '/admins', exact: true, name: 'Admins', component: Admins },
   { path: '/users', exact: true, name: 'Users', component: Users },
   { path: '/mobil-tangki', name: 'Mobil Tangki', component: MobilTangkis },
-  { path: '/approval-checklist', name: 'Daily AMT Check', component: Checklist },
+  { path: '/approval-checklist', name: 'Approval Checklist', component: Checklist },
   { path: '/report-qrcode-mt', name: 'QRCode Mobil Tangki', component: QRCodeAMT },
+  { path: '/report-daily-checklist', name: 'Daily AMT Checklist', component: ReportDaily },
   // { path: '/users/:id', exact: true, name: 'User Details', component: User },
 ]
 
