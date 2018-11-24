@@ -6,7 +6,6 @@ import { notification } from 'antd'
 
 import { message } from '../../utils/message'
 import ChecklistRequest from '../../views/Checklist/ChecklistRequest'
-import ChecklistApproval from '../../views/Checklist/ChecklistApproval'
 
 const queryChecklists = gql`
   query checklists {
@@ -234,7 +233,7 @@ class Checklist extends Component {
     // console.log('checklist props: ', this.props)
     const { loading, error, refetch, checklists = [] } = this.props
 
-    return !this.state.showForm ? (
+    return (
       <ChecklistRequest
         loading={loading}
         error={error}
@@ -243,12 +242,6 @@ class Checklist extends Component {
         onAddItem={this.handleAddItem}
         onEditItem={this.handleEditItem}
         onDeleteItem={this.handleDeleteItem}
-      />
-    ) : (
-      <ChecklistApproval
-        itemData={this.state.itemData}
-        onBack={this.handleBack}
-        onSubmitItem={itemData => this.handleSubmit(itemData)}
       />
     )
   }
@@ -262,16 +255,18 @@ export default compose(
     },
     props: ({ data }) => {
       const { loading, error, refetch, checklists } = data
-      return loading || error
-        ? {
-            loading,
-            error,
-            refetch,
-          }
-        : {
-            refetch,
-            checklists,
-          }
+      return loading
+        ? { loading, refetch }
+        : error
+        ? typeof error === 'object'
+          ? {
+              error: {
+                message:
+                  'Your session expired. Sign in again!\nPlease wait until redirect to login page.',
+              },
+            }
+          : { error, refetch }
+        : { refetch, checklists }
     },
   }),
   graphql(mutationApprovalCheckList, {

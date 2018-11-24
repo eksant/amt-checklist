@@ -212,16 +212,18 @@ export default compose(
     },
     props: ({ data }) => {
       const { loading, error, refetch, admins } = data
-      return loading || error
-        ? {
-            loading,
-            error,
-            refetch,
-          }
-        : {
-            refetch,
-            admins,
-          }
+      return loading
+        ? { loading, refetch }
+        : error
+        ? typeof error === 'object'
+          ? {
+              error: {
+                message:
+                  'Your session expired. Sign in again!\nPlease wait until redirect to login page.',
+              },
+            }
+          : { error, refetch }
+        : { refetch, admins }
     },
   }),
   graphql(mutationCreateAdmin, {

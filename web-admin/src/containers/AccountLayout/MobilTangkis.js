@@ -202,16 +202,18 @@ export default compose(
     },
     props: ({ data }) => {
       const { loading, error, refetch, mobiltangkis } = data
-      return loading || error
-        ? {
-            loading,
-            error,
-            refetch,
-          }
-        : {
-            refetch,
-            mobiltangkis,
-          }
+      return loading
+        ? { loading, refetch }
+        : error
+        ? typeof error === 'object'
+          ? {
+              error: {
+                message:
+                  'Your session expired. Sign in again!\nPlease wait until redirect to login page.',
+              },
+            }
+          : { error, refetch }
+        : { refetch, mobiltangkis }
     },
   }),
   graphql(mutationCreateMobilTangki, {

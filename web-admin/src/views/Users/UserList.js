@@ -1,10 +1,18 @@
 import React from 'react'
 import { Card, Table, Divider, Icon, Popconfirm, Alert } from 'antd'
 
+import { logout } from '../../utils/logout'
+
 export default props => {
   // console.log('user list props: ', props)
   const { loading, error, onRefresh, onAddItem, onEditItem, onDeleteItem, users = [] } = props
   const dataSource = users !== null ? users.map(user => ({ ...user, key: user._id })) : []
+
+  if (error && error.message.indexOf('session expired')) {
+    setTimeout(() => {
+      logout()
+    }, 3000)
+  }
 
   const columns = [
     {
@@ -62,16 +70,17 @@ export default props => {
             <a
               href="#/users"
               onClick={() => onRefresh()}
+              disabled={error}
               style={{ marginRight: '10px', color: '#A6A6A6' }}>
               <i className="fa fa-refresh" /> Refresh
             </a>
-            <a href="#/users" onClick={() => onAddItem()}>
+            <a href="#/users" onClick={() => onAddItem()} disabled={error}>
               <i className="fa fa-plus-square" /> Create New
             </a>
           </span>
         }>
         {error ? (
-          <Alert message="Error" description={this.props.error.message} type="error" showIcon />
+          <Alert message="Error" description={error.message} type="error" showIcon />
         ) : (
           <Table columns={columns} dataSource={dataSource} loading={loading} size={'small'} />
         )}

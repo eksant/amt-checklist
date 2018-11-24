@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import moment from 'moment'
 import { Row, Col, Tabs, Card, Tag, Divider, Radio, Table, Icon, Alert, Modal, Button } from 'antd'
 
+import { logout } from '../../utils/logout'
+
 class ChecklistRequest extends Component {
   constructor(props) {
     super(props)
@@ -33,7 +35,7 @@ class ChecklistRequest extends Component {
       },
     },
     {
-      title: 'AMT',
+      title: 'No. Pol',
       dataIndex: 'mobiltangki.nopol',
     },
     {
@@ -165,17 +167,22 @@ class ChecklistRequest extends Component {
         ? itemChecklists
         : itemChecklists.filter(checklist => checklist.status === status)
 
-    // console.log(item)
+    if (error && error.message.indexOf('session expired')) {
+      setTimeout(() => {
+        logout()
+      }, 3000)
+    }
 
     return (
       <div className="animated fadeIn">
         <Card
-          title="Daily AMT Check"
+          title="Approval Checklist"
           extra={
             <span>
               <a
                 href="#/approval-checklist"
                 onClick={() => onRefresh()}
+                disabled={error}
                 style={{ marginRight: '10px', color: '#A6A6A6' }}>
                 <i className="fa fa-refresh" /> Refresh
               </a>
@@ -184,7 +191,8 @@ class ChecklistRequest extends Component {
               <Radio.Group
                 name="statusGroup"
                 onChange={this.handleChangeStatus.bind(this)}
-                defaultValue={status}>
+                defaultValue={status}
+                disabled={error}>
                 <Radio value="All">All</Radio>
                 <Radio value="Waiting">Waiting</Radio>
                 <Radio value="Approved">Approved</Radio>

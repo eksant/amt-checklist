@@ -1,6 +1,8 @@
 import React from 'react'
-import { Row, Col, Card, Table, Icon, Alert, Modal } from 'antd'
 import QRCode from 'qrcode.react'
+import { Row, Col, Card, Table, Icon, Alert, Modal } from 'antd'
+
+import { logout } from '../../utils/logout'
 
 export default props => {
   // console.log('mobiltangki list props: ', props)
@@ -9,6 +11,12 @@ export default props => {
     mobiltangkis !== null
       ? mobiltangkis.map(mobiltangki => ({ ...mobiltangki, key: mobiltangki._id }))
       : []
+
+  if (error && error.message.indexOf('session expired')) {
+    setTimeout(() => {
+      logout()
+    }, 3000)
+  }
 
   const columns = [
     {
@@ -118,7 +126,7 @@ export default props => {
     <div className="animated fadeIn">
       <Card title="Report QRCode Mobil Tangki">
         {error ? (
-          <Alert message="Error" description={this.props.error.message} type="error" showIcon />
+          <Alert message="Error" description={error.message} type="error" showIcon />
         ) : (
           <Table columns={columns} dataSource={dataSource} loading={loading} size={'small'} />
         )}
