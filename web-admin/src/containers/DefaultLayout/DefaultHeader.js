@@ -1,17 +1,18 @@
 import React, { Component } from 'react'
 import {
-  Badge,
+  // Badge,
   DropdownItem,
   DropdownMenu,
   DropdownToggle,
   Nav,
-  NavItem,
-  NavLink,
+  // NavItem,
+  // NavLink,
 } from 'reactstrap'
 import PropTypes from 'prop-types'
 
 import { AppHeaderDropdown, AppNavbarBrand, AppSidebarToggler } from '@coreui/react'
-import logo from '../../assets/img/brand/logo.png'
+import { logout } from '../../utils/logout'
+import logo from '../../assets/img/brand/logo-patraniaga.png'
 import sygnet from '../../assets/img/brand/logo-symbol.png'
 
 const propTypes = {
@@ -21,19 +22,6 @@ const propTypes = {
 const defaultProps = {}
 
 class DefaultHeader extends Component {
-  constructor(props) {
-    super(props)
-
-    this.handleLogout = this.handleLogout.bind(this)
-  }
-
-  handleLogout() {
-    localStorage.removeItem('token')
-    localStorage.removeItem('group')
-    window.location.href = '/'
-    // window.location.reload()
-  }
-
   render() {
     // eslint-disable-next-line
     const { children, ...attributes } = this.props
@@ -47,14 +35,14 @@ class DefaultHeader extends Component {
         />
 
         <Nav className="ml-auto" navbar>
-          <NavItem className="d-md-down-none">
+          {/* <NavItem className="d-md-down-none">
             <NavLink href="#">
               <i className="icon-bell" />
               <Badge pill color="danger">
                 5
               </Badge>
             </NavLink>
-          </NavItem>
+          </NavItem> */}
           <AppHeaderDropdown direction="down">
             <DropdownToggle nav>
               <img
@@ -67,10 +55,10 @@ class DefaultHeader extends Component {
               {/* <DropdownItem>
                 <i className="fa fa-wrench" /> Settings
               </DropdownItem> */}
-              <DropdownItem>
+              {/* <DropdownItem>
                 <i className="fa fa-user" /> Profile
-              </DropdownItem>
-              <DropdownItem onClick={() => this.handleLogout()}>
+              </DropdownItem> */}
+              <DropdownItem onClick={() => logout()}>
                 <i className="fa fa-lock" /> Logout
               </DropdownItem>
             </DropdownMenu>
