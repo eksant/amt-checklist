@@ -33,11 +33,16 @@ class Splash extends Component {
     await this.setState({ isVisible: false })
 
     const resp = await this.props.getChecklist()
-    if (resp.error && resp.error.name === 'TokenExpiredError') {
-      Actions.replace('login')
+    // console.warn(resp)
+    if (Object.keys(resp).length === 0) {
+      alert('Check your connection!')
     } else {
-      const token = await getAsyncToken()
-      token ? Actions.replace('home') : Actions.replace('login')
+      if (resp.error && resp.error.name === 'TokenExpiredError') {
+        Actions.replace('login')
+      } else {
+        const token = await getAsyncToken()
+        token ? Actions.replace('home') : Actions.replace('login')
+      }
     }
   }
 

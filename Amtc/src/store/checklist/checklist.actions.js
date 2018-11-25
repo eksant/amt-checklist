@@ -29,12 +29,12 @@ export const getChecklist = () => {
     dispatch(checklistLoading())
     return apiGetData('checklist/user')
       .then(resp => {
-        // console.log('RESP', resp)
+        // console.warn('RESP', resp)
         if (resp.status === 200) {
           dispatch(checklistSuccess(resp.data))
         } else {
           dispatch(checklistError(resp.message))
-          if (resp.error.name === 'JsonWebTokenError') {
+          if (resp.error && resp.error.name === 'JsonWebTokenError') {
             delAsyncToken()
             dispatch(authExpiredToken())
           }
