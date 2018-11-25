@@ -128,12 +128,8 @@ class App extends Component {
               <Scene key="profile" component={WrapperComponent(Profile)} />
               <Scene key="histories" component={WrapperComponent(Histories, true, false)} />
               <Scene key="formchecklist" hideNavBar>
-                <Scene
-                  key="formmethod"
-                  component={WrapperComponent(FormMethod, true, false)}
-                  initial
-                />
-                <Scene key="scanner" component={WrapperComponent(Scanner, true, false)} />
+                <Scene key="formmethod" component={WrapperComponent(FormMethod, true, false)} />
+                <Scene key="scanner" component={WrapperComponent(Scanner, true, false)} initial />
                 <Scene key="checklist" component={WrapperComponent(Checklist, true, true)} />
               </Scene>
             </Scene>

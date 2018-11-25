@@ -42,7 +42,7 @@ export default class BasicInfo extends Component {
                   onChangeText={odoKM => setState({ odoKM })}
                 />
               </Item>
-              <Item fixedLabel style={styles.itemStyle}>
+              {/* <Item fixedLabel style={styles.itemStyle}>
                 <Label style={styles.formLabel}>HSSE</Label>
                 <Input
                   underlineColorAndroid="transparent"
@@ -50,7 +50,7 @@ export default class BasicInfo extends Component {
                   value={data.HSSE}
                   onChangeText={HSSE => setState({ HSSE })}
                 />
-              </Item>
+              </Item> */}
               <Item fixedLabel style={styles.itemStyle}>
                 <Label style={styles.formLabel}>PWSAMT</Label>
                 <Input
