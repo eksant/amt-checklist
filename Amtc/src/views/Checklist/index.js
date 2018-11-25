@@ -32,42 +32,42 @@ class Checklist extends Component {
       itemsKondisi: [
         {
           name: 'Kondisi Rem',
-          status: 1,
+          status: 0,
           reason: '',
         },
         {
           name: 'Kondisi Ban',
-          status: 1,
+          status: 0,
           reason: '',
         },
         {
           name: 'Kondisi Wiper',
-          status: 1,
+          status: 0,
           reason: '',
         },
         {
           name: 'Kondisi Lampu',
-          status: 1,
+          status: 0,
           reason: '',
         },
         {
           name: 'Kondisi Kompartemen',
-          status: 1,
+          status: 0,
           reason: '',
         },
         {
           name: 'Kondisi Apar',
-          status: 1,
+          status: 0,
           reason: '',
         },
         {
           name: 'Kondisi Oli Mesin',
-          status: 1,
+          status: 0,
           reason: '',
         },
         {
           name: 'Kondisi Air Radiator',
-          status: 1,
+          status: 0,
           reason: '',
         },
       ],
@@ -75,52 +75,52 @@ class Checklist extends Component {
       itemsKeberadaan: [
         {
           name: 'Keberadaan STNK',
-          status: 1,
+          status: 0,
           reason: '',
         },
         {
           name: 'Keberadaan Surat Keur',
-          status: 1,
+          status: 0,
           reason: '',
         },
         {
           name: 'Keberadaan Surat Tera',
-          status: 1,
+          status: 0,
           reason: '',
         },
         {
           name: 'Keberadaan P3K',
-          status: 1,
+          status: 0,
           reason: '',
         },
         {
           name: 'Keberadaan Flame Trap',
-          status: 1,
+          status: 0,
           reason: '',
         },
         {
           name: 'Keberadaan Ban Serep',
-          status: 1,
+          status: 0,
           reason: '',
         },
         {
           name: 'Keberadaan Toolkit',
-          status: 1,
+          status: 0,
           reason: '',
         },
         {
           name: 'Keberadaan Grounding Cable',
-          status: 1,
+          status: 0,
           reason: '',
         },
         {
           name: 'Keberadaan Selang Bongkar',
-          status: 1,
+          status: 0,
           reason: '',
         },
         {
           name: 'Keberadaan Spill Kit',
-          status: 1,
+          status: 0,
           reason: '',
         },
       ],
@@ -128,22 +128,22 @@ class Checklist extends Component {
       itemsMembawa: [
         {
           name: 'Membawa SIM',
-          status: 1,
+          status: 0,
           reason: '',
         },
         {
           name: 'Membawa Surat Ijin Area',
-          status: 1,
+          status: 0,
           reason: '',
         },
         {
           name: 'Membawa Buku Saku',
-          status: 1,
+          status: 0,
           reason: '',
         },
         {
           name: 'Membawa Catatan Perjalanan',
-          status: 1,
+          status: 0,
           reason: '',
         },
       ],
@@ -151,32 +151,32 @@ class Checklist extends Component {
       itemsMenggunakan: [
         {
           name: 'Menggunakan Seragam',
-          status: 1,
+          status: 0,
           reason: '',
         },
         {
           name: 'Menggunakan Safety Shoes',
-          status: 1,
+          status: 0,
           reason: '',
         },
         {
           name: 'Menggunakan Safety Helm',
-          status: 1,
+          status: 0,
           reason: '',
         },
         {
           name: 'Menggunakan ID Card',
-          status: 1,
+          status: 0,
           reason: '',
         },
         {
           name: 'Menggunakan Sarung Tangan',
-          status: 1,
+          status: 0,
           reason: '',
         },
         {
           name: 'Menggunakan Jas Hujan',
-          status: 1,
+          status: 0,
           reason: '',
         },
       ],
