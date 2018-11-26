@@ -6,19 +6,16 @@ jobs:
     docker:
       - image: circleci/node:8.10
     working_directory: ~/amtc-web
-    attach_workspace: /web-admin
     steps:
       - checkout
-      - attach_workspace
+      - attach_workspace: ~/amtc-web/web-admin
       - run:
           name: Install dependencies
           command: |
-            ls -ltr
             npm install
       - run:
           name: Building app base on branch
           command: |
-            ls -ltr
             npm run build
       - save_cache:
           key: v1-build-{{ .Environment.CIRCLE_BRANCH }}-{{ .Environment.CIRCLE_SHA1 }}
