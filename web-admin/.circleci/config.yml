@@ -1,0 +1,29 @@
+version: 2
+jobs:
+  build:
+    environment:
+      CI: false
+    docker:
+      - image: circleci/node:8.10
+    working_directory: ~/amtc-web
+    steps:
+      - checkout
+      - run:
+          name: Install dependencies
+          command: npm install
+      - run:
+          name: Building app base on branch
+          command: npm run build
+      - save_cache:
+          key: v1-build-{{ .Environment.CIRCLE_BRANCH }}-{{ .Environment.CIRCLE_SHA1 }}
+          paths:
+            - build
+
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - build
+      # - deploy:
+          # requires:
+            # - build
