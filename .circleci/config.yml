@@ -8,12 +8,17 @@ jobs:
     working_directory: ~/amtc-web
     steps:
       - checkout
+      - attach_workspace
       - run:
           name: Install dependencies
-          command: npm install
+          command: |
+            cd web-admin
+            npm install
       - run:
           name: Building app base on branch
-          command: npm run build
+          command: |
+            cd web-admin
+            npm run build
       - save_cache:
           key: v1-build-{{ .Environment.CIRCLE_BRANCH }}-{{ .Environment.CIRCLE_SHA1 }}
           paths:
@@ -25,5 +30,5 @@ workflows:
     jobs:
       - build
       # - deploy:
-          # requires:
-            # - build
+      # requires:
+      # - build
