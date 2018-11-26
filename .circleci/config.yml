@@ -12,12 +12,12 @@ jobs:
           name: Install dependencies
           command: |
             cd web-admin
-            ls -ltr
+            # ls -ltr
             yarn install
-      # - run:
-      #     name: Building app base on branch
-      #     command: |
-      #       npm run build
+      - run:
+          name: Building app
+          command: |
+            yarn build
       # - save_cache:
       #     key: v1-build-{{ .Environment.CIRCLE_BRANCH }}-{{ .Environment.CIRCLE_SHA1 }}
       #     paths:
