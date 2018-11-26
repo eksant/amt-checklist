@@ -12,12 +12,12 @@ jobs:
       - run:
           name: Install dependencies
           command: |
-            cd web-admin
+            ls -ltr
             npm install
       - run:
           name: Building app base on branch
           command: |
-            cd web-admin
+            ls -ltr
             npm run build
       - save_cache:
           key: v1-build-{{ .Environment.CIRCLE_BRANCH }}-{{ .Environment.CIRCLE_SHA1 }}
