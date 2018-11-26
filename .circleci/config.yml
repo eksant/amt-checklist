@@ -11,10 +11,9 @@ jobs:
       - run:
           name: Install dependencies
           command: |
-            ls -ltr
             cd web-admin
             ls -ltr
-            # npm install
+            yarn install
       # - run:
       #     name: Building app base on branch
       #     command: |
