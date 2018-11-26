@@ -9,19 +9,20 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Install dependencies
+          name: Install dependencies of Web Admin
           command: |
             cd web-admin
             # ls -ltr
             yarn install
       - run:
-          name: Building app
+          name: Building Web Admin
           command: |
+            cd web-admin
             yarn build
-      # - save_cache:
-      #     key: v1-build-{{ .Environment.CIRCLE_BRANCH }}-{{ .Environment.CIRCLE_SHA1 }}
-      #     paths:
-      #       - build
+      - save_cache:
+          key: v1-build-web-admin-{{ .Environment.CIRCLE_BRANCH }}-{{ .Environment.CIRCLE_SHA1 }}
+          paths:
+            - build
 
 workflows:
   version: 2
