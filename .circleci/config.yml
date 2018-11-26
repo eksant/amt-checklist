@@ -12,6 +12,8 @@ jobs:
           name: Install dependencies
           command: |
             ls -ltr
+            cd web-admin
+            ls -ltr
             # npm install
       # - run:
       #     name: Building app base on branch
