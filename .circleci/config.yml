@@ -6,9 +6,9 @@ jobs:
     docker:
       - image: circleci/node:8.10
     working_directory: ~/amtc-web
+    attach_workspace: ~/amtc-web/web-admin
     steps:
       - checkout
-      - attach_workspace: ~/amtc-web/web-admin
       - run:
           name: Install dependencies
           command: |
