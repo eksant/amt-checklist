@@ -23,6 +23,14 @@ jobs:
           key: v1-build-web-admin-{{ .Environment.CIRCLE_BRANCH }}-{{ .Environment.CIRCLE_SHA1 }}
           paths:
             - build
+  # deploy:
+  #   docker:
+  #     - image: google/cloud-sdk
+  #   environment:
+  #     - PROJECT_NAME: 'my-app'
+  #     - GOOGLE_PROJECT_ID: 'xxx'
+  #     - GOOGLE_COMPUTE_ZONE: 'asia-southeast1-b'
+  #     - GOOGLE_CLUSTER_NAME: 'cluster-1'
 
 workflows:
   version: 2
