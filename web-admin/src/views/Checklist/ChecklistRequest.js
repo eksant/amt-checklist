@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import moment from 'moment'
-import { Row, Col, Tabs, Card, Tag, Divider, Radio, Table, Icon, Alert, Modal, Button } from 'antd'
+import { Row, Col, Tabs, Card, Tag, Table, Icon, Alert, Modal, Button } from 'antd'
 
 import { logout } from '../../utils/logout'
 
@@ -25,14 +25,14 @@ class ChecklistRequest extends Component {
       },
     },
     {
-      title: 'Requested By',
+      title: 'Supir',
       render: record => {
-        return (
-          <span>
-            {record.createdBy.username} ({record.createdBy.roles})
-          </span>
-        )
+        return <span>{record.createdBy.username}</span>
       },
+    },
+    {
+      title: 'Kernet',
+      dataIndex: 'remarks',
     },
     {
       title: 'No. Pol',
@@ -60,10 +60,31 @@ class ChecklistRequest extends Component {
     {
       title: 'Count Checklist',
       render: record => {
-        const totalCheck = 5
-        const totalUncheck = 10
+        var totalCheck = 0
+        var totalUncheck = 0
 
-        return <span>{`${totalCheck} check, ${totalUncheck} uncheck`}</span>
+        for (const key of Object.keys(record)) {
+          if (
+            key.includes('kondisi') ||
+            key.includes('keberadaan') ||
+            key.includes('membawa') ||
+            key.includes('menggunakan')
+          ) {
+            if (record[key] === 0) {
+              totalUncheck++
+            } else if (record[key] === 1) {
+              totalCheck++
+            }
+          }
+        }
+
+        // return <span>{`${totalCheck} check, ${totalUncheck} uncheck`}</span>
+        return (
+          <span>
+            {totalCheck} <i className="fa fa-check-square" /> check - {totalUncheck}{' '}
+            <i className="fa fa-window-close" /> uncheck
+          </span>
+        )
       },
     },
     {
@@ -72,7 +93,7 @@ class ChecklistRequest extends Component {
         <span>
           <a href="#/approval-checklist" onClick={() => this.handleShowDetail(record)}>
             <Icon type="search" theme="outlined" /> Show Detail{' '}
-            {record.status === 'Waiting' ? 'For Approval' : null}
+            {record.status === 'Waiting' ? 'For Finishing' : null}
           </a>
         </span>
       ),
@@ -86,58 +107,58 @@ class ChecklistRequest extends Component {
   }
 
   async handleShowDetail(item) {
-    var arrCekKondisi = []
-
-    for (const key of Object.keys(item)) {
-      if (key.includes('kondisi')) {
-        console.log(key, item[key])
-        arrCekKondisi.push({
-          status: item[key],
-          name:
-            key === 'kondisiRem'
-              ? 'Kondisi Rem'
-              : key === 'kondisiBan'
-              ? 'Kondisi Ban'
-              : key === 'kondisiWiper'
-              ? 'Kondisi Wiper'
-              : key === 'kondisiLampu'
-              ? 'Kondisi Lampu'
-              : key === 'kondisiKompartemen'
-              ? 'Kondisi Kompartemen'
-              : key === 'kondisiApar'
-              ? 'Kondisi Apar'
-              : key === 'kondisiOliMesin'
-              ? 'Kondisi Oli Mesin'
-              : key === 'kondisiAirRadiator'
-              ? 'Kondisi Air Radiator'
-              : null,
-          reason:
-            key === 'kondisiRemReason'
-              ? item[key]
-              : key === 'kondisiBanReason'
-              ? item[key]
-              : key === 'kondisiWiperReason'
-              ? item[key]
-              : key === 'kondisiLampuReason'
-              ? item[key]
-              : key === 'kondisiKompartemenReason'
-              ? item[key]
-              : key === 'kondisiAparReason'
-              ? item[key]
-              : key === 'kondisiOliMesinReason'
-              ? item[key]
-              : key === 'kondisiAirRadiatorReason'
-              ? item[key]
-              : null,
-        })
-      }
-    }
+    // console.log(item)
+    // var arrCekKondisi = []
+    // for (const key of Object.keys(item)) {
+    //   if (key.includes('kondisi')) {
+    //     console.log(key, item[key])
+    //     arrCekKondisi.push({
+    //       status: item[key],
+    //       name:
+    //         key === 'kondisiRem'
+    //           ? 'Kondisi Rem'
+    //           : key === 'kondisiBan'
+    //           ? 'Kondisi Ban'
+    //           : key === 'kondisiWiper'
+    //           ? 'Kondisi Wiper'
+    //           : key === 'kondisiLampu'
+    //           ? 'Kondisi Lampu'
+    //           : key === 'kondisiKompartemen'
+    //           ? 'Kondisi Kompartemen'
+    //           : key === 'kondisiApar'
+    //           ? 'Kondisi Apar'
+    //           : key === 'kondisiOliMesin'
+    //           ? 'Kondisi Oli Mesin'
+    //           : key === 'kondisiAirRadiator'
+    //           ? 'Kondisi Air Radiator'
+    //           : null,
+    //       reason:
+    //         key === 'kondisiRemReason'
+    //           ? item[key]
+    //           : key === 'kondisiBanReason'
+    //           ? item[key]
+    //           : key === 'kondisiWiperReason'
+    //           ? item[key]
+    //           : key === 'kondisiLampuReason'
+    //           ? item[key]
+    //           : key === 'kondisiKompartemenReason'
+    //           ? item[key]
+    //           : key === 'kondisiAparReason'
+    //           ? item[key]
+    //           : key === 'kondisiOliMesinReason'
+    //           ? item[key]
+    //           : key === 'kondisiAirRadiatorReason'
+    //           ? item[key]
+    //           : null,
+    //     })
+    //   }
+    // }
     // arrCekKondisi.filter(item => {
     //   if (item.name === null) {
     //     console.log('kosong', item.na)
     //   }
     // })
-    console.log(arrCekKondisi)
+    // console.log(arrCekKondisi)
 
     await this.setState({
       item: item,
@@ -152,8 +173,10 @@ class ChecklistRequest extends Component {
     })
   }
 
-  handleApproval() {
-    console.log('approval')
+  async handleApproval() {
+    // console.log('approval', this.state.item)
+    await this.props.onSubmit(this.state.item)
+    this.handleCloseDetail()
   }
 
   render() {
@@ -186,7 +209,7 @@ class ChecklistRequest extends Component {
                 style={{ marginRight: '10px', color: '#A6A6A6' }}>
                 <i className="fa fa-refresh" /> Refresh
               </a>
-              <Divider type="vertical" />
+              {/* <Divider type="vertical" />
               Status Request : &nbsp;
               <Radio.Group
                 name="statusGroup"
@@ -195,9 +218,9 @@ class ChecklistRequest extends Component {
                 disabled={error}>
                 <Radio value="All">All</Radio>
                 <Radio value="Waiting">Waiting</Radio>
-                <Radio value="Approved">Approved</Radio>
+                <Radio value="Approved">Finishing</Radio>
                 <Radio value="Rejected">Rejected</Radio>
-              </Radio.Group>
+              </Radio.Group> */}
             </span>
           }>
           {error ? (
@@ -210,6 +233,7 @@ class ChecklistRequest extends Component {
                 loading={loading}
                 size={'small'}
               />
+
               <Modal
                 visible={visibleDetail}
                 title={`Detail AMT Checklist ${item && item.mobiltangki.nopol} - ${item &&
@@ -227,7 +251,7 @@ class ChecklistRequest extends Component {
                       type="primary"
                       loading={loading}
                       onClick={this.handleApproval.bind(this)}>
-                      Submit
+                      Finishing
                     </Button>
                   ) : null,
                 ]}>
@@ -246,16 +270,31 @@ class ChecklistRequest extends Component {
                         : {item && item.createdBy.username}
                       </Col>
                       <Col span={6} pull={18}>
-                        Created By
+                        Supir
                       </Col>
                     </Row>
-
+                    <Row>
+                      <Col span={18} push={6}>
+                        : {item && item.remarks}
+                      </Col>
+                      <Col span={6} pull={18}>
+                        Kernet
+                      </Col>
+                    </Row>
+                    {/* <Row>
+                      <Col span={18} push={6}>
+                        : {item && item.createdBy.roles}
+                      </Col>
+                      <Col span={6} pull={18}>
+                        Roles
+                      </Col>
+                    </Row> */}
                     <Row>
                       <Col span={18} push={6}>
                         : {item && item.mobiltangki.nopol}
                       </Col>
                       <Col span={6} pull={18}>
-                        AMT
+                        No. Pol
                       </Col>
                     </Row>
                     <Row>
@@ -298,26 +337,326 @@ class ChecklistRequest extends Component {
                         TBBM
                       </Col>
                     </Row>
-                    <Row>
-                      <Col span={18} push={6}>
-                        : {item && item.remarks}
-                      </Col>
-                      <Col span={6} pull={18}>
-                        Remarks
-                      </Col>
-                    </Row>
                   </Tabs.TabPane>
+
                   <Tabs.TabPane tab="Cek Kondisi" key="cekkondisi">
-                    Content of Tab Pane 2
+                    <Row>
+                      {item && item.kondisiRem === 1 ? (
+                        <i className="fa fa-check-square" />
+                      ) : (
+                        <i className="fa fa-window-close" />
+                      )}{' '}
+                      Kondisi Rem
+                    </Row>
+                    {item && item.kondisiRem === 0 && (
+                      <Row>Reason: {item && item.kondisiRemReason}</Row>
+                    )}
+                    <Row>
+                      {item && item.kondisiBan === 1 ? (
+                        <i className="fa fa-check-square" />
+                      ) : (
+                        <i className="fa fa-window-close" />
+                      )}{' '}
+                      Kondisi Ban
+                    </Row>
+                    {item && item.kondisiBan === 0 && (
+                      <Row>Reason: {item && item.kondisiBanReason}</Row>
+                    )}
+                    <Row>
+                      {item && item.kondisiWiper === 1 ? (
+                        <i className="fa fa-check-square" />
+                      ) : (
+                        <i className="fa fa-window-close" />
+                      )}{' '}
+                      Kondisi Wiper
+                    </Row>
+                    {item && item.kondisiWiper === 0 && (
+                      <Row>Reason: {item && item.kondisiWiperReason}</Row>
+                    )}
+                    <Row>
+                      {item && item.kondisiLampu === 1 ? (
+                        <i className="fa fa-check-square" />
+                      ) : (
+                        <i className="fa fa-window-close" />
+                      )}{' '}
+                      Kondisi Lampu
+                    </Row>
+                    {item && item.kondisiLampu === 0 && (
+                      <Row>Reason: {item && item.kondisiLampuReason}</Row>
+                    )}
+                    <Row>
+                      {item && item.kondisiKompartemen === 1 ? (
+                        <i className="fa fa-check-square" />
+                      ) : (
+                        <i className="fa fa-window-close" />
+                      )}{' '}
+                      Kondisi Kompartemen
+                    </Row>
+                    {item && item.kondisiKompartemen === 0 && (
+                      <Row>Reason: {item && item.kondisiKompartemenReason}</Row>
+                    )}
+                    <Row>
+                      {item && item.kondisiApar === 1 ? (
+                        <i className="fa fa-check-square" />
+                      ) : (
+                        <i className="fa fa-window-close" />
+                      )}{' '}
+                      Kondisi Apar
+                    </Row>
+                    {item && item.kondisiApar === 0 && (
+                      <Row>Reason: {item && item.kondisiAparReason}</Row>
+                    )}
+                    <Row>
+                      {item && item.kondisiOliMesin === 1 ? (
+                        <i className="fa fa-check-square" />
+                      ) : (
+                        <i className="fa fa-window-close" />
+                      )}{' '}
+                      Kondisi Oli Mesin
+                    </Row>
+                    {item && item.kondisiOliMesin === 0 && (
+                      <Row>Reason: {item && item.kondisiOliMesinReason}</Row>
+                    )}
+                    <Row>
+                      {item && item.kondisiAirRadiator === 1 ? (
+                        <i className="fa fa-check-square" />
+                      ) : (
+                        <i className="fa fa-window-close" />
+                      )}{' '}
+                      Kondisi Air Radiator
+                    </Row>
+                    {item && item.kondisiAirRadiator === 0 && (
+                      <Row>Reason: {item && item.kondisiAirRadiatorReason}</Row>
+                    )}
                   </Tabs.TabPane>
+
                   <Tabs.TabPane tab="Cek Keberadaan" key="cekkeberadaan">
-                    Content of Tab Pane 3
+                    <Row>
+                      {item && item.keberadaanSTNK === 1 ? (
+                        <i className="fa fa-check-square" />
+                      ) : (
+                        <i className="fa fa-window-close" />
+                      )}{' '}
+                      Keberadaan STNK
+                    </Row>
+                    {item && item.keberadaanSTNK === 0 && (
+                      <Row>Reason: {item && item.keberadaanSTNKReason}</Row>
+                    )}
+                    <Row>
+                      {item && item.keberadaanSuratKeur === 1 ? (
+                        <i className="fa fa-check-square" />
+                      ) : (
+                        <i className="fa fa-window-close" />
+                      )}{' '}
+                      Keberadaan Surat Keur
+                    </Row>
+                    {item && item.keberadaanSuratKeur === 0 && (
+                      <Row>Reason: {item && item.keberadaanSuratKeurReason}</Row>
+                    )}
+                    <Row>
+                      {item && item.keberadaanSuratTera === 1 ? (
+                        <i className="fa fa-check-square" />
+                      ) : (
+                        <i className="fa fa-window-close" />
+                      )}{' '}
+                      Keberadaan Surat Tera
+                    </Row>
+                    {item && item.keberadaanSuratTera === 0 && (
+                      <Row>Reason: {item && item.keberadaanSuratTeraReason}</Row>
+                    )}
+                    <Row>
+                      {item && item.keberadaanP3K === 1 ? (
+                        <i className="fa fa-check-square" />
+                      ) : (
+                        <i className="fa fa-window-close" />
+                      )}{' '}
+                      Keberadaan P3K
+                    </Row>
+                    {item && item.keberadaanP3K === 0 && (
+                      <Row>Reason: {item && item.keberadaanP3KReason}</Row>
+                    )}
+                    <Row>
+                      {item && item.keberadaanFlameTrap === 1 ? (
+                        <i className="fa fa-check-square" />
+                      ) : (
+                        <i className="fa fa-window-close" />
+                      )}{' '}
+                      Keberadaan Flame Trap
+                    </Row>
+                    {item && item.keberadaanFlameTrap === 0 && (
+                      <Row>Reason: {item && item.keberadaanFlameTrapReason}</Row>
+                    )}
+                    <Row>
+                      {item && item.keberadaanBanSerep === 1 ? (
+                        <i className="fa fa-check-square" />
+                      ) : (
+                        <i className="fa fa-window-close" />
+                      )}{' '}
+                      Keberadaan Ban Serep
+                    </Row>
+                    {item && item.keberadaanBanSerep === 0 && (
+                      <Row>Reason: {item && item.keberadaanBanSerepReason}</Row>
+                    )}
+                    <Row>
+                      {item && item.keberadaanToolkit === 1 ? (
+                        <i className="fa fa-check-square" />
+                      ) : (
+                        <i className="fa fa-window-close" />
+                      )}{' '}
+                      Keberadaan Toolkit
+                    </Row>
+                    {item && item.keberadaanToolkit === 0 && (
+                      <Row>Reason: {item && item.keberadaanToolkitReason}</Row>
+                    )}
+                    <Row>
+                      {item && item.keberadaanGroundingCable === 1 ? (
+                        <i className="fa fa-check-square" />
+                      ) : (
+                        <i className="fa fa-window-close" />
+                      )}{' '}
+                      Keberadaan Grounding Cable
+                    </Row>
+                    {item && item.keberadaanGroundingCable === 0 && (
+                      <Row>Reason: {item && item.keberadaanGroundingCableReason}</Row>
+                    )}
+                    <Row>
+                      {item && item.keberadaanSelangBongkar === 1 ? (
+                        <i className="fa fa-check-square" />
+                      ) : (
+                        <i className="fa fa-window-close" />
+                      )}{' '}
+                      Keberadaan Selang Bongkar
+                    </Row>
+                    {item && item.keberadaanSelangBongkar === 0 && (
+                      <Row>Reason: {item && item.keberadaanSelangBongkarReason}</Row>
+                    )}
+                    <Row>
+                      {item && item.keberadaanSpillKit === 1 ? (
+                        <i className="fa fa-check-square" />
+                      ) : (
+                        <i className="fa fa-window-close" />
+                      )}{' '}
+                      Keberadaan Spill Kit
+                    </Row>
+                    {item && item.keberadaanSpillKit === 0 && (
+                      <Row>Reason: {item && item.keberadaanSpillKitReason}</Row>
+                    )}
                   </Tabs.TabPane>
+
                   <Tabs.TabPane tab="Cek Bawaan" key="cekbawaan">
-                    Content of Tab Pane 3
+                    <Row>
+                      {item && item.membawaSIM === 1 ? (
+                        <i className="fa fa-check-square" />
+                      ) : (
+                        <i className="fa fa-window-close" />
+                      )}{' '}
+                      Membawa SIM
+                    </Row>
+                    {item && item.membawaSIM === 0 && (
+                      <Row>Reason: {item && item.membawaSIMReason}</Row>
+                    )}
+                    <Row>
+                      {item && item.membawaSuratIjinArea === 1 ? (
+                        <i className="fa fa-check-square" />
+                      ) : (
+                        <i className="fa fa-window-close" />
+                      )}{' '}
+                      Membawa Surat Ijin Area
+                    </Row>
+                    {item && item.membawaSuratIjinArea === 0 && (
+                      <Row>Reason: {item && item.membawaSuratIjinAreaReason}</Row>
+                    )}
+                    <Row>
+                      {item && item.membawaBukuSaku === 1 ? (
+                        <i className="fa fa-check-square" />
+                      ) : (
+                        <i className="fa fa-window-close" />
+                      )}{' '}
+                      Membawa Buku Saku
+                    </Row>
+                    {item && item.membawaBukuSaku === 0 && (
+                      <Row>Reason: {item && item.membawaBukuSakuReason}</Row>
+                    )}
+                    <Row>
+                      {item && item.membawaCatatanPerjalanan === 1 ? (
+                        <i className="fa fa-check-square" />
+                      ) : (
+                        <i className="fa fa-window-close" />
+                      )}{' '}
+                      Membawa Catatan Perjalanan
+                    </Row>
+                    {item && item.membawaCatatanPerjalanan === 0 && (
+                      <Row>Reason: {item && item.membawaCatatanPerjalananReason}</Row>
+                    )}
                   </Tabs.TabPane>
+
                   <Tabs.TabPane tab="Cek Penggunaan" key="cekpenggunaan">
-                    Content of Tab Pane 3
+                    <Row>
+                      {item && item.menggunakanSeragam === 1 ? (
+                        <i className="fa fa-check-square" />
+                      ) : (
+                        <i className="fa fa-window-close" />
+                      )}{' '}
+                      Menggunakan Seragam
+                    </Row>
+                    {item && item.menggunakanSeragam === 0 && (
+                      <Row>Reason: {item && item.menggunakanSeragamReason}</Row>
+                    )}
+                    <Row>
+                      {item && item.menggunakanSafetyShoes === 1 ? (
+                        <i className="fa fa-check-square" />
+                      ) : (
+                        <i className="fa fa-window-close" />
+                      )}{' '}
+                      Menggunakan Safety Shoes
+                    </Row>
+                    {item && item.menggunakanSafetyShoes === 0 && (
+                      <Row>Reason: {item && item.menggunakanSafetyShoesReason}</Row>
+                    )}
+                    <Row>
+                      {item && item.menggunakanSafetyHelm === 1 ? (
+                        <i className="fa fa-check-square" />
+                      ) : (
+                        <i className="fa fa-window-close" />
+                      )}{' '}
+                      Menggunakan Safety Helm
+                    </Row>
+                    {item && item.menggunakanSafetyHelm === 0 && (
+                      <Row>Reason: {item && item.menggunakanSafetyHelmReason}</Row>
+                    )}
+                    <Row>
+                      {item && item.menggunakanIDCard === 1 ? (
+                        <i className="fa fa-check-square" />
+                      ) : (
+                        <i className="fa fa-window-close" />
+                      )}{' '}
+                      Menggunakan ID Card
+                    </Row>
+                    {item && item.menggunakanIDCard === 0 && (
+                      <Row>Reason: {item && item.menggunakanIDCardReason}</Row>
+                    )}
+                    <Row>
+                      {item && item.menggunakanSarungTangan === 1 ? (
+                        <i className="fa fa-check-square" />
+                      ) : (
+                        <i className="fa fa-window-close" />
+                      )}{' '}
+                      Menggunakan Sarung Tangan
+                    </Row>
+                    {item && item.menggunakanSarungTangan === 0 && (
+                      <Row>Reason: {item && item.menggunakanSarungTanganReason}</Row>
+                    )}
+                    <Row>
+                      {item && item.menggunakanJasHujan === 1 ? (
+                        <i className="fa fa-check-square" />
+                      ) : (
+                        <i className="fa fa-window-close" />
+                      )}{' '}
+                      Menggunakan Jas Hujan
+                    </Row>
+                    {item && item.menggunakanJasHujan === 0 && (
+                      <Row>Reason: {item && item.menggunakanJasHujanReason}</Row>
+                    )}
                   </Tabs.TabPane>
                 </Tabs>
               </Modal>
