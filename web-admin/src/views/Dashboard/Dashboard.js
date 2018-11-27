@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-const logo = require('../../assets/img/brand/logo-patraniaga.png')
+// const logo = require('../../assets/img/brand/logo-patraniaga.png')
 
 class Dashboard extends Component {
   render() {
