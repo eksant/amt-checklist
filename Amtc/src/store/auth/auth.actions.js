@@ -1,4 +1,4 @@
-import { apiSendData, setAsyncToken, getAsyncToken, delAsyncToken } from '../../utils'
+import { apiSendData, setAsyncToken, getAsyncToken, setAsyncStorage } from '../../utils'
 import {
   AUTH_EXPIRED_TOKEN,
   AUTH_LOGIN_LOADING,
@@ -30,10 +30,12 @@ export const userLogin = payload => {
     dispatch(authLoginLoading())
     // console.log('PAYLOAD', payload)
     return apiSendData('signin', payload)
-      .then(resp => {
+      .then(async resp => {
         // console.log('RESP', resp)
         if (resp.token) {
-          setAsyncToken(resp.token)
+          await setAsyncToken(resp.token)
+          await setAsyncStorage('user-fullname', resp.user.fullName)
+          await setAsyncStorage('user-roles', resp.user.roles)
           dispatch(authLoginSuccess(resp.user))
           dispatch(authExpiredToken(resp.expired))
         } else {

@@ -2,11 +2,37 @@ import React, { Component } from 'react'
 import { Container, Content, Form, Item, Label, Input } from 'native-base'
 import { StyleSheet, Dimensions, ScrollView } from 'react-native'
 
+import { getAsyncStorage } from '../../utils'
+
 const window = Dimensions.get('window')
 const { width } = window
 
 export default class BasicInfo extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      user: {
+        fullName: '',
+        roles: '',
+      },
+    }
+  }
+
+  async componentDidMount() {
+    const fullName = await getAsyncStorage('user-fullname')
+    const roles = await getAsyncStorage('user-roles')
+
+    this.setState({
+      user: {
+        fullName,
+        roles,
+      },
+    })
+  }
+
   render() {
+    const { user } = this.state
     const { data, setState } = this.props
 
     return (
@@ -23,6 +49,19 @@ export default class BasicInfo extends Component {
                 value={data.ritase}
                 onChangeText={ritase => setState({ ritase })}
               /> */}
+              </Item>
+              <Item fixedLabel style={styles.itemStyle}>
+                <Label style={styles.formLabel}>Supir</Label>
+                <Label style={styles.formLabel}>{user.fullName}</Label>
+              </Item>
+              <Item fixedLabel style={styles.itemStyle}>
+                <Label style={styles.formLabel}>Kernet</Label>
+                <Input
+                  underlineColorAndroid="transparent"
+                  style={styles.formInput}
+                  value={data.remarks}
+                  onChangeText={remarks => setState({ remarks })}
+                />
               </Item>
               <Item fixedLabel style={styles.itemStyle}>
                 <Label style={styles.formLabel}>Ritase</Label>
@@ -69,7 +108,7 @@ export default class BasicInfo extends Component {
                   onChangeText={TBBM => setState({ TBBM })}
                 />
               </Item>
-              <Item fixedLabel style={styles.itemStyle}>
+              {/* <Item fixedLabel style={styles.itemStyle}>
                 <Label style={styles.formLabel}>Remarks</Label>
                 <Input
                   underlineColorAndroid="transparent"
@@ -77,7 +116,7 @@ export default class BasicInfo extends Component {
                   value={data.remarks}
                   onChangeText={remarks => setState({ remarks })}
                 />
-              </Item>
+              </Item> */}
             </Form>
           </ScrollView>
         </Content>

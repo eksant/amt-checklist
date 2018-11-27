@@ -3,7 +3,8 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { Actions } from 'react-native-router-flux'
 import { StyleSheet, Dimensions, View } from 'react-native'
-import { Container, Content, Card, CardItem, Text } from 'native-base'
+import { Container, Content, Card, CardItem, Text, Button } from 'native-base'
+import FAIcon from 'react-native-vector-icons/FontAwesome'
 
 import Loading from '../../components/Loading'
 import Message from '../../components/Message'
@@ -40,6 +41,9 @@ class Histories extends Component {
             <Card>
               <CardItem header bordered>
                 <Text>History Checklist ({checklist.length > 0 ? checklist.length : 0})</Text>
+                <Button iconLeft transparent primary onPress={() => this.handleRefresh()}>
+                  <FAIcon name="refresh" style={{ fontSize: 20, left: 10, color: 'green' }} />
+                </Button>
               </CardItem>
               <CardItem>
                 <Content style={styles.content}>

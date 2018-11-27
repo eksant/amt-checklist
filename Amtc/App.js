@@ -16,6 +16,8 @@ import Scanner from './src/views/Scanner'
 import Checklist from './src/views/Checklist'
 import Histories from './src/views/Histories'
 
+import { getAsyncStorage } from './src/utils'
+
 /* create reducer for router */
 const reducerCreate = params => {
   const defaultReducer = new Reducer(params)
@@ -34,7 +36,23 @@ const WrapperComponent = (ComposedComponent, isActionBack, isForm) =>
 
       this.state = {
         isOpen: false,
+        user: {
+          fullName: 'Test',
+          roles: '',
+        },
       }
+    }
+
+    async componentDidMount() {
+      const fullName = await getAsyncStorage('user-fullname')
+      const roles = await getAsyncStorage('user-roles')
+
+      this.setState({
+        user: {
+          fullName,
+          roles,
+        },
+      })
     }
 
     toggle() {
@@ -57,7 +75,9 @@ const WrapperComponent = (ComposedComponent, isActionBack, isForm) =>
     }
 
     render() {
-      const menu = <Sidebar onItemSelected={this.onMenuItemSelected.bind(this)} />
+      const menu = (
+        <Sidebar user={this.state.user} onItemSelected={this.onMenuItemSelected.bind(this)} />
+      )
 
       return (
         <SideMenu

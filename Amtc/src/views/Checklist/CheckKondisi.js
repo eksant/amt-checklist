@@ -3,14 +3,14 @@ import { StyleSheet, ScrollView, View } from 'react-native'
 import { Text, List, ListItem, Textarea, CheckBox, Body, Form } from 'native-base'
 
 const ShowReason = props => {
-  const { status, reason, index, onChangeReason } = props
+  const { status, reason, index, isLast, onChangeReason } = props
 
   return status === 0 ? (
     <Form>
       <Textarea
         bordered
         rowSpan={2}
-        style={styles.formReason}
+        style={[isLast ? { marginBottom: 30 } : null, styles.formReason]}
         placeholder="input your reason here..."
         value={reason}
         onChangeText={reason => onChangeReason(index, reason)}
@@ -34,35 +34,41 @@ export default class CheckKondisi extends Component {
     const { data, onChangeStatus, onChangeReason } = this.props
 
     return (
-      <ScrollView>
-        <View>
-          <List
-            dataArray={data}
-            // onEndReachedThreshold={200}
-            renderRow={(rowData, sectionID, rowID, highlightRow) => {
-              return (
-                <ListItem style={{ alignItems: 'flex-start' }}>
-                  <StatusCheckBox
-                    index={rowID}
-                    status={rowData.status}
-                    onChangeStatus={onChangeStatus}
-                  />
-                  <Body style={{ marginLeft: 5 }}>
-                    <Text style={styles.label}>{rowData.name}</Text>
-
-                    <ShowReason
+      // <Container>
+      <View style={{ flex: 1, height: 500, borderWidth: 1 }}>
+        <ScrollView>
+          <View style={{ flex: 1 }}>
+            <List
+              dataArray={data}
+              // onEndReachedThreshold={200}
+              renderRow={(rowData, sectionID, rowID, highlightRow) => {
+                // console.log(rowID + ' == ' + data.length)
+                return (
+                  <ListItem style={{ alignItems: 'flex-start' }}>
+                    <StatusCheckBox
                       index={rowID}
                       status={rowData.status}
-                      reason={rowData.reason}
-                      onChangeReason={onChangeReason}
+                      onChangeStatus={onChangeStatus}
                     />
-                  </Body>
-                </ListItem>
-              )
-            }}
-          />
-        </View>
-      </ScrollView>
+                    <Body style={{ marginLeft: 5 }}>
+                      <Text style={styles.label}>{rowData.name}</Text>
+
+                      <ShowReason
+                        index={rowID}
+                        status={rowData.status}
+                        reason={rowData.reason}
+                        isLast={rowID === data.length - 1}
+                        onChangeReason={onChangeReason}
+                      />
+                    </Body>
+                  </ListItem>
+                )
+              }}
+            />
+          </View>
+        </ScrollView>
+      </View>
+      // </Container>
     )
   }
 }

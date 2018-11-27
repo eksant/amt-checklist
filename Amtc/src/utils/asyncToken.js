@@ -25,3 +25,27 @@ export const delAsyncToken = async () => {
     console.log('AsyncStorage Error', error.message)
   }
 }
+
+export const setAsyncStorage = async (storageName, payload) => {
+  try {
+    await AsyncStorage.setItem(storageName, payload)
+  } catch (error) {
+    console.log('AsyncStorage Error', error.message)
+  }
+}
+
+export const getAsyncStorage = async storageName => {
+  try {
+    return await AsyncStorage.getItem(storageName)
+  } catch (error) {
+    console.log('AsyncStorage Error', error.message)
+  }
+}
+
+export const delAsyncStorage = async storageName => {
+  try {
+    return await AsyncStorage.removeItem(storageName)
+  } catch (error) {
+    console.log('AsyncStorage Error', error.message)
+  }
+}

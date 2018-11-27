@@ -65,6 +65,9 @@ class Dashboard extends Component {
             <Card>
               <CardItem header bordered>
                 <Text>Checklist Previous</Text>
+                <Button iconLeft transparent primary onPress={() => this.handleRefresh()}>
+                  <FAIcon name="refresh" style={{ fontSize: 20, left: 10, color: 'green' }} />
+                </Button>
               </CardItem>
               <CardItem>
                 <Content style={styles.content}>

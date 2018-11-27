@@ -1,18 +1,20 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { StyleSheet, Dimensions, ScrollView, View, Image, Text } from 'react-native'
+import { StyleSheet, Dimensions, ScrollView, View, Image, Text, } from 'react-native'
 import { Actions } from 'react-native-router-flux'
 import FAIcon from 'react-native-vector-icons/FontAwesome'
 
-import { delAsyncToken } from '../../utils'
+import { delAsyncToken, delAsyncStorage } from '../../utils'
 
 const window = Dimensions.get('window')
 const { width, height } = window
 
-export default function Menu({ onItemSelected }) {
+export default function Menu({ user, onItemSelected }) {
   const handleLogout = async () => {
     const token = await delAsyncToken()
     if (!token || token === undefined) {
+      await delAsyncStorage('user-fullname')
+      await delAsyncStorage('user-roles')
       Actions.replace('login')
     }
   }
@@ -24,10 +26,11 @@ export default function Menu({ onItemSelected }) {
           style={styles.sidebarAvatar}
           source={require('../../assets/img/avatars/user-default.png')}
         />
-        <Text style={styles.sidebarProfile}>Your name</Text>
-        <Text style={styles.sidebarEditProfile} onPress={() => onItemSelected('profile', 'pop')}>
+        <Text style={styles.sidebarProfile}>{user && user.fullName}</Text>
+        <Text style={styles.sidebarProfile}>{user && user.roles}</Text>
+        {/* <Text style={styles.sidebarEditProfile} onPress={() => onItemSelected('profile', 'pop')}>
           Edit Profile
-        </Text>
+        </Text> */}
       </View>
 
       <View style={styles.sidebarItemContainer}>

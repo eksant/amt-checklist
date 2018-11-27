@@ -21,11 +21,11 @@ const HistoryList = ({ items }) => {
               </Left>
               <Body>
                 <Text style={{ fontSize: 12 }}>
-                  AMT {item.mobiltangki && item.mobiltangki.nopol}
+                  NoPol {item.mobiltangki && item.mobiltangki.nopol}
                 </Text>
                 <Text style={{ fontSize: 10 }}>Status {item.status}</Text>
                 <Text style={{ fontSize: 9 }} note>
-                  {item.rejectedReason}
+                  {/* {item.rejectedReason} */}
                 </Text>
               </Body>
               <Right>

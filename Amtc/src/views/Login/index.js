@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { Actions } from 'react-native-router-flux'
-import { Item, Input, Button, Text, Spinner } from 'native-base'
+import { Item, Input, Button, Text, Spinner, Thumbnail } from 'native-base'
 import FAIcon from 'react-native-vector-icons/FontAwesome'
 import {
   StyleSheet,
@@ -13,12 +13,14 @@ import {
   // KeyboardAvoidingView,
 } from 'react-native'
 
+import { setAsyncStorage } from '../../utils'
 import { userLogin } from '../../store/auth/auth.actions'
 import ConnectAlert from '../../components/ConnectAlert'
 
 const window = Dimensions.get('window')
 const { height, width } = window
 const imgBackground = require('../../assets/img/background/background-1.jpg')
+const logoDraconId = require('../../assets/img/brand/logo.jpg')
 
 // Enable LayoutAnimation on Android
 UIManager.setLayoutAnimationEnabledExperimental &&
@@ -82,7 +84,8 @@ class Login extends Component {
             <View style={styles.formContainer}>
               <View style={styles.titleContainer}>
                 <View style={{ flexDirection: 'row' }}>
-                  <Text style={styles.titleText}>Login AMTC</Text>
+                  {/* <Text style={styles.titleText}>Login DraconId</Text> */}
+                  <Thumbnail square source={logoDraconId} />
                 </View>
               </View>
 

@@ -18,28 +18,42 @@ class Scanner extends Component {
 
     this.state = {
       nopol: null,
+      onChecking: false,
     }
   }
 
   onBarCodeRead(result) {
-    if (!this.state.nopol) {
+    // console.log(result)
+    if (!this.state.nopol && !this.state.onChecking) {
+      const timeOut = 800
+      this.setState({ onChecking: true })
+
       this.props
         .getMobilTangkiByNoPol(result.data)
         .then(resp => {
           // console.log(resp)
           if (resp.status === 200) {
-            this.setState({ nopol: resp.data.nopol })
+            this.setState({
+              nopol: resp.data.nopol,
+              onChecking: false,
+            })
 
             setTimeout(() => {
               Actions.checklist({ amt: resp.data })
-            }, 2000)
+            }, timeOut)
           } else {
-            this.setState({ nopol: resp.message })
+            this.setState({
+              nopol: resp.message,
+              onChecking: false,
+            })
             this.props.alertWithType('error', 'Error', resp.message)
 
             setTimeout(() => {
-              this.setState({ nopol: null })
-            }, 2000)
+              this.setState({
+                nopol: null,
+                onChecking: false,
+              })
+            }, timeOut)
           }
         })
         .catch(err => {
@@ -67,9 +81,10 @@ class Scanner extends Component {
                     flashMode={RNCamera.Constants.FlashMode.on}
                     permissionDialogTitle={'Permission to use camera'}
                     permissionDialogMessage={'We need your permission to use your camera phone'}
-                    onBarCodeRead={this.onBarCodeRead.bind(this)}
+                    // onBarCodeRead={this.onBarCodeRead.bind(this)}
                     onGoogleVisionBarcodesDetected={({ barcodes }) => {
-                      console.log(barcodes)
+                      // console.log(barcodes)
+                      this.onBarCodeRead(barcodes[0])
                     }}
                   >
                     <View style={styles.rectangleContainer}>
