@@ -10,7 +10,7 @@ import { getAsyncToken } from '../../utils'
 import { getChecklist } from '../../store/checklist/checklist.actions'
 
 const deviceHeight = Dimensions.get('window').height
-const logoPertamina = require('../../assets/img/brand/logo-symbol.png')
+const logoPertamina = require('../../assets/img/brand/logo-patraniaga.png')
 
 class Splash extends Component {
   constructor() {
@@ -119,8 +119,8 @@ const styles = StyleSheet.create({
   },
   logo: {
     flex: 1,
-    width: 250,
-    height: null,
+    width: 350,
+    // height: null,
     alignSelf: 'center',
     resizeMode: 'contain',
     marginTop: deviceHeight / 5,
@@ -128,7 +128,7 @@ const styles = StyleSheet.create({
   title: {
     flex: 1,
     color: '#D8D8D8',
-    fontSize: 25,
+    fontSize: 28,
     fontWeight: 'bold',
     alignSelf: 'center',
   },

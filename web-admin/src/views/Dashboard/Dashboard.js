@@ -21,7 +21,7 @@ class Dashboard extends Component {
         /> */}
         <div style={{ height: '560px' }}>
           <img
-            src={require('../../assets/img/brand/logo-symbol.png')}
+            src={require('../../assets/img/brand/logo-patraniaga-big.png')}
             alt="logo-pertamina"
             align="middle"
             style={{
@@ -30,7 +30,7 @@ class Dashboard extends Component {
               marginRight: 'auto',
               height: 'auto',
               width: '100%',
-              maxWidth: '450px',
+              maxWidth: '850px',
             }}
           />
         </div>
