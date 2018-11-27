@@ -1,14 +1,16 @@
 import React, { Component } from 'react'
 
+const logo = require('../../assets/img/brand/logo-patraniaga.png')
+
 class Dashboard extends Component {
   render() {
     return (
       <div className="animated fadeIn">
-        <img
-          src={require('../../assets/img/brand/logo-symbol.png')}
-          alt="logo-pertamina"
-          align="middle"
+        {/* <div
           style={{
+            backgroundImage: `url(${logo})`,
+            height: '200px',
+            width: '400px',
             display: 'block',
             marginLeft: 'auto',
             marginRight: 'auto',
@@ -16,7 +18,22 @@ class Dashboard extends Component {
             width: '100%',
             maxWidth: '450px',
           }}
-        />
+        /> */}
+        <div style={{ height: '560px' }}>
+          <img
+            src={require('../../assets/img/brand/logo-symbol.png')}
+            alt="logo-pertamina"
+            align="middle"
+            style={{
+              display: 'block',
+              marginLeft: 'auto',
+              marginRight: 'auto',
+              height: 'auto',
+              width: '100%',
+              maxWidth: '450px',
+            }}
+          />
+        </div>
       </div>
     )
   }
