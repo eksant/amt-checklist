@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import moment from 'moment'
-import { Card, Tag, Divider, Radio, Table, Alert } from 'antd'
+import { Card, Table, Alert } from 'antd'
 
 import { logout } from '../../utils/logout'
 
@@ -9,7 +9,7 @@ class ChecklistRequest extends Component {
     super(props)
 
     this.state = {
-      status: 'All',
+      status: 'Approved',
     }
   }
 
@@ -30,41 +30,73 @@ class ChecklistRequest extends Component {
       dataIndex: 'mobiltangki.KL',
     },
     {
-      title: 'Requested By',
+      title: 'Supir',
       dataIndex: 'createdBy.username',
     },
     {
-      title: 'Roles',
-      dataIndex: 'createdBy.roles',
+      title: 'Kernet',
+      dataIndex: 'remarks',
     },
     {
       title: 'Count Checklist',
       render: record => {
-        const totalCheck = 5
-        const totalUncheck = 10
+        var totalCheck = 0
+        var totalUncheck = 0
 
-        return <span>{`${totalCheck} check, ${totalUncheck} uncheck`}</span>
-      },
-    },
-    {
-      title: 'Status',
-      render: record => {
+        for (const key of Object.keys(record)) {
+          if (
+            key.includes('kondisi') ||
+            key.includes('keberadaan') ||
+            key.includes('membawa') ||
+            key.includes('menggunakan')
+          ) {
+            if (record[key] === 0) {
+              totalUncheck++
+            } else if (record[key] === 1) {
+              totalCheck++
+            }
+          }
+        }
+
+        // return <span>{`${totalCheck} check, ${totalUncheck} uncheck`}</span>
         return (
-          <Tag
-            color={
-              record.status === 'Waiting'
-                ? '#2db7f5'
-                : record.status === 'Request'
-                ? '#108ee9'
-                : record.status === 'Rejected'
-                ? '#f50'
-                : '#87d068'
-            }>
-            {record.status}
-          </Tag>
+          <span>
+            {totalCheck} <i className="fa fa-check-square" /> check - {totalUncheck}{' '}
+            <i className="fa fa-window-close" /> uncheck
+          </span>
         )
       },
     },
+    {
+      title: 'Finished Date',
+      key: 'updatedAt',
+      render: record => {
+        return <span>{moment(record.updatedAt).format('DD MMM YYYY hh:mm')}</span>
+      },
+    },
+    {
+      title: 'Finished By',
+      dataIndex: 'approvedBy.fullName',
+    },
+    // {
+    //   title: 'Status',
+    //   render: record => {
+    //     return (
+    //       <Tag
+    //         color={
+    //           record.status === 'Waiting'
+    //             ? '#2db7f5'
+    //             : record.status === 'Request'
+    //             ? '#108ee9'
+    //             : record.status === 'Rejected'
+    //             ? '#f50'
+    //             : '#87d068'
+    //         }>
+    //         {record.status}
+    //       </Tag>
+    //     )
+    //   },
+    // },
   ]
 
   handleChangeStatus(e) {
@@ -83,6 +115,7 @@ class ChecklistRequest extends Component {
       status === 'All'
         ? itemChecklists
         : itemChecklists.filter(checklist => checklist.status === status)
+    console.log(dataSource)
 
     if (error && error.message.indexOf('session expired')) {
       setTimeout(() => {
@@ -97,13 +130,13 @@ class ChecklistRequest extends Component {
           extra={
             <span>
               <a
-                href="#/approval-checklist"
+                href="#/report-daily-checklist"
                 onClick={() => onRefresh()}
                 disabled={error}
                 style={{ marginRight: '10px', color: '#A6A6A6' }}>
                 <i className="fa fa-refresh" /> Refresh
               </a>
-              <Divider type="vertical" />
+              {/* <Divider type="vertical" />
               Status Request : &nbsp;
               <Radio.Group
                 name="statusGroup"
@@ -114,7 +147,7 @@ class ChecklistRequest extends Component {
                 <Radio value="Waiting">Waiting</Radio>
                 <Radio value="Approved">Approved</Radio>
                 <Radio value="Rejected">Rejected</Radio>
-              </Radio.Group>
+              </Radio.Group> */}
             </span>
           }>
           {error ? (
