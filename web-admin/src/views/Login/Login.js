@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import { Container, Row, Col, CardGroup, Card, CardBody } from 'reactstrap'
 import { Form, Input, Button } from 'antd'
 
-import logo from '../../assets/img/brand/logo-symbol.png'
+import logo from '../../assets/img/brand/logo-patraniaga-big.png'
 
 class Login extends Component {
   constructor(props) {
@@ -75,7 +75,7 @@ class Login extends Component {
                   className="text-white bg-primary py-5 d-md-down-none"
                   style={{ width: '44%' }}>
                   <CardBody className="text-center">
-                    <img src={logo} alt="Pertamina" height="200px" />
+                    <img src={logo} alt="Pertamina" width="300px" style={{ paddingTop: '55px' }} />
                   </CardBody>
                 </Card>
               </CardGroup>
