@@ -1,16 +1,23 @@
 import React, { Component } from 'react'
 import moment from 'moment'
-import { Card, Table, Alert } from 'antd'
+import { ExcelExport, ExcelExportColumn } from '@progress/kendo-react-excel-export'
+import { Card, Table, Alert, Divider } from 'antd'
 
 import { logout } from '../../utils/logout'
 
 class ChecklistRequest extends Component {
+  _exporter
+
   constructor(props) {
     super(props)
 
     this.state = {
       status: 'Approved',
     }
+  }
+
+  export = () => {
+    this._exporter.save()
   }
 
   columns = [
@@ -31,41 +38,50 @@ class ChecklistRequest extends Component {
     },
     {
       title: 'Supir',
-      dataIndex: 'createdBy.username',
+      dataIndex: 'createdBy.fullName',
     },
     {
       title: 'Kernet',
       dataIndex: 'remarks',
     },
     {
-      title: 'Count Checklist',
-      render: record => {
-        var totalCheck = 0
-        var totalUncheck = 0
+      title: 'Ritase',
+      dataIndex: 'ritase',
+    },
+    {
+      title: 'Count Check',
+      dataIndex: 'totalCheck',
+      // render: record => {
+      // var totalCheck = 0
+      // var totalUncheck = 0
 
-        for (const key of Object.keys(record)) {
-          if (
-            key.includes('kondisi') ||
-            key.includes('keberadaan') ||
-            key.includes('membawa') ||
-            key.includes('menggunakan')
-          ) {
-            if (record[key] === 0) {
-              totalUncheck++
-            } else if (record[key] === 1) {
-              totalCheck++
-            }
-          }
-        }
+      // for (const key of Object.keys(record)) {
+      //   if (
+      //     key.includes('kondisi') ||
+      //     key.includes('keberadaan') ||
+      //     key.includes('membawa') ||
+      //     key.includes('menggunakan')
+      //   ) {
+      //     if (record[key] === 0) {
+      //       totalUncheck++
+      //     } else if (record[key] === 1) {
+      //       totalCheck++
+      //     }
+      //   }
+      // }
 
-        // return <span>{`${totalCheck} check, ${totalUncheck} uncheck`}</span>
-        return (
-          <span>
-            {totalCheck} <i className="fa fa-check-square" /> check - {totalUncheck}{' '}
-            <i className="fa fa-window-close" /> uncheck
-          </span>
-        )
-      },
+      // // return <span>{`${totalCheck} check, ${totalUncheck} uncheck`}</span>
+      // return (
+      //   <span>
+      //     {totalCheck} <i className="fa fa-check-square" /> check - {totalUncheck}{' '}
+      //     <i className="fa fa-window-close" /> uncheck
+      //   </span>
+      // )
+      // },
+    },
+    {
+      title: 'Count Uncheck',
+      dataIndex: 'totalUncheck',
     },
     {
       title: 'Finished Date',
@@ -110,12 +126,38 @@ class ChecklistRequest extends Component {
     const { status } = this.state
     const { loading, error, onRefresh, checklists = [] } = this.props
     const itemChecklists =
-      checklists !== null ? checklists.map(checklist => ({ ...checklist, key: checklist._id })) : []
+      checklists !== null
+        ? checklists.map(checklist => {
+            var totalCheck = 0
+            var totalUncheck = 0
+
+            for (const key of Object.keys(checklist)) {
+              if (
+                key.includes('kondisi') ||
+                key.includes('keberadaan') ||
+                key.includes('membawa') ||
+                key.includes('menggunakan')
+              ) {
+                if (checklist[key] === 0) {
+                  totalUncheck++
+                } else if (checklist[key] === 1) {
+                  totalCheck++
+                }
+              }
+            }
+
+            return {
+              ...checklist,
+              key: checklist._id,
+              totalCheck: totalCheck,
+              totalUncheck: totalUncheck,
+            }
+          })
+        : []
     const dataSource =
       status === 'All'
         ? itemChecklists
         : itemChecklists.filter(checklist => checklist.status === status)
-    console.log(dataSource)
 
     if (error && error.message.indexOf('session expired')) {
       setTimeout(() => {
@@ -136,8 +178,8 @@ class ChecklistRequest extends Component {
                 style={{ marginRight: '10px', color: '#A6A6A6' }}>
                 <i className="fa fa-refresh" /> Refresh
               </a>
-              {/* <Divider type="vertical" />
-              Status Request : &nbsp;
+              <Divider type="vertical" />
+              {/* Status Request : &nbsp;
               <Radio.Group
                 name="statusGroup"
                 onChange={this.handleChangeStatus.bind(this)}
@@ -148,6 +190,35 @@ class ChecklistRequest extends Component {
                 <Radio value="Approved">Approved</Radio>
                 <Radio value="Rejected">Rejected</Radio>
               </Radio.Group> */}
+              <a href="#/report-daily-checklist" onClick={this.export} disabled={error}>
+                <i className="fa fa-download" /> Download Excel
+              </a>
+
+              <ExcelExport
+                data={dataSource}
+                fileName="daily-amt-checklist.xlsx"
+                ref={exporter => {
+                  this._exporter = exporter
+                }}>
+                <ExcelExportColumn
+                  field="createdAt"
+                  cellOptions={{ format: 'dd mmm yyyy hh:mm' }}
+                  title="Created At"
+                />
+                <ExcelExportColumn field="mobiltangki.nopol" title="No.POl" />
+                <ExcelExportColumn field="mobiltangki.KL" title="Kapasitas KL" />
+                <ExcelExportColumn field="createdBy.fullName" title="Supir" />
+                <ExcelExportColumn field="remarks" title="Kernet" />
+                <ExcelExportColumn field="ritase" title="Ritase" />
+                <ExcelExportColumn field="totalCheck" title="Count Check" />
+                <ExcelExportColumn field="totalUncheck" title="Count Uncheck" />
+                <ExcelExportColumn
+                  field="updatedAt"
+                  cellOptions={{ format: 'dd mmm yyyy hh:mm' }}
+                  title="Finished Date"
+                />
+                <ExcelExportColumn field="approvedBy.fullName" title="Finished By" />
+              </ExcelExport>
             </span>
           }>
           {error ? (

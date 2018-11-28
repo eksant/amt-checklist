@@ -29,6 +29,7 @@
     "@coreui/coreui-plugin-chartjs-custom-tooltips": "^1.2.0",
     "@coreui/icons": "0.3.0",
     "@coreui/react": "^2.0.9",
+    "@progress/kendo-react-excel-export": "^2.4.0",
     "antd": "^3.10.1",
     "apollo-boost": "^0.1.15",
     "apollo-cache-inmemory": "^1.2.9",

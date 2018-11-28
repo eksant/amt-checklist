@@ -27,7 +27,7 @@ class ChecklistRequest extends Component {
     {
       title: 'Supir',
       render: record => {
-        return <span>{record.createdBy.username}</span>
+        return <span>{record.createdBy.fullName}</span>
       },
     },
     {
@@ -39,23 +39,8 @@ class ChecklistRequest extends Component {
       dataIndex: 'mobiltangki.nopol',
     },
     {
-      title: 'Status',
-      render: record => {
-        return (
-          <Tag
-            color={
-              record.status === 'Waiting'
-                ? '#2db7f5'
-                : record.status === 'Request'
-                ? '#108ee9'
-                : record.status === 'Rejected'
-                ? '#f50'
-                : '#87d068'
-            }>
-            {record.status}
-          </Tag>
-        )
-      },
+      title: 'Ritase',
+      dataIndex: 'ritase',
     },
     {
       title: 'Count Checklist',
@@ -84,6 +69,25 @@ class ChecklistRequest extends Component {
             {totalCheck} <i className="fa fa-check-square" /> check - {totalUncheck}{' '}
             <i className="fa fa-window-close" /> uncheck
           </span>
+        )
+      },
+    },
+    {
+      title: 'Status',
+      render: record => {
+        return (
+          <Tag
+            color={
+              record.status === 'Waiting'
+                ? '#2db7f5'
+                : record.status === 'Request'
+                ? '#108ee9'
+                : record.status === 'Rejected'
+                ? '#f50'
+                : '#87d068'
+            }>
+            {record.status}
+          </Tag>
         )
       },
     },
