@@ -74,7 +74,7 @@ class UserForm extends Component {
           ) : (
             <Form onSubmit={this.handleSubmit}>
               <Row>
-                <Col span="12">
+                <Col span={12}>
                   <Form.Item label="NIP" {...formItemLayout}>
                     {getFieldDecorator('NIP', {
                       initialValue: itemData && itemData.NIP,
@@ -123,7 +123,7 @@ class UserForm extends Component {
                     )}
                   </Form.Item>
                 </Col>
-                <Col span="12">
+                <Col span={12}>
                   <Form.Item label="Photo" {...formItemLayout}>
                     {getFieldDecorator('imgUrl', {
                       rules: [{ required: false, message: 'Please input photo!' }],

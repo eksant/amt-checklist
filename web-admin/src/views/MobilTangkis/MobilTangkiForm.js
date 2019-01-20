@@ -62,7 +62,7 @@ class MobilTangkiForm extends Component {
           ) : (
             <Form onSubmit={this.handleSubmit}>
               <Row>
-                <Col span="12">
+                <Col span={12}>
                   <Form.Item label="No. Polisi" {...formItemLayout}>
                     {getFieldDecorator('nopol', {
                       initialValue: itemData && itemData.nopol,
@@ -78,7 +78,7 @@ class MobilTangkiForm extends Component {
                     })(<NumericInput placeholder="Input your KL.." style={{ width: '100%' }} />)}
                   </Form.Item>
                 </Col>
-                <Col span="12">
+                <Col span={12}>
                   <Form.Item label="Year" {...formItemLayout}>
                     {getFieldDecorator('year', {
                       initialValue: itemData && itemData.year,
