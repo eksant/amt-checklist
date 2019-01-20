@@ -1,13 +1,13 @@
 const dev = {
-  EndpointRestAPI: 'http://localhost:3030/api',
-  EndpointGraphql: 'http://localhost:3030/graphql',
-  EndpointWebsocket: 'ws://localhost:3030/graphql',
-}
-
-const prod = {
   EndpointRestAPI: 'http://seorangeksa.com:3030/api',
   EndpointGraphql: 'http://seorangeksa.com:3030/graphql',
   EndpointWebsocket: 'ws://35.197.140.110:3030/graphql',
+}
+
+const prod = {
+  EndpointRestAPI: 'http://localhost:3030/api',
+  EndpointGraphql: 'http://localhost:3030/graphql',
+  EndpointWebsocket: 'ws://localhost:3030/graphql',
 }
 
 const pertamina = {

@@ -228,7 +228,7 @@ export default compose(
   }),
   graphql(mutationCreateUser, {
     options: {
-      fetchPolicy: 'cache-and-network',
+      fetchPolicy: 'no-cache',
       errorPolicy: 'all',
     },
     props: props => ({
@@ -241,7 +241,7 @@ export default compose(
   }),
   graphql(mutationUpdateUser, {
     options: {
-      fetchPolicy: 'cache-and-network',
+      fetchPolicy: 'no-cache',
       errorPolicy: 'all',
     },
     props: props => ({
@@ -254,7 +254,7 @@ export default compose(
   }),
   graphql(mutationDeleteUser, {
     options: {
-      fetchPolicy: 'cache-and-network',
+      fetchPolicy: 'no-cache',
       errorPolicy: 'all',
     },
     props: props => ({

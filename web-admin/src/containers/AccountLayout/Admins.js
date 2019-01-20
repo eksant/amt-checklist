@@ -228,7 +228,7 @@ export default compose(
   }),
   graphql(mutationCreateAdmin, {
     options: {
-      fetchPolicy: 'cache-and-network',
+      fetchPolicy: 'no-caches',
       errorPolicy: 'all',
     },
     props: props => ({
@@ -241,7 +241,7 @@ export default compose(
   }),
   graphql(mutationUpdateAdmin, {
     options: {
-      fetchPolicy: 'cache-and-network',
+      fetchPolicy: 'no-caches',
       errorPolicy: 'all',
     },
     props: props => ({
@@ -254,7 +254,7 @@ export default compose(
   }),
   graphql(mutationDeleteAdmin, {
     options: {
-      fetchPolicy: 'cache-and-network',
+      fetchPolicy: 'no-caches',
       errorPolicy: 'all',
     },
     props: props => ({

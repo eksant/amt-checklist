@@ -218,7 +218,7 @@ export default compose(
   }),
   graphql(mutationCreateMobilTangki, {
     options: {
-      fetchPolicy: 'cache-and-network',
+      fetchPolicy: 'no-cache',
       errorPolicy: 'all',
     },
     props: props => ({
@@ -231,7 +231,7 @@ export default compose(
   }),
   graphql(mutationUpdateMobilTangki, {
     options: {
-      fetchPolicy: 'cache-and-network',
+      fetchPolicy: 'no-cache',
       errorPolicy: 'all',
     },
     props: props => ({
@@ -244,7 +244,7 @@ export default compose(
   }),
   graphql(mutationDeleteMobilTangki, {
     options: {
-      fetchPolicy: 'cache-and-network',
+      fetchPolicy: 'no-cache',
       errorPolicy: 'all',
     },
     props: props => ({
