@@ -44,7 +44,7 @@ class Splash extends Component {
     if (Object.keys(resp).length === 0) {
       Alert.alert(
         'Check Your Connection!',
-        'This app can only be used in the depot area!',
+        'Anda harus berada di area Pertamina TBBM Boyolali!',
         [{ text: 'Close', onPress: () => BackHandler.exitApp() }],
         { cancelable: false }
       )
