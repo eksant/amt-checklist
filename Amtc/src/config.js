@@ -4,8 +4,8 @@ const dev = {
 }
 
 const prod = {
-  EndpointRestAPI: 'http://localhost:3030/api',
-  EndpointGraphql: 'http://localhost:3030/graphql',
+  EndpointRestAPI: 'http://192.168.1.10:3030/api',
+  EndpointGraphql: 'http://192.168.1.10:3030/graphql',
 }
 
 const pertamina = {
