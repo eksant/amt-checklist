@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { Dimensions, StyleSheet, Text, View, Image } from 'react-native'
+import { Dimensions, StyleSheet, BackHandler, Text, View, Image, Alert } from 'react-native'
 import { Container } from 'native-base'
 import { Actions } from 'react-native-router-flux'
 // import * as Progress from 'react-native-progress'
@@ -21,6 +21,14 @@ class Splash extends Component {
     }
   }
 
+  componentWillMount() {
+    BackHandler.addEventListener('hardwareBackPress', this.backPressed)
+  }
+
+  componentWillUnmount() {
+    BackHandler.removeEventListener('hardwareBackPress', this.backPressed)
+  }
+
   async componentDidMount() {
     let self = this
 
@@ -33,9 +41,14 @@ class Splash extends Component {
     await this.setState({ isVisible: false })
 
     const resp = await this.props.getChecklist()
-    // console.warn(resp)
     if (Object.keys(resp).length === 0) {
-      alert('Check your connection!')
+      Alert.alert(
+        'Check Your Connection!',
+        'This app can only be used in the depot area!',
+        [{ text: 'Close', onPress: () => BackHandler.exitApp() }],
+        { cancelable: false }
+      )
+      return true
     } else {
       if (resp.error && resp.error.name === 'TokenExpiredError') {
         Actions.replace('login')
@@ -46,57 +59,10 @@ class Splash extends Component {
     }
   }
 
-  // constructor(props) {
-  //   super(props)
-
-  //   this.iSMounted = false
-  //   this.state = {
-  //     progress: 0,
-  //     indeterminate: true,
-  //   }
-  // }
-
-  // componentDidMount() {
-  //   this.iSMounted = true
-  //   if (this.iSMounted) {
-  //     this.animate()
-  //   }
-  // }
-
-  // componentWillUnmount() {
-  //   this.iSMounted = false
-  // }
-
-  // animate() {
-  //   let progress = 0
-  //   this.setState({ progress })
-  //   setTimeout(() => {
-  //     this.setState({ indeterminate: false })
-  //     setInterval(() => {
-  //       progress += Math.random() / 5
-  //       if (this._isMounted) {
-  //         this.setState({ progress })
-  //       }
-
-  //       if (progress > 1) {
-  //         this._isMounted = false
-  //         progress = 1
-  //         this.props.navigation.navigate('Login')
-  //       }
-  //     }, 200)
-  //   }, 100)
-  // }
-
   render() {
     return (
       <Container style={styles.container}>
         <View style={styles.logoContainer}>
-          {/* <Progress.Bar
-            progress={this.state.progress}
-            indeterminate={this.state.indeterminate}
-            color="#5DADE2"
-            width={400}
-          /> */}
           <Image source={logoPertamina} style={styles.logo} />
           <Text style={styles.title}>DAILY CHECKLIST</Text>
         </View>

@@ -1,11 +1,11 @@
 const dev = {
-  EndpointRestAPI: 'http://localhost:3030/api',
-  EndpointGraphql: 'http://localhost:3030/graphql',
+  EndpointRestAPI: 'http://seorangeksa.com:3030/api',
+  EndpointGraphql: 'http://seorangeksa.com:3030/graphql',
 }
 
 const prod = {
-  EndpointRestAPI: 'http://seorangeksa.com:3030/api',
-  EndpointGraphql: 'http://seorangeksa.com:3030/graphql',
+  EndpointRestAPI: 'http://localhost:3030/api',
+  EndpointGraphql: 'http://localhost:3030/graphql',
 }
 
 const pertamina = {
