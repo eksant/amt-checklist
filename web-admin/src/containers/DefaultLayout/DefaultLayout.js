@@ -53,6 +53,7 @@ class DefaultLayout extends Component {
             } else {
               return item
             }
+            return null
           }),
         },
       })
